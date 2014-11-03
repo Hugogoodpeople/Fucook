@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BAC6394F1A07ED420049E3BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC6394E1A07ED420049E3BD /* main.m */; };
+		BAC639521A07ED420049E3BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC639511A07ED420049E3BD /* AppDelegate.m */; };
+		BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAC639531A07ED420049E3BD /* Fucook.xcdatamodeld */; };
+		BAC639581A07ED420049E3BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC639571A07ED420049E3BD /* ViewController.m */; };
+		BAC6395B1A07ED420049E3BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC639591A07ED420049E3BD /* Main.storyboard */; };
+		BAC6395D1A07ED420049E3BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC6395C1A07ED420049E3BD /* Images.xcassets */; };
+		BAC639601A07ED420049E3BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC6395E1A07ED420049E3BD /* LaunchScreen.xib */; };
+		BAC6396C1A07ED420049E3BD /* FucookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC6396B1A07ED420049E3BD /* FucookTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BAC639661A07ED420049E3BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAC639411A07ED420049E3BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAC639481A07ED420049E3BD;
+			remoteInfo = Fucook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BAC639491A07ED420049E3BD /* Fucook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fucook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAC6394D1A07ED420049E3BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAC6394E1A07ED420049E3BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BAC639501A07ED420049E3BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BAC639511A07ED420049E3BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BAC639541A07ED420049E3BD /* Fucook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fucook.xcdatamodel; sourceTree = "<group>"; };
+		BAC639561A07ED420049E3BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BAC639571A07ED420049E3BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BAC6395A1A07ED420049E3BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BAC6395C1A07ED420049E3BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BAC6395F1A07ED420049E3BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BAC639651A07ED420049E3BD /* FucookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FucookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAC6396A1A07ED420049E3BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAC6396B1A07ED420049E3BD /* FucookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FucookTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BAC639461A07ED420049E3BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAC639621A07ED420049E3BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BAC639401A07ED420049E3BD = {
+			isa = PBXGroup;
+			children = (
+				BAC6394B1A07ED420049E3BD /* Fucook */,
+				BAC639681A07ED420049E3BD /* FucookTests */,
+				BAC6394A1A07ED420049E3BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BAC6394A1A07ED420049E3BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BAC639491A07ED420049E3BD /* Fucook.app */,
+				BAC639651A07ED420049E3BD /* FucookTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BAC6394B1A07ED420049E3BD /* Fucook */ = {
+			isa = PBXGroup;
+			children = (
+				BAC639501A07ED420049E3BD /* AppDelegate.h */,
+				BAC639511A07ED420049E3BD /* AppDelegate.m */,
+				BAC639561A07ED420049E3BD /* ViewController.h */,
+				BAC639571A07ED420049E3BD /* ViewController.m */,
+				BAC639591A07ED420049E3BD /* Main.storyboard */,
+				BAC6395C1A07ED420049E3BD /* Images.xcassets */,
+				BAC6395E1A07ED420049E3BD /* LaunchScreen.xib */,
+				BAC639531A07ED420049E3BD /* Fucook.xcdatamodeld */,
+				BAC6394C1A07ED420049E3BD /* Supporting Files */,
+			);
+			path = Fucook;
+			sourceTree = "<group>";
+		};
+		BAC6394C1A07ED420049E3BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAC6394D1A07ED420049E3BD /* Info.plist */,
+				BAC6394E1A07ED420049E3BD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BAC639681A07ED420049E3BD /* FucookTests */ = {
+			isa = PBXGroup;
+			children = (
+				BAC6396B1A07ED420049E3BD /* FucookTests.m */,
+				BAC639691A07ED420049E3BD /* Supporting Files */,
+			);
+			path = FucookTests;
+			sourceTree = "<group>";
+		};
+		BAC639691A07ED420049E3BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAC6396A1A07ED420049E3BD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BAC639481A07ED420049E3BD /* Fucook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAC6396F1A07ED420049E3BD /* Build configuration list for PBXNativeTarget "Fucook" */;
+			buildPhases = (
+				BAC639451A07ED420049E3BD /* Sources */,
+				BAC639461A07ED420049E3BD /* Frameworks */,
+				BAC639471A07ED420049E3BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fucook;
+			productName = Fucook;
+			productReference = BAC639491A07ED420049E3BD /* Fucook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BAC639641A07ED420049E3BD /* FucookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAC639721A07ED420049E3BD /* Build configuration list for PBXNativeTarget "FucookTests" */;
+			buildPhases = (
+				BAC639611A07ED420049E3BD /* Sources */,
+				BAC639621A07ED420049E3BD /* Frameworks */,
+				BAC639631A07ED420049E3BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAC639671A07ED420049E3BD /* PBXTargetDependency */,
+			);
+			name = FucookTests;
+			productName = FucookTests;
+			productReference = BAC639651A07ED420049E3BD /* FucookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BAC639411A07ED420049E3BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Hugo Costa";
+				TargetAttributes = {
+					BAC639481A07ED420049E3BD = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					BAC639641A07ED420049E3BD = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = BAC639481A07ED420049E3BD;
+					};
+				};
+			};
+			buildConfigurationList = BAC639441A07ED420049E3BD /* Build configuration list for PBXProject "Fucook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BAC639401A07ED420049E3BD;
+			productRefGroup = BAC6394A1A07ED420049E3BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BAC639481A07ED420049E3BD /* Fucook */,
+				BAC639641A07ED420049E3BD /* FucookTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BAC639471A07ED420049E3BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC6395B1A07ED420049E3BD /* Main.storyboard in Resources */,
+				BAC639601A07ED420049E3BD /* LaunchScreen.xib in Resources */,
+				BAC6395D1A07ED420049E3BD /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAC639631A07ED420049E3BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BAC639451A07ED420049E3BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC639521A07ED420049E3BD /* AppDelegate.m in Sources */,
+				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
+				BAC639581A07ED420049E3BD /* ViewController.m in Sources */,
+				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAC639611A07ED420049E3BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC6396C1A07ED420049E3BD /* FucookTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BAC639671A07ED420049E3BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAC639481A07ED420049E3BD /* Fucook */;
+			targetProxy = BAC639661A07ED420049E3BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BAC639591A07ED420049E3BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAC6395A1A07ED420049E3BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BAC6395E1A07ED420049E3BD /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAC6395F1A07ED420049E3BD /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BAC6396D1A07ED420049E3BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BAC6396E1A07ED420049E3BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BAC639701A07ED420049E3BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Fucook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BAC639711A07ED420049E3BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Fucook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BAC639731A07ED420049E3BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FucookTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fucook.app/Fucook";
+			};
+			name = Debug;
+		};
+		BAC639741A07ED420049E3BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FucookTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fucook.app/Fucook";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BAC639441A07ED420049E3BD /* Build configuration list for PBXProject "Fucook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAC6396D1A07ED420049E3BD /* Debug */,
+				BAC6396E1A07ED420049E3BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAC6396F1A07ED420049E3BD /* Build configuration list for PBXNativeTarget "Fucook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAC639701A07ED420049E3BD /* Debug */,
+				BAC639711A07ED420049E3BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BAC639721A07ED420049E3BD /* Build configuration list for PBXNativeTarget "FucookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAC639731A07ED420049E3BD /* Debug */,
+				BAC639741A07ED420049E3BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BAC639531A07ED420049E3BD /* Fucook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BAC639541A07ED420049E3BD /* Fucook.xcdatamodel */,
+			);
+			currentVersion = BAC639541A07ED420049E3BD /* Fucook.xcdatamodel */;
+			path = Fucook.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BAC639411A07ED420049E3BD /* Project object */;
+}
