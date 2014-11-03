@@ -10,11 +10,13 @@
 		BAC6394F1A07ED420049E3BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC6394E1A07ED420049E3BD /* main.m */; };
 		BAC639521A07ED420049E3BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC639511A07ED420049E3BD /* AppDelegate.m */; };
 		BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAC639531A07ED420049E3BD /* Fucook.xcdatamodeld */; };
-		BAC639581A07ED420049E3BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC639571A07ED420049E3BD /* ViewController.m */; };
-		BAC6395B1A07ED420049E3BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC639591A07ED420049E3BD /* Main.storyboard */; };
 		BAC6395D1A07ED420049E3BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC6395C1A07ED420049E3BD /* Images.xcassets */; };
-		BAC639601A07ED420049E3BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC6395E1A07ED420049E3BD /* LaunchScreen.xib */; };
 		BAC6396C1A07ED420049E3BD /* FucookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC6396B1A07ED420049E3BD /* FucookTests.m */; };
+		BAC6397F1A07EF290049E3BD /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC6397D1A07EF290049E3BD /* Home.m */; };
+		BAC639801A07EF290049E3BD /* Home.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC6397E1A07EF290049E3BD /* Home.xib */; };
+		BAC639841A07F0C40049E3BD /* Books.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC639821A07F0C40049E3BD /* Books.m */; };
+		BAC639851A07F0C40049E3BD /* Books.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC639831A07F0C40049E3BD /* Books.xib */; };
+		BAC639881A07F10A0049E3BD /* mzl.khrfwdoi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAC639871A07F10A0049E3BD /* mzl.khrfwdoi.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +36,17 @@
 		BAC639501A07ED420049E3BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BAC639511A07ED420049E3BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BAC639541A07ED420049E3BD /* Fucook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fucook.xcdatamodel; sourceTree = "<group>"; };
-		BAC639561A07ED420049E3BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BAC639571A07ED420049E3BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BAC6395A1A07ED420049E3BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAC6395C1A07ED420049E3BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BAC6395F1A07ED420049E3BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BAC639651A07ED420049E3BD /* FucookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FucookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC6396A1A07ED420049E3BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAC6396B1A07ED420049E3BD /* FucookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FucookTests.m; sourceTree = "<group>"; };
+		BAC6397C1A07EF290049E3BD /* Home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Home.h; path = "untitled folder/Home.h"; sourceTree = "<group>"; };
+		BAC6397D1A07EF290049E3BD /* Home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Home.m; path = "untitled folder/Home.m"; sourceTree = "<group>"; };
+		BAC6397E1A07EF290049E3BD /* Home.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Home.xib; path = "untitled folder/Home.xib"; sourceTree = "<group>"; };
+		BAC639811A07F0C40049E3BD /* Books.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Books.h; path = "untitled folder/Books.h"; sourceTree = "<group>"; };
+		BAC639821A07F0C40049E3BD /* Books.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Books.m; path = "untitled folder/Books.m"; sourceTree = "<group>"; };
+		BAC639831A07F0C40049E3BD /* Books.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Books.xib; path = "untitled folder/Books.xib"; sourceTree = "<group>"; };
+		BAC639871A07F10A0049E3BD /* mzl.khrfwdoi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mzl.khrfwdoi.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +90,15 @@
 			children = (
 				BAC639501A07ED420049E3BD /* AppDelegate.h */,
 				BAC639511A07ED420049E3BD /* AppDelegate.m */,
-				BAC639561A07ED420049E3BD /* ViewController.h */,
-				BAC639571A07ED420049E3BD /* ViewController.m */,
-				BAC639591A07ED420049E3BD /* Main.storyboard */,
 				BAC6395C1A07ED420049E3BD /* Images.xcassets */,
-				BAC6395E1A07ED420049E3BD /* LaunchScreen.xib */,
 				BAC639531A07ED420049E3BD /* Fucook.xcdatamodeld */,
 				BAC6394C1A07ED420049E3BD /* Supporting Files */,
+				BAC6397C1A07EF290049E3BD /* Home.h */,
+				BAC6397D1A07EF290049E3BD /* Home.m */,
+				BAC6397E1A07EF290049E3BD /* Home.xib */,
+				BAC639811A07F0C40049E3BD /* Books.h */,
+				BAC639821A07F0C40049E3BD /* Books.m */,
+				BAC639831A07F0C40049E3BD /* Books.xib */,
 			);
 			path = Fucook;
 			sourceTree = "<group>";
@@ -99,6 +106,7 @@
 		BAC6394C1A07ED420049E3BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BAC639861A07F0FD0049E3BD /* Imagens */,
 				BAC6394D1A07ED420049E3BD /* Info.plist */,
 				BAC6394E1A07ED420049E3BD /* main.m */,
 			);
@@ -120,6 +128,14 @@
 				BAC6396A1A07ED420049E3BD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BAC639861A07F0FD0049E3BD /* Imagens */ = {
+			isa = PBXGroup;
+			children = (
+				BAC639871A07F10A0049E3BD /* mzl.khrfwdoi.jpg */,
+			);
+			name = Imagens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,8 +218,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAC6395B1A07ED420049E3BD /* Main.storyboard in Resources */,
-				BAC639601A07ED420049E3BD /* LaunchScreen.xib in Resources */,
+				BAC639851A07F0C40049E3BD /* Books.xib in Resources */,
+				BAC639801A07EF290049E3BD /* Home.xib in Resources */,
+				BAC639881A07F10A0049E3BD /* mzl.khrfwdoi.jpg in Resources */,
 				BAC6395D1A07ED420049E3BD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,8 +240,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAC639521A07ED420049E3BD /* AppDelegate.m in Sources */,
+				BAC639841A07F0C40049E3BD /* Books.m in Sources */,
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
-				BAC639581A07ED420049E3BD /* ViewController.m in Sources */,
+				BAC6397F1A07EF290049E3BD /* Home.m in Sources */,
 				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,25 +264,6 @@
 			targetProxy = BAC639661A07ED420049E3BD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		BAC639591A07ED420049E3BD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BAC6395A1A07ED420049E3BD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BAC6395E1A07ED420049E3BD /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BAC6395F1A07ED420049E3BD /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BAC6396D1A07ED420049E3BD /* Debug */ = {

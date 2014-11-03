@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  Home.h
 //  Fucook
 //
 //  Created by Hugo Costa on 03/11/14.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface Home : UIViewController
+- (IBAction)clickButton:(id)sender;
 
 @end
-
