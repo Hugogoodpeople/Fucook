@@ -1,4 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="13F34" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Etapas" syncable="YES">
+        <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="foto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_etapa" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="id_receita" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="ordem" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tempo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Receitas" inverseName="relationship2" inverseEntity="Receitas" syncable="YES"/>
+    </entity>
+    <entity name="Ingredientes" syncable="YES">
+        <attribute name="id_ingrediente" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="id_receita" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nutricao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantidade" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unidade" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Receitas" inverseName="relationship1" inverseEntity="Receitas" syncable="YES"/>
+    </entity>
+    <entity name="Livros" syncable="YES">
+        <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="foto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_livro" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Receitas" inverseName="relationship" inverseEntity="Receitas" syncable="YES"/>
+    </entity>
+    <entity name="Receitas" syncable="YES">
+        <attribute name="categoria" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dificuldade" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="foto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_livro" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="id_receita" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notas" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nr_pessoas" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tempo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" maxCount="1" deletionRule="Nullify" destinationEntity="Livros" inverseName="relationship" inverseEntity="Livros" syncable="YES"/>
+        <relationship name="relationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredientes" inverseName="relationship" inverseEntity="Ingredientes" syncable="YES"/>
+        <relationship name="relationship2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Etapas" inverseName="relationship" inverseEntity="Etapas" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Etapas" positionX="-198" positionY="285" width="128" height="58"/>
+        <element name="Ingredientes" positionX="115" positionY="162" width="128" height="58"/>
+        <element name="Livros" positionX="-144" positionY="-75" width="126" height="118"/>
+        <element name="Receitas" positionX="-162" positionY="150" width="128" height="88"/>
+    </elements>
 </model>
