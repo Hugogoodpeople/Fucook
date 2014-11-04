@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "iCarousel.h"
 
 @interface Home : UIViewController
-- (IBAction)clickButton:(id)sender;
+
+@property (nonatomic, strong) IBOutlet iCarousel *carouselTop;
+
 
 @end
