@@ -27,13 +27,9 @@
     
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:cenas];
     
-    
     [self.window makeKeyAndVisible];
     
     [self.window setRootViewController:nav];
-    
-
-    
     
     return YES;
 }

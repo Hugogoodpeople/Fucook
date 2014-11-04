@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA05F5811A08D0FD00E752E7 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05F5801A08D0FD00E752E7 /* iCarousel.m */; };
+		BA05F5851A08D24300E752E7 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BA05F5821A08D24300E752E7 /* background.png */; };
+		BA05F5861A08D24300E752E7 /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = BA05F5831A08D24300E752E7 /* page.png */; };
+		BA05F5871A08D24300E752E7 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = BA05F5841A08D24300E752E7 /* placeholder.png */; };
+		BA05F58C1A08D4B700E752E7 /* LivrosView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05F58A1A08D4B700E752E7 /* LivrosView.m */; };
+		BA05F58D1A08D4B700E752E7 /* LivrosView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA05F58B1A08D4B700E752E7 /* LivrosView.xib */; };
 		BAC6394F1A07ED420049E3BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC6394E1A07ED420049E3BD /* main.m */; };
 		BAC639521A07ED420049E3BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC639511A07ED420049E3BD /* AppDelegate.m */; };
 		BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAC639531A07ED420049E3BD /* Fucook.xcdatamodeld */; };
@@ -30,6 +36,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA05F57F1A08D0FD00E752E7 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iCarousel.h; path = iCarousel/iCarousel.h; sourceTree = "<group>"; };
+		BA05F5801A08D0FD00E752E7 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iCarousel.m; path = iCarousel/iCarousel.m; sourceTree = "<group>"; };
+		BA05F5821A08D24300E752E7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		BA05F5831A08D24300E752E7 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
+		BA05F5841A08D24300E752E7 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		BA05F5891A08D4B700E752E7 /* LivrosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LivrosView.h; path = LivrosView/LivrosView.h; sourceTree = "<group>"; };
+		BA05F58A1A08D4B700E752E7 /* LivrosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LivrosView.m; path = LivrosView/LivrosView.m; sourceTree = "<group>"; };
+		BA05F58B1A08D4B700E752E7 /* LivrosView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LivrosView.xib; path = LivrosView/LivrosView.xib; sourceTree = "<group>"; };
+		BA05F58E1A08F19100E752E7 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		BAC639491A07ED420049E3BD /* Fucook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fucook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC6394D1A07ED420049E3BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAC6394E1A07ED420049E3BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -67,6 +82,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA05F57E1A08D0F000E752E7 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				BA05F58E1A08F19100E752E7 /* Constant.h */,
+				BA05F57F1A08D0FD00E752E7 /* iCarousel.h */,
+				BA05F5801A08D0FD00E752E7 /* iCarousel.m */,
+			);
+			name = iCarousel;
+			sourceTree = "<group>";
+		};
+		BA05F5881A08D49100E752E7 /* LivrosView */ = {
+			isa = PBXGroup;
+			children = (
+				BA05F5891A08D4B700E752E7 /* LivrosView.h */,
+				BA05F58A1A08D4B700E752E7 /* LivrosView.m */,
+				BA05F58B1A08D4B700E752E7 /* LivrosView.xib */,
+			);
+			name = LivrosView;
+			sourceTree = "<group>";
+		};
 		BAC639401A07ED420049E3BD = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +123,8 @@
 		BAC6394B1A07ED420049E3BD /* Fucook */ = {
 			isa = PBXGroup;
 			children = (
+				BA05F5881A08D49100E752E7 /* LivrosView */,
+				BA05F57E1A08D0F000E752E7 /* iCarousel */,
 				BAC639501A07ED420049E3BD /* AppDelegate.h */,
 				BAC639511A07ED420049E3BD /* AppDelegate.m */,
 				BAC6395C1A07ED420049E3BD /* Images.xcassets */,
@@ -133,6 +170,9 @@
 		BAC639861A07F0FD0049E3BD /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BA05F5821A08D24300E752E7 /* background.png */,
+				BA05F5831A08D24300E752E7 /* page.png */,
+				BA05F5841A08D24300E752E7 /* placeholder.png */,
 				BAC639871A07F10A0049E3BD /* mzl.khrfwdoi.jpg */,
 			);
 			name = Imagens;
@@ -219,7 +259,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAC639851A07F0C40049E3BD /* Books.xib in Resources */,
+				BA05F58D1A08D4B700E752E7 /* LivrosView.xib in Resources */,
+				BA05F5851A08D24300E752E7 /* background.png in Resources */,
+				BA05F5861A08D24300E752E7 /* page.png in Resources */,
 				BAC639801A07EF290049E3BD /* Home.xib in Resources */,
+				BA05F5871A08D24300E752E7 /* placeholder.png in Resources */,
 				BAC639881A07F10A0049E3BD /* mzl.khrfwdoi.jpg in Resources */,
 				BAC6395D1A07ED420049E3BD /* Images.xcassets in Resources */,
 			);
@@ -239,9 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA05F58C1A08D4B700E752E7 /* LivrosView.m in Sources */,
 				BAC639521A07ED420049E3BD /* AppDelegate.m in Sources */,
 				BAC639841A07F0C40049E3BD /* Books.m in Sources */,
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
+				BA05F5811A08D0FD00E752E7 /* iCarousel.m in Sources */,
 				BAC6397F1A07EF290049E3BD /* Home.m in Sources */,
 				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,
 			);
@@ -415,6 +461,7 @@
 				BAC639711A07ED420049E3BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BAC639721A07ED420049E3BD /* Build configuration list for PBXNativeTarget "FucookTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +470,7 @@
 				BAC639741A07ED420049E3BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
