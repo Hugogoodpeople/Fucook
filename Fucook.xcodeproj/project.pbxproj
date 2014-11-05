@@ -21,6 +21,8 @@
 		BAF9551E1A0A7B7200277B94 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF9551C1A0A7B7200277B94 /* Home.m */; };
 		BAF9551F1A0A7B7200277B94 /* Home.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF9551D1A0A7B7200277B94 /* Home.xib */; };
 		BAF955221A0A8D3D00277B94 /* imgsample001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAF955211A0A8D3D00277B94 /* imgsample001.jpg */; };
+		BAF955241A0A92D100277B94 /* imgbckhome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF955231A0A92D100277B94 /* imgbckhome@2x.png */; };
+		BAF955261A0A93B300277B94 /* imgbckhome@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF955251A0A93B300277B94 /* imgbckhome@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		BAF9551C1A0A7B7200277B94 /* Home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Home.m; path = Home/Home.m; sourceTree = SOURCE_ROOT; };
 		BAF9551D1A0A7B7200277B94 /* Home.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Home.xib; path = Home/Home.xib; sourceTree = SOURCE_ROOT; };
 		BAF955211A0A8D3D00277B94 /* imgsample001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imgsample001.jpg; sourceTree = "<group>"; };
+		BAF955231A0A92D100277B94 /* imgbckhome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgbckhome@2x.png"; sourceTree = "<group>"; };
+		BAF955251A0A93B300277B94 /* imgbckhome@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgbckhome@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,8 @@
 		BAF955201A0A8D3500277B94 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BAF955251A0A93B300277B94 /* imgbckhome@3x.png */,
+				BAF955231A0A92D100277B94 /* imgbckhome@2x.png */,
 				BAF955211A0A8D3D00277B94 /* imgsample001.jpg */,
 			);
 			name = Imagens;
@@ -286,11 +292,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF955241A0A92D100277B94 /* imgbckhome@2x.png in Resources */,
 				BAF955221A0A8D3D00277B94 /* imgsample001.jpg in Resources */,
 				BAC639851A07F0C40049E3BD /* Books.xib in Resources */,
 				BAF9551F1A0A7B7200277B94 /* Home.xib in Resources */,
 				BAF9550C1A0A4B2C00277B94 /* LivroCellTableViewCell.xib in Resources */,
 				BAC6395D1A07ED420049E3BD /* Images.xcassets in Resources */,
+				BAF955261A0A93B300277B94 /* imgbckhome@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

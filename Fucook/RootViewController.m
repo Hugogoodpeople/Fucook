@@ -55,7 +55,7 @@
     //self.tableView.frame = CGRectMake(0, 320, 320, 320);
     
     
-    self.tableView.backgroundColor = [UIColor redColor];
+    self.tableView.backgroundColor = [UIColor clearColor];
     
     
 

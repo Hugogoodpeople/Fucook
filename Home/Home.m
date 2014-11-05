@@ -26,6 +26,8 @@
     
     [self.root.view setFrame:CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height)];
     
+    self.root.view.backgroundColor = [UIColor clearColor];
+    
     
     [self.container addSubview:self.root.view];
 
