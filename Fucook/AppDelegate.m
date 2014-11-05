@@ -26,6 +26,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:cenas];
+    //[nav.view setFrame:[[UIScreen mainScreen] bounds] ];
     
     [self.window makeKeyAndVisible];
     
