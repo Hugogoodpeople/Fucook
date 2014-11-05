@@ -21,6 +21,13 @@
 		BAF9551E1A0A7B7200277B94 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF9551C1A0A7B7200277B94 /* Home.m */; };
 		BAF9551F1A0A7B7200277B94 /* Home.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF9551D1A0A7B7200277B94 /* Home.xib */; };
 		BAF955221A0A8D3D00277B94 /* imgsample001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAF955211A0A8D3D00277B94 /* imgsample001.jpg */; };
+		CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983F61A0A90B7009EC1A4 /* TGLExposedLayout.m */; };
+		CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983F81A0A90B7009EC1A4 /* TGLStackedLayout.m */; };
+		CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983FA1A0A90B7009EC1A4 /* TGLStackedViewController.m */; };
+		CE4984091A0A911F009EC1A4 /* TGLCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4984061A0A911F009EC1A4 /* TGLCollectionViewCell.m */; };
+		CE49840A1A0A911F009EC1A4 /* TGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4984081A0A911F009EC1A4 /* TGLViewController.m */; };
+		CE49840F1A0A9188009EC1A4 /* HeaderReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE49840D1A0A9188009EC1A4 /* HeaderReceita.m */; };
+		CE4984101A0A9188009EC1A4 /* HeaderReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE49840E1A0A9188009EC1A4 /* HeaderReceita.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +70,19 @@
 		BAF9551C1A0A7B7200277B94 /* Home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Home.m; path = Home/Home.m; sourceTree = SOURCE_ROOT; };
 		BAF9551D1A0A7B7200277B94 /* Home.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Home.xib; path = Home/Home.xib; sourceTree = SOURCE_ROOT; };
 		BAF955211A0A8D3D00277B94 /* imgsample001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imgsample001.jpg; sourceTree = "<group>"; };
+		CE4983F51A0A90B7009EC1A4 /* TGLExposedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLExposedLayout.h; sourceTree = "<group>"; };
+		CE4983F61A0A90B7009EC1A4 /* TGLExposedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLExposedLayout.m; sourceTree = "<group>"; };
+		CE4983F71A0A90B7009EC1A4 /* TGLStackedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLStackedLayout.h; sourceTree = "<group>"; };
+		CE4983F81A0A90B7009EC1A4 /* TGLStackedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLStackedLayout.m; sourceTree = "<group>"; };
+		CE4983F91A0A90B7009EC1A4 /* TGLStackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLStackedViewController.h; sourceTree = "<group>"; };
+		CE4983FA1A0A90B7009EC1A4 /* TGLStackedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLStackedViewController.m; sourceTree = "<group>"; };
+		CE4984051A0A911F009EC1A4 /* TGLCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLCollectionViewCell.h; sourceTree = "<group>"; };
+		CE4984061A0A911F009EC1A4 /* TGLCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLCollectionViewCell.m; sourceTree = "<group>"; };
+		CE4984071A0A911F009EC1A4 /* TGLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLViewController.h; sourceTree = "<group>"; };
+		CE4984081A0A911F009EC1A4 /* TGLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLViewController.m; sourceTree = "<group>"; };
+		CE49840C1A0A9188009EC1A4 /* HeaderReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderReceita.h; sourceTree = "<group>"; };
+		CE49840D1A0A9188009EC1A4 /* HeaderReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderReceita.m; sourceTree = "<group>"; };
+		CE49840E1A0A9188009EC1A4 /* HeaderReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderReceita.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +125,9 @@
 		BAC6394B1A07ED420049E3BD /* Fucook */ = {
 			isa = PBXGroup;
 			children = (
+				CE49840B1A0A9188009EC1A4 /* HeaderReceita */,
+				CE4984041A0A911F009EC1A4 /* Cell Receita */,
+				CE4983F41A0A90B7009EC1A4 /* TGLStackedViewController */,
 				BAF955151A0A7A9400277B94 /* Home */,
 				BAF955061A0A4ACF00277B94 /* DragableTable */,
 				BAC639501A07ED420049E3BD /* AppDelegate.h */,
@@ -206,6 +229,40 @@
 			name = Imagens;
 			sourceTree = "<group>";
 		};
+		CE4983F41A0A90B7009EC1A4 /* TGLStackedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE4983F51A0A90B7009EC1A4 /* TGLExposedLayout.h */,
+				CE4983F61A0A90B7009EC1A4 /* TGLExposedLayout.m */,
+				CE4983F71A0A90B7009EC1A4 /* TGLStackedLayout.h */,
+				CE4983F81A0A90B7009EC1A4 /* TGLStackedLayout.m */,
+				CE4983F91A0A90B7009EC1A4 /* TGLStackedViewController.h */,
+				CE4983FA1A0A90B7009EC1A4 /* TGLStackedViewController.m */,
+			);
+			path = TGLStackedViewController;
+			sourceTree = "<group>";
+		};
+		CE4984041A0A911F009EC1A4 /* Cell Receita */ = {
+			isa = PBXGroup;
+			children = (
+				CE4984051A0A911F009EC1A4 /* TGLCollectionViewCell.h */,
+				CE4984061A0A911F009EC1A4 /* TGLCollectionViewCell.m */,
+				CE4984071A0A911F009EC1A4 /* TGLViewController.h */,
+				CE4984081A0A911F009EC1A4 /* TGLViewController.m */,
+			);
+			path = "Cell Receita";
+			sourceTree = "<group>";
+		};
+		CE49840B1A0A9188009EC1A4 /* HeaderReceita */ = {
+			isa = PBXGroup;
+			children = (
+				CE49840C1A0A9188009EC1A4 /* HeaderReceita.h */,
+				CE49840D1A0A9188009EC1A4 /* HeaderReceita.m */,
+				CE49840E1A0A9188009EC1A4 /* HeaderReceita.xib */,
+			);
+			path = HeaderReceita;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -286,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4984101A0A9188009EC1A4 /* HeaderReceita.xib in Resources */,
 				BAF955221A0A8D3D00277B94 /* imgsample001.jpg in Resources */,
 				BAC639851A07F0C40049E3BD /* Books.xib in Resources */,
 				BAF9551F1A0A7B7200277B94 /* Home.xib in Resources */,
@@ -310,10 +368,16 @@
 			files = (
 				BAC639521A07ED420049E3BD /* AppDelegate.m in Sources */,
 				BAF955141A0A4BA300277B94 /* ATSDragToReorderTableViewController.m in Sources */,
+				CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */,
+				CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */,
+				CE4984091A0A911F009EC1A4 /* TGLCollectionViewCell.m in Sources */,
 				BAF9551E1A0A7B7200277B94 /* Home.m in Sources */,
 				BAC639841A07F0C40049E3BD /* Books.m in Sources */,
 				BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */,
+				CE49840F1A0A9188009EC1A4 /* HeaderReceita.m in Sources */,
 				BAF9550B1A0A4B2C00277B94 /* LivroCellTableViewCell.m in Sources */,
+				CE49840A1A0A911F009EC1A4 /* TGLViewController.m in Sources */,
+				CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */,
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
 				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,
 			);
