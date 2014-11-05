@@ -17,20 +17,20 @@
                         <rect key="frame" x="105" y="365" width="110" height="50"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Twe-yS-ZS6">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btndelet2.png" id="Twe-yS-ZS6">
+                                <rect key="frame" x="10" y="11" width="23" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.8980392157" green="0.79154985069999995" blue="0.0020316998680000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="S3h-6c-WaZ">
-                                <rect key="frame" x="60" y="0.0" width="50" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnedit2.png" id="S3h-6c-WaZ">
+                                <rect key="frame" x="70" y="13" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.8980392157" green="0.79154985069999995" blue="0.0020316998680000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Qwv-7I-65J">
                                 <rect key="frame" x="62" y="0.0" width="46" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -40,7 +40,7 @@
                             <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wJR-8D-tix">
                                 <rect key="frame" x="2" y="1" width="46" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -48,20 +48,20 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <view clipsSubviews="YES" contentMode="scaleToFill" id="I0s-yF-ejG">
-                        <rect key="frame" x="8" y="72" width="304" height="344.5"/>
+                        <rect key="frame" x="8" y="72.5" width="304" height="344.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgsample001.jpg" id="GJS-4V-rxv">
-                                <rect key="frame" x="0.0" y="0.0" width="304" height="344.5"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9ga-iu-siM">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="344.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgsample001.jpg" id="GJS-4V-rxv">
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="344.5"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tou-bc-uy3">
                                 <rect key="frame" x="11" y="0.5" width="285" height="58.5"/>
@@ -90,6 +90,7 @@
                 <outlet property="buttonDelete" destination="wJR-8D-tix" id="chN-7N-gDW"/>
                 <outlet property="buttonEdit" destination="Qwv-7I-65J" id="qG1-lA-iav"/>
                 <outlet property="imageCapa" destination="GJS-4V-rxv" id="Nni-6l-75O"/>
+                <outlet property="imagemMascara" destination="9ga-iu-siM" id="2ef-pH-PzO"/>
                 <outlet property="labelDescricao" destination="Lh8-7v-5Q7" id="hH6-th-Wgb"/>
                 <outlet property="labelTitulo" destination="Tou-bc-uy3" id="hIc-GD-UM8"/>
             </connections>
@@ -97,6 +98,8 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="btndelet2.png" width="20" height="24"/>
+        <image name="btnedit2.png" width="24" height="24"/>
         <image name="imgsample001.jpg" width="1000" height="1325"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

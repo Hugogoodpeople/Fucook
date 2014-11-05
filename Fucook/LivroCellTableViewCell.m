@@ -33,7 +33,10 @@
     [self.contentView addGestureRecognizer:swipeDown];
     [self.contentView addGestureRecognizer:swipeUp];
     
+    
     UIColor *color = [UIColor colorWithRed:53.0/255.0 green:54.0/255.0 blue:58.0/255.0 alpha:1];
+    
+    
     self.labelTitulo.layer.shadowColor = [color CGColor];
     self.labelTitulo.layer.shadowRadius = 4.0f;
     self.labelTitulo.layer.shadowOpacity = .9;
@@ -45,7 +48,16 @@
     self.labelDescricao.layer.shadowOpacity = .9;
     self.labelDescricao.layer.shadowOffset = CGSizeZero;
     self.labelDescricao.layer.masksToBounds = NO;
-
+    
+    
+    /*
+    self.contentView.layer.shadowColor = [color CGColor];
+    self.contentView.layer.shadowRadius = 4.0f;
+    self.contentView.layer.shadowOpacity = .9;
+    self.contentView.layer.shadowOffset = CGSizeZero;
+    self.contentView.layer.masksToBounds = NO;
+     */
+   // self.contentView.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
     
 }
 
