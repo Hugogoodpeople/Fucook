@@ -44,6 +44,32 @@
     
     [carouselTop setTag:CAROUSEL_TOP];
     carouselTop.ignorePerpendicularSwipes = NO;
+    
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 25, 25)];
+    //[button addTarget:self action:@selector(clickBack:) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btnsearch"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    //[anotherButton setImage:[UIImage imageNamed:@"b_back.png"]];
+    self.navigationItem.leftBarButtonItem = anotherButton;
+    
+    UIButton * buttonadd = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 25, 25)];
+    //[buttonadd addTarget:self action:@selector(clickBack:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonadd setImage:[UIImage imageNamed:@"btnaddbook.png"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButtonadd = [[UIBarButtonItem alloc] initWithCustomView:buttonadd];
+    //[anotherButton setImage:[UIImage imageNamed:@"b_back.png"]];
+    //self.navigationItem.rightBarButtonItem = anotherButtonadd;
+    
+    UIButton * buttonmoc = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 25, 25)];
+    [buttonmoc addTarget:self action:@selector(clickBack:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonmoc setImage:[UIImage imageNamed:@"btnmosaic.png"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButtonmoc = [[UIBarButtonItem alloc] initWithCustomView:buttonmoc];
+    //[anotherButton setImage:[UIImage imageNamed:@"b_back.png"]];
+    //self.navigationItem.rightBarButtonItem = anotherButtonmoc;
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:anotherButtonadd, anotherButtonmoc, nil]];
+
 }
 
 - (void)didReceiveMemoryWarning
