@@ -28,7 +28,31 @@
     
     self.root.view.backgroundColor = [UIColor clearColor];
     
+    /* bt search*/
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    //[button addTarget:self action:@selector(clickBack:) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btnsearch"] forState:UIControlStateNormal];
     
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    //[anotherButton setImage:[UIImage imageNamed:@"b_back.png"]];
+    self.navigationItem.leftBarButtonItem = anotherButton;
+    
+    /* bt add*/
+    UIButton * buttonadd = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    //[button addTarget:self action:@selector(clickBack:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonadd setImage:[UIImage imageNamed:@"btnaddbook"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButtonadd = [[UIBarButtonItem alloc] initWithCustomView:buttonadd];
+    
+    /* bt mosaico*/
+    UIButton * buttonmos= [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    //[buttonmos addTarget:self action:@selector(clickBack:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonmos setImage:[UIImage imageNamed:@"btnmosaic"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButtonmos = [[UIBarButtonItem alloc] initWithCustomView:buttonmos];
+    
+    
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:anotherButtonadd, anotherButtonmos, nil]];
     [self.container addSubview:self.root.view];
 
 }
