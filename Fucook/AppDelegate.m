@@ -30,6 +30,15 @@
     
     [self.window makeKeyAndVisible];
     
+    UIImageView * topo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"imgframetop"]];
+    [topo setFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 10)];
+    [nav.view addSubview:topo];
+    
+    
+    UIImageView * fundo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"imgframedown"]];
+    [fundo setFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-10, [[UIScreen mainScreen] bounds].size.width, 10)];
+    [nav.view addSubview:fundo];
+    
     [self.window setRootViewController:nav];
     
     return YES;

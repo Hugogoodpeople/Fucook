@@ -56,8 +56,8 @@
     self.contentView.layer.shadowOpacity = .9;
     self.contentView.layer.shadowOffset = CGSizeZero;
     self.contentView.layer.masksToBounds = NO;
-     */
-   // self.contentView.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
+    */
+    // self.contentView.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
     
 }
 
