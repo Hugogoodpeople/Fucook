@@ -14,7 +14,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" id="Hhs-h0-Iw5">
-                        <rect key="frame" x="105" y="450" width="110" height="50"/>
+                        <rect key="frame" x="105" y="444" width="110" height="50"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btndelet2.png" id="Twe-yS-ZS6">
@@ -50,36 +50,31 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
-                    <view contentMode="scaleToFill" id="mb9-m1-94t">
-                        <rect key="frame" x="8" y="72" width="304" height="434.5"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" id="mb9-m1-94t">
+                        <rect key="frame" x="15" y="72" width="290" height="419.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgsample001.jpg" id="VTf-gf-eTB">
-                                <rect key="frame" x="0.0" y="0.0" width="304" height="434.5"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.043376036710000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="vyT-oS-yW0">
-                                <rect key="frame" x="0.0" y="0.0" width="304" height="434.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="VTf-gf-eTB">
+                                <rect key="frame" x="0.0" y="0.0" width="290" height="419.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lAv-sX-LAi">
-                                <rect key="frame" x="8" y="8" width="288" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRAND MOTHER RECIPES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lAv-sX-LAi">
+                                <rect key="frame" x="8" y="8" width="274" height="73"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="afk-i6-W4q">
-                                <rect key="frame" x="8" y="89" width="288" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 recipes all gluten free meals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="afk-i6-W4q">
+                                <rect key="frame" x="8" y="89" width="274" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.8980392157" green="0.79154985069999995" blue="0.0020316998680000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -91,7 +86,6 @@
                 <outlet property="buttonDelete" destination="wJR-8D-tix" id="chN-7N-gDW"/>
                 <outlet property="buttonEdit" destination="Qwv-7I-65J" id="qG1-lA-iav"/>
                 <outlet property="imageCapa" destination="VTf-gf-eTB" id="Hcg-7q-Tew"/>
-                <outlet property="imagemMascara" destination="vyT-oS-yW0" id="WS1-zc-VYX"/>
                 <outlet property="labelDescricao" destination="afk-i6-W4q" id="53i-g1-sbm"/>
                 <outlet property="labelTitulo" destination="lAv-sX-LAi" id="SdY-XX-66d"/>
             </connections>
@@ -101,7 +95,6 @@
     <resources>
         <image name="btndelet2.png" width="20" height="24"/>
         <image name="btnedit2.png" width="24" height="24"/>
-        <image name="imgsample001.jpg" width="1000" height="1325"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -24,6 +24,18 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
+                <tabBar contentMode="scaleToFill" id="1uA-O2-5Au">
+                    <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <items>
+                        <tabBarItem title="" image="btnbook2.png" selectedImage="btnbook1.png" id="4zL-q8-dK7"/>
+                        <tabBarItem title="" image="btnshop2.png" selectedImage="btnshop1.png" id="YgP-dm-8a4"/>
+                        <tabBarItem title="" image="btncall2.png" selectedImage="btncall1.png" id="JJR-J9-51t"/>
+                        <tabBarItem title="" image="btnfeatured2.png" selectedImage="btnfeatured1.png" id="3Ql-Ke-5Nw"/>
+                        <tabBarItem title="" image="btnsetting2.png" selectedImage="btnsetting2.png" id="Bi8-Qa-MZm"/>
+                    </items>
+                </tabBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -32,6 +44,15 @@
         </view>
     </objects>
     <resources>
+        <image name="btnbook1.png" width="24" height="24"/>
+        <image name="btnbook2.png" width="24" height="24"/>
+        <image name="btncall1.png" width="23" height="24"/>
+        <image name="btncall2.png" width="23" height="24"/>
+        <image name="btnfeatured1.png" width="17" height="24"/>
+        <image name="btnfeatured2.png" width="17" height="24"/>
+        <image name="btnsetting2.png" width="24" height="24"/>
+        <image name="btnshop1.png" width="24" height="24"/>
+        <image name="btnshop2.png" width="24" height="24"/>
         <image name="imgbckhome.png" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
