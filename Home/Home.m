@@ -67,7 +67,12 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"Table did Scrool");
+    NSLog(@"Table did Scrool %f" , scrollView.contentOffset.y);
+    
+    int pagina = (scrollView.contentOffset.y/self.view.frame.size.width);
+    
+    [self.pageControl setCurrentPage: pagina];
+    
     
 }
 

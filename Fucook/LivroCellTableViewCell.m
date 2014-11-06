@@ -110,20 +110,6 @@
 -(void)setupViewMovel
 {
     
-    
-    //[self.imageCapa setImage:[self maskImage:[UIImage imageNamed:@"imgsample001.jpg"] withMask:[UIImage imageNamed:@"imgbookcut.png"]]];
-    
-    int x = self.ViewMovel.frame.origin.x;
-    int y = self.ViewMovel.frame.origin.y;
-    
-    int height = self.ViewMovel.frame.size.height;
-    int width = self.ViewMovel.frame.size.width;
-    
-    [self.ViewMovel setFrame:CGRectMake(x, y, width, height)];
-    
-    NSLog(@"altura do ecra %f", self.contentView.frame.size.height);
-
-    
     UIColor *color = [UIColor colorWithRed:53.0/255.0 green:54.0/255.0 blue:58.0/255.0 alpha:1];
     
     
