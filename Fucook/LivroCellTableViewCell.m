@@ -19,7 +19,8 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
-   
+    [self setupViewMovel];
+    
     
     UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
@@ -34,40 +35,6 @@
     [self.contentView addGestureRecognizer:swipeUp];
     
     
-    UIColor *color = [UIColor colorWithRed:53.0/255.0 green:54.0/255.0 blue:58.0/255.0 alpha:1];
-    
-    
-    self.labelTitulo.layer.shadowColor = [color CGColor];
-    self.labelTitulo.layer.shadowRadius = 4.0f;
-    self.labelTitulo.layer.shadowOpacity = .9;
-    self.labelTitulo.layer.shadowOffset = CGSizeZero;
-    self.labelTitulo.layer.masksToBounds = NO;
-    
-    self.labelDescricao.layer.shadowColor = [color CGColor];
-    self.labelDescricao.layer.shadowRadius = 4.0f;
-    self.labelDescricao.layer.shadowOpacity = .9;
-    self.labelDescricao.layer.shadowOffset = CGSizeZero;
-    self.labelDescricao.layer.masksToBounds = NO;
-    
-    
-    
-    self.ViewMovel.layer.shadowColor = [color CGColor];
-    self.ViewMovel.layer.shadowRadius = 1.5f;
-    self.ViewMovel.layer.shadowOpacity = .1;
-    self.ViewMovel.layer.shadowOffset = CGSizeMake(5, 5);
-    self.ViewMovel.layer.masksToBounds = NO;
-    
-    //self.ViewMovel.transform = CGAffineTransformMakeRotation(0.01f);
-    
-     self.ViewMovel.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.ViewMovel.bounds].CGPath;
-    
-    
-    
-    // imgsample001.jpg
-    
-    [self.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
-    
-    //[self.imageCapa setImage:[self maskImage:[UIImage imageNamed:@"imgsample001.jpg"] withMask:[UIImage imageNamed:@"imgbookcut.png"]]];
     
 }
 
@@ -100,7 +67,7 @@
     int width = self.ViewMovel.frame.size.width;
     
     
-    [UIView animateWithDuration:0.5f animations:^{
+    [UIView animateWithDuration:0.2f animations:^{
         [self.ViewMovel setFrame:CGRectMake(x, 22, width, height)];
     }];
     
@@ -120,7 +87,7 @@
     int width = self.ViewMovel.frame.size.width;
     
     
-    [UIView animateWithDuration:0.5f animations:^{
+    [UIView animateWithDuration:0.2f animations:^{
         [self.ViewMovel setFrame:CGRectMake(x, 72, width, height)];
     }];
     
@@ -128,9 +95,6 @@
     
     NSLog(@"Tamanho da movel %d %d altura=%d", width, height, altura);
 }
-
-
-
 
 
 
@@ -142,20 +106,60 @@
      NSLog(@"Click Edit");
 }
 
+// tenho de fazer uma verificaçao para os diferentes tamanhos de ecra
+-(void)setupViewMovel
+{
+    
+    
+    //[self.imageCapa setImage:[self maskImage:[UIImage imageNamed:@"imgsample001.jpg"] withMask:[UIImage imageNamed:@"imgbookcut.png"]]];
+    
+    int x = self.ViewMovel.frame.origin.x;
+    int y = self.ViewMovel.frame.origin.y;
+    
+    int height = self.ViewMovel.frame.size.height;
+    int width = self.ViewMovel.frame.size.width;
+    
+    [self.ViewMovel setFrame:CGRectMake(x, y, width, height)];
+    
+    NSLog(@"altura do ecra %f", self.contentView.frame.size.height);
 
-- (UIImage*) maskImage:(UIImage *)image withMask:(UIImage *)maskImage {
     
-    CGImageRef maskRef = maskImage.CGImage;
+    UIColor *color = [UIColor colorWithRed:53.0/255.0 green:54.0/255.0 blue:58.0/255.0 alpha:1];
     
-    CGImageRef mask = CGImageMaskCreate(CGImageGetWidth(maskRef),
-                                        CGImageGetHeight(maskRef),
-                                        CGImageGetBitsPerComponent(maskRef),
-                                        CGImageGetBitsPerPixel(maskRef),
-                                        CGImageGetBytesPerRow(maskRef),
-                                        CGImageGetDataProvider(maskRef), NULL, false);
     
-    CGImageRef masked = CGImageCreateWithMask([image CGImage], mask);
-    return [UIImage imageWithCGImage:masked];
+    self.labelTitulo.layer.shadowColor = [color CGColor];
+    self.labelTitulo.layer.shadowRadius = 4.0f;
+    self.labelTitulo.layer.shadowOpacity = .9;
+    self.labelTitulo.layer.shadowOffset = CGSizeZero;
+    self.labelTitulo.layer.masksToBounds = NO;
+    
+    self.labelDescricao.layer.shadowColor = [color CGColor];
+    self.labelDescricao.layer.shadowRadius = 4.0f;
+    self.labelDescricao.layer.shadowOpacity = .9;
+    self.labelDescricao.layer.shadowOffset = CGSizeZero;
+    self.labelDescricao.layer.masksToBounds = NO;
+    
+    
+    
+    self.ViewMovel.layer.shadowColor = [color CGColor];
+    self.ViewMovel.layer.shadowRadius = 1.5f;
+    self.ViewMovel.layer.shadowOpacity = .1;
+    self.ViewMovel.layer.shadowOffset = CGSizeMake(5, 5);
+    self.ViewMovel.layer.masksToBounds = NO;
+    
+    //self.ViewMovel.transform = CGAffineTransformMakeRotation(0.01f);
+    
+    self.ViewMovel.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.ViewMovel.bounds].CGPath;
+    
+    
+    
+    // imgsample001.jpg
+    
+    [self.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
+    
     
 }
+
+
+
 @end

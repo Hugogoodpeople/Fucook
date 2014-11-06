@@ -54,7 +54,21 @@
     
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:anotherButtonadd, anotherButtonmos, nil]];
     [self.container addSubview:self.root.view];
+    
+    self.root.tableView.delegate = self;
 
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [[UIScreen mainScreen] bounds].size.width ;
+}
+
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"Table did Scrool");
+    
 }
 
 - (void)didReceiveMemoryWarning {

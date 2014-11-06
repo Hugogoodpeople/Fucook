@@ -48,16 +48,14 @@
     //[self.tableView setFrame:self.view.frame];
     //[self.tableView.layer setAnchorPoint:CGPointMake(0.0, 0.0)];
     self.tableView.transform = CGAffineTransformMakeRotation(M_PI/-2);
-    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsVerticalScrollIndicator = YES;
     self.tableView.pagingEnabled = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    //self.tableView.frame = CGRectMake(0, 320, 320, 320);
+   
     
-    
-    self.tableView.backgroundColor = [UIColor clearColor];
-    
-    
+    NSLog(@"altura da tabela %f largura %f", self.tableView.frame.size.height , self.tableView.frame.size.width);
 
 }
 
@@ -77,13 +75,7 @@
 }
 
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [[UIScreen mainScreen] bounds].size.width ;
-}
 
-- (CGFloat)tableView:(UITableView *)tableView widthForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [[UIScreen mainScreen] bounds].size.height ;
-}
 
 
 
@@ -127,9 +119,12 @@
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LivroCellTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
-        cell.contentView.transform = CGAffineTransformMakeRotation(M_PI/2);
+        cell.transform = CGAffineTransformMakeRotation(M_PI/2);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.contentView.clipsToBounds = YES;
+        [cell.contentView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         
+        NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
         
     }
     

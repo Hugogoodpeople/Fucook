@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Home : UIViewController
+@interface Home : UIViewController <UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *container;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @end
