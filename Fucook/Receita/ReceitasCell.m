@@ -1,22 +1,19 @@
 //
-//  CellReceita.m
-//  Fucook
+//  CollectionViewCell.m
+//  Notes
 //
-//  Created by Rundlr on 06/11/14.
+//  Created by Hugo Costa on 06/11/14.
 //  Copyright (c) 2014 Hugo Costa. All rights reserved.
 //
-#import <QuartzCore/QuartzCore.h>
 
-#import "CellReceita.h"
+#import "ReceitasCell.h"
 
-@interface CellReceita ()
+@interface ReceitasCell ()
+@property (weak, nonatomic) IBOutlet UILabel *titulo;
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *tituloSep;
-@property (weak, nonatomic) IBOutlet UIImageView *imageBack;
 @end
 
-@implementation CellReceita
+@implementation ReceitasCell
 
 - (void)awakeFromNib {
     
@@ -30,15 +27,11 @@
     self.layer.shadowRadius = 10.0;
     self.clipsToBounds = NO;
     self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
-    // self.layer.borderColor = [UIColor blackColor].CGColor;
     
     
-    // Get the Layer of any view
-    CALayer * l = [_imageBack layer];
-    [l setMasksToBounds:YES];
-    [l setCornerRadius:10.0];
+
     
-    self.tituloSep.text = self.title;
+    self.titulo.text = self.title;
 }
 
 #pragma mark - Accessors
@@ -47,14 +40,14 @@
     
     _title = [title copy];
     
-    self.tituloSep.text = self.title;
+    self.titulo.text = self.title;
 }
 
 - (void)setColor:(UIColor *)color {
     
     _color = [color copy];
     
-    self.tituloSep.textColor = self.color;
+    self.backgroundColor = self.color;
 }
 
 #pragma mark - Methods
@@ -63,8 +56,7 @@
     
     [super setSelected:selected];
     
-    // self.layer.borderColor = self.selected ? [UIColor whiteColor].CGColor : [UIColor blackColor].CGColor;
+    self.layer.borderColor = self.selected ? [UIColor whiteColor].CGColor : [UIColor blackColor].CGColor;
 }
 
 @end
-

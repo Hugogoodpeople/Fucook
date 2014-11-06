@@ -34,4 +34,9 @@
 }
 */
 
+- (IBAction)clickBottun:(id)sender {
+    if(self.delegate){
+        [self.delegate performSelector:@selector(voltar) withObject:nil];
+    }
+}
 @end

@@ -60,10 +60,12 @@
 		BAF9557A1A0A9D6900277B94 /* btnshop2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF955571A0A9D6900277B94 /* btnshop2@2x.png */; };
 		BAF9557B1A0A9D6900277B94 /* btnshop2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF955581A0A9D6900277B94 /* btnshop2@3x.png */; };
 		BAF9557C1A0A9D6900277B94 /* imgsample001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAF955591A0A9D6900277B94 /* imgsample001.jpg */; };
-		CE46602A1A0B89E400ED496C /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4660281A0B89E400ED496C /* Receita.m */; };
-		CE46602B1A0B89E400ED496C /* Receita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4660291A0B89E400ED496C /* Receita.xib */; };
-		CE4660341A0B8D8900ED496C /* CellReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4660321A0B8D8900ED496C /* CellReceita.m */; };
-		CE4660351A0B8D8900ED496C /* CellReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4660331A0B8D8900ED496C /* CellReceita.xib */; };
+		CE3AE16F1A0BC9BB006C4B2E /* ReceitasCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3AE16A1A0BC9BB006C4B2E /* ReceitasCell.m */; };
+		CE3AE1701A0BC9BB006C4B2E /* ReceitasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3AE16B1A0BC9BB006C4B2E /* ReceitasCell.xib */; };
+		CE3AE1711A0BC9BB006C4B2E /* ReceitasController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3AE16D1A0BC9BB006C4B2E /* ReceitasController.m */; };
+		CE3AE1721A0BC9BB006C4B2E /* ReceitasController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3AE16E1A0BC9BB006C4B2E /* ReceitasController.xib */; };
+		CE4660391A0BC77600ED496C /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4660371A0BC77600ED496C /* Receita.m */; };
+		CE46603A1A0BC77600ED496C /* Receita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4660381A0BC77600ED496C /* Receita.xib */; };
 		CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983F61A0A90B7009EC1A4 /* TGLExposedLayout.m */; };
 		CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983F81A0A90B7009EC1A4 /* TGLStackedLayout.m */; };
 		CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983FA1A0A90B7009EC1A4 /* TGLStackedViewController.m */; };
@@ -150,12 +152,15 @@
 		BAF955571A0A9D6900277B94 /* btnshop2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnshop2@2x.png"; path = "imgs/btnshop2@2x.png"; sourceTree = "<group>"; };
 		BAF955581A0A9D6900277B94 /* btnshop2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnshop2@3x.png"; path = "imgs/btnshop2@3x.png"; sourceTree = "<group>"; };
 		BAF955591A0A9D6900277B94 /* imgsample001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imgsample001.jpg; path = imgs/imgsample001.jpg; sourceTree = "<group>"; };
-		CE4660271A0B89E400ED496C /* Receita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Receita.h; path = Receita/Receita.h; sourceTree = "<group>"; };
-		CE4660281A0B89E400ED496C /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Receita.m; path = Receita/Receita.m; sourceTree = "<group>"; };
-		CE4660291A0B89E400ED496C /* Receita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Receita.xib; path = Receita/Receita.xib; sourceTree = "<group>"; };
-		CE4660311A0B8D8900ED496C /* CellReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellReceita.h; path = Receita/CellReceita.h; sourceTree = "<group>"; };
-		CE4660321A0B8D8900ED496C /* CellReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellReceita.m; path = Receita/CellReceita.m; sourceTree = "<group>"; };
-		CE4660331A0B8D8900ED496C /* CellReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CellReceita.xib; path = Receita/CellReceita.xib; sourceTree = "<group>"; };
+		CE3AE1691A0BC9BB006C4B2E /* ReceitasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReceitasCell.h; path = Receita/ReceitasCell.h; sourceTree = "<group>"; };
+		CE3AE16A1A0BC9BB006C4B2E /* ReceitasCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReceitasCell.m; path = Receita/ReceitasCell.m; sourceTree = "<group>"; };
+		CE3AE16B1A0BC9BB006C4B2E /* ReceitasCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReceitasCell.xib; path = Receita/ReceitasCell.xib; sourceTree = "<group>"; };
+		CE3AE16C1A0BC9BB006C4B2E /* ReceitasController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReceitasController.h; path = Receita/ReceitasController.h; sourceTree = "<group>"; };
+		CE3AE16D1A0BC9BB006C4B2E /* ReceitasController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReceitasController.m; path = Receita/ReceitasController.m; sourceTree = "<group>"; };
+		CE3AE16E1A0BC9BB006C4B2E /* ReceitasController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReceitasController.xib; path = Receita/ReceitasController.xib; sourceTree = "<group>"; };
+		CE4660361A0BC77600ED496C /* Receita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receita.h; sourceTree = "<group>"; };
+		CE4660371A0BC77600ED496C /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receita.m; sourceTree = "<group>"; };
+		CE4660381A0BC77600ED496C /* Receita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Receita.xib; sourceTree = "<group>"; };
 		CE4983F51A0A90B7009EC1A4 /* TGLExposedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLExposedLayout.h; sourceTree = "<group>"; };
 		CE4983F61A0A90B7009EC1A4 /* TGLExposedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLExposedLayout.m; sourceTree = "<group>"; };
 		CE4983F71A0A90B7009EC1A4 /* TGLStackedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLStackedLayout.h; sourceTree = "<group>"; };
@@ -376,12 +381,15 @@
 		CE4984111A0AA3E7009EC1A4 /* Receita */ = {
 			isa = PBXGroup;
 			children = (
-				CE4660311A0B8D8900ED496C /* CellReceita.h */,
-				CE4660321A0B8D8900ED496C /* CellReceita.m */,
-				CE4660331A0B8D8900ED496C /* CellReceita.xib */,
-				CE4660271A0B89E400ED496C /* Receita.h */,
-				CE4660281A0B89E400ED496C /* Receita.m */,
-				CE4660291A0B89E400ED496C /* Receita.xib */,
+				CE3AE1691A0BC9BB006C4B2E /* ReceitasCell.h */,
+				CE3AE16A1A0BC9BB006C4B2E /* ReceitasCell.m */,
+				CE3AE16B1A0BC9BB006C4B2E /* ReceitasCell.xib */,
+				CE3AE16C1A0BC9BB006C4B2E /* ReceitasController.h */,
+				CE3AE16D1A0BC9BB006C4B2E /* ReceitasController.m */,
+				CE3AE16E1A0BC9BB006C4B2E /* ReceitasController.xib */,
+				CE4660361A0BC77600ED496C /* Receita.h */,
+				CE4660371A0BC77600ED496C /* Receita.m */,
+				CE4660381A0BC77600ED496C /* Receita.xib */,
 			);
 			name = Receita;
 			sourceTree = "<group>";
@@ -477,6 +485,7 @@
 				BAF955771A0A9D6900277B94 /* btnsetting2@3x.png in Resources */,
 				BAF66E2E1A0B851600E90B7D /* imgbookslice@2x.png in Resources */,
 				BAF9556C1A0A9D6900277B94 /* btnfeatured1@2x.png in Resources */,
+				CE3AE1721A0BC9BB006C4B2E /* ReceitasController.xib in Resources */,
 				BAF9555E1A0A9D6900277B94 /* btnbook2@2x.png in Resources */,
 				BAF66E2B1A0B809800E90B7D /* imgbookcut@3x.png in Resources */,
 				BAF9555A1A0A9D6900277B94 /* btnaddbook@2x.png in Resources */,
@@ -487,6 +496,7 @@
 				BAF955691A0A9D6900277B94 /* btnedit1@3x.png in Resources */,
 				BAF66E281A0B7DA900E90B7D /* imgbckhome@2x.png in Resources */,
 				BAF9555C1A0A9D6900277B94 /* btnbook1@2x.png in Resources */,
+				CE46603A1A0BC77600ED496C /* Receita.xib in Resources */,
 				BAF955731A0A9D6900277B94 /* btnsearch@3x.png in Resources */,
 				BAF9555D1A0A9D6900277B94 /* btnbook1@3x.png in Resources */,
 				BAF955681A0A9D6900277B94 /* btnedit1@2x.png in Resources */,
@@ -502,15 +512,14 @@
 				BAF9556B1A0A9D6900277B94 /* btnedit2@3x.png in Resources */,
 				BAF955751A0A9D6900277B94 /* btnsetting1@3x.png in Resources */,
 				BAF9557C1A0A9D6900277B94 /* imgsample001.jpg in Resources */,
+				CE3AE1701A0BC9BB006C4B2E /* ReceitasCell.xib in Resources */,
 				BAF9557A1A0A9D6900277B94 /* btnshop2@2x.png in Resources */,
 				BAF955621A0A9D6900277B94 /* btncall2@2x.png in Resources */,
 				BAF955651A0A9D6900277B94 /* btndelet1@3x.png in Resources */,
-				CE46602B1A0B89E400ED496C /* Receita.xib in Resources */,
 				BAF955601A0A9D6900277B94 /* btncall1@2x.png in Resources */,
 				BAF9556F1A0A9D6900277B94 /* btnfeatured2@3x.png in Resources */,
 				BAF66E2F1A0B851600E90B7D /* imgbookslice@3x.png in Resources */,
 				BAF9550C1A0A4B2C00277B94 /* LivroCellTableViewCell.xib in Resources */,
-				CE4660351A0B8D8900ED496C /* CellReceita.xib in Resources */,
 				BAF9556D1A0A9D6900277B94 /* btnfeatured1@3x.png in Resources */,
 				BAC6395D1A07ED420049E3BD /* Images.xcassets in Resources */,
 			);
@@ -533,17 +542,18 @@
 				BAC639521A07ED420049E3BD /* AppDelegate.m in Sources */,
 				BAF955141A0A4BA300277B94 /* ATSDragToReorderTableViewController.m in Sources */,
 				CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */,
-				CE4660341A0B8D8900ED496C /* CellReceita.m in Sources */,
+				CE3AE16F1A0BC9BB006C4B2E /* ReceitasCell.m in Sources */,
 				CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */,
 				BAF9551E1A0A7B7200277B94 /* Home.m in Sources */,
 				BAC639841A07F0C40049E3BD /* Books.m in Sources */,
 				BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */,
 				CE49840F1A0A9188009EC1A4 /* HeaderReceita.m in Sources */,
+				CE3AE1711A0BC9BB006C4B2E /* ReceitasController.m in Sources */,
 				BAF9550B1A0A4B2C00277B94 /* LivroCellTableViewCell.m in Sources */,
 				CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */,
+				CE4660391A0BC77600ED496C /* Receita.m in Sources */,
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
 				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,
-				CE46602A1A0B89E400ED496C /* Receita.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
