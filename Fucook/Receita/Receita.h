@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TGLStackedViewController.h"
 
-@interface Receita : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *conteiner;
+@interface Receita : TGLStackedViewController
+@property (nonatomic, assign) BOOL doubleTapToClose;
+
 
 @end
