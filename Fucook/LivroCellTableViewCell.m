@@ -50,14 +50,14 @@
     self.labelDescricao.layer.masksToBounds = NO;
     
     
-    /*
-    self.contentView.layer.shadowColor = [color CGColor];
-    self.contentView.layer.shadowRadius = 4.0f;
-    self.contentView.layer.shadowOpacity = .9;
-    self.contentView.layer.shadowOffset = CGSizeZero;
-    self.contentView.layer.masksToBounds = NO;
-    */
-    // self.contentView.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
+    
+    self.ViewMovel.layer.shadowColor = [color CGColor];
+    self.ViewMovel.layer.shadowRadius = 4.0f;
+    self.ViewMovel.layer.shadowOpacity = .9;
+    self.ViewMovel.layer.shadowOffset = CGSizeZero;
+    self.ViewMovel.layer.masksToBounds = NO;
+    
+     self.ViewMovel.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.ViewMovel.bounds].CGPath;
     
 }
 
@@ -93,10 +93,17 @@
     [UIView animateWithDuration:0.5f animations:^{
         [self.ViewMovel setFrame:CGRectMake(x, 22, width, height)];
     }];
+    
+    int altura = [[UIScreen mainScreen] bounds].size.height;
+    
+    NSLog(@"Tamanho da movel %d %d altura=%d", width, height, altura);
+
 }
 
 -(void)irParaFundo
 {
+    
+    
     int x = self.ViewMovel.frame.origin.x;
     
     int height = self.ViewMovel.frame.size.height;
@@ -106,6 +113,10 @@
     [UIView animateWithDuration:0.5f animations:^{
         [self.ViewMovel setFrame:CGRectMake(x, 72, width, height)];
     }];
+    
+    int altura = [[UIScreen mainScreen] bounds].size.height;
+    
+    NSLog(@"Tamanho da movel %d %d altura=%d", width, height, altura);
 }
 
 

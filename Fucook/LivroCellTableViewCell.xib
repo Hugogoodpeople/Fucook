@@ -6,15 +6,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LivroCellTableViewCell" rowHeight="288" id="KGk-i7-Jjw" customClass="LivroCellTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="425"/>
+        <tableViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LivroCellTableViewCell" rowHeight="359" id="KGk-i7-Jjw" customClass="LivroCellTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" id="Hhs-h0-Iw5">
-                        <rect key="frame" x="105" y="365" width="110" height="50"/>
+                        <rect key="frame" x="105" y="450" width="110" height="50"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btndelet2.png" id="Twe-yS-ZS6">
@@ -50,35 +50,36 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
-                    <view clipsSubviews="YES" contentMode="scaleToFill" id="I0s-yF-ejG">
-                        <rect key="frame" x="8" y="72.5" width="304" height="344.5"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" id="mb9-m1-94t">
+                        <rect key="frame" x="8" y="72" width="304" height="434.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9ga-iu-siM">
-                                <rect key="frame" x="0.0" y="0.0" width="304" height="344.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgsample001.jpg" id="VTf-gf-eTB">
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="434.5"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.043376036710000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="vyT-oS-yW0">
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="434.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgsample001.jpg" id="GJS-4V-rxv">
-                                <rect key="frame" x="0.0" y="0.0" width="304" height="344.5"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tou-bc-uy3">
-                                <rect key="frame" x="11" y="0.5" width="285" height="58.5"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lAv-sX-LAi">
+                                <rect key="frame" x="8" y="8" width="288" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lh8-7v-5Q7">
-                                <rect key="frame" x="10" y="49" width="285" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="afk-i6-W4q">
+                                <rect key="frame" x="8" y="89" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.8980392157" green="0.79154985069999995" blue="0.0020316998680000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -86,15 +87,15 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="ViewMovel" destination="I0s-yF-ejG" id="qMa-yr-mIx"/>
+                <outlet property="ViewMovel" destination="mb9-m1-94t" id="SVJ-Ri-Taq"/>
                 <outlet property="buttonDelete" destination="wJR-8D-tix" id="chN-7N-gDW"/>
                 <outlet property="buttonEdit" destination="Qwv-7I-65J" id="qG1-lA-iav"/>
-                <outlet property="imageCapa" destination="GJS-4V-rxv" id="Nni-6l-75O"/>
-                <outlet property="imagemMascara" destination="9ga-iu-siM" id="2ef-pH-PzO"/>
-                <outlet property="labelDescricao" destination="Lh8-7v-5Q7" id="hH6-th-Wgb"/>
-                <outlet property="labelTitulo" destination="Tou-bc-uy3" id="hIc-GD-UM8"/>
+                <outlet property="imageCapa" destination="VTf-gf-eTB" id="Hcg-7q-Tew"/>
+                <outlet property="imagemMascara" destination="vyT-oS-yW0" id="WS1-zc-VYX"/>
+                <outlet property="labelDescricao" destination="afk-i6-W4q" id="53i-g1-sbm"/>
+                <outlet property="labelTitulo" destination="lAv-sX-LAi" id="SdY-XX-66d"/>
             </connections>
-            <point key="canvasLocation" x="543" y="144.5"/>
+            <point key="canvasLocation" x="820" y="126"/>
         </tableViewCell>
     </objects>
     <resources>

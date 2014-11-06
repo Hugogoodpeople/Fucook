@@ -78,11 +78,11 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [[UIScreen mainScreen] bounds].size.width;
+    return [[UIScreen mainScreen] bounds].size.width ;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView widthForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [[UIScreen mainScreen] bounds].size.height;
+    return [[UIScreen mainScreen] bounds].size.height ;
 }
 
 
