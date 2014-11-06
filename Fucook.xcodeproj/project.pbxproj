@@ -55,6 +55,8 @@
 		BAF9557A1A0A9D6900277B94 /* btnshop2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF955571A0A9D6900277B94 /* btnshop2@2x.png */; };
 		BAF9557B1A0A9D6900277B94 /* btnshop2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF955581A0A9D6900277B94 /* btnshop2@3x.png */; };
 		BAF9557C1A0A9D6900277B94 /* imgsample001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAF955591A0A9D6900277B94 /* imgsample001.jpg */; };
+		CE4660251A0B769D00ED496C /* CellReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4660231A0B769D00ED496C /* CellReceita.m */; };
+		CE4660261A0B769D00ED496C /* CellReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4660241A0B769D00ED496C /* CellReceita.xib */; };
 		CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983F61A0A90B7009EC1A4 /* TGLExposedLayout.m */; };
 		CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983F81A0A90B7009EC1A4 /* TGLStackedLayout.m */; };
 		CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983FA1A0A90B7009EC1A4 /* TGLStackedViewController.m */; };
@@ -62,6 +64,8 @@
 		CE49840A1A0A911F009EC1A4 /* TGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4984081A0A911F009EC1A4 /* TGLViewController.m */; };
 		CE49840F1A0A9188009EC1A4 /* HeaderReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE49840D1A0A9188009EC1A4 /* HeaderReceita.m */; };
 		CE4984101A0A9188009EC1A4 /* HeaderReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE49840E1A0A9188009EC1A4 /* HeaderReceita.xib */; };
+		CE4984151A0AA40C009EC1A4 /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4984131A0AA40C009EC1A4 /* Receita.m */; };
+		CE4984161A0AA40C009EC1A4 /* Receita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4984141A0AA40C009EC1A4 /* Receita.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +142,9 @@
 		BAF955571A0A9D6900277B94 /* btnshop2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnshop2@2x.png"; path = "imgs/btnshop2@2x.png"; sourceTree = "<group>"; };
 		BAF955581A0A9D6900277B94 /* btnshop2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnshop2@3x.png"; path = "imgs/btnshop2@3x.png"; sourceTree = "<group>"; };
 		BAF955591A0A9D6900277B94 /* imgsample001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imgsample001.jpg; path = imgs/imgsample001.jpg; sourceTree = "<group>"; };
+		CE4660221A0B769D00ED496C /* CellReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellReceita.h; path = Receita/CellReceita.h; sourceTree = "<group>"; };
+		CE4660231A0B769D00ED496C /* CellReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellReceita.m; path = Receita/CellReceita.m; sourceTree = "<group>"; };
+		CE4660241A0B769D00ED496C /* CellReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CellReceita.xib; path = Receita/CellReceita.xib; sourceTree = "<group>"; };
 		CE4983F51A0A90B7009EC1A4 /* TGLExposedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLExposedLayout.h; sourceTree = "<group>"; };
 		CE4983F61A0A90B7009EC1A4 /* TGLExposedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLExposedLayout.m; sourceTree = "<group>"; };
 		CE4983F71A0A90B7009EC1A4 /* TGLStackedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLStackedLayout.h; sourceTree = "<group>"; };
@@ -151,6 +158,9 @@
 		CE49840C1A0A9188009EC1A4 /* HeaderReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderReceita.h; sourceTree = "<group>"; };
 		CE49840D1A0A9188009EC1A4 /* HeaderReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderReceita.m; sourceTree = "<group>"; };
 		CE49840E1A0A9188009EC1A4 /* HeaderReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderReceita.xib; sourceTree = "<group>"; };
+		CE4984121A0AA40C009EC1A4 /* Receita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Receita.h; path = Receita/Receita.h; sourceTree = "<group>"; };
+		CE4984131A0AA40C009EC1A4 /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Receita.m; path = Receita/Receita.m; sourceTree = "<group>"; };
+		CE4984141A0AA40C009EC1A4 /* Receita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Receita.xib; path = Receita/Receita.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +203,7 @@
 		BAC6394B1A07ED420049E3BD /* Fucook */ = {
 			isa = PBXGroup;
 			children = (
+				CE4984111A0AA3E7009EC1A4 /* Receita */,
 				CE49840B1A0A9188009EC1A4 /* HeaderReceita */,
 				CE4984041A0A911F009EC1A4 /* Cell Receita */,
 				CE4983F41A0A90B7009EC1A4 /* TGLStackedViewController */,
@@ -365,6 +376,19 @@
 			path = HeaderReceita;
 			sourceTree = "<group>";
 		};
+		CE4984111A0AA3E7009EC1A4 /* Receita */ = {
+			isa = PBXGroup;
+			children = (
+				CE4984121A0AA40C009EC1A4 /* Receita.h */,
+				CE4984131A0AA40C009EC1A4 /* Receita.m */,
+				CE4984141A0AA40C009EC1A4 /* Receita.xib */,
+				CE4660221A0B769D00ED496C /* CellReceita.h */,
+				CE4660231A0B769D00ED496C /* CellReceita.m */,
+				CE4660241A0B769D00ED496C /* CellReceita.xib */,
+			);
+			name = Receita;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -454,6 +478,7 @@
 				BAF955631A0A9D6900277B94 /* btncall2@3x.png in Resources */,
 				BAF955781A0A9D6900277B94 /* btnshop1@2x.png in Resources */,
 				BAF955771A0A9D6900277B94 /* btnsetting2@3x.png in Resources */,
+				CE4660261A0B769D00ED496C /* CellReceita.xib in Resources */,
 				BAF9556C1A0A9D6900277B94 /* btnfeatured1@2x.png in Resources */,
 				BAF9555E1A0A9D6900277B94 /* btnbook2@2x.png in Resources */,
 				BAF9555A1A0A9D6900277B94 /* btnaddbook@2x.png in Resources */,
@@ -481,6 +506,7 @@
 				BAF955621A0A9D6900277B94 /* btncall2@2x.png in Resources */,
 				BAF955651A0A9D6900277B94 /* btndelet1@3x.png in Resources */,
 				BAF955601A0A9D6900277B94 /* btncall1@2x.png in Resources */,
+				CE4984161A0AA40C009EC1A4 /* Receita.xib in Resources */,
 				BAF9556F1A0A9D6900277B94 /* btnfeatured2@3x.png in Resources */,
 				BAF9550C1A0A4B2C00277B94 /* LivroCellTableViewCell.xib in Resources */,
 				BAF9556D1A0A9D6900277B94 /* btnfeatured1@3x.png in Resources */,
@@ -507,6 +533,7 @@
 				CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */,
 				CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */,
 				CE4984091A0A911F009EC1A4 /* TGLCollectionViewCell.m in Sources */,
+				CE4660251A0B769D00ED496C /* CellReceita.m in Sources */,
 				BAF9551E1A0A7B7200277B94 /* Home.m in Sources */,
 				BAC639841A07F0C40049E3BD /* Books.m in Sources */,
 				BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */,
@@ -516,6 +543,7 @@
 				CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */,
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
 				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,
+				CE4984151A0AA40C009EC1A4 /* Receita.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

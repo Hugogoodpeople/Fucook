@@ -8,6 +8,7 @@
 
 #import "Home.h"
 #import "RootViewController.h"
+#import "Receita.h"
 
 @interface Home ()
 
@@ -30,16 +31,15 @@
     
     /* bt search*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    //[button addTarget:self action:@selector(clickBack:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(receita:) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btnsearch"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-    //[anotherButton setImage:[UIImage imageNamed:@"b_back.png"]];
     self.navigationItem.leftBarButtonItem = anotherButton;
     
     /* bt add*/
     UIButton * buttonadd = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    //[button addTarget:self action:@selector(clickBack:) forControlEvents:UIControlEventTouchUpInside];
+    //[button addTarget:self action:@selector(receita:) forControlEvents:UIControlEventTouchUpInside];
     [buttonadd setImage:[UIImage imageNamed:@"btnaddbook"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButtonadd = [[UIBarButtonItem alloc] initWithCustomView:buttonadd];
@@ -60,8 +60,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    self.navigationController.toolbarHidden = YES;
+    [self.navigationController popViewControllerAnimated:YES];
     
-    
+}
+
+- (IBAction)receita:(id)sender {
+    NSLog(@"clicou pesquisa");
+    Receita *objYourViewController = [[Receita alloc] initWithNibName:@"Receita" bundle:nil];
+    [self.navigationController pushViewController:objYourViewController animated:YES];
 }
 
 /*
