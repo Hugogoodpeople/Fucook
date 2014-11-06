@@ -50,14 +50,24 @@
     self.labelDescricao.layer.masksToBounds = NO;
     
     
-    /*
-    self.contentView.layer.shadowColor = [color CGColor];
-    self.contentView.layer.shadowRadius = 4.0f;
-    self.contentView.layer.shadowOpacity = .9;
-    self.contentView.layer.shadowOffset = CGSizeZero;
-    self.contentView.layer.masksToBounds = NO;
-    */
-    // self.contentView.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
+    
+    self.ViewMovel.layer.shadowColor = [color CGColor];
+    self.ViewMovel.layer.shadowRadius = 1.5f;
+    self.ViewMovel.layer.shadowOpacity = .1;
+    self.ViewMovel.layer.shadowOffset = CGSizeMake(5, 5);
+    self.ViewMovel.layer.masksToBounds = NO;
+    
+    //self.ViewMovel.transform = CGAffineTransformMakeRotation(0.01f);
+    
+     self.ViewMovel.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.ViewMovel.bounds].CGPath;
+    
+    
+    
+    // imgsample001.jpg
+    
+    [self.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
+    
+    //[self.imageCapa setImage:[self maskImage:[UIImage imageNamed:@"imgsample001.jpg"] withMask:[UIImage imageNamed:@"imgbookcut.png"]]];
     
 }
 
@@ -93,10 +103,17 @@
     [UIView animateWithDuration:0.5f animations:^{
         [self.ViewMovel setFrame:CGRectMake(x, 22, width, height)];
     }];
+    
+    int altura = [[UIScreen mainScreen] bounds].size.height;
+    
+    NSLog(@"Tamanho da movel %d %d altura=%d", width, height, altura);
+
 }
 
 -(void)irParaFundo
 {
+    
+    
     int x = self.ViewMovel.frame.origin.x;
     
     int height = self.ViewMovel.frame.size.height;
@@ -106,6 +123,10 @@
     [UIView animateWithDuration:0.5f animations:^{
         [self.ViewMovel setFrame:CGRectMake(x, 72, width, height)];
     }];
+    
+    int altura = [[UIScreen mainScreen] bounds].size.height;
+    
+    NSLog(@"Tamanho da movel %d %d altura=%d", width, height, altura);
 }
 
 
@@ -119,5 +140,22 @@
 
 - (IBAction)ClickEdit:(id)sender {
      NSLog(@"Click Edit");
+}
+
+
+- (UIImage*) maskImage:(UIImage *)image withMask:(UIImage *)maskImage {
+    
+    CGImageRef maskRef = maskImage.CGImage;
+    
+    CGImageRef mask = CGImageMaskCreate(CGImageGetWidth(maskRef),
+                                        CGImageGetHeight(maskRef),
+                                        CGImageGetBitsPerComponent(maskRef),
+                                        CGImageGetBitsPerPixel(maskRef),
+                                        CGImageGetBytesPerRow(maskRef),
+                                        CGImageGetDataProvider(maskRef), NULL, false);
+    
+    CGImageRef masked = CGImageCreateWithMask([image CGImage], mask);
+    return [UIImage imageWithCGImage:masked];
+    
 }
 @end
