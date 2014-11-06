@@ -56,6 +56,10 @@
     [self.container addSubview:self.root.view];
     
     self.root.tableView.delegate = self;
+    
+    
+    UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
+    [self.navigationItem setTitleView:titleView];
 
 }
 
