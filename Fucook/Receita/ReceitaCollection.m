@@ -1,57 +1,37 @@
 //
-//  TGLViewController.m
-//  TGLStackedViewExample
+//  Receita.m
+//  Fucook
 //
-//  Created by Tim Gleue on 07.04.14.
-//  Copyright (c) 2014 Tim Gleue ( http://gleue-interactive.com )
+//  Created by Rundlr on 05/11/14.
+//  Copyright (c) 2014 Hugo Costa. All rights reserved.
 //
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-//  THE SOFTWARE.
 
-#import "TGLViewController.h"
-#import "TGLCollectionViewCell.h"
+#import "CellReceita.h"
 #import "HeaderReceita.h"
+#import "ReceitaCollection.h"
 
-
-
-@interface TGLViewController (){
-    HeaderReceita * headerFinal;
+@interface ReceitaCollection (){
+     HeaderReceita * headerFinal;
+    
 }
 
 @property (strong, readonly, nonatomic) NSMutableArray *cards;
 
 @end
 
-@implementation TGLViewController
+@implementation ReceitaCollection
 
 @synthesize cards = _cards;
 
 - (void)viewDidLoad {
-
     [super viewDidLoad];
-    
     // Set to NO to prevent a small number
     // of cards from filling the entire
     // view height evenly and only show
     // their -topReveal amount
     //
     self.stackedLayout.fillHeight = NO;
-
+    
     // Set to NO to prevent a small number
     // of cards from being scrollable and
     // bounce
@@ -74,32 +54,30 @@
         [self.collectionView addGestureRecognizer:recognizer];
     }
     
-    headerFinal = [HeaderReceita alloc];
-    [headerFinal.view setFrame:CGRectMake(0, 0, 320, headerFinal.view.frame.size.height )];
-    //headerHeight = headerFinal.view.frame.size.height;
+   // headerFinal = [HeaderReceita alloc];
+    //[headerFinal.view setFrame:CGRectMake(0, 0, 320, headerFinal.view.frame.size.height )];
 
-    [self.collectionView addSubview: headerFinal.view];
-
-    //[[self navigationController] setNavigationBarHidden:YES animated:YES];
     
+  //  [self.collectionView addSubview: headerFinal.view];
+
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-
+    
     return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - Accessors
 
 - (NSMutableArray *)cards {
-
-    if (_cards == nil) {
     
+    if (_cards == nil) {
+        
         NSArray *cards = @[ @{ @"name" : @"Ingredients", @"color" : [UIColor redColor] },
                             @{ @"name" : @"Directions", @"color" : [UIColor greenColor] },
                             @{ @"name" : @"Notes", @"color" : [UIColor yellowColor] },
                             @{ @"name" : @"Nutricion", @"color" : [UIColor blueColor] }];
-
+        
         _cards = [NSMutableArray arrayWithArray:cards];
     }
     
@@ -123,12 +101,12 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    TGLCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CardCell" forIndexPath:indexPath];
+    CellReceita *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellReceita" forIndexPath:indexPath];
     NSDictionary *card = self.cards[indexPath.item];
-  
+    
     cell.title = card[@"name"];
     cell.color = card[@"color"];
-
+    
     return cell;
 }
 

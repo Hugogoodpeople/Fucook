@@ -11,7 +11,7 @@
 
 @interface CellReceita ()
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *tituloSep;
 @property (weak, nonatomic) IBOutlet UIImageView *imageBack;
 @end
