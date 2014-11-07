@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Home">
             <connections>
                 <outlet property="container" destination="EaZ-mj-8pb" id="fbp-ec-Wju"/>
+                <outlet property="containerCollections" destination="R1G-0A-nLC" id="rs0-7e-Ne3"/>
                 <outlet property="pageControl" destination="GME-5h-38w" id="A9K-LN-I14"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -17,21 +18,24 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" id="R1G-0A-nLC">
+                    <rect key="frame" x="0.0" y="65" width="320" height="454"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgbckhome.png" id="OJ8-9Y-4wD">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <view contentMode="scaleToFill" id="EaZ-mj-8pb">
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" id="GME-5h-38w">
+                    <rect key="frame" x="8" y="488" width="304" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
+                    <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="0.81000000000000005" colorSpace="calibratedWhite"/>
+                </pageControl>
+                <view contentMode="scaleToFill" id="EaZ-mj-8pb" userLabel="ContainerDragable">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <subviews>
-                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" id="GME-5h-38w">
-                            <rect key="frame" x="8" y="489" width="304" height="37"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
-                            <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="0.81000000000000005" colorSpace="calibratedWhite"/>
-                        </pageControl>
-                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <tabBar contentMode="scaleToFill" id="1uA-O2-5Au">
@@ -68,7 +72,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="278" y="299"/>
+            <point key="canvasLocation" x="521" y="306"/>
         </view>
     </objects>
     <resources>

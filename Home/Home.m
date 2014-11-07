@@ -9,10 +9,14 @@
 #import "Home.h"
 #import "RootViewController.h"
 #import "Receita.h"
+#import "CollectionLivros.h"
 
 @interface Home ()
 
 @property RootViewController * root;
+@property CollectionLivros * mos;
+
+@property bool selectedView;
 
 @end
 
@@ -54,7 +58,7 @@
     
     /* bt mosaico*/
     UIButton * buttonmos= [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    //[buttonmos addTarget:self action:@selector(clickBack:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonmos addTarget:self action:@selector(togleViews) forControlEvents:UIControlEventTouchUpInside];
     [buttonmos setImage:[UIImage imageNamed:@"btnmosaic"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButtonmos = [[UIBarButtonItem alloc] initWithCustomView:buttonmos];
@@ -68,8 +72,35 @@
     
     UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
     [self.navigationItem setTitleView:titleView];
+    
+    
+
+    UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
+    [aFlowLayout setItemSize:CGSizeMake(155, 220)];
+    [aFlowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    self.mos = [[CollectionLivros alloc]initWithCollectionViewLayout:aFlowLayout];
+    
+    [self.mos.view setFrame:CGRectMake(0, self.containerCollections.frame.origin.y, self.containerCollections.frame.size.width, self.containerCollections.frame.size.height)];
+    
 
 }
+
+-(void)togleViews
+{
+    if (self.selectedView) {
+        [self.mos.view removeFromSuperview];
+        [self.container addSubview:self.root.view];
+    }
+    else
+    {
+        [self.root.view removeFromSuperview];
+        [self.container addSubview:self.mos.view];
+    }
+    
+    self.selectedView = !self.selectedView;
+    
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [[UIScreen mainScreen] bounds].size.width ;
