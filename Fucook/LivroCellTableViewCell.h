@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelTitulo;
 @property (weak, nonatomic) IBOutlet UILabel *labelDescricao;
 @property (weak, nonatomic) IBOutlet UIImageView *imageCapa;
-@property (weak, nonatomic) IBOutlet UIImageView *imagemMascara;
 
 
 - (IBAction)ClickDelete:(id)sender;

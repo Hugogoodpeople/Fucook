@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface BookCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIView *viewMovel;
+
+@property (weak, nonatomic) IBOutlet UILabel *labelTempo;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitulo;
+@property (weak, nonatomic) IBOutlet UIImageView *imageCapa;
 
 @end

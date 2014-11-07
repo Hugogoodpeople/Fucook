@@ -7,7 +7,7 @@
 //
 
 #import "DragableTableReceitas.h"
-#import "LivroCellTableViewCell.h"
+#import "BookCell.h"
 
 @interface DragableTableReceitas ()
 
@@ -99,12 +99,12 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *simpleTableIdentifier = @"Cell";
+    static NSString *simpleTableIdentifier = @"BookCell";
     
-    LivroCellTableViewCell *cell = (LivroCellTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    BookCell *cell = (BookCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
     {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LivroCellTableViewCell" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
         cell.transform = CGAffineTransformMakeRotation(M_PI/2);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -114,6 +114,8 @@
         NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
         
     }
+    
+    
     
     
     [cell setSelected:YES];
@@ -133,17 +135,15 @@
      
      return cell;
      */
-    static NSString *simpleTableIdentifier = @"Cell";
+    static NSString *simpleTableIdentifier = @"BookCell";
     
-    LivroCellTableViewCell *cell = (LivroCellTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    if (cell == nil)
-    {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LivroCellTableViewCell" owner:self options:nil];
+    BookCell *cell = (BookCell *)[self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
         cell.contentView.transform = CGAffineTransformMakeRotation(M_PI/2);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
     
+    [cell setSelected:YES];
     //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];
     
     return cell;
