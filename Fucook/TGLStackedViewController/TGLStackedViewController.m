@@ -97,7 +97,7 @@ typedef NS_ENUM(NSInteger, TGLStackedViewControllerScrollDirection) {
     
     _stackedLayout = [[TGLStackedLayout alloc] init];
     
-    _exposedLayoutMargin = UIEdgeInsetsMake(40.0, 0.0, 0.0, 0.0);
+    _exposedLayoutMargin = UIEdgeInsetsMake(60.0, 0.0, 0.0, 0.0);
     _exposedItemSize = CGSizeZero;
     _exposedTopOverlap = 20.0;
     _exposedBottomOverlap = 20.0;

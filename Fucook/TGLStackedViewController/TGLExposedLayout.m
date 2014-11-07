@@ -41,7 +41,7 @@
     
     if (self) {
         
-        self.layoutMargin = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
+        self.layoutMargin = UIEdgeInsetsMake(40.0, 0.0, 0.0, 0.0);
         self.topOverlap = 20.0;
         self.bottomOverlap = 20.0;
 

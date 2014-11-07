@@ -10,7 +10,7 @@
 
 @interface HeaderReceita : UIViewController
 
-- (IBAction)clickBottun:(id)sender;
+
 @property (nonatomic,assign) id delegate;
 
 @end
