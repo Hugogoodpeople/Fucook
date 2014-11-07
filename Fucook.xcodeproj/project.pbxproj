@@ -79,6 +79,12 @@
 		CE46603A1A0BC77600ED496C /* Receita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4660381A0BC77600ED496C /* Receita.xib */; };
 		CE475F241A0CCEB500D33A1A /* NewBook.m in Sources */ = {isa = PBXBuildFile; fileRef = CE475F221A0CCEB500D33A1A /* NewBook.m */; };
 		CE475F251A0CCEB500D33A1A /* NewBook.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE475F231A0CCEB500D33A1A /* NewBook.xib */; };
+		CE475F4F1A0D336C00D33A1A /* NewReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE475F4D1A0D336C00D33A1A /* NewReceita.m */; };
+		CE475F501A0D336C00D33A1A /* NewReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE475F4E1A0D336C00D33A1A /* NewReceita.xib */; };
+		CE475F551A0D3A6E00D33A1A /* btnphoto1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE475F511A0D3A6E00D33A1A /* btnphoto1@2x.png */; };
+		CE475F561A0D3A6F00D33A1A /* btnphoto1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE475F521A0D3A6E00D33A1A /* btnphoto1@3x.png */; };
+		CE475F571A0D3A6F00D33A1A /* btnphoto2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE475F531A0D3A6E00D33A1A /* btnphoto2@2x.png */; };
+		CE475F581A0D3A6F00D33A1A /* btnphoto2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE475F541A0D3A6E00D33A1A /* btnphoto2@3x.png */; };
 		CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983F61A0A90B7009EC1A4 /* TGLExposedLayout.m */; };
 		CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983F81A0A90B7009EC1A4 /* TGLStackedLayout.m */; };
 		CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983FA1A0A90B7009EC1A4 /* TGLStackedViewController.m */; };
@@ -193,6 +199,13 @@
 		CE475F211A0CCEB500D33A1A /* NewBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewBook.h; path = NewBook/NewBook.h; sourceTree = "<group>"; };
 		CE475F221A0CCEB500D33A1A /* NewBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewBook.m; path = NewBook/NewBook.m; sourceTree = "<group>"; };
 		CE475F231A0CCEB500D33A1A /* NewBook.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewBook.xib; path = NewBook/NewBook.xib; sourceTree = "<group>"; };
+		CE475F4C1A0D336C00D33A1A /* NewReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewReceita.h; path = NewReceita/NewReceita.h; sourceTree = "<group>"; };
+		CE475F4D1A0D336C00D33A1A /* NewReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewReceita.m; path = NewReceita/NewReceita.m; sourceTree = "<group>"; };
+		CE475F4E1A0D336C00D33A1A /* NewReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewReceita.xib; path = NewReceita/NewReceita.xib; sourceTree = "<group>"; };
+		CE475F511A0D3A6E00D33A1A /* btnphoto1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnphoto1@2x.png"; path = "Fucook/Imagens/btnphoto1@2x.png"; sourceTree = "<group>"; };
+		CE475F521A0D3A6E00D33A1A /* btnphoto1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnphoto1@3x.png"; path = "Fucook/Imagens/btnphoto1@3x.png"; sourceTree = "<group>"; };
+		CE475F531A0D3A6E00D33A1A /* btnphoto2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnphoto2@2x.png"; path = "Fucook/Imagens/btnphoto2@2x.png"; sourceTree = "<group>"; };
+		CE475F541A0D3A6E00D33A1A /* btnphoto2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnphoto2@3x.png"; path = "Fucook/Imagens/btnphoto2@3x.png"; sourceTree = "<group>"; };
 		CE4983F51A0A90B7009EC1A4 /* TGLExposedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLExposedLayout.h; sourceTree = "<group>"; };
 		CE4983F61A0A90B7009EC1A4 /* TGLExposedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLExposedLayout.m; sourceTree = "<group>"; };
 		CE4983F71A0A90B7009EC1A4 /* TGLStackedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLStackedLayout.h; sourceTree = "<group>"; };
@@ -247,6 +260,7 @@
 		BAC6394B1A07ED420049E3BD /* Fucook */ = {
 			isa = PBXGroup;
 			children = (
+				CE475F4B1A0D334A00D33A1A /* NewReceita */,
 				CE475F201A0CCE9200D33A1A /* NewBook */,
 				CE4984111A0AA3E7009EC1A4 /* Receita */,
 				CE49840B1A0A9188009EC1A4 /* HeaderReceita */,
@@ -406,6 +420,10 @@
 		BAF955201A0A8D3500277B94 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				CE475F511A0D3A6E00D33A1A /* btnphoto1@2x.png */,
+				CE475F521A0D3A6E00D33A1A /* btnphoto1@3x.png */,
+				CE475F531A0D3A6E00D33A1A /* btnphoto2@2x.png */,
+				CE475F541A0D3A6E00D33A1A /* btnphoto2@3x.png */,
 				CE3AE1731A0BEEAC006C4B2E /* btleft3@2x.png */,
 				CE3AE1741A0BEEAC006C4B2E /* btleft3@3x.png */,
 				BAF66E2C1A0B851600E90B7D /* imgbookslice@2x.png */,
@@ -460,6 +478,16 @@
 				CE475F231A0CCEB500D33A1A /* NewBook.xib */,
 			);
 			name = NewBook;
+			sourceTree = "<group>";
+		};
+		CE475F4B1A0D334A00D33A1A /* NewReceita */ = {
+			isa = PBXGroup;
+			children = (
+				CE475F4C1A0D336C00D33A1A /* NewReceita.h */,
+				CE475F4D1A0D336C00D33A1A /* NewReceita.m */,
+				CE475F4E1A0D336C00D33A1A /* NewReceita.xib */,
+			);
+			name = NewReceita;
 			sourceTree = "<group>";
 		};
 		CE4983F41A0A90B7009EC1A4 /* TGLStackedViewController */ = {
@@ -589,6 +617,7 @@
 				BAF955661A0A9D6900277B94 /* btndelet2@2x.png in Resources */,
 				BAF955721A0A9D6900277B94 /* btnsearch@2x.png in Resources */,
 				BAF9555B1A0A9D6900277B94 /* btnaddbook@3x.png in Resources */,
+				CE475F571A0D3A6F00D33A1A /* btnphoto2@2x.png in Resources */,
 				BAF955631A0A9D6900277B94 /* btncall2@3x.png in Resources */,
 				BAF955781A0A9D6900277B94 /* btnshop1@2x.png in Resources */,
 				BAF955771A0A9D6900277B94 /* btnsetting2@3x.png in Resources */,
@@ -606,6 +635,7 @@
 				BAC639851A07F0C40049E3BD /* Book.xib in Resources */,
 				BAF76B501A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.xib in Resources */,
 				BAF955691A0A9D6900277B94 /* btnedit1@3x.png in Resources */,
+				CE475F561A0D3A6F00D33A1A /* btnphoto1@3x.png in Resources */,
 				BAF66E281A0B7DA900E90B7D /* imgbckhome@2x.png in Resources */,
 				BAF9555C1A0A9D6900277B94 /* btnbook1@2x.png in Resources */,
 				CE46603A1A0BC77600ED496C /* Receita.xib in Resources */,
@@ -619,13 +649,16 @@
 				BAF9556E1A0A9D6900277B94 /* btnfeatured2@2x.png in Resources */,
 				BAF955701A0A9D6900277B94 /* btnmosaic@2x.png in Resources */,
 				BAF9555F1A0A9D6900277B94 /* btnbook2@3x.png in Resources */,
+				CE475F501A0D336C00D33A1A /* NewReceita.xib in Resources */,
 				BAF66E291A0B7DA900E90B7D /* imgbckhome@3x.png in Resources */,
+				CE475F581A0D3A6F00D33A1A /* btnphoto2@3x.png in Resources */,
 				CE3AE1761A0BEEAC006C4B2E /* btleft3@3x.png in Resources */,
 				BAF9551F1A0A7B7200277B94 /* Home.xib in Resources */,
 				BAF955791A0A9D6900277B94 /* btnshop1@3x.png in Resources */,
 				BAF9556B1A0A9D6900277B94 /* btnedit2@3x.png in Resources */,
 				BAF955751A0A9D6900277B94 /* btnsetting1@3x.png in Resources */,
 				BAF9557C1A0A9D6900277B94 /* imgsample001.jpg in Resources */,
+				CE475F551A0D3A6E00D33A1A /* btnphoto1@2x.png in Resources */,
 				CE3AE1701A0BC9BB006C4B2E /* ReceitasCell.xib in Resources */,
 				BAF9557A1A0A9D6900277B94 /* btnshop2@2x.png in Resources */,
 				BAF955621A0A9D6900277B94 /* btncall2@2x.png in Resources */,
@@ -671,6 +704,7 @@
 				BAF9550B1A0A4B2C00277B94 /* LivroCellTableViewCell.m in Sources */,
 				BAF76B4F1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.m in Sources */,
 				CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */,
+				CE475F4F1A0D336C00D33A1A /* NewReceita.m in Sources */,
 				CE4660391A0BC77600ED496C /* Receita.m in Sources */,
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
 				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,
