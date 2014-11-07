@@ -15,8 +15,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hhs-h0-Iw5">
-                        <rect key="frame" x="105" y="444" width="110" height="50"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hhs-h0-Iw5">
+                        <rect key="frame" x="113" y="444" width="94" height="50"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btndelet2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Twe-yS-ZS6">
                                 <rect key="frame" x="10" y="11" width="23" height="27"/>
@@ -29,8 +29,8 @@
                                 <rect key="frame" x="70" y="13" width="24" height="24"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwv-7I-65J">
-                                <rect key="frame" x="62" y="0.0" width="46" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwv-7I-65J">
+                                <rect key="frame" x="62" y="0.0" width="30" height="50"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -133,7 +133,7 @@
                 <outlet property="labelDescricao" destination="afk-i6-W4q" id="53i-g1-sbm"/>
                 <outlet property="labelTitulo" destination="lAv-sX-LAi" id="SdY-XX-66d"/>
             </connections>
-            <point key="canvasLocation" x="891" y="0.0"/>
+            <point key="canvasLocation" x="349" y="4"/>
         </tableViewCell>
     </objects>
     <resources>

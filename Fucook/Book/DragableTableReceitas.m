@@ -102,8 +102,7 @@
     static NSString *simpleTableIdentifier = @"BookCell";
     
     BookCell *cell = (BookCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    if (cell == nil)
-    {
+    
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
         cell.transform = CGAffineTransformMakeRotation(M_PI/2);
@@ -112,8 +111,7 @@
         [cell.contentView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         
         NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
-        
-    }
+    
     
     
     
