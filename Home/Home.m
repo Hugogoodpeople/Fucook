@@ -10,6 +10,7 @@
 #import "RootViewController.h"
 #import "Receita.h"
 #import "CollectionLivros.h"
+#import "NewBook.h"
 
 @interface Home ()
 
@@ -51,7 +52,7 @@
     
     /* bt add*/
     UIButton * buttonadd = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    //[button addTarget:self action:@selector(receita:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonadd addTarget:self action:@selector(addbook:) forControlEvents:UIControlEventTouchUpInside];
     [buttonadd setImage:[UIImage imageNamed:@"btnaddbook"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButtonadd = [[UIBarButtonItem alloc] initWithCustomView:buttonadd];
@@ -104,6 +105,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [[UIScreen mainScreen] bounds].size.width ;
+}
+
+-(IBAction)addbook:(id)sender {
+    NSLog(@"clicou add");
+
+    NewBook *objYourViewController = [[NewBook alloc] initWithNibName:@"NewBook" bundle:nil];
+    [self.navigationController pushViewController:objYourViewController animated:YES];
 }
 
 
