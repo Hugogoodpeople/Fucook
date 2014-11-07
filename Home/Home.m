@@ -10,12 +10,9 @@
 #import "RootViewController.h"
 #import "Receita.h"
 #import "CollectionLivros.h"
-<<<<<<< HEAD
 #import "NewBook.h"
-=======
 #import "Settings.h"
 #import "Book.h"
->>>>>>> FETCH_HEAD
 
 @interface Home ()
 
