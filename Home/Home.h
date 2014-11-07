@@ -16,4 +16,11 @@
 
 @property (weak, nonatomic) IBOutlet UIToolbar *yoolbar;
 
+
+- (IBAction)clickHome:(id)sender;
+- (IBAction)clickCarrinho:(id)sender;
+- (IBAction)clickAgends:(id)sender;
+- (IBAction)clickInApps:(id)sender;
+- (IBAction)clickSettings:(id)sender;
+
 @end

@@ -10,6 +10,8 @@
 #import "RootViewController.h"
 #import "Receita.h"
 #import "CollectionLivros.h"
+#import "Settings.h"
+#import "Book.h"
 
 @interface Home ()
 
@@ -137,7 +139,6 @@
     // Dispose of any resources that can be recreated.
     self.navigationController.toolbarHidden = YES;
     [self.navigationController popViewControllerAnimated:YES];
-    
 }
 
 - (IBAction)receita:(id)sender {
@@ -145,6 +146,15 @@
     Receita *objYourViewController = [[Receita alloc] initWithNibName:@"Receita" bundle:nil];
     [self.navigationController pushViewController:objYourViewController animated:YES];
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"selected %ld", (long)indexPath.row);
+    [self.navigationController pushViewController:[Book new] animated:YES];
+}
+
+
+
 
 /*
 #pragma mark - Navigation
@@ -156,4 +166,20 @@
 }
 */
 
+- (IBAction)clickHome:(id)sender {
+}
+
+- (IBAction)clickCarrinho:(id)sender {
+}
+
+- (IBAction)clickAgends:(id)sender {
+}
+
+- (IBAction)clickInApps:(id)sender {
+}
+
+- (IBAction)clickSettings:(id)sender
+{
+    [self presentViewController:[Settings new] animated:YES completion:^{}];
+}
 @end

@@ -12,8 +12,8 @@
 		BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAC639531A07ED420049E3BD /* Fucook.xcdatamodeld */; };
 		BAC6395D1A07ED420049E3BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC6395C1A07ED420049E3BD /* Images.xcassets */; };
 		BAC6396C1A07ED420049E3BD /* FucookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC6396B1A07ED420049E3BD /* FucookTests.m */; };
-		BAC639841A07F0C40049E3BD /* Books.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC639821A07F0C40049E3BD /* Books.m */; };
-		BAC639851A07F0C40049E3BD /* Books.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC639831A07F0C40049E3BD /* Books.xib */; };
+		BAC639841A07F0C40049E3BD /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC639821A07F0C40049E3BD /* Book.m */; };
+		BAC639851A07F0C40049E3BD /* Book.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC639831A07F0C40049E3BD /* Book.xib */; };
 		BAF66E281A0B7DA900E90B7D /* imgbckhome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF66E261A0B7DA900E90B7D /* imgbckhome@2x.png */; };
 		BAF66E291A0B7DA900E90B7D /* imgbckhome@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF66E271A0B7DA900E90B7D /* imgbckhome@3x.png */; };
 		BAF66E2B1A0B809800E90B7D /* imgbookcut@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF66E2A1A0B809800E90B7D /* imgbookcut@3x.png */; };
@@ -23,6 +23,9 @@
 		BAF76B4A1A0CCE6B00D2CC13 /* CollectionLivros.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF76B481A0CCE6B00D2CC13 /* CollectionLivros.xib */; };
 		BAF76B4F1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF76B4D1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.m */; };
 		BAF76B501A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF76B4E1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.xib */; };
+		BAF76B551A0D0FD200D2CC13 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF76B531A0D0FD200D2CC13 /* Settings.m */; };
+		BAF76B561A0D0FD200D2CC13 /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF76B541A0D0FD200D2CC13 /* Settings.xib */; };
+		BAF76B5B1A0D2AAE00D2CC13 /* DragableTableReceitas.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF76B5A1A0D2AAE00D2CC13 /* DragableTableReceitas.m */; };
 		BAF9550B1A0A4B2C00277B94 /* LivroCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF955091A0A4B2C00277B94 /* LivroCellTableViewCell.m */; };
 		BAF9550C1A0A4B2C00277B94 /* LivroCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF9550A1A0A4B2C00277B94 /* LivroCellTableViewCell.xib */; };
 		BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF9550E1A0A4B6D00277B94 /* RootViewController.m */; };
@@ -105,9 +108,9 @@
 		BAC639651A07ED420049E3BD /* FucookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FucookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC6396A1A07ED420049E3BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAC6396B1A07ED420049E3BD /* FucookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FucookTests.m; sourceTree = "<group>"; };
-		BAC639811A07F0C40049E3BD /* Books.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Books.h; path = "untitled folder/Books.h"; sourceTree = "<group>"; };
-		BAC639821A07F0C40049E3BD /* Books.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Books.m; path = "untitled folder/Books.m"; sourceTree = "<group>"; };
-		BAC639831A07F0C40049E3BD /* Books.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Books.xib; path = "untitled folder/Books.xib"; sourceTree = "<group>"; };
+		BAC639811A07F0C40049E3BD /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Book.h; path = "Fucook/untitled folder/Book.h"; sourceTree = "<group>"; };
+		BAC639821A07F0C40049E3BD /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Book.m; path = "Fucook/untitled folder/Book.m"; sourceTree = "<group>"; };
+		BAC639831A07F0C40049E3BD /* Book.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Book.xib; path = "Fucook/untitled folder/Book.xib"; sourceTree = "<group>"; };
 		BAC639871A07F10A0049E3BD /* mzl.khrfwdoi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mzl.khrfwdoi.jpg; sourceTree = "<group>"; };
 		BAF66E261A0B7DA900E90B7D /* imgbckhome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgbckhome@2x.png"; path = "imgs/imgbckhome@2x.png"; sourceTree = "<group>"; };
 		BAF66E271A0B7DA900E90B7D /* imgbckhome@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgbckhome@3x.png"; path = "imgs/imgbckhome@3x.png"; sourceTree = "<group>"; };
@@ -120,6 +123,11 @@
 		BAF76B4C1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionLivroCellCollectionViewCell.h; path = CollectionLivros/CollectionLivroCellCollectionViewCell.h; sourceTree = "<group>"; };
 		BAF76B4D1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionLivroCellCollectionViewCell.m; path = CollectionLivros/CollectionLivroCellCollectionViewCell.m; sourceTree = "<group>"; };
 		BAF76B4E1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollectionLivroCellCollectionViewCell.xib; path = CollectionLivros/CollectionLivroCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		BAF76B521A0D0FD200D2CC13 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = Setings/Settings.h; sourceTree = "<group>"; };
+		BAF76B531A0D0FD200D2CC13 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = Setings/Settings.m; sourceTree = "<group>"; };
+		BAF76B541A0D0FD200D2CC13 /* Settings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Settings.xib; path = Setings/Settings.xib; sourceTree = "<group>"; };
+		BAF76B591A0D2AAE00D2CC13 /* DragableTableReceitas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DragableTableReceitas.h; path = Fucook/Book/DragableTableReceitas.h; sourceTree = "<group>"; };
+		BAF76B5A1A0D2AAE00D2CC13 /* DragableTableReceitas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DragableTableReceitas.m; path = Fucook/Book/DragableTableReceitas.m; sourceTree = "<group>"; };
 		BAF955081A0A4B2C00277B94 /* LivroCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivroCellTableViewCell.h; sourceTree = "<group>"; };
 		BAF955091A0A4B2C00277B94 /* LivroCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivroCellTableViewCell.m; sourceTree = "<group>"; };
 		BAF9550A1A0A4B2C00277B94 /* LivroCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LivroCellTableViewCell.xib; sourceTree = "<group>"; };
@@ -212,6 +220,8 @@
 		BAC639401A07ED420049E3BD = {
 			isa = PBXGroup;
 			children = (
+				BAF76B571A0D216800D2CC13 /* Book */,
+				BAF76B511A0D0E5D00D2CC13 /* Settings */,
 				BAF955201A0A8D3500277B94 /* Imagens */,
 				BAF76B451A0CCE2F00D2CC13 /* CollectionLivros */,
 				BAC6394B1A07ED420049E3BD /* Fucook */,
@@ -243,9 +253,6 @@
 				BAC6395C1A07ED420049E3BD /* Images.xcassets */,
 				BAC639531A07ED420049E3BD /* Fucook.xcdatamodeld */,
 				BAC6394C1A07ED420049E3BD /* Supporting Files */,
-				BAC639811A07F0C40049E3BD /* Books.h */,
-				BAC639821A07F0C40049E3BD /* Books.m */,
-				BAC639831A07F0C40049E3BD /* Books.xib */,
 			);
 			path = Fucook;
 			sourceTree = "<group>";
@@ -307,6 +314,36 @@
 				BAF76B4E1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.xib */,
 			);
 			name = CollectionLivroCell;
+			sourceTree = "<group>";
+		};
+		BAF76B511A0D0E5D00D2CC13 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BAF76B521A0D0FD200D2CC13 /* Settings.h */,
+				BAF76B531A0D0FD200D2CC13 /* Settings.m */,
+				BAF76B541A0D0FD200D2CC13 /* Settings.xib */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		BAF76B571A0D216800D2CC13 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				BAF76B581A0D2A7900D2CC13 /* DragableReceita */,
+				BAC639811A07F0C40049E3BD /* Book.h */,
+				BAC639821A07F0C40049E3BD /* Book.m */,
+				BAC639831A07F0C40049E3BD /* Book.xib */,
+			);
+			name = Book;
+			sourceTree = "<group>";
+		};
+		BAF76B581A0D2A7900D2CC13 /* DragableReceita */ = {
+			isa = PBXGroup;
+			children = (
+				BAF76B591A0D2AAE00D2CC13 /* DragableTableReceitas.h */,
+				BAF76B5A1A0D2AAE00D2CC13 /* DragableTableReceitas.m */,
+			);
+			name = DragableReceita;
 			sourceTree = "<group>";
 		};
 		BAF955061A0A4ACF00277B94 /* DragableTable */ = {
@@ -528,6 +565,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF76B561A0D0FD200D2CC13 /* Settings.xib in Resources */,
 				BAF955671A0A9D6900277B94 /* btndelet2@3x.png in Resources */,
 				BAF955641A0A9D6900277B94 /* btndelet1@2x.png in Resources */,
 				BAF955741A0A9D6900277B94 /* btnsetting1@2x.png in Resources */,
@@ -548,7 +586,7 @@
 				CE3AE1751A0BEEAC006C4B2E /* btleft3@2x.png in Resources */,
 				CE4984101A0A9188009EC1A4 /* HeaderReceita.xib in Resources */,
 				BAF9556A1A0A9D6900277B94 /* btnedit2@2x.png in Resources */,
-				BAC639851A07F0C40049E3BD /* Books.xib in Resources */,
+				BAC639851A07F0C40049E3BD /* Book.xib in Resources */,
 				BAF76B501A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.xib in Resources */,
 				BAF955691A0A9D6900277B94 /* btnedit1@3x.png in Resources */,
 				BAF66E281A0B7DA900E90B7D /* imgbckhome@2x.png in Resources */,
@@ -601,10 +639,12 @@
 				BAC639521A07ED420049E3BD /* AppDelegate.m in Sources */,
 				BAF955141A0A4BA300277B94 /* ATSDragToReorderTableViewController.m in Sources */,
 				CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */,
+				BAF76B551A0D0FD200D2CC13 /* Settings.m in Sources */,
 				CE3AE16F1A0BC9BB006C4B2E /* ReceitasCell.m in Sources */,
 				CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */,
 				BAF9551E1A0A7B7200277B94 /* Home.m in Sources */,
-				BAC639841A07F0C40049E3BD /* Books.m in Sources */,
+				BAC639841A07F0C40049E3BD /* Book.m in Sources */,
+				BAF76B5B1A0D2AAE00D2CC13 /* DragableTableReceitas.m in Sources */,
 				BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */,
 				BAF76B491A0CCE6B00D2CC13 /* CollectionLivros.m in Sources */,
 				CE49840F1A0A9188009EC1A4 /* HeaderReceita.m in Sources */,
