@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -18,29 +18,26 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" id="R1G-0A-nLC">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1G-0A-nLC" userLabel="containerCollection">
                     <rect key="frame" x="0.0" y="65" width="320" height="454"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgbckhome.png" id="OJ8-9Y-4wD">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imgbckhome.png" translatesAutoresizingMaskIntoConstraints="NO" id="OJ8-9Y-4wD">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" id="GME-5h-38w">
-                    <rect key="frame" x="8" y="488" width="304" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
-                    <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="0.81000000000000005" colorSpace="calibratedWhite"/>
-                </pageControl>
-                <view contentMode="scaleToFill" id="EaZ-mj-8pb" userLabel="ContainerDragable">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EaZ-mj-8pb" userLabel="ContainerDragable">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="GME-5h-38w">
+                            <rect key="frame" x="8" y="490" width="304" height="37"/>
+                            <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
+                            <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="0.81000000000000005" colorSpace="calibratedWhite"/>
+                        </pageControl>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <tabBar contentMode="scaleToFill" id="1uA-O2-5Au">
+                <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1uA-O2-5Au">
                     <rect key="frame" x="0.0" y="519" width="320" height="49"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <items>
                         <tabBarItem tag="1" title="" image="btnbook1.png" selectedImage="btnbook1.png" id="4zL-q8-dK7"/>
@@ -50,9 +47,8 @@
                         <tabBarItem tag="5" title="" image="btnsetting2.png" selectedImage="btnsetting2.png" id="Bi8-Qa-MZm"/>
                     </items>
                 </tabBar>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="rpq-Cz-DxD">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpq-Cz-DxD">
                     <rect key="frame" x="0.0" y="519" width="320" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
                         <barButtonItem image="btnbook1.png" id="tfq-az-nfk">
                             <color key="tintColor" red="0.59215686274509804" green="0.21176470588235294" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,9 +82,4 @@
         <image name="btnshop2.png" width="24" height="24"/>
         <image name="imgbckhome.png" width="320" height="568"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

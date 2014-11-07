@@ -212,8 +212,8 @@
 		BAC639401A07ED420049E3BD = {
 			isa = PBXGroup;
 			children = (
-				BAF76B451A0CCE2F00D2CC13 /* CollectionLivros */,
 				BAF955201A0A8D3500277B94 /* Imagens */,
+				BAF76B451A0CCE2F00D2CC13 /* CollectionLivros */,
 				BAC6394B1A07ED420049E3BD /* Fucook */,
 				BAC639681A07ED420049E3BD /* FucookTests */,
 				BAC6394A1A07ED420049E3BD /* Products */,

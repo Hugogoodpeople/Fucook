@@ -76,9 +76,13 @@
     
 
     UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
-    [aFlowLayout setItemSize:CGSizeMake(155, 220)];
+    [aFlowLayout setItemSize:CGSizeMake(160, 222)];
     [aFlowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [aFlowLayout setMinimumInteritemSpacing:0];
+    [aFlowLayout setMinimumLineSpacing:0];
     self.mos = [[CollectionLivros alloc]initWithCollectionViewLayout:aFlowLayout];
+    [self.mos.collectionView setBackgroundColor:[UIColor clearColor]];
+    
     
     [self.mos.view setFrame:CGRectMake(0, self.containerCollections.frame.origin.y, self.containerCollections.frame.size.width, self.containerCollections.frame.size.height)];
     
@@ -90,11 +94,13 @@
     if (self.selectedView) {
         [self.mos.view removeFromSuperview];
         [self.container addSubview:self.root.view];
+        [self.pageControl setAlpha:1];
     }
     else
     {
         [self.root.view removeFromSuperview];
         [self.container addSubview:self.mos.view];
+        [self.pageControl setAlpha:0];
     }
     
     self.selectedView = !self.selectedView;
