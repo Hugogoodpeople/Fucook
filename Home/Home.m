@@ -76,7 +76,7 @@
     
 
     UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
-    [aFlowLayout setItemSize:CGSizeMake(160, 222)];
+    [aFlowLayout setItemSize:CGSizeMake([UIScreen mainScreen].bounds.size.width/2, ([UIScreen mainScreen].bounds.size.height/2) -56 ) ];
     [aFlowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     [aFlowLayout setMinimumInteritemSpacing:0];
     [aFlowLayout setMinimumLineSpacing:0];
@@ -84,9 +84,16 @@
     [self.mos.collectionView setBackgroundColor:[UIColor clearColor]];
     
     
-    [self.mos.view setFrame:CGRectMake(0, self.containerCollections.frame.origin.y, self.containerCollections.frame.size.width, self.containerCollections.frame.size.height)];
+    [self.mos.view setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height )];
     
-
+    [self.mos.collectionView setContentInset:UIEdgeInsetsMake(64, 0, 44, 0)];
+    
+    
+    [self.yoolbar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.97f]];
+    //[nav.navigationBar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.8f]];
+    [self.yoolbar setBackgroundImage:[UIImage new] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    self.yoolbar.clipsToBounds = YES;
+    
 }
 
 -(void)togleViews

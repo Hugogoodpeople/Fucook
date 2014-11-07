@@ -14,5 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *containerCollections;
 
+@property (weak, nonatomic) IBOutlet UIToolbar *yoolbar;
 
 @end

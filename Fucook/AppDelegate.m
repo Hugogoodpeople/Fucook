@@ -30,10 +30,21 @@
     
     [self.window makeKeyAndVisible];
     
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0,320, 20)];
+    view.backgroundColor=[UIColor colorWithRed:1 green:1 blue:1 alpha:0.97f];
+    [nav.view addSubview:view];
+    
     UIImageView * topo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"imgframetop"]];
     [topo setFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 10)];
     [nav.view addSubview:topo];
     
+    
+    [nav.navigationBar setBackgroundImage:[UIImage new]
+                       forBarPosition:UIBarPositionAny
+                           barMetrics:UIBarMetricsDefault];
+    [nav.navigationBar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.97f]];
+    
+    [nav.navigationBar setShadowImage:[UIImage new]];
     
     UIImageView * fundo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"imgframedown"]];
     [fundo setFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-10, [[UIScreen mainScreen] bounds].size.width, 10)];
