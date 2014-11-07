@@ -1,23 +1,24 @@
 //
-//  Books.m
+//  Settings.m
 //  Fucook
 //
-//  Created by Hugo Costa on 03/11/14.
+//  Created by Hugo Costa on 07/11/14.
 //  Copyright (c) 2014 Hugo Costa. All rights reserved.
 //
 
-#import "Books.h"
+#import "Settings.h"
 
-@interface Books ()
+@interface Settings ()
 
 @end
 
-@implementation Books
+@implementation Settings
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, 950)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,4 +36,7 @@
 }
 */
 
+- (IBAction)clickFechar:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{}];
+}
 @end

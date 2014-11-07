@@ -10,7 +10,12 @@
 #import "RootViewController.h"
 #import "Receita.h"
 #import "CollectionLivros.h"
+<<<<<<< HEAD
 #import "NewBook.h"
+=======
+#import "Settings.h"
+#import "Book.h"
+>>>>>>> FETCH_HEAD
 
 @interface Home ()
 
@@ -77,13 +82,24 @@
     
 
     UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
-    [aFlowLayout setItemSize:CGSizeMake(155, 220)];
+    [aFlowLayout setItemSize:CGSizeMake([UIScreen mainScreen].bounds.size.width/2, ([UIScreen mainScreen].bounds.size.height/2) -56 ) ];
     [aFlowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [aFlowLayout setMinimumInteritemSpacing:0];
+    [aFlowLayout setMinimumLineSpacing:0];
     self.mos = [[CollectionLivros alloc]initWithCollectionViewLayout:aFlowLayout];
+    [self.mos.collectionView setBackgroundColor:[UIColor clearColor]];
     
-    [self.mos.view setFrame:CGRectMake(0, self.containerCollections.frame.origin.y, self.containerCollections.frame.size.width, self.containerCollections.frame.size.height)];
     
-
+    [self.mos.view setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height )];
+    
+    [self.mos.collectionView setContentInset:UIEdgeInsetsMake(64, 0, 44, 0)];
+    
+    
+    [self.yoolbar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.97f]];
+    //[nav.navigationBar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.8f]];
+    [self.yoolbar setBackgroundImage:[UIImage new] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    self.yoolbar.clipsToBounds = YES;
+    
 }
 
 -(void)togleViews
@@ -91,11 +107,13 @@
     if (self.selectedView) {
         [self.mos.view removeFromSuperview];
         [self.container addSubview:self.root.view];
+        [self.pageControl setAlpha:1];
     }
     else
     {
         [self.root.view removeFromSuperview];
         [self.container addSubview:self.mos.view];
+        [self.pageControl setAlpha:0];
     }
     
     self.selectedView = !self.selectedView;
@@ -132,7 +150,6 @@
     // Dispose of any resources that can be recreated.
     self.navigationController.toolbarHidden = YES;
     [self.navigationController popViewControllerAnimated:YES];
-    
 }
 
 - (IBAction)receita:(id)sender {
@@ -140,6 +157,15 @@
     Receita *objYourViewController = [[Receita alloc] initWithNibName:@"Receita" bundle:nil];
     [self.navigationController pushViewController:objYourViewController animated:YES];
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"selected %ld", (long)indexPath.row);
+    [self.navigationController pushViewController:[Book new] animated:YES];
+}
+
+
+
 
 /*
 #pragma mark - Navigation
@@ -151,4 +177,20 @@
 }
 */
 
+- (IBAction)clickHome:(id)sender {
+}
+
+- (IBAction)clickCarrinho:(id)sender {
+}
+
+- (IBAction)clickAgends:(id)sender {
+}
+
+- (IBAction)clickInApps:(id)sender {
+}
+
+- (IBAction)clickSettings:(id)sender
+{
+    [self presentViewController:[Settings new] animated:YES completion:^{}];
+}
 @end

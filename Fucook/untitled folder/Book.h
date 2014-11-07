@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Books : UIViewController
+@interface Book : UIViewController <UITableViewDelegate >
+
+@property (weak, nonatomic) IBOutlet UIView *container;
 
 @end

@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface CollectionLivroCellCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imagemCapa;
+
+@property (weak, nonatomic) IBOutlet UILabel *labelTitulo;
+@property (weak, nonatomic) IBOutlet UILabel *labelDescricao;
+@property (weak, nonatomic) IBOutlet UIView *ViewMovel;
+
 
 @end
