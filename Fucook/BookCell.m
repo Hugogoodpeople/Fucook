@@ -121,6 +121,22 @@
     
     
     */
+    
+    
+    
+    
+    // imgsample001.jpg
+    
+    [self.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
+    
+    UIImage *_maskingImage = [UIImage imageNamed:@"mascara_transparente.png"];
+    CALayer *_maskingLayer = [CALayer layer];
+    _maskingLayer.frame = self.viewMovel.bounds;
+    [_maskingLayer setContents:(id)[_maskingImage CGImage]];
+    [self.viewMovel.layer setMask:_maskingLayer];
+    
+    
+    /*
     self.viewMovel.layer.shadowColor = [color CGColor];
     self.viewMovel.layer.shadowRadius = 1.5f;
     self.viewMovel.layer.shadowOpacity = .1;
@@ -131,14 +147,10 @@
     //self.ViewMovel.transform = CGAffineTransformMakeRotation(0.01f);
     
     self.viewMovel.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.viewMovel.bounds].CGPath;
-    
-    
-    
-    // imgsample001.jpg
-    
-    [self.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
-    
+     */
     
 }
+
+
 
 @end
