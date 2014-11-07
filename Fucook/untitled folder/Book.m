@@ -9,6 +9,7 @@
 #import "Book.h"
 #import "DragableTableReceitas.h"
 #import "LivroCellTableViewCell.h"
+#import "HeaderNewReceita.h"
 
 @interface Book ()
 
@@ -23,7 +24,24 @@
     // Do any additional setup after loading the view from its nib.
     [self setUp];
     
+    /* bt search*/
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    [button addTarget:self action:@selector(addreceita:) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btnaddbook"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = anotherButton;
+
+    
 }
+
+-(IBAction)addreceita:(id)sender {
+    NSLog(@"clicou add");
+    
+    HeaderNewReceita *objYourViewController = [[HeaderNewReceita alloc] initWithNibName:@"HeaderNewReceita" bundle:nil];
+    [self.navigationController pushViewController:objYourViewController animated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

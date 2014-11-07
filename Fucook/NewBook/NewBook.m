@@ -116,9 +116,10 @@
                     break;
                 case 1:
                     NSLog(@"photo");
-                    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-                       [self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
-                    }                    
+                     [self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
+                    //if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+                       //[self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
+                    //}
                     break;
                 default:
                     break;

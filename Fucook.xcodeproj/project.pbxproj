@@ -85,6 +85,9 @@
 		CE475F561A0D3A6F00D33A1A /* btnphoto1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE475F521A0D3A6E00D33A1A /* btnphoto1@3x.png */; };
 		CE475F571A0D3A6F00D33A1A /* btnphoto2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE475F531A0D3A6E00D33A1A /* btnphoto2@2x.png */; };
 		CE475F581A0D3A6F00D33A1A /* btnphoto2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE475F541A0D3A6E00D33A1A /* btnphoto2@3x.png */; };
+		CE475F5C1A0D3DF300D33A1A /* HeaderNewReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE475F5A1A0D3DF300D33A1A /* HeaderNewReceita.m */; };
+		CE475F5D1A0D3DF300D33A1A /* HeaderNewReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE475F5B1A0D3DF300D33A1A /* HeaderNewReceita.xib */; };
+		CE475F5F1A0D4DDE00D33A1A /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE475F5E1A0D4DDE00D33A1A /* OverlayView.xib */; };
 		CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983F61A0A90B7009EC1A4 /* TGLExposedLayout.m */; };
 		CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983F81A0A90B7009EC1A4 /* TGLStackedLayout.m */; };
 		CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983FA1A0A90B7009EC1A4 /* TGLStackedViewController.m */; };
@@ -206,6 +209,10 @@
 		CE475F521A0D3A6E00D33A1A /* btnphoto1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnphoto1@3x.png"; path = "Fucook/Imagens/btnphoto1@3x.png"; sourceTree = "<group>"; };
 		CE475F531A0D3A6E00D33A1A /* btnphoto2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnphoto2@2x.png"; path = "Fucook/Imagens/btnphoto2@2x.png"; sourceTree = "<group>"; };
 		CE475F541A0D3A6E00D33A1A /* btnphoto2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnphoto2@3x.png"; path = "Fucook/Imagens/btnphoto2@3x.png"; sourceTree = "<group>"; };
+		CE475F591A0D3DF300D33A1A /* HeaderNewReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderNewReceita.h; path = NewReceita/HeaderNewReceita.h; sourceTree = "<group>"; };
+		CE475F5A1A0D3DF300D33A1A /* HeaderNewReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderNewReceita.m; path = NewReceita/HeaderNewReceita.m; sourceTree = "<group>"; };
+		CE475F5B1A0D3DF300D33A1A /* HeaderNewReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderNewReceita.xib; path = NewReceita/HeaderNewReceita.xib; sourceTree = "<group>"; };
+		CE475F5E1A0D4DDE00D33A1A /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OverlayView.xib; path = NewBook/OverlayView.xib; sourceTree = "<group>"; };
 		CE4983F51A0A90B7009EC1A4 /* TGLExposedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLExposedLayout.h; sourceTree = "<group>"; };
 		CE4983F61A0A90B7009EC1A4 /* TGLExposedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLExposedLayout.m; sourceTree = "<group>"; };
 		CE4983F71A0A90B7009EC1A4 /* TGLStackedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLStackedLayout.h; sourceTree = "<group>"; };
@@ -473,6 +480,7 @@
 		CE475F201A0CCE9200D33A1A /* NewBook */ = {
 			isa = PBXGroup;
 			children = (
+				CE475F5E1A0D4DDE00D33A1A /* OverlayView.xib */,
 				CE475F211A0CCEB500D33A1A /* NewBook.h */,
 				CE475F221A0CCEB500D33A1A /* NewBook.m */,
 				CE475F231A0CCEB500D33A1A /* NewBook.xib */,
@@ -486,6 +494,9 @@
 				CE475F4C1A0D336C00D33A1A /* NewReceita.h */,
 				CE475F4D1A0D336C00D33A1A /* NewReceita.m */,
 				CE475F4E1A0D336C00D33A1A /* NewReceita.xib */,
+				CE475F591A0D3DF300D33A1A /* HeaderNewReceita.h */,
+				CE475F5A1A0D3DF300D33A1A /* HeaderNewReceita.m */,
+				CE475F5B1A0D3DF300D33A1A /* HeaderNewReceita.xib */,
 			);
 			name = NewReceita;
 			sourceTree = "<group>";
@@ -642,12 +653,14 @@
 				BAF955731A0A9D6900277B94 /* btnsearch@3x.png in Resources */,
 				BAF9555D1A0A9D6900277B94 /* btnbook1@3x.png in Resources */,
 				BAF955681A0A9D6900277B94 /* btnedit1@2x.png in Resources */,
+				CE475F5F1A0D4DDE00D33A1A /* OverlayView.xib in Resources */,
 				BAF955761A0A9D6900277B94 /* btnsetting2@2x.png in Resources */,
 				BAF955611A0A9D6900277B94 /* btncall1@3x.png in Resources */,
 				BAF9557B1A0A9D6900277B94 /* btnshop2@3x.png in Resources */,
 				CE475F251A0CCEB500D33A1A /* NewBook.xib in Resources */,
 				BAF9556E1A0A9D6900277B94 /* btnfeatured2@2x.png in Resources */,
 				BAF955701A0A9D6900277B94 /* btnmosaic@2x.png in Resources */,
+				CE475F5D1A0D3DF300D33A1A /* HeaderNewReceita.xib in Resources */,
 				BAF9555F1A0A9D6900277B94 /* btnbook2@3x.png in Resources */,
 				CE475F501A0D336C00D33A1A /* NewReceita.xib in Resources */,
 				BAF66E291A0B7DA900E90B7D /* imgbckhome@3x.png in Resources */,
@@ -703,6 +716,7 @@
 				CE3AE1711A0BC9BB006C4B2E /* ReceitasController.m in Sources */,
 				BAF9550B1A0A4B2C00277B94 /* LivroCellTableViewCell.m in Sources */,
 				BAF76B4F1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.m in Sources */,
+				CE475F5C1A0D3DF300D33A1A /* HeaderNewReceita.m in Sources */,
 				CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */,
 				CE475F4F1A0D336C00D33A1A /* NewReceita.m in Sources */,
 				CE4660391A0BC77600ED496C /* Receita.m in Sources */,
