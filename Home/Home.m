@@ -45,7 +45,7 @@
     self.root.view.backgroundColor = [UIColor clearColor];
     
     /* bt search*/
-    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 20, 40)];
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
     [button addTarget:self action:@selector(receita:) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btnsearch"] forState:UIControlStateNormal];
     
