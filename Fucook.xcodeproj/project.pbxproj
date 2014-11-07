@@ -72,6 +72,8 @@
 		CE3AE1761A0BEEAC006C4B2E /* btleft3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3AE1741A0BEEAC006C4B2E /* btleft3@3x.png */; };
 		CE4660391A0BC77600ED496C /* Receita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4660371A0BC77600ED496C /* Receita.m */; };
 		CE46603A1A0BC77600ED496C /* Receita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4660381A0BC77600ED496C /* Receita.xib */; };
+		CE475F241A0CCEB500D33A1A /* NewBook.m in Sources */ = {isa = PBXBuildFile; fileRef = CE475F221A0CCEB500D33A1A /* NewBook.m */; };
+		CE475F251A0CCEB500D33A1A /* NewBook.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE475F231A0CCEB500D33A1A /* NewBook.xib */; };
 		CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983F61A0A90B7009EC1A4 /* TGLExposedLayout.m */; };
 		CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983F81A0A90B7009EC1A4 /* TGLStackedLayout.m */; };
 		CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983FA1A0A90B7009EC1A4 /* TGLStackedViewController.m */; };
@@ -175,6 +177,9 @@
 		CE4660361A0BC77600ED496C /* Receita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receita.h; sourceTree = "<group>"; };
 		CE4660371A0BC77600ED496C /* Receita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receita.m; sourceTree = "<group>"; };
 		CE4660381A0BC77600ED496C /* Receita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Receita.xib; sourceTree = "<group>"; };
+		CE475F211A0CCEB500D33A1A /* NewBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewBook.h; path = NewBook/NewBook.h; sourceTree = "<group>"; };
+		CE475F221A0CCEB500D33A1A /* NewBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewBook.m; path = NewBook/NewBook.m; sourceTree = "<group>"; };
+		CE475F231A0CCEB500D33A1A /* NewBook.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewBook.xib; path = NewBook/NewBook.xib; sourceTree = "<group>"; };
 		CE4983F51A0A90B7009EC1A4 /* TGLExposedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLExposedLayout.h; sourceTree = "<group>"; };
 		CE4983F61A0A90B7009EC1A4 /* TGLExposedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLExposedLayout.m; sourceTree = "<group>"; };
 		CE4983F71A0A90B7009EC1A4 /* TGLStackedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLStackedLayout.h; sourceTree = "<group>"; };
@@ -227,6 +232,7 @@
 		BAC6394B1A07ED420049E3BD /* Fucook */ = {
 			isa = PBXGroup;
 			children = (
+				CE475F201A0CCE9200D33A1A /* NewBook */,
 				CE4984111A0AA3E7009EC1A4 /* Receita */,
 				CE49840B1A0A9188009EC1A4 /* HeaderReceita */,
 				CE4983F41A0A90B7009EC1A4 /* TGLStackedViewController */,
@@ -393,6 +399,16 @@
 			name = Imagens;
 			sourceTree = "<group>";
 		};
+		CE475F201A0CCE9200D33A1A /* NewBook */ = {
+			isa = PBXGroup;
+			children = (
+				CE475F211A0CCEB500D33A1A /* NewBook.h */,
+				CE475F221A0CCEB500D33A1A /* NewBook.m */,
+				CE475F231A0CCEB500D33A1A /* NewBook.xib */,
+			);
+			name = NewBook;
+			sourceTree = "<group>";
+		};
 		CE4983F41A0A90B7009EC1A4 /* TGLStackedViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +560,7 @@
 				BAF955761A0A9D6900277B94 /* btnsetting2@2x.png in Resources */,
 				BAF955611A0A9D6900277B94 /* btncall1@3x.png in Resources */,
 				BAF9557B1A0A9D6900277B94 /* btnshop2@3x.png in Resources */,
+				CE475F251A0CCEB500D33A1A /* NewBook.xib in Resources */,
 				BAF9556E1A0A9D6900277B94 /* btnfeatured2@2x.png in Resources */,
 				BAF955701A0A9D6900277B94 /* btnmosaic@2x.png in Resources */,
 				BAF9555F1A0A9D6900277B94 /* btnbook2@3x.png in Resources */,
@@ -591,6 +608,7 @@
 				BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */,
 				BAF76B491A0CCE6B00D2CC13 /* CollectionLivros.m in Sources */,
 				CE49840F1A0A9188009EC1A4 /* HeaderReceita.m in Sources */,
+				CE475F241A0CCEB500D33A1A /* NewBook.m in Sources */,
 				CE3AE1711A0BC9BB006C4B2E /* ReceitasController.m in Sources */,
 				BAF9550B1A0A4B2C00277B94 /* LivroCellTableViewCell.m in Sources */,
 				BAF76B4F1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.m in Sources */,
