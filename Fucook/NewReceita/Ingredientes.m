@@ -1,18 +1,19 @@
 //
-//  FooterNewReceita.m
+//  Ingredientes.m
 //  Fucook
 //
 //  Created by Rundlr on 10/11/14.
 //  Copyright (c) 2014 Hugo Costa. All rights reserved.
 //
 
-#import "FooterNewReceita.h"
+#import "Ingredientes.h"
+#import "NewIngrediente.h"
 
-@interface FooterNewReceita ()
+@interface Ingredientes ()
 
 @end
 
-@implementation FooterNewReceita
+@implementation Ingredientes
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,9 +35,10 @@
 }
 */
 
-- (IBAction)btNewNotes:(id)sender {
-    if(self.delegatef){
-        [self.delegatef performSelector:@selector(novoNote) withObject:nil];
+- (IBAction)btnewIng:(id)sender {
+    NSLog(@"Clicou add");
+    if(self.delegate){
+        [self.delegate performSelector:@selector(novoIng) withObject:nil];
     }
 }
 @end

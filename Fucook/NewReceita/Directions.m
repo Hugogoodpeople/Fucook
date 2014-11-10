@@ -1,18 +1,18 @@
 //
-//  FooterNewReceita.m
+//  Directions.m
 //  Fucook
 //
 //  Created by Rundlr on 10/11/14.
 //  Copyright (c) 2014 Hugo Costa. All rights reserved.
 //
 
-#import "FooterNewReceita.h"
+#import "Directions.h"
 
-@interface FooterNewReceita ()
+@interface Directions ()
 
 @end
 
-@implementation FooterNewReceita
+@implementation Directions
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,9 +34,9 @@
 }
 */
 
-- (IBAction)btNewNotes:(id)sender {
-    if(self.delegatef){
-        [self.delegatef performSelector:@selector(novoNote) withObject:nil];
+- (IBAction)btNewDirection:(id)sender {
+    if(self.delegate){
+        [self.delegate performSelector:@selector(novoDir) withObject:nil];
     }
 }
 @end

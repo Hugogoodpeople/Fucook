@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FooterNewReceita : UIViewController
+@property (nonatomic,assign) id delegatef;
+- (IBAction)btNewNotes:(id)sender;
 
 @end

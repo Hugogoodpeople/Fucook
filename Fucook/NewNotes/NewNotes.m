@@ -1,18 +1,18 @@
 //
-//  FooterNewReceita.m
+//  NewNotes.m
 //  Fucook
 //
 //  Created by Rundlr on 10/11/14.
 //  Copyright (c) 2014 Hugo Costa. All rights reserved.
 //
 
-#import "FooterNewReceita.h"
+#import "NewNotes.h"
 
-@interface FooterNewReceita ()
+@interface NewNotes ()
 
 @end
 
-@implementation FooterNewReceita
+@implementation NewNotes
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,9 +34,4 @@
 }
 */
 
-- (IBAction)btNewNotes:(id)sender {
-    if(self.delegatef){
-        [self.delegatef performSelector:@selector(novoNote) withObject:nil];
-    }
-}
 @end

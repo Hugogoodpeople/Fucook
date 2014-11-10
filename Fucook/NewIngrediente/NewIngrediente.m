@@ -1,22 +1,24 @@
 //
-//  FooterNewReceita.m
+//  NewIngrediente.m
 //  Fucook
 //
 //  Created by Rundlr on 10/11/14.
 //  Copyright (c) 2014 Hugo Costa. All rights reserved.
 //
 
-#import "FooterNewReceita.h"
+#import "NewIngrediente.h"
 
-@interface FooterNewReceita ()
+@interface NewIngrediente ()
 
 @end
 
-@implementation FooterNewReceita
+@implementation NewIngrediente
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.automaticallyAdjustsScrollViewInsets = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,9 +36,4 @@
 }
 */
 
-- (IBAction)btNewNotes:(id)sender {
-    if(self.delegatef){
-        [self.delegatef performSelector:@selector(novoNote) withObject:nil];
-    }
-}
 @end

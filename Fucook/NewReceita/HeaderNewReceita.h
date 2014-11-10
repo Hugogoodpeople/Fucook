@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HeaderNewReceita : UIViewController
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@interface HeaderNewReceita : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic,assign) id delegate;
+- (IBAction)btFoto:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
