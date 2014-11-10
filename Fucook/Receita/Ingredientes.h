@@ -1,5 +1,5 @@
 //
-//  ReceitaController.h
+//  Receitas.h
 //  Fucook
 //
 //  Created by Hugo Costa on 10/11/14.
@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReceitaController : UIViewController
-
-
-
+@interface Ingredientes : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tabela;
 
 @end

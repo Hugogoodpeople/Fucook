@@ -1,5 +1,5 @@
 //
-//  ReceitaController.h
+//  HeaderIngrediente.h
 //  Fucook
 //
 //  Created by Hugo Costa on 10/11/14.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReceitaController : UIViewController
-
-
-
+@interface HeaderIngrediente : UIViewController
 
 @end

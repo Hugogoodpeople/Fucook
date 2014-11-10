@@ -31,7 +31,7 @@
         [self addSubview:_coloredView];
         */
         
-        CGRect frame = CGRectMake(-50, -10, 120, 44);
+        CGRect frame = CGRectMake(-50, -5, 120, 44);
         UILabel *label5 = [[UILabel alloc] initWithFrame:frame] ;
         label5.backgroundColor = [UIColor clearColor];
         label5.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20];
@@ -40,15 +40,13 @@
         label5.numberOfLines = 2;
         label5.minimumFontSize = 5.0;
         label5.textColor = [UIColor colorWithRed:101.0/255.0 green:112.0/255.0 blue:122.0/255.0 alpha:1];
-        label5.text = @"nome";
+        label5.text = self.titulo;
         
         _label = label5;
         
-
         [self addSubview:label5];
-        
     }
-
+    
     return _label;
 }
     
@@ -58,7 +56,7 @@
 {
     self.coloredView.alpha = 1;
     self.label.alpha = ratio+0.5;
-    [self.label setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:20* (ratio + 0.5 )]];
+    [self.label setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:20* (ratio/2 + 0.5 )]];
     
     if (ratio == 1) {
         self.label.textColor = [UIColor colorWithRed:152.0/255.0 green:55.0/255.0 blue:150.0/255.0 alpha:1];

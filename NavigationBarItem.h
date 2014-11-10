@@ -11,6 +11,8 @@
 
 @interface NavigationBarItem : UIView <THTinderNavigationBarItem>
 
+@property NSString * titulo;
+
 @end
 
 // Copyright belongs to original author

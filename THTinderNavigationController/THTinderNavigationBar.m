@@ -32,6 +32,8 @@
         return;
     }
     
+    
+    
     [self.itemViews enumerateObjectsUsingBlock:^(UIView<THTinderNavigationBarItem> *itemView, NSUInteger idx, BOOL *stop) {
         
         //dyanmically get the width with 15px side margins
