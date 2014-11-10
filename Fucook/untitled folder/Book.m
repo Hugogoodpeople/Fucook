@@ -9,7 +9,7 @@
 #import "Book.h"
 #import "DragableTableReceitas.h"
 #import "LivroCellTableViewCell.h"
-#import "NewReceita.h"
+#import "ReceitaController.h"
 
 @interface Book ()
 
@@ -35,19 +35,13 @@
     
 }
 
--(IBAction)addreceita:(id)sender {
-    NSLog(@"clicou add");
-    
-    NewReceita *objYourViewController = [[NewReceita alloc] initWithNibName:@"NewReceita" bundle:nil];
-    [self.navigationController pushViewController:objYourViewController animated:YES];
-}
 
 
-- (void)didReceiveMemoryWarning {
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    
-    
 }
 
 -(void)setUp
@@ -67,6 +61,16 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [[UIScreen mainScreen] bounds].size.width ;
+}
+
+//ReceitaController
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"selected %ld", (long)indexPath.row);
+    [self.navigationController pushViewController:[ReceitaController new] animated:YES];
+    //[self.navigationController presentViewController:[ReceitaController new] animated:YES completion:^{}];
 }
 
 

@@ -32,6 +32,8 @@
         return;
     }
     
+    
+    
     [self.itemViews enumerateObjectsUsingBlock:^(UIView<THTinderNavigationBarItem> *itemView, NSUInteger idx, BOOL *stop) {
         
         //dyanmically get the width with 15px side margins
@@ -43,7 +45,15 @@
         } else if (idx == 2){
             //add right margin to the last idx
             step -= 15;
+        }else if (idx == 3){
+            //add right margin to the last idx
+            step -= 30;
         }
+        else if (idx == 4){
+            //add right margin to the last idx
+            step -= 45;
+        }
+
         
         CGRect itemViewFrame = CGRectMake(step, Y_POSITION, IMAGESIZE, IMAGESIZE);
         itemView.hidden = NO;
@@ -83,7 +93,15 @@
         } else if (idx == 2){
             //add right margin to the last idx
             step -= 15;
+        }else if (idx == 3){
+            //add right margin to the last idx
+            step -= 30;
         }
+        else if (idx == 4){
+            //add right margin to the last idx
+            step -= 45;
+        }
+
         
         CGRect itemViewFrame = itemView.frame;
         itemViewFrame.origin.x = step - (xOffset - normalWidth) / SPEED;

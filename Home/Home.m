@@ -8,7 +8,7 @@
 
 #import "Home.h"
 #import "RootViewController.h"
-#import "Receita.h"
+
 #import "CollectionLivros.h"
 #import "NewBook.h"
 #import "Settings.h"
@@ -155,11 +155,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)receita:(id)sender {
-    NSLog(@"clicou pesquisa");
-    Receita *objYourViewController = [[Receita alloc] initWithNibName:@"Receita" bundle:nil];
-    [self.navigationController pushViewController:objYourViewController animated:YES];
-}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

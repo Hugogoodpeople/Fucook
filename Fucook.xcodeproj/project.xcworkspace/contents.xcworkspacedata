@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
-      location = "self:Fucook.xcodeproj">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "Ignore">
+      <FileRef
+         location = "self:Fucook.xcodeproj">
+      </FileRef>
+   </Group>
 </Workspace>
