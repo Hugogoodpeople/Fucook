@@ -14,5 +14,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelTempo;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitulo;
 @property (weak, nonatomic) IBOutlet UIImageView *imageCapa;
+@property (weak, nonatomic) IBOutlet UILabel *labelPagina;
+
+- (IBAction)clickEdit:(id)sender;
+- (IBAction)clickCalendario:(id)sender;
+- (IBAction)clickCarrinho:(id)sender;
 
 @end
