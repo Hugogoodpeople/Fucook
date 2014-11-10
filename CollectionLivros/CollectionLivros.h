@@ -10,4 +10,6 @@
 
 @interface CollectionLivros : UICollectionViewController
 
+@property (nonatomic, assign) id delegate;
+
 @end

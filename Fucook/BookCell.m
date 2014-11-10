@@ -103,10 +103,11 @@
 // tenho de fazer uma verificaçao para os diferentes tamanhos de ecra
 -(void)setupViewMovel
 {
-    
-    UIColor *color = [UIColor colorWithRed:53.0/255.0 green:54.0/255.0 blue:58.0/255.0 alpha:1];
+    // para as sombras
     
     /*
+    UIColor *color = [UIColor colorWithRed:53.0/255.0 green:54.0/255.0 blue:58.0/255.0 alpha:1];
+    
     self.labelTitulo.layer.shadowColor = [color CGColor];
     self.labelTitulo.layer.shadowRadius = 4.0f;
     self.labelTitulo.layer.shadowOpacity = .9;
@@ -120,12 +121,20 @@
     self.labelTempo.layer.masksToBounds = NO;
     
     
-    */
+ 
+     self.viewMovel.layer.shadowColor = [color CGColor];
+     self.viewMovel.layer.shadowRadius = 1.5f;
+     self.viewMovel.layer.shadowOpacity = .1;
+     self.viewMovel.layer.shadowOffset = CGSizeMake(5, 5);
+     self.viewMovel.layer.masksToBounds = NO;
+     
+     
+     //self.ViewMovel.transform = CGAffineTransformMakeRotation(0.01f);
+     
+     self.viewMovel.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.viewMovel.bounds].CGPath;
+     */
+
     
-    
-    
-    
-    // imgsample001.jpg
     
     [self.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
     
@@ -136,21 +145,17 @@
     [self.viewMovel.layer setMask:_maskingLayer];
     
     
-    /*
-    self.viewMovel.layer.shadowColor = [color CGColor];
-    self.viewMovel.layer.shadowRadius = 1.5f;
-    self.viewMovel.layer.shadowOpacity = .1;
-    self.viewMovel.layer.shadowOffset = CGSizeMake(5, 5);
-    self.viewMovel.layer.masksToBounds = NO;
-    
-    
-    //self.ViewMovel.transform = CGAffineTransformMakeRotation(0.01f);
-    
-    self.viewMovel.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.viewMovel.bounds].CGPath;
-     */
     
 }
 
 
 
+- (IBAction)clickEdit:(id)sender {
+}
+
+- (IBAction)clickCalendario:(id)sender {
+}
+
+- (IBAction)clickCarrinho:(id)sender {
+}
 @end

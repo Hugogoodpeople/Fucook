@@ -114,6 +114,7 @@
     
     
     
+    cell.labelPagina.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
     
     
     [cell setSelected:YES];

@@ -9,6 +9,7 @@
 #import "CollectionLivros.h"
 #import "CollectionLivroCellCollectionViewCell.h"
 
+
 @interface CollectionLivros ()
 
 @end
@@ -69,10 +70,31 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
     
     CollectionLivroCellCollectionViewCell *cell = (CollectionLivroCellCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
+    
     return cell;
 }
 
 #pragma mark <UICollectionViewDelegate>
+
+// para quando é descelecionado
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"deDelected %ld", (long)indexPath.row);
+    if (self.delegate) {
+//        [self.delegate performSelector:@selector(abrirLivro) withObject:nil];
+    }
+}
+
+// para quando é selecionado
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"selected %ld", (long)indexPath.row);
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(abrirLivro) withObject:nil];
+    }
+}
+
+
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

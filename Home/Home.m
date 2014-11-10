@@ -85,6 +85,7 @@
     [aFlowLayout setMinimumLineSpacing:0];
     self.mos = [[CollectionLivros alloc]initWithCollectionViewLayout:aFlowLayout];
     [self.mos.collectionView setBackgroundColor:[UIColor clearColor]];
+    self.mos.delegate = self;
     
     
     [self.mos.view setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height )];
@@ -97,6 +98,11 @@
     [self.yoolbar setBackgroundImage:[UIImage new] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     self.yoolbar.clipsToBounds = YES;
     
+}
+
+-(void)abrirLivro
+{
+    [self.navigationController pushViewController:[Book new] animated:YES];
 }
 
 -(void)togleViews
