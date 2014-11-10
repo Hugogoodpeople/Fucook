@@ -7,8 +7,12 @@
 //
 
 #import "NewReceita.h"
+#import "HeaderNewReceita.h"
 
-@interface NewReceita ()
+@interface NewReceita (){
+    HeaderNewReceita * headerFinal;
+
+}
 
 @end
 
@@ -16,6 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    headerFinal = [HeaderNewReceita alloc];
+    [headerFinal.view setFrame:CGRectMake(0, 40, headerFinal.view.frame.size.width, headerFinal.view.frame.size.height )];
+    //headerHeight = headerFinal.view.frame.size.height;
+    headerFinal.delegate = self;
+    [self.view addSubview: headerFinal.view];
+    
+    [self.scrollViewReceita setContentSize:CGSizeMake(self.view.frame.size.width, self.view.frame.size.height)];
+
     // Do any additional setup after loading the view from its nib.
 }
 

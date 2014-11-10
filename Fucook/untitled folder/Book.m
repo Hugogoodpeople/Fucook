@@ -9,7 +9,7 @@
 #import "Book.h"
 #import "DragableTableReceitas.h"
 #import "LivroCellTableViewCell.h"
-#import "HeaderNewReceita.h"
+#import "NewReceita.h"
 
 @interface Book ()
 
@@ -38,7 +38,7 @@
 -(IBAction)addreceita:(id)sender {
     NSLog(@"clicou add");
     
-    HeaderNewReceita *objYourViewController = [[HeaderNewReceita alloc] initWithNibName:@"HeaderNewReceita" bundle:nil];
+    NewReceita *objYourViewController = [[NewReceita alloc] initWithNibName:@"NewReceita" bundle:nil];
     [self.navigationController pushViewController:objYourViewController animated:YES];
 }
 

@@ -10,5 +10,6 @@
 
 @interface HeaderNewReceita : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic,assign) id delegate;
 
 @end

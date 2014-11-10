@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface NewReceita : UIViewController
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewReceita;
+
 
 @end
