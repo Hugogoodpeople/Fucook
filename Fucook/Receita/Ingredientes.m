@@ -12,9 +12,14 @@
 
 @interface Ingredientes ()
 
+@property HeaderIngrediente * header;
+@property BOOL servingsOpen;
+
 @end
 
 @implementation Ingredientes
+
+@synthesize header;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,7 +34,8 @@
 
 -(void)setUp
 {
-    HeaderIngrediente * header = [HeaderIngrediente new];
+    header = [HeaderIngrediente new];
+    header.delegate = self;
     
     self.tabela.tableHeaderView = header.view;
 }
@@ -81,5 +87,24 @@
     return cell;
 
 }
+
+
+-(void)callCart
+{
+    NSLog(@"abrir cart");
+}
+
+-(void)callPikerServings
+{
+    NSLog(@"abrir fechar picker servings");
+    
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.tabela.tableHeaderView = header.view;
+    }];
+    
+    
+}
+
 
 @end

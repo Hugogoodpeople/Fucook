@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HeaderIngrediente : UIViewController
+@interface HeaderIngrediente : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+
+@property (nonatomic , assign) id delegate;
+- (IBAction)clickCart:(id)sender;
+- (IBAction)clckServings:(id)sender;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerServings;
+
+@property (weak, nonatomic) IBOutlet UILabel *labelNumberServings;
+
+- (IBAction)DoneServings:(id)sender;
 
 @end

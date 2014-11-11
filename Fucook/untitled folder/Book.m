@@ -9,15 +9,12 @@
 #import "Book.h"
 #import "DragableTableReceitas.h"
 #import "LivroCellTableViewCell.h"
-<<<<<<< HEAD
 //#import "ReceitaController.h"
 #import "THTinderNavigationController.h"
 #import "Ingredientes.h"
 #import "NavigationBarItem.h"
-=======
-#import "ReceitaController.h"
 #import "NewReceita.h"
->>>>>>> FETCH_HEAD
+
 
 @interface Book ()
 
