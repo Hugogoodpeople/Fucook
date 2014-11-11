@@ -9,7 +9,7 @@
 #import "NewReceita.h"
 #import "HeaderNewReceita.h"
 #import "FooterNewReceita.h"
-#import "NIngredientes.h"
+#import "Ingredientes.h"
 #import "Directions.h"
 #import "NewIngrediente.h"
 #import "NewNotes.h"
@@ -17,7 +17,7 @@
 
 @interface NewReceita (){
     HeaderNewReceita * headerFinal;
-    NIngredientes * ingre;
+    Ingredientes * ingre;
     Directions * dir;
     FooterNewReceita * footerFinal;
 }
@@ -35,7 +35,7 @@
     headerFinal.delegate = self;
     [self.scrollNewReceita addSubview: headerFinal.view];
     
-    ingre = [NIngredientes alloc];
+    ingre = [Ingredientes alloc];
     [ingre.view setFrame:CGRectMake(0,  headerFinal.view.frame.size.height , ingre.view.frame.size.width, ingre.view.frame.size.height )];
     //headerHeight = headerFinal.view.frame.size.height;
     ingre.delegate = self;

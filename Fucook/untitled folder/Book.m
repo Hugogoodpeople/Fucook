@@ -10,6 +10,7 @@
 #import "DragableTableReceitas.h"
 #import "LivroCellTableViewCell.h"
 #import "ReceitaController.h"
+#import "NewReceita.h"
 
 @interface Book ()
 
@@ -35,6 +36,12 @@
     
 }
 
+-(IBAction)addreceita:(id)sender {
+    NSLog(@"clicou add");
+    
+    NewReceita *objYourViewController = [NewReceita new];
+    [self.navigationController pushViewController:objYourViewController animated:YES];
+}
 
 
 

@@ -84,27 +84,10 @@
 		BAF9557A1A0A9D6900277B94 /* btnshop2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF955571A0A9D6900277B94 /* btnshop2@2x.png */; };
 		BAF9557B1A0A9D6900277B94 /* btnshop2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF955581A0A9D6900277B94 /* btnshop2@3x.png */; };
 		BAF9557C1A0A9D6900277B94 /* imgsample001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAF955591A0A9D6900277B94 /* imgsample001.jpg */; };
-		CE253F991A10B9C7003DA45C /* HeaderNewReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE253F941A10B9C7003DA45C /* HeaderNewReceita.m */; };
-		CE253F9A1A10B9C7003DA45C /* HeaderNewReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE253F951A10B9C7003DA45C /* HeaderNewReceita.xib */; };
-		CE253F9B1A10B9C7003DA45C /* NewReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE253F971A10B9C7003DA45C /* NewReceita.m */; };
-		CE253F9C1A10B9C7003DA45C /* NewReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE253F981A10B9C7003DA45C /* NewReceita.xib */; };
 		CE253FA11A10BB27003DA45C /* btnphoto1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE253F9D1A10BB27003DA45C /* btnphoto1@2x.png */; };
 		CE253FA21A10BB27003DA45C /* btnphoto1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE253F9E1A10BB27003DA45C /* btnphoto1@3x.png */; };
 		CE253FA31A10BB27003DA45C /* btnphoto2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE253F9F1A10BB27003DA45C /* btnphoto2@2x.png */; };
 		CE253FA41A10BB27003DA45C /* btnphoto2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE253FA01A10BB27003DA45C /* btnphoto2@3x.png */; };
-		CE253FA81A10C290003DA45C /* FooterNewReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE253FA61A10C290003DA45C /* FooterNewReceita.m */; };
-		CE253FA91A10C290003DA45C /* FooterNewReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE253FA71A10C290003DA45C /* FooterNewReceita.xib */; };
-<<<<<<< HEAD
-		CE253FAF1A10ED26003DA45C /* Ingredientes.m in Sources */ = {isa = PBXBuildFile; fileRef = CE253FAD1A10ED26003DA45C /* Ingredientes.m */; };
-		CE253FB01A10ED26003DA45C /* Ingredientes.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE253FAE1A10ED26003DA45C /* Ingredientes.xib */; };
-		CE253FB41A10EEE5003DA45C /* Directions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE253FB21A10EEE5003DA45C /* Directions.m */; };
-		CE253FB51A10EEE5003DA45C /* Directions.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE253FB31A10EEE5003DA45C /* Directions.xib */; };
-		CE3AE16F1A0BC9BB006C4B2E /* ReceitasCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3AE16A1A0BC9BB006C4B2E /* ReceitasCell.m */; };
-		CE3AE1701A0BC9BB006C4B2E /* ReceitasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3AE16B1A0BC9BB006C4B2E /* ReceitasCell.xib */; };
-		CE3AE1711A0BC9BB006C4B2E /* ReceitasController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3AE16D1A0BC9BB006C4B2E /* ReceitasController.m */; };
-		CE3AE1721A0BC9BB006C4B2E /* ReceitasController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3AE16E1A0BC9BB006C4B2E /* ReceitasController.xib */; };
-=======
->>>>>>> FETCH_HEAD
 		CE3AE1751A0BEEAC006C4B2E /* btleft3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3AE1731A0BEEAC006C4B2E /* btleft3@2x.png */; };
 		CE3AE1761A0BEEAC006C4B2E /* btleft3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3AE1741A0BEEAC006C4B2E /* btleft3@3x.png */; };
 		CE475F241A0CCEB500D33A1A /* NewBook.m in Sources */ = {isa = PBXBuildFile; fileRef = CE475F221A0CCEB500D33A1A /* NewBook.m */; };
@@ -114,12 +97,23 @@
 		CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983FA1A0A90B7009EC1A4 /* TGLStackedViewController.m */; };
 		CE49840F1A0A9188009EC1A4 /* HeaderReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE49840D1A0A9188009EC1A4 /* HeaderReceita.m */; };
 		CE4984101A0A9188009EC1A4 /* HeaderReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE49840E1A0A9188009EC1A4 /* HeaderReceita.xib */; };
-		CEDC62CB1A11131100F06FDC /* NewIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC62C91A11131100F06FDC /* NewIngrediente.m */; };
-		CEDC62CC1A11131100F06FDC /* NewIngrediente.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDC62CA1A11131100F06FDC /* NewIngrediente.xib */; };
-		CEDC62D01A112D1400F06FDC /* NewNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC62CE1A112D1400F06FDC /* NewNotes.m */; };
-		CEDC62D11A112D1400F06FDC /* NewNotes.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDC62CF1A112D1400F06FDC /* NewNotes.xib */; };
-		CEDC62D71A112D4900F06FDC /* NewDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC62D51A112D4900F06FDC /* NewDirections.m */; };
-		CEDC62D81A112D4900F06FDC /* NewDirections.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDC62D61A112D4900F06FDC /* NewDirections.xib */; };
+		CE7863E21A1209C000D16C26 /* NIngredientes.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7863E01A1209C000D16C26 /* NIngredientes.m */; };
+		CE7863E31A1209C000D16C26 /* NIngredientes.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7863E11A1209C000D16C26 /* NIngredientes.xib */; };
+		CEDC62DF1A11390B00F06FDC /* NewIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC62DD1A11390B00F06FDC /* NewIngrediente.m */; };
+		CEDC62E01A11390B00F06FDC /* NewIngrediente.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDC62DE1A11390B00F06FDC /* NewIngrediente.xib */; };
+		CEDC62E41A11391700F06FDC /* NewDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC62E21A11391700F06FDC /* NewDirections.m */; };
+		CEDC62E51A11391700F06FDC /* NewDirections.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDC62E31A11391700F06FDC /* NewDirections.xib */; };
+		CEDC62E91A11391F00F06FDC /* NewNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC62E71A11391F00F06FDC /* NewNotes.m */; };
+		CEDC62EA1A11391F00F06FDC /* NewNotes.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDC62E81A11391F00F06FDC /* NewNotes.xib */; };
+		CEDC63131A1139E800F06FDC /* Directions.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC63051A1139E800F06FDC /* Directions.m */; };
+		CEDC63141A1139E800F06FDC /* Directions.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDC63061A1139E800F06FDC /* Directions.xib */; };
+		CEDC63151A1139E800F06FDC /* FooterNewReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC63081A1139E800F06FDC /* FooterNewReceita.m */; };
+		CEDC63161A1139E800F06FDC /* FooterNewReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDC63091A1139E800F06FDC /* FooterNewReceita.xib */; };
+		CEDC63171A1139E800F06FDC /* HeaderNewReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC630B1A1139E800F06FDC /* HeaderNewReceita.m */; };
+		CEDC63181A1139E800F06FDC /* HeaderNewReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDC630C1A1139E800F06FDC /* HeaderNewReceita.xib */; };
+		CEDC631B1A1139E800F06FDC /* NewReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC63111A1139E800F06FDC /* NewReceita.m */; };
+		CEDC631C1A1139E800F06FDC /* NewReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDC63121A1139E800F06FDC /* NewReceita.xib */; };
+		CEDC631E1A113A0100F06FDC /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDC631D1A113A0100F06FDC /* OverlayView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,34 +231,10 @@
 		BAF955571A0A9D6900277B94 /* btnshop2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnshop2@2x.png"; path = "imgs/btnshop2@2x.png"; sourceTree = "<group>"; };
 		BAF955581A0A9D6900277B94 /* btnshop2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnshop2@3x.png"; path = "imgs/btnshop2@3x.png"; sourceTree = "<group>"; };
 		BAF955591A0A9D6900277B94 /* imgsample001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imgsample001.jpg; path = imgs/imgsample001.jpg; sourceTree = "<group>"; };
-		CE253F931A10B9C7003DA45C /* HeaderNewReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderNewReceita.h; path = Fucook/NewReceita/HeaderNewReceita.h; sourceTree = "<group>"; };
-		CE253F941A10B9C7003DA45C /* HeaderNewReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderNewReceita.m; path = Fucook/NewReceita/HeaderNewReceita.m; sourceTree = "<group>"; };
-		CE253F951A10B9C7003DA45C /* HeaderNewReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderNewReceita.xib; path = Fucook/NewReceita/HeaderNewReceita.xib; sourceTree = "<group>"; };
-		CE253F961A10B9C7003DA45C /* NewReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewReceita.h; path = Fucook/NewReceita/NewReceita.h; sourceTree = "<group>"; };
-		CE253F971A10B9C7003DA45C /* NewReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewReceita.m; path = Fucook/NewReceita/NewReceita.m; sourceTree = "<group>"; };
-		CE253F981A10B9C7003DA45C /* NewReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewReceita.xib; path = Fucook/NewReceita/NewReceita.xib; sourceTree = "<group>"; };
 		CE253F9D1A10BB27003DA45C /* btnphoto1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnphoto1@2x.png"; path = "Fucook/Imagens/btnphoto1@2x.png"; sourceTree = "<group>"; };
 		CE253F9E1A10BB27003DA45C /* btnphoto1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnphoto1@3x.png"; path = "Fucook/Imagens/btnphoto1@3x.png"; sourceTree = "<group>"; };
 		CE253F9F1A10BB27003DA45C /* btnphoto2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnphoto2@2x.png"; path = "Fucook/Imagens/btnphoto2@2x.png"; sourceTree = "<group>"; };
 		CE253FA01A10BB27003DA45C /* btnphoto2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnphoto2@3x.png"; path = "Fucook/Imagens/btnphoto2@3x.png"; sourceTree = "<group>"; };
-		CE253FA51A10C290003DA45C /* FooterNewReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FooterNewReceita.h; path = Fucook/NewReceita/FooterNewReceita.h; sourceTree = "<group>"; };
-		CE253FA61A10C290003DA45C /* FooterNewReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FooterNewReceita.m; path = Fucook/NewReceita/FooterNewReceita.m; sourceTree = "<group>"; };
-		CE253FA71A10C290003DA45C /* FooterNewReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FooterNewReceita.xib; path = Fucook/NewReceita/FooterNewReceita.xib; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		CE253FAC1A10ED26003DA45C /* Ingredientes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ingredientes.h; path = Fucook/NewReceita/Ingredientes.h; sourceTree = "<group>"; };
-		CE253FAD1A10ED26003DA45C /* Ingredientes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ingredientes.m; path = Fucook/NewReceita/Ingredientes.m; sourceTree = "<group>"; };
-		CE253FAE1A10ED26003DA45C /* Ingredientes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Ingredientes.xib; path = Fucook/NewReceita/Ingredientes.xib; sourceTree = "<group>"; };
-		CE253FB11A10EEE5003DA45C /* Directions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Directions.h; path = Fucook/NewReceita/Directions.h; sourceTree = "<group>"; };
-		CE253FB21A10EEE5003DA45C /* Directions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Directions.m; path = Fucook/NewReceita/Directions.m; sourceTree = "<group>"; };
-		CE253FB31A10EEE5003DA45C /* Directions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Directions.xib; path = Fucook/NewReceita/Directions.xib; sourceTree = "<group>"; };
-		CE3AE1691A0BC9BB006C4B2E /* ReceitasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReceitasCell.h; path = Receita/ReceitasCell.h; sourceTree = "<group>"; };
-		CE3AE16A1A0BC9BB006C4B2E /* ReceitasCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReceitasCell.m; path = Receita/ReceitasCell.m; sourceTree = "<group>"; };
-		CE3AE16B1A0BC9BB006C4B2E /* ReceitasCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReceitasCell.xib; path = Receita/ReceitasCell.xib; sourceTree = "<group>"; };
-		CE3AE16C1A0BC9BB006C4B2E /* ReceitasController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReceitasController.h; path = Receita/ReceitasController.h; sourceTree = "<group>"; };
-		CE3AE16D1A0BC9BB006C4B2E /* ReceitasController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReceitasController.m; path = Receita/ReceitasController.m; sourceTree = "<group>"; };
-		CE3AE16E1A0BC9BB006C4B2E /* ReceitasController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReceitasController.xib; path = Receita/ReceitasController.xib; sourceTree = "<group>"; };
-=======
->>>>>>> FETCH_HEAD
 		CE3AE1731A0BEEAC006C4B2E /* btleft3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft3@2x.png"; path = "Fucook/Imagens/btleft3@2x.png"; sourceTree = "<group>"; };
 		CE3AE1741A0BEEAC006C4B2E /* btleft3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft3@3x.png"; path = "Fucook/Imagens/btleft3@3x.png"; sourceTree = "<group>"; };
 		CE475F211A0CCEB500D33A1A /* NewBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewBook.h; path = NewBook/NewBook.h; sourceTree = "<group>"; };
@@ -279,15 +249,31 @@
 		CE49840C1A0A9188009EC1A4 /* HeaderReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderReceita.h; sourceTree = "<group>"; };
 		CE49840D1A0A9188009EC1A4 /* HeaderReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderReceita.m; sourceTree = "<group>"; };
 		CE49840E1A0A9188009EC1A4 /* HeaderReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderReceita.xib; sourceTree = "<group>"; };
-		CEDC62C81A11131100F06FDC /* NewIngrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewIngrediente.h; path = NewIngrediente/NewIngrediente.h; sourceTree = "<group>"; };
-		CEDC62C91A11131100F06FDC /* NewIngrediente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewIngrediente.m; path = NewIngrediente/NewIngrediente.m; sourceTree = "<group>"; };
-		CEDC62CA1A11131100F06FDC /* NewIngrediente.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewIngrediente.xib; path = NewIngrediente/NewIngrediente.xib; sourceTree = "<group>"; };
-		CEDC62CD1A112D1400F06FDC /* NewNotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewNotes.h; path = NewNotes/NewNotes.h; sourceTree = "<group>"; };
-		CEDC62CE1A112D1400F06FDC /* NewNotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewNotes.m; path = NewNotes/NewNotes.m; sourceTree = "<group>"; };
-		CEDC62CF1A112D1400F06FDC /* NewNotes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewNotes.xib; path = NewNotes/NewNotes.xib; sourceTree = "<group>"; };
-		CEDC62D41A112D4900F06FDC /* NewDirections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewDirections.h; path = NewDirections/NewDirections.h; sourceTree = "<group>"; };
-		CEDC62D51A112D4900F06FDC /* NewDirections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewDirections.m; path = NewDirections/NewDirections.m; sourceTree = "<group>"; };
-		CEDC62D61A112D4900F06FDC /* NewDirections.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewDirections.xib; path = NewDirections/NewDirections.xib; sourceTree = "<group>"; };
+		CE7863DF1A1209C000D16C26 /* NIngredientes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIngredientes.h; path = Fucook/NewReceita/NIngredientes.h; sourceTree = "<group>"; };
+		CE7863E01A1209C000D16C26 /* NIngredientes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIngredientes.m; path = Fucook/NewReceita/NIngredientes.m; sourceTree = "<group>"; };
+		CE7863E11A1209C000D16C26 /* NIngredientes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NIngredientes.xib; path = Fucook/NewReceita/NIngredientes.xib; sourceTree = "<group>"; };
+		CEDC62DC1A11390B00F06FDC /* NewIngrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewIngrediente.h; path = NewIngrediente/NewIngrediente.h; sourceTree = "<group>"; };
+		CEDC62DD1A11390B00F06FDC /* NewIngrediente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewIngrediente.m; path = NewIngrediente/NewIngrediente.m; sourceTree = "<group>"; };
+		CEDC62DE1A11390B00F06FDC /* NewIngrediente.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewIngrediente.xib; path = NewIngrediente/NewIngrediente.xib; sourceTree = "<group>"; };
+		CEDC62E11A11391700F06FDC /* NewDirections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewDirections.h; path = NewDirections/NewDirections.h; sourceTree = "<group>"; };
+		CEDC62E21A11391700F06FDC /* NewDirections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewDirections.m; path = NewDirections/NewDirections.m; sourceTree = "<group>"; };
+		CEDC62E31A11391700F06FDC /* NewDirections.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewDirections.xib; path = NewDirections/NewDirections.xib; sourceTree = "<group>"; };
+		CEDC62E61A11391F00F06FDC /* NewNotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewNotes.h; path = NewNotes/NewNotes.h; sourceTree = "<group>"; };
+		CEDC62E71A11391F00F06FDC /* NewNotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewNotes.m; path = NewNotes/NewNotes.m; sourceTree = "<group>"; };
+		CEDC62E81A11391F00F06FDC /* NewNotes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewNotes.xib; path = NewNotes/NewNotes.xib; sourceTree = "<group>"; };
+		CEDC63041A1139E800F06FDC /* Directions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Directions.h; path = Fucook/NewReceita/Directions.h; sourceTree = "<group>"; };
+		CEDC63051A1139E800F06FDC /* Directions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Directions.m; path = Fucook/NewReceita/Directions.m; sourceTree = "<group>"; };
+		CEDC63061A1139E800F06FDC /* Directions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Directions.xib; path = Fucook/NewReceita/Directions.xib; sourceTree = "<group>"; };
+		CEDC63071A1139E800F06FDC /* FooterNewReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FooterNewReceita.h; path = Fucook/NewReceita/FooterNewReceita.h; sourceTree = "<group>"; };
+		CEDC63081A1139E800F06FDC /* FooterNewReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FooterNewReceita.m; path = Fucook/NewReceita/FooterNewReceita.m; sourceTree = "<group>"; };
+		CEDC63091A1139E800F06FDC /* FooterNewReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FooterNewReceita.xib; path = Fucook/NewReceita/FooterNewReceita.xib; sourceTree = "<group>"; };
+		CEDC630A1A1139E800F06FDC /* HeaderNewReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderNewReceita.h; path = Fucook/NewReceita/HeaderNewReceita.h; sourceTree = "<group>"; };
+		CEDC630B1A1139E800F06FDC /* HeaderNewReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderNewReceita.m; path = Fucook/NewReceita/HeaderNewReceita.m; sourceTree = "<group>"; };
+		CEDC630C1A1139E800F06FDC /* HeaderNewReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderNewReceita.xib; path = Fucook/NewReceita/HeaderNewReceita.xib; sourceTree = "<group>"; };
+		CEDC63101A1139E800F06FDC /* NewReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewReceita.h; path = Fucook/NewReceita/NewReceita.h; sourceTree = "<group>"; };
+		CEDC63111A1139E800F06FDC /* NewReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewReceita.m; path = Fucook/NewReceita/NewReceita.m; sourceTree = "<group>"; };
+		CEDC63121A1139E800F06FDC /* NewReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewReceita.xib; path = Fucook/NewReceita/NewReceita.xib; sourceTree = "<group>"; };
+		CEDC631D1A113A0100F06FDC /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OverlayView.xib; path = NewBook/OverlayView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,9 +321,9 @@
 		BAC6394B1A07ED420049E3BD /* Fucook */ = {
 			isa = PBXGroup;
 			children = (
-				CEDC62D31A112D2A00F06FDC /* NewDirections */,
-				CEDC62D21A112D1D00F06FDC /* NewNotes */,
-				CEDC62C71A1112F000F06FDC /* NewIngrediente */,
+				CEDC62DB1A1138F200F06FDC /* NewDirections */,
+				CEDC62DA1A1138E300F06FDC /* NewNotes */,
+				CEDC62D91A1138D900F06FDC /* NewIngrediente */,
 				CE253F921A10B9A9003DA45C /* NewReceita */,
 				CE475F201A0CCE9200D33A1A /* NewBook */,
 				CE49840B1A0A9188009EC1A4 /* HeaderReceita */,
@@ -602,21 +588,21 @@
 		CE253F921A10B9A9003DA45C /* NewReceita */ = {
 			isa = PBXGroup;
 			children = (
-				CE253F931A10B9C7003DA45C /* HeaderNewReceita.h */,
-				CE253F941A10B9C7003DA45C /* HeaderNewReceita.m */,
-				CE253F951A10B9C7003DA45C /* HeaderNewReceita.xib */,
-				CE253F961A10B9C7003DA45C /* NewReceita.h */,
-				CE253F971A10B9C7003DA45C /* NewReceita.m */,
-				CE253F981A10B9C7003DA45C /* NewReceita.xib */,
-				CE253FA51A10C290003DA45C /* FooterNewReceita.h */,
-				CE253FA61A10C290003DA45C /* FooterNewReceita.m */,
-				CE253FA71A10C290003DA45C /* FooterNewReceita.xib */,
-				CE253FAC1A10ED26003DA45C /* Ingredientes.h */,
-				CE253FAD1A10ED26003DA45C /* Ingredientes.m */,
-				CE253FAE1A10ED26003DA45C /* Ingredientes.xib */,
-				CE253FB11A10EEE5003DA45C /* Directions.h */,
-				CE253FB21A10EEE5003DA45C /* Directions.m */,
-				CE253FB31A10EEE5003DA45C /* Directions.xib */,
+				CEDC63041A1139E800F06FDC /* Directions.h */,
+				CEDC63051A1139E800F06FDC /* Directions.m */,
+				CEDC63061A1139E800F06FDC /* Directions.xib */,
+				CEDC63071A1139E800F06FDC /* FooterNewReceita.h */,
+				CEDC63081A1139E800F06FDC /* FooterNewReceita.m */,
+				CEDC63091A1139E800F06FDC /* FooterNewReceita.xib */,
+				CEDC630A1A1139E800F06FDC /* HeaderNewReceita.h */,
+				CEDC630B1A1139E800F06FDC /* HeaderNewReceita.m */,
+				CEDC630C1A1139E800F06FDC /* HeaderNewReceita.xib */,
+				CEDC63101A1139E800F06FDC /* NewReceita.h */,
+				CEDC63111A1139E800F06FDC /* NewReceita.m */,
+				CEDC63121A1139E800F06FDC /* NewReceita.xib */,
+				CE7863DF1A1209C000D16C26 /* NIngredientes.h */,
+				CE7863E01A1209C000D16C26 /* NIngredientes.m */,
+				CE7863E11A1209C000D16C26 /* NIngredientes.xib */,
 			);
 			name = NewReceita;
 			path = ..;
@@ -625,6 +611,7 @@
 		CE475F201A0CCE9200D33A1A /* NewBook */ = {
 			isa = PBXGroup;
 			children = (
+				CEDC631D1A113A0100F06FDC /* OverlayView.xib */,
 				CE475F211A0CCEB500D33A1A /* NewBook.h */,
 				CE475F221A0CCEB500D33A1A /* NewBook.m */,
 				CE475F231A0CCEB500D33A1A /* NewBook.xib */,
@@ -655,55 +642,36 @@
 			path = HeaderReceita;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-		CE4984111A0AA3E7009EC1A4 /* Receita */ = {
+		CEDC62D91A1138D900F06FDC /* NewIngrediente */ = {
 			isa = PBXGroup;
 			children = (
-				CE3AE1691A0BC9BB006C4B2E /* ReceitasCell.h */,
-				CE3AE16A1A0BC9BB006C4B2E /* ReceitasCell.m */,
-				CE3AE16B1A0BC9BB006C4B2E /* ReceitasCell.xib */,
-				CE3AE16C1A0BC9BB006C4B2E /* ReceitasController.h */,
-				CE3AE16D1A0BC9BB006C4B2E /* ReceitasController.m */,
-				CE3AE16E1A0BC9BB006C4B2E /* ReceitasController.xib */,
-				CE4660361A0BC77600ED496C /* Receita.h */,
-				CE4660371A0BC77600ED496C /* Receita.m */,
-				CE4660381A0BC77600ED496C /* Receita.xib */,
-			);
-			name = Receita;
-			sourceTree = "<group>";
-		};
-		CEDC62C71A1112F000F06FDC /* NewIngrediente */ = {
-			isa = PBXGroup;
-			children = (
-				CEDC62C81A11131100F06FDC /* NewIngrediente.h */,
-				CEDC62C91A11131100F06FDC /* NewIngrediente.m */,
-				CEDC62CA1A11131100F06FDC /* NewIngrediente.xib */,
+				CEDC62DC1A11390B00F06FDC /* NewIngrediente.h */,
+				CEDC62DD1A11390B00F06FDC /* NewIngrediente.m */,
+				CEDC62DE1A11390B00F06FDC /* NewIngrediente.xib */,
 			);
 			name = NewIngrediente;
 			sourceTree = "<group>";
 		};
-		CEDC62D21A112D1D00F06FDC /* NewNotes */ = {
+		CEDC62DA1A1138E300F06FDC /* NewNotes */ = {
 			isa = PBXGroup;
 			children = (
-				CEDC62CD1A112D1400F06FDC /* NewNotes.h */,
-				CEDC62CE1A112D1400F06FDC /* NewNotes.m */,
-				CEDC62CF1A112D1400F06FDC /* NewNotes.xib */,
+				CEDC62E61A11391F00F06FDC /* NewNotes.h */,
+				CEDC62E71A11391F00F06FDC /* NewNotes.m */,
+				CEDC62E81A11391F00F06FDC /* NewNotes.xib */,
 			);
 			name = NewNotes;
 			sourceTree = "<group>";
 		};
-		CEDC62D31A112D2A00F06FDC /* NewDirections */ = {
+		CEDC62DB1A1138F200F06FDC /* NewDirections */ = {
 			isa = PBXGroup;
 			children = (
-				CEDC62D41A112D4900F06FDC /* NewDirections.h */,
-				CEDC62D51A112D4900F06FDC /* NewDirections.m */,
-				CEDC62D61A112D4900F06FDC /* NewDirections.xib */,
+				CEDC62E11A11391700F06FDC /* NewDirections.h */,
+				CEDC62E21A11391700F06FDC /* NewDirections.m */,
+				CEDC62E31A11391700F06FDC /* NewDirections.xib */,
 			);
 			name = NewDirections;
 			sourceTree = "<group>";
 		};
-=======
->>>>>>> FETCH_HEAD
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -785,12 +753,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF76B561A0D0FD200D2CC13 /* Settings.xib in Resources */,
-				CE253F9C1A10B9C7003DA45C /* NewReceita.xib in Resources */,
 				BAF76B611A0D314700D2CC13 /* BookCell.xib in Resources */,
-				CEDC62D81A112D4900F06FDC /* NewDirections.xib in Resources */,
+				CEDC62E51A11391700F06FDC /* NewDirections.xib in Resources */,
 				BAF955671A0A9D6900277B94 /* btndelet2@3x.png in Resources */,
 				BAF955641A0A9D6900277B94 /* btndelet1@2x.png in Resources */,
-				CE253FB01A10ED26003DA45C /* Ingredientes.xib in Resources */,
 				BAF955741A0A9D6900277B94 /* btnsetting1@2x.png in Resources */,
 				BAF955661A0A9D6900277B94 /* btndelet2@2x.png in Resources */,
 				BAF955721A0A9D6900277B94 /* btnsearch@2x.png in Resources */,
@@ -805,19 +771,17 @@
 				BAF9555E1A0A9D6900277B94 /* btnbook2@2x.png in Resources */,
 				CE253FA11A10BB27003DA45C /* btnphoto1@2x.png in Resources */,
 				BAF76B4A1A0CCE6B00D2CC13 /* CollectionLivros.xib in Resources */,
-				CEDC62D11A112D1400F06FDC /* NewNotes.xib in Resources */,
+				CEDC63141A1139E800F06FDC /* Directions.xib in Resources */,
 				BAF66E2B1A0B809800E90B7D /* imgbookcut@3x.png in Resources */,
 				BAE468141A11254700D3F596 /* btnbook5@2x.png in Resources */,
 				BAE468151A11254700D3F596 /* btnbook5@3x.png in Resources */,
 				BAF76B651A0D3F1200D2CC13 /* mascara_transparente.png in Resources */,
-				CEDC62CC1A11131100F06FDC /* NewIngrediente.xib in Resources */,
 				BAF9555A1A0A9D6900277B94 /* btnaddbook@2x.png in Resources */,
 				BAF955711A0A9D6900277B94 /* btnmosaic@3x.png in Resources */,
 				CE3AE1751A0BEEAC006C4B2E /* btleft3@2x.png in Resources */,
 				CE4984101A0A9188009EC1A4 /* HeaderReceita.xib in Resources */,
 				CE253FA21A10BB27003DA45C /* btnphoto1@3x.png in Resources */,
 				BAF9556A1A0A9D6900277B94 /* btnedit2@2x.png in Resources */,
-				CE253FA91A10C290003DA45C /* FooterNewReceita.xib in Resources */,
 				BAC639851A07F0C40049E3BD /* Book.xib in Resources */,
 				BAF76B501A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.xib in Resources */,
 				BAF955691A0A9D6900277B94 /* btnedit1@3x.png in Resources */,
@@ -834,24 +798,29 @@
 				BAF9556E1A0A9D6900277B94 /* btnfeatured2@2x.png in Resources */,
 				BAF955701A0A9D6900277B94 /* btnmosaic@2x.png in Resources */,
 				BAF9555F1A0A9D6900277B94 /* btnbook2@3x.png in Resources */,
+				CEDC63161A1139E800F06FDC /* FooterNewReceita.xib in Resources */,
 				BAF66E291A0B7DA900E90B7D /* imgbckhome@3x.png in Resources */,
 				CE3AE1761A0BEEAC006C4B2E /* btleft3@3x.png in Resources */,
 				BAE4681A1A112CFB00D3F596 /* IngredienteCellTableViewCell.xib in Resources */,
 				BAF9551F1A0A7B7200277B94 /* Home.xib in Resources */,
-				CE253FB51A10EEE5003DA45C /* Directions.xib in Resources */,
 				BAF955791A0A9D6900277B94 /* btnshop1@3x.png in Resources */,
 				BAF9556B1A0A9D6900277B94 /* btnedit2@3x.png in Resources */,
 				BAF955751A0A9D6900277B94 /* btnsetting1@3x.png in Resources */,
 				BAF9557C1A0A9D6900277B94 /* imgsample001.jpg in Resources */,
+				CEDC631E1A113A0100F06FDC /* OverlayView.xib in Resources */,
+				CE7863E31A1209C000D16C26 /* NIngredientes.xib in Resources */,
 				BAF9557A1A0A9D6900277B94 /* btnshop2@2x.png in Resources */,
 				BAF955621A0A9D6900277B94 /* btncall2@2x.png in Resources */,
 				BAF955651A0A9D6900277B94 /* btndelet1@3x.png in Resources */,
+				CEDC62EA1A11391F00F06FDC /* NewNotes.xib in Resources */,
 				BAF76B671A0D3F3D00D2CC13 /* mascara_branca.png in Resources */,
 				BAF955601A0A9D6900277B94 /* btncall1@2x.png in Resources */,
+				CEDC631C1A1139E800F06FDC /* NewReceita.xib in Resources */,
+				CEDC62E01A11390B00F06FDC /* NewIngrediente.xib in Resources */,
 				BAF9556F1A0A9D6900277B94 /* btnfeatured2@3x.png in Resources */,
-				CE253F9A1A10B9C7003DA45C /* HeaderNewReceita.xib in Resources */,
 				BAE4680C1A111E8E00D3F596 /* Ingredientes.xib in Resources */,
 				BAF66E2F1A0B851600E90B7D /* imgbookslice@3x.png in Resources */,
+				CEDC63181A1139E800F06FDC /* HeaderNewReceita.xib in Resources */,
 				BAF9550C1A0A4B2C00277B94 /* LivroCellTableViewCell.xib in Resources */,
 				BAE468111A11214A00D3F596 /* HeaderIngrediente.xib in Resources */,
 				BAF9556D1A0A9D6900277B94 /* btnfeatured1@3x.png in Resources */,
@@ -873,45 +842,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDC63131A1139E800F06FDC /* Directions.m in Sources */,
+				CEDC62E41A11391700F06FDC /* NewDirections.m in Sources */,
 				BAC639521A07ED420049E3BD /* AppDelegate.m in Sources */,
 				BAE467F31A10C7F500D3F596 /* THTinderNavigationBar.m in Sources */,
 				BAF76B601A0D314700D2CC13 /* BookCell.m in Sources */,
 				BAF955141A0A4BA300277B94 /* ATSDragToReorderTableViewController.m in Sources */,
-				CE253F991A10B9C7003DA45C /* HeaderNewReceita.m in Sources */,
+				CEDC63171A1139E800F06FDC /* HeaderNewReceita.m in Sources */,
 				BAE467F41A10C7F500D3F596 /* THTinderNavigationController.m in Sources */,
 				CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */,
 				BAE467F91A10CB6300D3F596 /* ReceitaController.m in Sources */,
 				BAF76B551A0D0FD200D2CC13 /* Settings.m in Sources */,
-<<<<<<< HEAD
-				CE253FAF1A10ED26003DA45C /* Ingredientes.m in Sources */,
-				CEDC62D01A112D1400F06FDC /* NewNotes.m in Sources */,
-				CE3AE16F1A0BC9BB006C4B2E /* ReceitasCell.m in Sources */,
-				BAE467ED1A10C4A900D3F596 /* THTinderNavigationBar.m in Sources */,
-=======
->>>>>>> FETCH_HEAD
 				CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */,
 				BAF9551E1A0A7B7200277B94 /* Home.m in Sources */,
-				CE253F9B1A10B9C7003DA45C /* NewReceita.m in Sources */,
 				BAC639841A07F0C40049E3BD /* Book.m in Sources */,
-				CE253FA81A10C290003DA45C /* FooterNewReceita.m in Sources */,
-				CEDC62CB1A11131100F06FDC /* NewIngrediente.m in Sources */,
+				CEDC62E91A11391F00F06FDC /* NewNotes.m in Sources */,
 				BAF76B5B1A0D2AAE00D2CC13 /* DragableTableReceitas.m in Sources */,
+				CEDC62DF1A11390B00F06FDC /* NewIngrediente.m in Sources */,
 				BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */,
+				CEDC63151A1139E800F06FDC /* FooterNewReceita.m in Sources */,
 				BAF76B491A0CCE6B00D2CC13 /* CollectionLivros.m in Sources */,
 				CE49840F1A0A9188009EC1A4 /* HeaderReceita.m in Sources */,
-				CE253FB41A10EEE5003DA45C /* Directions.m in Sources */,
 				CE475F241A0CCEB500D33A1A /* NewBook.m in Sources */,
-<<<<<<< HEAD
-				CEDC62D71A112D4900F06FDC /* NewDirections.m in Sources */,
-				CE3AE1711A0BC9BB006C4B2E /* ReceitasController.m in Sources */,
-=======
 				BAE4680B1A111E8E00D3F596 /* Ingredientes.m in Sources */,
->>>>>>> FETCH_HEAD
 				BAF9550B1A0A4B2C00277B94 /* LivroCellTableViewCell.m in Sources */,
 				BAF76B4F1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.m in Sources */,
 				BAE468191A112CFB00D3F596 /* IngredienteCellTableViewCell.m in Sources */,
 				BAE467FE1A10CBB900D3F596 /* NavigationBarItem.m in Sources */,
 				CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */,
+				CE7863E21A1209C000D16C26 /* NIngredientes.m in Sources */,
+				CEDC631B1A1139E800F06FDC /* NewReceita.m in Sources */,
 				BAE468101A11214A00D3F596 /* HeaderIngrediente.m in Sources */,
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
 				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,
