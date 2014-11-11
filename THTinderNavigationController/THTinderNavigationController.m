@@ -39,18 +39,17 @@ typedef NS_ENUM(NSInteger, THSlideType) {
 
 - (void)setCurrentPage:(NSInteger)currentPage animated:(BOOL)animated {
     self.paggingNavbar.currentPage = currentPage;
-    [self.paggingNavbar setBackgroundColor:[UIColor redColor]];
+    self.currentPage = currentPage;
+    
     [self.paggingNavbar setTranslucent:NO];
     
-    /*
-    [self.paggingNavbar setBackgroundImage:[UIImage new]
-                           forBarPosition:UIBarPositionAny
-                               barMetrics:UIBarMetricsDefault];
+    [self.paggingNavbar setBackgroundImage:[UIImage new] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+     
     [self.paggingNavbar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.97f]];
+     
     [self.paggingNavbar setShadowImage:[UIImage new]];
-     */
+     
     
-    self.currentPage = currentPage;
     
     CGFloat pageWidth = CGRectGetWidth(self.paggingScrollView.frame);
     
@@ -97,7 +96,7 @@ typedef NS_ENUM(NSInteger, THSlideType) {
 
 - (UIScrollView *)paggingScrollView {
     if (!_paggingScrollView) {
-        _paggingScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+        _paggingScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 26, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-26)];
         _paggingScrollView.bounces = NO;
         _paggingScrollView.pagingEnabled = YES;
         [_paggingScrollView setScrollsToTop:NO];
@@ -110,7 +109,7 @@ typedef NS_ENUM(NSInteger, THSlideType) {
 
 - (THTinderNavigationBar *)paggingNavbar {
     if (!_paggingNavbar) {
-        _paggingNavbar = [[THTinderNavigationBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 64)];
+        _paggingNavbar = [[THTinderNavigationBar alloc] initWithFrame:CGRectMake(0, 26, CGRectGetWidth(self.view.bounds), 64)];
         _paggingNavbar.backgroundColor = [UIColor clearColor];
         _paggingNavbar.navigationController = self;
         _paggingNavbar.itemViews = self.navbarItemViews;

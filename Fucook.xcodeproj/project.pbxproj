@@ -16,8 +16,6 @@
 		BAC639851A07F0C40049E3BD /* Book.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC639831A07F0C40049E3BD /* Book.xib */; };
 		BAE467F31A10C7F500D3F596 /* THTinderNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467F01A10C7F500D3F596 /* THTinderNavigationBar.m */; };
 		BAE467F41A10C7F500D3F596 /* THTinderNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467F21A10C7F500D3F596 /* THTinderNavigationController.m */; };
-		BAE467F91A10CB6300D3F596 /* ReceitaController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467F71A10CB6300D3F596 /* ReceitaController.m */; };
-		BAE467FA1A10CB6300D3F596 /* ReceitaController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE467F81A10CB6300D3F596 /* ReceitaController.xib */; };
 		BAE467FE1A10CBB900D3F596 /* NavigationBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467FD1A10CBB900D3F596 /* NavigationBarItem.m */; };
 		BAE4680B1A111E8E00D3F596 /* Ingredientes.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE468091A111E8E00D3F596 /* Ingredientes.m */; };
 		BAE4680C1A111E8E00D3F596 /* Ingredientes.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE4680A1A111E8E00D3F596 /* Ingredientes.xib */; };
@@ -137,9 +135,6 @@
 		BAE467F01A10C7F500D3F596 /* THTinderNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THTinderNavigationBar.m; path = THTinderNavigationController/THTinderNavigationBar.m; sourceTree = "<group>"; };
 		BAE467F11A10C7F500D3F596 /* THTinderNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THTinderNavigationController.h; path = THTinderNavigationController/THTinderNavigationController.h; sourceTree = "<group>"; };
 		BAE467F21A10C7F500D3F596 /* THTinderNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THTinderNavigationController.m; path = THTinderNavigationController/THTinderNavigationController.m; sourceTree = "<group>"; };
-		BAE467F61A10CB6300D3F596 /* ReceitaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReceitaController.h; path = Fucook/Receita/ReceitaController.h; sourceTree = "<group>"; };
-		BAE467F71A10CB6300D3F596 /* ReceitaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReceitaController.m; path = Fucook/Receita/ReceitaController.m; sourceTree = "<group>"; };
-		BAE467F81A10CB6300D3F596 /* ReceitaController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReceitaController.xib; path = Fucook/Receita/ReceitaController.xib; sourceTree = "<group>"; };
 		BAE467FC1A10CBB900D3F596 /* NavigationBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarItem.h; sourceTree = "<group>"; };
 		BAE467FD1A10CBB900D3F596 /* NavigationBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarItem.m; sourceTree = "<group>"; };
 		BAE468081A111E8E00D3F596 /* Ingredientes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ingredientes.h; path = Fucook/Receita/Ingredientes.h; sourceTree = "<group>"; };
@@ -363,9 +358,6 @@
 			children = (
 				BAE468071A111E7500D3F596 /* Ingredientes */,
 				BAE467FB1A10CBA300D3F596 /* outros */,
-				BAE467F61A10CB6300D3F596 /* ReceitaController.h */,
-				BAE467F71A10CB6300D3F596 /* ReceitaController.m */,
-				BAE467F81A10CB6300D3F596 /* ReceitaController.xib */,
 			);
 			name = Receita;
 			sourceTree = "<group>";
@@ -698,7 +690,6 @@
 				BAF955631A0A9D6900277B94 /* btncall2@3x.png in Resources */,
 				BAF955781A0A9D6900277B94 /* btnshop1@2x.png in Resources */,
 				BAF955771A0A9D6900277B94 /* btnsetting2@3x.png in Resources */,
-				BAE467FA1A10CB6300D3F596 /* ReceitaController.xib in Resources */,
 				BAF66E2E1A0B851600E90B7D /* imgbookslice@2x.png in Resources */,
 				BAF9556C1A0A9D6900277B94 /* btnfeatured1@2x.png in Resources */,
 				BAF9555E1A0A9D6900277B94 /* btnbook2@2x.png in Resources */,
@@ -776,7 +767,6 @@
 				CE253F991A10B9C7003DA45C /* HeaderNewReceita.m in Sources */,
 				BAE467F41A10C7F500D3F596 /* THTinderNavigationController.m in Sources */,
 				CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */,
-				BAE467F91A10CB6300D3F596 /* ReceitaController.m in Sources */,
 				BAF76B551A0D0FD200D2CC13 /* Settings.m in Sources */,
 				CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */,
 				BAF9551E1A0A7B7200277B94 /* Home.m in Sources */,
