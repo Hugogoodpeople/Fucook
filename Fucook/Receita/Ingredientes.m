@@ -9,11 +9,13 @@
 #import "Ingredientes.h"
 #import "HeaderIngrediente.h"
 #import "IngredienteCellTableViewCell.h"
+#import "ObjecteIngrediente.h"
 
 @interface Ingredientes ()
 
 @property HeaderIngrediente * header;
 @property BOOL servingsOpen;
+@property BOOL cartAllSelected;
 
 @end
 
@@ -34,6 +36,43 @@
 
 -(void)setUp
 {
+    // apenas para textes
+    
+    self.items = [NSMutableArray new];
+    
+    ObjecteIngrediente * ing1 = [ObjecteIngrediente new];
+    ing1.nome = @"Carré de borrego";
+    ing1.quantidade = @"1";
+    ing1.unidade = @"kg";
+    
+    ObjecteIngrediente * ing2 = [ObjecteIngrediente new];
+    ing2.nome = @"Abóbora";
+    ing2.quantidade = @"1,5";
+    ing2.unidade = @"kg";
+    
+    ObjecteIngrediente * ing3 = [ObjecteIngrediente new];
+    ing3.nome = @"Batata";
+    ing3.quantidade = @"2";
+    ing3.unidade = @"kg";
+    
+    ObjecteIngrediente * ing4 = [ObjecteIngrediente new];
+    ing4.nome = @"Figo";
+    ing4.quantidade = @"150";
+    ing4.unidade = @"g";
+    
+    ObjecteIngrediente * ing5 = [ObjecteIngrediente new];
+    ing5.nome = @"Cogumelos";
+    ing5.quantidade = @"200";
+    ing5.unidade = @"g";
+    
+    [self.items addObject:ing1];
+    [self.items addObject:ing2];
+    [self.items addObject:ing3];
+    [self.items addObject:ing4];
+    [self.items addObject:ing5];
+
+    
+    
     header = [HeaderIngrediente new];
     header.delegate = self;
     
@@ -53,7 +92,7 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.items.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,28 +120,105 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];
-    [cell setSelected:YES];
+    ObjecteIngrediente * ing = [self.items objectAtIndex:indexPath.row];
+
+    cell.LabelTitulo.text = ing.nome;
+    cell.ingrediente = ing;
+    // tenho de calcular com base no que esta no header
+    
+    cell.labelQtd.text = [self calcularValor:indexPath];
+
+    [cell addRemove: !ing.selecionado];
     
     return cell;
 
+}
+
+-(NSString *)calcularValor:(NSIndexPath *)indexPath
+{
+    ObjecteIngrediente * ing = [self.items objectAtIndex:indexPath.row];
+
+    float calculado = [ing.quantidade floatValue] * [header.labelNumberServings.text floatValue];
+    
+    return [NSString stringWithFormat:@"%.2f %@", calculado, ing.unidade];
 }
 
 
 -(void)callCart
 {
     NSLog(@"abrir cart");
+    // tenho de adicionar ou remover tudo do carrinho
+    // mas quando removo tenho de arranjar forma de salvar as alteraçoes
+    [self verificaMudarCartAllSelecte];
+    
+    if (self.cartAllSelected){
+        
+        for (ObjecteIngrediente * ing in self.items) {
+            ing.selecionado = NO;
+        }
+    }
+    else
+    {
+        for (ObjecteIngrediente * ing in self.items) {
+            ing.selecionado = YES;
+        }
+    }
+    self.cartAllSelected = !self.cartAllSelected;
+    [self.tabela reloadData];
+
+    [self mostrarAlteracoesAddRemove:self.cartAllSelected];
+}
+
+-(void)verificaMudarCartAllSelecte
+{
+ 
+    BOOL muda = YES;
+    for (ObjecteIngrediente * ing in self.items) {
+        if (ing.selecionado != self.cartAllSelected) {
+            muda = NO;
+        }
+        
+    }
+    
+    if (!muda) {
+        self.cartAllSelected = !self.cartAllSelected;
+    }
+}
+
+-(void)mostrarAlteracoesAddRemove:(BOOL)added
+{
+    
+    if (added) {
+        header.labelAllitensAddedRemoved.text = @"All itens added to shopping list";
+    }
+    else
+    {
+        header.labelAllitensAddedRemoved.text = @"All itens removed from shopping list";
+    }
+    
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        [header.addedRemovedView setAlpha:1];
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.5 delay:2 options:0 animations:^{
+            [header.addedRemovedView setAlpha:0];
+        } completion:0];
+    }];
+     
+    
+
+    
 }
 
 -(void)callPikerServings
 {
     NSLog(@"abrir fechar picker servings");
     
-    
     [UIView animateWithDuration:0.5 animations:^{
         self.tabela.tableHeaderView = header.view;
+    } completion:^(BOOL finished) {
+         [self.tabela reloadData];
     }];
-    
     
 }
 

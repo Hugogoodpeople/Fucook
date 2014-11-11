@@ -18,5 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelNumberServings;
 
 - (IBAction)DoneServings:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *addedRemovedView;
+@property (weak, nonatomic) IBOutlet UILabel *labelAllitensAddedRemoved;
 
 @end

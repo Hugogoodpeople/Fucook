@@ -10,6 +10,9 @@
 
 @implementation IngredienteCellTableViewCell
 
+
+
+
 - (void)awakeFromNib {
     // Initialization code
 }
@@ -17,11 +20,30 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
     
-    self.labelMais.layer.cornerRadius = 18;
-    self.labelMais.layer.borderColor = [UIColor blackColor].CGColor;
-    self.labelMais.layer.borderWidth = 1;
+    
 }
 
+-(void)addRemove:(BOOL)selecionado
+{
+    if (selecionado)
+    {
+        [self.imgAddRemove setImage:[UIImage imageNamed:@"btnmore.png"]];
+      
+    }
+    else
+    {
+        [self.imgAddRemove setImage:[UIImage imageNamed:@"btnless.png"]];
+    }
+    
+    self.onCart = selecionado;
+
+}
+
+- (IBAction)clickAddRemove:(id)sender
+{
+    self.ingrediente.selecionado = self.onCart;
+      self.onCart = !self.onCart;
+    [self addRemove:self.onCart];
+}
 @end

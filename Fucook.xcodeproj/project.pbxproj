@@ -18,6 +18,39 @@
 		BA66E5D31A12310A0090F99D /* NIngredientes.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5CF1A12310A0090F99D /* NIngredientes.m */; };
 		BA66E5D41A12310A0090F99D /* NIngredientes.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5D01A12310A0090F99D /* NIngredientes.xib */; };
 		BA66E5D61A1231910090F99D /* Ingredientes.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5D51A1231910090F99D /* Ingredientes.xib */; };
+		BA66E5F71A1258160090F99D /* btleft2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5D71A1258160090F99D /* btleft2@2x.png */; };
+		BA66E5F81A1258160090F99D /* btleft2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5D81A1258160090F99D /* btleft2@3x.png */; };
+		BA66E5F91A1258160090F99D /* btnclose2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5D91A1258160090F99D /* btnclose2@2x.png */; };
+		BA66E5FA1A1258160090F99D /* btnclose2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5DA1A1258160090F99D /* btnclose2@3x.png */; };
+		BA66E5FB1A1258160090F99D /* btnless@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5DB1A1258160090F99D /* btnless@2x.png */; };
+		BA66E5FC1A1258160090F99D /* btnless@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5DC1A1258160090F99D /* btnless@3x.png */; };
+		BA66E5FD1A1258160090F99D /* btnmore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5DD1A1258160090F99D /* btnmore@2x.png */; };
+		BA66E5FE1A1258160090F99D /* btnmore@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5DE1A1258160090F99D /* btnmore@3x.png */; };
+		BA66E5FF1A1258160090F99D /* btnopen1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5DF1A1258160090F99D /* btnopen1@2x.png */; };
+		BA66E6001A1258160090F99D /* btnopen1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5E01A1258160090F99D /* btnopen1@3x.png */; };
+		BA66E6011A1258160090F99D /* btnsave2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5E11A1258160090F99D /* btnsave2@2x.png */; };
+		BA66E6021A1258160090F99D /* btnsave2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5E21A1258160090F99D /* btnsave2@3x.png */; };
+		BA66E6031A1258160090F99D /* icoabout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5E31A1258160090F99D /* icoabout@2x.png */; };
+		BA66E6041A1258160090F99D /* icoabout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5E41A1258160090F99D /* icoabout@3x.png */; };
+		BA66E6051A1258160090F99D /* icobug@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5E51A1258160090F99D /* icobug@2x.png */; };
+		BA66E6061A1258160090F99D /* icobug@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5E61A1258160090F99D /* icobug@3x.png */; };
+		BA66E6071A1258160090F99D /* icocloud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5E71A1258160090F99D /* icocloud@2x.png */; };
+		BA66E6081A1258160090F99D /* icocloud@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5E81A1258160090F99D /* icocloud@3x.png */; };
+		BA66E6091A1258160090F99D /* icoexport@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5E91A1258160090F99D /* icoexport@2x.png */; };
+		BA66E60A1A1258160090F99D /* icoexport@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5EA1A1258160090F99D /* icoexport@3x.png */; };
+		BA66E60B1A1258160090F99D /* icoguide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5EB1A1258160090F99D /* icoguide@2x.png */; };
+		BA66E60C1A1258160090F99D /* icoguide@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5EC1A1258160090F99D /* icoguide@3x.png */; };
+		BA66E60D1A1258160090F99D /* icoimport@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5ED1A1258160090F99D /* icoimport@2x.png */; };
+		BA66E60E1A1258160090F99D /* icoimport@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5EE1A1258160090F99D /* icoimport@3x.png */; };
+		BA66E60F1A1258160090F99D /* icorating@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5EF1A1258160090F99D /* icorating@2x.png */; };
+		BA66E6101A1258160090F99D /* icorating@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5F01A1258160090F99D /* icorating@3x.png */; };
+		BA66E6111A1258160090F99D /* icosettings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5F11A1258160090F99D /* icosettings@2x.png */; };
+		BA66E6121A1258160090F99D /* icosettings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5F21A1258160090F99D /* icosettings@3x.png */; };
+		BA66E6131A1258160090F99D /* icoshare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5F31A1258160090F99D /* icoshare@2x.png */; };
+		BA66E6141A1258160090F99D /* icoshare@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5F41A1258160090F99D /* icoshare@3x.png */; };
+		BA66E6151A1258160090F99D /* imglogofucook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5F51A1258160090F99D /* imglogofucook@2x.png */; };
+		BA66E6161A1258160090F99D /* imglogofucook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5F61A1258160090F99D /* imglogofucook@3x.png */; };
+		BA66E61A1A1262910090F99D /* ObjecteIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E6191A1262910090F99D /* ObjecteIngrediente.m */; };
 		BAC6394F1A07ED420049E3BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC6394E1A07ED420049E3BD /* main.m */; };
 		BAC639521A07ED420049E3BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC639511A07ED420049E3BD /* AppDelegate.m */; };
 		BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAC639531A07ED420049E3BD /* Fucook.xcdatamodeld */; };
@@ -143,6 +176,40 @@
 		BA66E5CF1A12310A0090F99D /* NIngredientes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIngredientes.m; path = Fucook/NewReceita/NIngredientes.m; sourceTree = "<group>"; };
 		BA66E5D01A12310A0090F99D /* NIngredientes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NIngredientes.xib; path = Fucook/NewReceita/NIngredientes.xib; sourceTree = "<group>"; };
 		BA66E5D51A1231910090F99D /* Ingredientes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Ingredientes.xib; path = Fucook/Receita/Ingredientes.xib; sourceTree = "<group>"; };
+		BA66E5D71A1258160090F99D /* btleft2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft2@2x.png"; path = "Fucook/Imagens/btleft2@2x.png"; sourceTree = "<group>"; };
+		BA66E5D81A1258160090F99D /* btleft2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft2@3x.png"; path = "Fucook/Imagens/btleft2@3x.png"; sourceTree = "<group>"; };
+		BA66E5D91A1258160090F99D /* btnclose2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnclose2@2x.png"; path = "Fucook/Imagens/btnclose2@2x.png"; sourceTree = "<group>"; };
+		BA66E5DA1A1258160090F99D /* btnclose2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnclose2@3x.png"; path = "Fucook/Imagens/btnclose2@3x.png"; sourceTree = "<group>"; };
+		BA66E5DB1A1258160090F99D /* btnless@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnless@2x.png"; path = "Fucook/Imagens/btnless@2x.png"; sourceTree = "<group>"; };
+		BA66E5DC1A1258160090F99D /* btnless@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnless@3x.png"; path = "Fucook/Imagens/btnless@3x.png"; sourceTree = "<group>"; };
+		BA66E5DD1A1258160090F99D /* btnmore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnmore@2x.png"; path = "Fucook/Imagens/btnmore@2x.png"; sourceTree = "<group>"; };
+		BA66E5DE1A1258160090F99D /* btnmore@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnmore@3x.png"; path = "Fucook/Imagens/btnmore@3x.png"; sourceTree = "<group>"; };
+		BA66E5DF1A1258160090F99D /* btnopen1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnopen1@2x.png"; path = "Fucook/Imagens/btnopen1@2x.png"; sourceTree = "<group>"; };
+		BA66E5E01A1258160090F99D /* btnopen1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnopen1@3x.png"; path = "Fucook/Imagens/btnopen1@3x.png"; sourceTree = "<group>"; };
+		BA66E5E11A1258160090F99D /* btnsave2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnsave2@2x.png"; path = "Fucook/Imagens/btnsave2@2x.png"; sourceTree = "<group>"; };
+		BA66E5E21A1258160090F99D /* btnsave2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnsave2@3x.png"; path = "Fucook/Imagens/btnsave2@3x.png"; sourceTree = "<group>"; };
+		BA66E5E31A1258160090F99D /* icoabout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoabout@2x.png"; path = "Fucook/Imagens/icoabout@2x.png"; sourceTree = "<group>"; };
+		BA66E5E41A1258160090F99D /* icoabout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoabout@3x.png"; path = "Fucook/Imagens/icoabout@3x.png"; sourceTree = "<group>"; };
+		BA66E5E51A1258160090F99D /* icobug@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icobug@2x.png"; path = "Fucook/Imagens/icobug@2x.png"; sourceTree = "<group>"; };
+		BA66E5E61A1258160090F99D /* icobug@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icobug@3x.png"; path = "Fucook/Imagens/icobug@3x.png"; sourceTree = "<group>"; };
+		BA66E5E71A1258160090F99D /* icocloud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icocloud@2x.png"; path = "Fucook/Imagens/icocloud@2x.png"; sourceTree = "<group>"; };
+		BA66E5E81A1258160090F99D /* icocloud@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icocloud@3x.png"; path = "Fucook/Imagens/icocloud@3x.png"; sourceTree = "<group>"; };
+		BA66E5E91A1258160090F99D /* icoexport@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoexport@2x.png"; path = "Fucook/Imagens/icoexport@2x.png"; sourceTree = "<group>"; };
+		BA66E5EA1A1258160090F99D /* icoexport@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoexport@3x.png"; path = "Fucook/Imagens/icoexport@3x.png"; sourceTree = "<group>"; };
+		BA66E5EB1A1258160090F99D /* icoguide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoguide@2x.png"; path = "Fucook/Imagens/icoguide@2x.png"; sourceTree = "<group>"; };
+		BA66E5EC1A1258160090F99D /* icoguide@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoguide@3x.png"; path = "Fucook/Imagens/icoguide@3x.png"; sourceTree = "<group>"; };
+		BA66E5ED1A1258160090F99D /* icoimport@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoimport@2x.png"; path = "Fucook/Imagens/icoimport@2x.png"; sourceTree = "<group>"; };
+		BA66E5EE1A1258160090F99D /* icoimport@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoimport@3x.png"; path = "Fucook/Imagens/icoimport@3x.png"; sourceTree = "<group>"; };
+		BA66E5EF1A1258160090F99D /* icorating@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icorating@2x.png"; path = "Fucook/Imagens/icorating@2x.png"; sourceTree = "<group>"; };
+		BA66E5F01A1258160090F99D /* icorating@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icorating@3x.png"; path = "Fucook/Imagens/icorating@3x.png"; sourceTree = "<group>"; };
+		BA66E5F11A1258160090F99D /* icosettings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icosettings@2x.png"; path = "Fucook/Imagens/icosettings@2x.png"; sourceTree = "<group>"; };
+		BA66E5F21A1258160090F99D /* icosettings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icosettings@3x.png"; path = "Fucook/Imagens/icosettings@3x.png"; sourceTree = "<group>"; };
+		BA66E5F31A1258160090F99D /* icoshare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoshare@2x.png"; path = "Fucook/Imagens/icoshare@2x.png"; sourceTree = "<group>"; };
+		BA66E5F41A1258160090F99D /* icoshare@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoshare@3x.png"; path = "Fucook/Imagens/icoshare@3x.png"; sourceTree = "<group>"; };
+		BA66E5F51A1258160090F99D /* imglogofucook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imglogofucook@2x.png"; path = "Fucook/Imagens/imglogofucook@2x.png"; sourceTree = "<group>"; };
+		BA66E5F61A1258160090F99D /* imglogofucook@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imglogofucook@3x.png"; path = "Fucook/Imagens/imglogofucook@3x.png"; sourceTree = "<group>"; };
+		BA66E6181A1262910090F99D /* ObjecteIngrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjecteIngrediente.h; path = Fucook/Receita/ObjecteIngrediente.h; sourceTree = "<group>"; };
+		BA66E6191A1262910090F99D /* ObjecteIngrediente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjecteIngrediente.m; path = Fucook/Receita/ObjecteIngrediente.m; sourceTree = "<group>"; };
 		BAC639491A07ED420049E3BD /* Fucook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fucook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC6394D1A07ED420049E3BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAC6394E1A07ED420049E3BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -317,6 +384,15 @@
 			path = NewNotes;
 			sourceTree = "<group>";
 		};
+		BA66E6171A1262680090F99D /* ObjectIngrediente */ = {
+			isa = PBXGroup;
+			children = (
+				BA66E6181A1262910090F99D /* ObjecteIngrediente.h */,
+				BA66E6191A1262910090F99D /* ObjecteIngrediente.m */,
+			);
+			name = ObjectIngrediente;
+			sourceTree = "<group>";
+		};
 		BAC639401A07ED420049E3BD = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +508,7 @@
 		BAE468071A111E7500D3F596 /* Ingredientes */ = {
 			isa = PBXGroup;
 			children = (
+				BA66E6171A1262680090F99D /* ObjectIngrediente */,
 				BAE468081A111E8E00D3F596 /* Ingredientes.h */,
 				BAE468091A111E8E00D3F596 /* Ingredientes.m */,
 				BA66E5D51A1231910090F99D /* Ingredientes.xib */,
@@ -551,6 +628,38 @@
 		BAF955201A0A8D3500277B94 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BA66E5D71A1258160090F99D /* btleft2@2x.png */,
+				BA66E5D81A1258160090F99D /* btleft2@3x.png */,
+				BA66E5D91A1258160090F99D /* btnclose2@2x.png */,
+				BA66E5DA1A1258160090F99D /* btnclose2@3x.png */,
+				BA66E5DB1A1258160090F99D /* btnless@2x.png */,
+				BA66E5DC1A1258160090F99D /* btnless@3x.png */,
+				BA66E5DD1A1258160090F99D /* btnmore@2x.png */,
+				BA66E5DE1A1258160090F99D /* btnmore@3x.png */,
+				BA66E5DF1A1258160090F99D /* btnopen1@2x.png */,
+				BA66E5E01A1258160090F99D /* btnopen1@3x.png */,
+				BA66E5E11A1258160090F99D /* btnsave2@2x.png */,
+				BA66E5E21A1258160090F99D /* btnsave2@3x.png */,
+				BA66E5E31A1258160090F99D /* icoabout@2x.png */,
+				BA66E5E41A1258160090F99D /* icoabout@3x.png */,
+				BA66E5E51A1258160090F99D /* icobug@2x.png */,
+				BA66E5E61A1258160090F99D /* icobug@3x.png */,
+				BA66E5E71A1258160090F99D /* icocloud@2x.png */,
+				BA66E5E81A1258160090F99D /* icocloud@3x.png */,
+				BA66E5E91A1258160090F99D /* icoexport@2x.png */,
+				BA66E5EA1A1258160090F99D /* icoexport@3x.png */,
+				BA66E5EB1A1258160090F99D /* icoguide@2x.png */,
+				BA66E5EC1A1258160090F99D /* icoguide@3x.png */,
+				BA66E5ED1A1258160090F99D /* icoimport@2x.png */,
+				BA66E5EE1A1258160090F99D /* icoimport@3x.png */,
+				BA66E5EF1A1258160090F99D /* icorating@2x.png */,
+				BA66E5F01A1258160090F99D /* icorating@3x.png */,
+				BA66E5F11A1258160090F99D /* icosettings@2x.png */,
+				BA66E5F21A1258160090F99D /* icosettings@3x.png */,
+				BA66E5F31A1258160090F99D /* icoshare@2x.png */,
+				BA66E5F41A1258160090F99D /* icoshare@3x.png */,
+				BA66E5F51A1258160090F99D /* imglogofucook@2x.png */,
+				BA66E5F61A1258160090F99D /* imglogofucook@3x.png */,
 				BAE468121A11254700D3F596 /* btnbook5@2x.png */,
 				BAE468131A11254700D3F596 /* btnbook5@3x.png */,
 				CE253F9D1A10BB27003DA45C /* btnphoto1@2x.png */,
@@ -742,38 +851,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF76B561A0D0FD200D2CC13 /* Settings.xib in Resources */,
+				BA66E5FD1A1258160090F99D /* btnmore@2x.png in Resources */,
 				CE253F9C1A10B9C7003DA45C /* NewReceita.xib in Resources */,
 				BAF76B611A0D314700D2CC13 /* BookCell.xib in Resources */,
+				BA66E60C1A1258160090F99D /* icoguide@3x.png in Resources */,
+				BA66E6091A1258160090F99D /* icoexport@2x.png in Resources */,
 				BAF955671A0A9D6900277B94 /* btndelet2@3x.png in Resources */,
+				BA66E5FC1A1258160090F99D /* btnless@3x.png in Resources */,
 				BAF955641A0A9D6900277B94 /* btndelet1@2x.png in Resources */,
 				BAF955741A0A9D6900277B94 /* btnsetting1@2x.png in Resources */,
 				BAF955661A0A9D6900277B94 /* btndelet2@2x.png in Resources */,
 				BAF955721A0A9D6900277B94 /* btnsearch@2x.png in Resources */,
 				BAF9555B1A0A9D6900277B94 /* btnaddbook@3x.png in Resources */,
 				CE253FA31A10BB27003DA45C /* btnphoto2@2x.png in Resources */,
+				BA66E6151A1258160090F99D /* imglogofucook@2x.png in Resources */,
+				BA66E6141A1258160090F99D /* icoshare@3x.png in Resources */,
 				BA66E5C61A1230B60090F99D /* NewDirections.xib in Resources */,
 				BAF955631A0A9D6900277B94 /* btncall2@3x.png in Resources */,
+				BA66E6031A1258160090F99D /* icoabout@2x.png in Resources */,
 				BA66E5D61A1231910090F99D /* Ingredientes.xib in Resources */,
 				BAF955781A0A9D6900277B94 /* btnshop1@2x.png in Resources */,
+				BA66E60D1A1258160090F99D /* icoimport@2x.png in Resources */,
 				BAF955771A0A9D6900277B94 /* btnsetting2@3x.png in Resources */,
 				BAF66E2E1A0B851600E90B7D /* imgbookslice@2x.png in Resources */,
 				BAF9556C1A0A9D6900277B94 /* btnfeatured1@2x.png in Resources */,
+				BA66E6081A1258160090F99D /* icocloud@3x.png in Resources */,
+				BA66E5FF1A1258160090F99D /* btnopen1@2x.png in Resources */,
 				BAF9555E1A0A9D6900277B94 /* btnbook2@2x.png in Resources */,
 				CE253FA11A10BB27003DA45C /* btnphoto1@2x.png in Resources */,
+				BA66E6041A1258160090F99D /* icoabout@3x.png in Resources */,
 				BAF76B4A1A0CCE6B00D2CC13 /* CollectionLivros.xib in Resources */,
 				BAF66E2B1A0B809800E90B7D /* imgbookcut@3x.png in Resources */,
 				BAE468141A11254700D3F596 /* btnbook5@2x.png in Resources */,
 				BAE468151A11254700D3F596 /* btnbook5@3x.png in Resources */,
+				BA66E5FB1A1258160090F99D /* btnless@2x.png in Resources */,
+				BA66E5F91A1258160090F99D /* btnclose2@2x.png in Resources */,
+				BA66E6131A1258160090F99D /* icoshare@2x.png in Resources */,
 				BAF76B651A0D3F1200D2CC13 /* mascara_transparente.png in Resources */,
 				BAF9555A1A0A9D6900277B94 /* btnaddbook@2x.png in Resources */,
 				BAF955711A0A9D6900277B94 /* btnmosaic@3x.png in Resources */,
+				BA66E5FA1A1258160090F99D /* btnclose2@3x.png in Resources */,
 				CE3AE1751A0BEEAC006C4B2E /* btleft3@2x.png in Resources */,
 				BA66E5D41A12310A0090F99D /* NIngredientes.xib in Resources */,
 				CE4984101A0A9188009EC1A4 /* HeaderReceita.xib in Resources */,
 				CE253FA21A10BB27003DA45C /* btnphoto1@3x.png in Resources */,
 				BAF9556A1A0A9D6900277B94 /* btnedit2@2x.png in Resources */,
+				BA66E60B1A1258160090F99D /* icoguide@2x.png in Resources */,
 				CE253FA91A10C290003DA45C /* FooterNewReceita.xib in Resources */,
+				BA66E60F1A1258160090F99D /* icorating@2x.png in Resources */,
 				BAC639851A07F0C40049E3BD /* Book.xib in Resources */,
+				BA66E6121A1258160090F99D /* icosettings@3x.png in Resources */,
 				BAF76B501A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.xib in Resources */,
 				BAF955691A0A9D6900277B94 /* btnedit1@3x.png in Resources */,
 				BAF66E281A0B7DA900E90B7D /* imgbckhome@2x.png in Resources */,
@@ -782,20 +909,32 @@
 				BAF9555D1A0A9D6900277B94 /* btnbook1@3x.png in Resources */,
 				BAF955681A0A9D6900277B94 /* btnedit1@2x.png in Resources */,
 				BAF955761A0A9D6900277B94 /* btnsetting2@2x.png in Resources */,
+				BA66E6061A1258160090F99D /* icobug@3x.png in Resources */,
 				BAF955611A0A9D6900277B94 /* btncall1@3x.png in Resources */,
 				BAF9557B1A0A9D6900277B94 /* btnshop2@3x.png in Resources */,
+				BA66E6101A1258160090F99D /* icorating@3x.png in Resources */,
 				CE253FA41A10BB27003DA45C /* btnphoto2@3x.png in Resources */,
 				CE475F251A0CCEB500D33A1A /* NewBook.xib in Resources */,
+				BA66E6051A1258160090F99D /* icobug@2x.png in Resources */,
+				BA66E6011A1258160090F99D /* btnsave2@2x.png in Resources */,
 				BAF9556E1A0A9D6900277B94 /* btnfeatured2@2x.png in Resources */,
 				BAF955701A0A9D6900277B94 /* btnmosaic@2x.png in Resources */,
 				BAF9555F1A0A9D6900277B94 /* btnbook2@3x.png in Resources */,
 				BAF66E291A0B7DA900E90B7D /* imgbckhome@3x.png in Resources */,
+				BA66E6111A1258160090F99D /* icosettings@2x.png in Resources */,
 				CE3AE1761A0BEEAC006C4B2E /* btleft3@3x.png in Resources */,
 				BAE4681A1A112CFB00D3F596 /* IngredienteCellTableViewCell.xib in Resources */,
+				BA66E5F81A1258160090F99D /* btleft2@3x.png in Resources */,
+				BA66E60A1A1258160090F99D /* icoexport@3x.png in Resources */,
+				BA66E60E1A1258160090F99D /* icoimport@3x.png in Resources */,
+				BA66E6001A1258160090F99D /* btnopen1@3x.png in Resources */,
 				BAF9551F1A0A7B7200277B94 /* Home.xib in Resources */,
 				BAF955791A0A9D6900277B94 /* btnshop1@3x.png in Resources */,
 				BAF9556B1A0A9D6900277B94 /* btnedit2@3x.png in Resources */,
+				BA66E5FE1A1258160090F99D /* btnmore@3x.png in Resources */,
+				BA66E5F71A1258160090F99D /* btleft2@2x.png in Resources */,
 				BAF955751A0A9D6900277B94 /* btnsetting1@3x.png in Resources */,
+				BA66E6071A1258160090F99D /* icocloud@2x.png in Resources */,
 				BA66E5D21A12310A0090F99D /* Directions.xib in Resources */,
 				BA66E5CA1A1230B60090F99D /* NewNotes.xib in Resources */,
 				BAF9557C1A0A9D6900277B94 /* imgsample001.jpg in Resources */,
@@ -803,9 +942,11 @@
 				BAF955621A0A9D6900277B94 /* btncall2@2x.png in Resources */,
 				BAF955651A0A9D6900277B94 /* btndelet1@3x.png in Resources */,
 				BAF76B671A0D3F3D00D2CC13 /* mascara_branca.png in Resources */,
+				BA66E6161A1258160090F99D /* imglogofucook@3x.png in Resources */,
 				BAF955601A0A9D6900277B94 /* btncall1@2x.png in Resources */,
 				BA66E5C81A1230B60090F99D /* NewIngrediente.xib in Resources */,
 				BAF9556F1A0A9D6900277B94 /* btnfeatured2@3x.png in Resources */,
+				BA66E6021A1258160090F99D /* btnsave2@3x.png in Resources */,
 				CE253F9A1A10B9C7003DA45C /* HeaderNewReceita.xib in Resources */,
 				BAF66E2F1A0B851600E90B7D /* imgbookslice@3x.png in Resources */,
 				BAF9550C1A0A4B2C00277B94 /* LivroCellTableViewCell.xib in Resources */,
@@ -860,6 +1001,7 @@
 				CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */,
 				BAE468101A11214A00D3F596 /* HeaderIngrediente.m in Sources */,
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
+				BA66E61A1A1262910090F99D /* ObjecteIngrediente.m in Sources */,
 				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

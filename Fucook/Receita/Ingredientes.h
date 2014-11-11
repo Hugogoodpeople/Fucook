@@ -10,7 +10,10 @@
 
 @interface Ingredientes : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tabela;
-@property (weak, nonatomic) IBOutlet UIPickerView *pickerServings;
+
+
+@property NSMutableArray * items;
+
 
 
 

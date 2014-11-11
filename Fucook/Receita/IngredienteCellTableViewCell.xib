@@ -15,20 +15,26 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 kg" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9l-NN-rAt">
-                        <rect key="frame" x="52" y="14" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="44" y="14" width="85" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btnmore.png" translatesAutoresizingMaskIntoConstraints="NO" id="oey-Wx-jeI">
+                        <rect key="frame" x="8" y="10" width="28" height="28"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0M4-C7-Aup">
+                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="clickAddRemove:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zRr-xf-lKs"/>
+                        </connections>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carré de burrego" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUZ-NM-5fz">
-                        <rect key="frame" x="125" y="14" width="187" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3q-Qu-NUN">
-                        <rect key="frame" x="8" y="4" width="36" height="36.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                        <rect key="frame" x="147" y="14" width="165" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -36,10 +42,13 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="LabelTitulo" destination="aUZ-NM-5fz" id="hFy-aL-Jfd"/>
-                <outlet property="labelMais" destination="G3q-Qu-NUN" id="Ddm-hi-j9V"/>
+                <outlet property="imgAddRemove" destination="oey-Wx-jeI" id="hsn-Vh-oSg"/>
                 <outlet property="labelQtd" destination="v9l-NN-rAt" id="2DH-Qr-pQa"/>
             </connections>
-            <point key="canvasLocation" x="602" y="214.5"/>
+            <point key="canvasLocation" x="562" y="318"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="btnmore.png" width="22" height="22"/>
+    </resources>
 </document>
