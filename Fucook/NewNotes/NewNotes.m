@@ -17,11 +17,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    //[button addTarget:self action:@selector(receita:) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btnsave2"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = anotherButton;
+    
+    UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    [buttonback addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonback setImage:[UIImage imageNamed:@"btleft2"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
+    self.navigationItem.leftBarButtonItem = anotherButtonback;
+    
+    self.navigationItem.title = @"Notes";
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
 }
 
 /*

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface NewDirections : UIViewController
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollDir;
+- (IBAction)btFoto:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
 @end
