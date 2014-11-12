@@ -43,7 +43,6 @@
 
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
 }
 
 /*

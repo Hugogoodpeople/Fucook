@@ -8,7 +8,9 @@
 
 #import "NewDirections.h"
 
-@interface NewDirections ()
+@interface NewDirections (){
+     BOOL PickerAberto;
+}
 
 @property (nonatomic, weak) IBOutlet UIToolbar *toolBar;
 @property (nonatomic) UIImagePickerController *imagePickerController;
@@ -44,10 +46,14 @@
     
     self.navigationItem.title = @"Directions";
     
-    [self.scrollDir setContentSize:CGSizeMake(self.view.frame.size.width, 1000)];
+    [self.scrollDir setContentSize:CGSizeMake(self.view.frame.size.width, 680)];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.capturedImages = [[NSMutableArray alloc] init];
+    
+
+
+
 
 }
 
@@ -260,4 +266,52 @@
 
 
 
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    // não precisa fazer nada aqui mas convem ter este metodo implementado
+    
+}
+
+- (NSInteger)numberOfComponentsInPickerView:
+(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component
+{
+    return 7;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return @"asds";
+}
+
+
+
+
+
+
+
+- (IBAction)btAbrir:(id)sender {
+    NSLog(@"%u",PickerAberto);
+    if(PickerAberto){
+
+        [UIView animateWithDuration:0.5 animations:^{
+            [self.viewDown setFrame:CGRectMake(0,  self.viewImagem.frame.size.height+self.viewLabel1.frame.size.height+self.viewLabel2.frame.size.height+65, self.viewDown.frame.size.width,self.viewDown.frame.size.height)];
+        }];
+        [self.scrollDir setContentSize:CGSizeMake(self.view.frame.size.width, 680)];
+        PickerAberto=0;
+    }else{
+        [UIView animateWithDuration:0.5 animations:^{
+            [self.viewDown setFrame:CGRectMake(0, self.viewImagem.frame.size.height+self.viewLabel1.frame.size.height+self.viewLabel2.frame.size.height+self.viewPicker.frame.size.height+65, self.viewDown.frame.size.width,self.viewDown.frame.size.height)];
+        }];
+        [self.scrollDir setContentSize:CGSizeMake(self.view.frame.size.width, 1000)];
+        PickerAberto=1;
+    }
+    
+}
 @end

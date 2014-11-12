@@ -13,4 +13,14 @@
 - (IBAction)btFoto:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
+- (IBAction)btAbrir:(id)sender;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+
+
+@property (weak, nonatomic) IBOutlet UIView *viewDown;
+@property (weak, nonatomic) IBOutlet UIView *viewPicker;
+@property (weak, nonatomic) IBOutlet UIView *viewImagem;
+@property (weak, nonatomic) IBOutlet UIView *viewLabel1;
+@property (weak, nonatomic) IBOutlet UIView *viewLabel2;
+
 @end

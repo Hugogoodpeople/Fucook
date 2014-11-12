@@ -8,8 +8,10 @@
 
 #import "NewIngrediente.h"
 
-@interface NewIngrediente ()
-
+@interface NewIngrediente (){
+    BOOL pickerQuantA;
+    BOOL pickerUnitA;
+}
 @end
 
 @implementation NewIngrediente
@@ -54,5 +56,73 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)btUnit:(id)sender {
+    if(pickerUnitA){
+        [UIView animateWithDuration:0.5 animations:^{
+            [self.viewNutricao setFrame:CGRectMake(0,  self.viewUnit.frame.origin.y+self.viewUnit.frame.size.height, self.viewNutricao.frame.size.width,self.viewNutricao.frame.size.height)];
+            [self.viewCobrir setFrame:CGRectMake(0, self.viewNutricao.frame.origin.y+self.viewNutricao.frame.size.height, self.viewCobrir.frame.size.width,self.viewCobrir.frame.size.height)];
+            [self.viewPickerUnit setFrame:CGRectMake(0, self.viewUnit.frame.origin.y+self.viewUnit.frame.size.height, self.viewPickerUnit.frame.size.width,self.viewPickerUnit.frame.size.height)];
+         }];
+        pickerUnitA=0;
+    }else{
+        [UIView animateWithDuration:0.5 animations:^{
+            [self.viewNutricao setFrame:CGRectMake(0, self.viewPickerUnit.frame.origin.y+self.viewPickerUnit.frame.size.height, self.viewNutricao.frame.size.width,self.viewNutricao.frame.size.height)];
+            [self.viewCobrir setFrame:CGRectMake(0, self.viewNutricao.frame.origin.y+self.viewNutricao.frame.size.height, self.viewCobrir.frame.size.width,self.viewCobrir.frame.size.height)];
+            [self.viewPickerUnit setFrame:CGRectMake(0, self.viewUnit.frame.origin.y+self.viewUnit.frame.size.height, self.viewPickerUnit.frame.size.width,self.viewPickerUnit.frame.size.height)];
+        }];
+        pickerUnitA=1;
+    }
+
+}
+
+/*- (IBAction)btQuant:(id)sender {
+    
+    if(pickerQuantA){
+         NSLog(@"Esconde %u",pickerQuantA);
+        [UIView animateWithDuration:0.5 animations:^{
+            [self.viewUnit setFrame:CGRectMake(0, self.viewQuantity.frame.origin.y+self.viewQuantity.frame.size.height, self.viewUnit.frame.size.width,self.viewUnit.frame.size.height)];
+            [self.viewPickerUnit setFrame:CGRectMake(0, self.viewUnit.frame.origin.y+self.viewUnit.frame.size.height, self.viewPickerUnit.frame.size.width,self.viewPickerUnit.frame.size.height)];
+            [self.viewNutricao setFrame:CGRectMake(0,  self.viewUnit.frame.origin.y+self.viewUnit.frame.size.height, self.viewNutricao.frame.size.width,self.viewNutricao.frame.size.height)];
+            [self.viewCobrir setFrame:CGRectMake(0, self.viewNutricao.frame.origin.y+self.viewNutricao.frame.size.height, self.viewCobrir.frame.size.width,self.viewCobrir.frame.size.height)];
+        }];
+        pickerQuantA=0;
+    }else{
+         NSLog(@"Mostra %u",pickerQuantA);
+        [UIView animateWithDuration:0.5 animations:^{
+            [self.viewUnit setFrame:CGRectMake(0, self.viewPickerQuant.frame.origin.y+self.viewPickerQuant.frame.size.height, self.viewUnit.frame.size.width,self.viewUnit.frame.size.height)];
+            [self.viewPickerUnit setFrame:CGRectMake(0, self.viewUnit.frame.origin.y+self.viewUnit.frame.size.height, self.viewPickerUnit.frame.size.width,self.viewPickerUnit.frame.size.height)];
+            [self.viewNutricao setFrame:CGRectMake(0, self.viewUnit.frame.origin.y+self.viewUnit.frame.size.height, self.viewNutricao.frame.size.width,self.viewNutricao.frame.size.height)];
+            [self.viewCobrir setFrame:CGRectMake(0, self.viewNutricao.frame.origin.y+self.viewNutricao.frame.size.height, self.viewCobrir.frame.size.width,self.viewCobrir.frame.size.height)];
+        }];
+        pickerQuantA=1;
+    }
+}*/
+
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    // não precisa fazer nada aqui mas convem ter este metodo implementado
+    
+}
+
+- (NSInteger)numberOfComponentsInPickerView:
+(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component
+{
+    return 7;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return @"asds";
+}
+
+
 
 @end

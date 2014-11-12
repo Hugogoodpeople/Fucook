@@ -8,9 +8,37 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HeaderNewReceita : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface HeaderNewReceita : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate,UIPickerViewDataSource, UIPickerViewDelegate>
 @property (nonatomic,assign) id delegate;
 - (IBAction)btFoto:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+
+- (IBAction)btCategory:(id)sender;
+- (IBAction)btDificulty:(id)sender;
+- (IBAction)btServings:(id)sender;
+- (IBAction)btPretime:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIView *viewPre;
+@property (weak, nonatomic) IBOutlet UIView *viewDificulty;
+@property (weak, nonatomic) IBOutlet UIView *viewServings;
+@property (weak, nonatomic) IBOutlet UIView *viewCategory;
+
+@property (weak, nonatomic) IBOutlet UIView *viewPickerDificulty;
+@property (weak, nonatomic) IBOutlet UIView *viewPickerServings;
+@property (weak, nonatomic) IBOutlet UIView *viewPickerCategory;
+@property (weak, nonatomic) IBOutlet UIView *viewPickerPrepa;
+
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerPrep;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerCate;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerServi;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerDifi;
+
+- (IBAction)btDonePre:(id)sender;
+- (IBAction)btDoneCate:(id)sender;
+- (IBAction)btDoneServ:(id)sender;
+- (IBAction)btDoneDifi:(id)sender;
+
+
 
 @end
