@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface BookCell : UITableViewCell
+
+@property (nonatomic , assign) id delegate;
+
 @property (weak, nonatomic) IBOutlet UIView *viewMovel;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTempo;

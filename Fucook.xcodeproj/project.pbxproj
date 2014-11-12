@@ -19,6 +19,13 @@
 		BA023B611A13AF32000B4754 /* NotasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B5F1A13AF32000B4754 /* NotasCell.xib */; };
 		BA023B651A13AFF9000B4754 /* NotasHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B631A13AFF9000B4754 /* NotasHeader.m */; };
 		BA023B661A13AFF9000B4754 /* NotasHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B641A13AFF9000B4754 /* NotasHeader.xib */; };
+		BA023B741A13BE3B000B4754 /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B6B1A13BE3B000B4754 /* NSDate+convenience.m */; };
+		BA023B751A13BE3B000B4754 /* NSMutableArray+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B6D1A13BE3B000B4754 /* NSMutableArray+convenience.m */; };
+		BA023B761A13BE3B000B4754 /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B6F1A13BE3B000B4754 /* UIColor+expanded.m */; };
+		BA023B771A13BE3B000B4754 /* UIView+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B711A13BE3B000B4754 /* UIView+convenience.m */; };
+		BA023B781A13BE3B000B4754 /* VRGCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B731A13BE3B000B4754 /* VRGCalendarView.m */; };
+		BA023B7D1A13BEB3000B4754 /* Calendario.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B7B1A13BEB3000B4754 /* Calendario.m */; };
+		BA023B7E1A13BEB3000B4754 /* Calendario.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B7C1A13BEB3000B4754 /* Calendario.xib */; };
 		BA66E5C51A1230B60090F99D /* NewDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5BB1A1230B60090F99D /* NewDirections.m */; };
 		BA66E5C61A1230B60090F99D /* NewDirections.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5BC1A1230B60090F99D /* NewDirections.xib */; };
 		BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5BF1A1230B60090F99D /* NewIngrediente.m */; };
@@ -190,6 +197,19 @@
 		BA023B621A13AFF9000B4754 /* NotasHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotasHeader.h; path = Fucook/Receita/NotasHeader.h; sourceTree = "<group>"; };
 		BA023B631A13AFF9000B4754 /* NotasHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotasHeader.m; path = Fucook/Receita/NotasHeader.m; sourceTree = "<group>"; };
 		BA023B641A13AFF9000B4754 /* NotasHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotasHeader.xib; path = Fucook/Receita/NotasHeader.xib; sourceTree = "<group>"; };
+		BA023B6A1A13BE3B000B4754 /* NSDate+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+convenience.h"; path = "Fucook/Calendario/NSDate+convenience.h"; sourceTree = "<group>"; };
+		BA023B6B1A13BE3B000B4754 /* NSDate+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+convenience.m"; path = "Fucook/Calendario/NSDate+convenience.m"; sourceTree = "<group>"; };
+		BA023B6C1A13BE3B000B4754 /* NSMutableArray+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+convenience.h"; path = "Fucook/Calendario/NSMutableArray+convenience.h"; sourceTree = "<group>"; };
+		BA023B6D1A13BE3B000B4754 /* NSMutableArray+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+convenience.m"; path = "Fucook/Calendario/NSMutableArray+convenience.m"; sourceTree = "<group>"; };
+		BA023B6E1A13BE3B000B4754 /* UIColor+expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+expanded.h"; path = "Fucook/Calendario/UIColor+expanded.h"; sourceTree = "<group>"; };
+		BA023B6F1A13BE3B000B4754 /* UIColor+expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+expanded.m"; path = "Fucook/Calendario/UIColor+expanded.m"; sourceTree = "<group>"; };
+		BA023B701A13BE3B000B4754 /* UIView+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+convenience.h"; path = "Fucook/Calendario/UIView+convenience.h"; sourceTree = "<group>"; };
+		BA023B711A13BE3B000B4754 /* UIView+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+convenience.m"; path = "Fucook/Calendario/UIView+convenience.m"; sourceTree = "<group>"; };
+		BA023B721A13BE3B000B4754 /* VRGCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VRGCalendarView.h; path = Fucook/Calendario/VRGCalendarView.h; sourceTree = "<group>"; };
+		BA023B731A13BE3B000B4754 /* VRGCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VRGCalendarView.m; path = Fucook/Calendario/VRGCalendarView.m; sourceTree = "<group>"; };
+		BA023B7A1A13BEB3000B4754 /* Calendario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Calendario.h; path = Fucook/Receita/Calendario.h; sourceTree = "<group>"; };
+		BA023B7B1A13BEB3000B4754 /* Calendario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Calendario.m; path = Fucook/Receita/Calendario.m; sourceTree = "<group>"; };
+		BA023B7C1A13BEB3000B4754 /* Calendario.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Calendario.xib; path = Fucook/Receita/Calendario.xib; sourceTree = "<group>"; };
 		BA05F5821A08D24300E752E7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		BA05F5831A08D24300E752E7 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
 		BA05F5841A08D24300E752E7 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
@@ -425,6 +445,34 @@
 			name = ObjectNotas;
 			sourceTree = "<group>";
 		};
+		BA023B691A13BE27000B4754 /* Calendario */ = {
+			isa = PBXGroup;
+			children = (
+				BA023B791A13BE83000B4754 /* Util Calendario */,
+				BA023B7A1A13BEB3000B4754 /* Calendario.h */,
+				BA023B7B1A13BEB3000B4754 /* Calendario.m */,
+				BA023B7C1A13BEB3000B4754 /* Calendario.xib */,
+			);
+			name = Calendario;
+			sourceTree = "<group>";
+		};
+		BA023B791A13BE83000B4754 /* Util Calendario */ = {
+			isa = PBXGroup;
+			children = (
+				BA023B6A1A13BE3B000B4754 /* NSDate+convenience.h */,
+				BA023B6B1A13BE3B000B4754 /* NSDate+convenience.m */,
+				BA023B6C1A13BE3B000B4754 /* NSMutableArray+convenience.h */,
+				BA023B6D1A13BE3B000B4754 /* NSMutableArray+convenience.m */,
+				BA023B6E1A13BE3B000B4754 /* UIColor+expanded.h */,
+				BA023B6F1A13BE3B000B4754 /* UIColor+expanded.m */,
+				BA023B701A13BE3B000B4754 /* UIView+convenience.h */,
+				BA023B711A13BE3B000B4754 /* UIView+convenience.m */,
+				BA023B721A13BE3B000B4754 /* VRGCalendarView.h */,
+				BA023B731A13BE3B000B4754 /* VRGCalendarView.m */,
+			);
+			name = "Util Calendario";
+			sourceTree = "<group>";
+		};
 		BA66E5B91A1230B60090F99D /* NewDirections */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,6 +626,7 @@
 		BAE467F51A10CB3600D3F596 /* Receita */ = {
 			isa = PBXGroup;
 			children = (
+				BA023B691A13BE27000B4754 /* Calendario */,
 				BA023B531A13ABE3000B4754 /* Notas */,
 				BA66E61B1A1281F10090F99D /* Directions */,
 				BAE468071A111E7500D3F596 /* Ingredientes */,
@@ -1049,6 +1098,7 @@
 				BAE468111A11214A00D3F596 /* HeaderIngrediente.xib in Resources */,
 				BAF9556D1A0A9D6900277B94 /* btnfeatured1@3x.png in Resources */,
 				BAC6395D1A07ED420049E3BD /* Images.xcassets in Resources */,
+				BA023B7E1A13BEB3000B4754 /* Calendario.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1068,7 +1118,9 @@
 			files = (
 				BAC639521A07ED420049E3BD /* AppDelegate.m in Sources */,
 				BAE467F31A10C7F500D3F596 /* THTinderNavigationBar.m in Sources */,
+				BA023B761A13BE3B000B4754 /* UIColor+expanded.m in Sources */,
 				BAF76B601A0D314700D2CC13 /* BookCell.m in Sources */,
+				BA023B781A13BE3B000B4754 /* VRGCalendarView.m in Sources */,
 				BAF955141A0A4BA300277B94 /* ATSDragToReorderTableViewController.m in Sources */,
 				BA66E5C51A1230B60090F99D /* NewDirections.m in Sources */,
 				BA023B511A137BEC000B4754 /* DirectionsHeader.m in Sources */,
@@ -1080,11 +1132,14 @@
 				CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */,
 				BAF9551E1A0A7B7200277B94 /* Home.m in Sources */,
 				BA023B4A1A1367B2000B4754 /* ObjectDirections.m in Sources */,
+				BA023B741A13BE3B000B4754 /* NSDate+convenience.m in Sources */,
 				CE253F9B1A10B9C7003DA45C /* NewReceita.m in Sources */,
+				BA023B751A13BE3B000B4754 /* NSMutableArray+convenience.m in Sources */,
 				BAC639841A07F0C40049E3BD /* Book.m in Sources */,
 				BA023B5C1A13AE59000B4754 /* ObjectNotas.m in Sources */,
 				BA023B651A13AFF9000B4754 /* NotasHeader.m in Sources */,
 				BA023B451A135D38000B4754 /* DirectionsCell.m in Sources */,
+				BA023B771A13BE3B000B4754 /* UIView+convenience.m in Sources */,
 				CE253FA81A10C290003DA45C /* FooterNewReceita.m in Sources */,
 				BA023B601A13AF32000B4754 /* NotasCell.m in Sources */,
 				BAF76B5B1A0D2AAE00D2CC13 /* DragableTableReceitas.m in Sources */,
@@ -1094,6 +1149,7 @@
 				CE49840F1A0A9188009EC1A4 /* HeaderReceita.m in Sources */,
 				CE475F241A0CCEB500D33A1A /* NewBook.m in Sources */,
 				BAE4680B1A111E8E00D3F596 /* Ingredientes.m in Sources */,
+				BA023B7D1A13BEB3000B4754 /* Calendario.m in Sources */,
 				BAF9550B1A0A4B2C00277B94 /* LivroCellTableViewCell.m in Sources */,
 				BAF76B4F1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.m in Sources */,
 				BAE468191A112CFB00D3F596 /* IngredienteCellTableViewCell.m in Sources */,

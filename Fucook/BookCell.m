@@ -92,13 +92,7 @@
 
 
 
-- (IBAction)ClickDelete:(id)sender {
-    NSLog(@"Click Delete");
-}
 
-- (IBAction)ClickEdit:(id)sender {
-    NSLog(@"Click Edit");
-}
 
 // tenho de fazer uma verificaçao para os diferentes tamanhos de ecra
 -(void)setupViewMovel
@@ -145,17 +139,31 @@
     [self.viewMovel.layer setMask:_maskingLayer];
     
     
+}
+
+
+
+- (IBAction)clickEdit:(id)sender
+{
+    NSLog(@"Edit");
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(editarReceita) withObject:nil];
+    }
     
 }
 
-
-
-- (IBAction)clickEdit:(id)sender {
+- (IBAction)clickCalendario:(id)sender
+{
+    NSLog(@"Calendario");
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(calendarioReceita) withObject:nil];
+    }
 }
-
-- (IBAction)clickCalendario:(id)sender {
-}
-
-- (IBAction)clickCarrinho:(id)sender {
+- (IBAction)clickCarrinho:(id)sender
+{
+    NSLog(@"Carrinho");
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(adicionarReceita) withObject:nil];
+    }
 }
 @end

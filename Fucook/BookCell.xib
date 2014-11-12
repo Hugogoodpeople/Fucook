@@ -19,11 +19,11 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tls-sS-2I8">
                         <rect key="frame" x="82" y="444" width="157" height="50"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btndelet1.png" translatesAutoresizingMaskIntoConstraints="NO" id="HDu-w5-ALO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnedit1.png" translatesAutoresizingMaskIntoConstraints="NO" id="HDu-w5-ALO">
                                 <rect key="frame" x="10" y="11" width="23" height="27"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnedit1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kj2-ax-PGi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="btncall1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kj2-ax-PGi">
                                 <rect key="frame" x="66" y="13" width="24" height="24"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -40,7 +40,7 @@
                                     <action selector="clickEdit:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PWH-Ny-82g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddz-Yl-1I2">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddz-Yl-1I2">
                                 <rect key="frame" x="52" y="0.0" width="42" height="50"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -157,7 +157,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="btndelet1.png" width="20" height="24"/>
+        <image name="btncall1.png" width="23" height="24"/>
         <image name="btnedit1.png" width="24" height="24"/>
         <image name="btnshop1.png" width="24" height="24"/>
     </resources>

@@ -15,6 +15,7 @@
 #import "Notas.h"
 #import "NavigationBarItem.h"
 #import "NewReceita.h"
+#import "Calendario.h"
 
 
 @interface Book ()
@@ -66,7 +67,7 @@
     self.root.view.backgroundColor = [UIColor clearColor];
     
     [self.container addSubview:self.root.view];
-    
+    self.root.delegate = self;
     self.root.tableView.delegate = self;
 
 }
@@ -142,6 +143,20 @@
     
 }
 
+-(void)editarReceita
+{
+    NSLog(@"Delegado Editar");
+}
 
+-(void)calendarioReceita
+{
+    NSLog(@"Delegado Calendario");
+    [self.navigationController pushViewController:[Calendario new] animated:YES];
+}
+
+-(void)adicionarReceita
+{
+    NSLog(@"Delegado Adicionar");
+}
 
 @end

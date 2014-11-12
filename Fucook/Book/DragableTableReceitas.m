@@ -120,6 +120,8 @@
     [cell setSelected:YES];
     //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];
     
+    cell.delegate = self.delegate;
+    
     return cell;
     
 }
