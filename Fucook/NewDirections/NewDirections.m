@@ -282,12 +282,12 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView
 numberOfRowsInComponent:(NSInteger)component
 {
-    return 7;
+    return 60;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return @"asds";
+    return [NSString stringWithFormat:@"%ld min",(long)row+1];
 }
 
 
@@ -313,5 +313,10 @@ numberOfRowsInComponent:(NSInteger)component
         PickerAberto=1;
     }
     
+}
+- (IBAction)btDoneTime:(id)sender {
+    //long d = [self.pickerView selectedRowInComponent:0];
+    self.labelTime.text = [NSString stringWithFormat:@"%ld",(long)[self.pickerView selectedRowInComponent:0]+1];
+    [self btAbrir:self];
 }
 @end

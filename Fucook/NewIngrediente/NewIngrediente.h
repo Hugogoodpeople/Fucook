@@ -28,5 +28,7 @@
 - (IBAction)btUnit:(id)sender;
 - (IBAction)btQuant:(id)sender;
 
+- (IBAction)btCloseUnit:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelUnit;
 @end

@@ -11,6 +11,8 @@
 @interface NewIngrediente (){
     BOOL pickerQuantA;
     BOOL pickerUnitA;
+    
+     NSArray *_pickerDataUnit;
 }
 @end
 
@@ -35,6 +37,8 @@
     self.navigationItem.leftBarButtonItem = anotherButtonback;
     
     self.navigationItem.title = @"Ingredient";
+    
+    _pickerDataUnit = @[@"g", @"Kg", @"ml", @"dl", @"cl", @"L", @"un", @"tbsp"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -115,14 +119,19 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView
 numberOfRowsInComponent:(NSInteger)component
 {
-    return 7;
+    return _pickerDataUnit.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return @"asds";
+    return _pickerDataUnit[row];
 }
 
 
 
+- (IBAction)btCloseUnit:(id)sender {
+    long b = [self.pickerUnit selectedRowInComponent:0];
+    self.labelUnit.text = [_pickerDataUnit objectAtIndex:b];
+    [self btUnit:self];
+}
 @end

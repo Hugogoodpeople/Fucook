@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewIngrediente">
             <connections>
+                <outlet property="labelUnit" destination="hK7-ee-8ab" id="uD5-O2-mKl"/>
                 <outlet property="pickerQuantity" destination="efQ-Aw-jUX" id="04X-gg-8Qx"/>
                 <outlet property="pickerUnit" destination="lih-CI-b1l" id="4Ix-Ro-bpX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -53,6 +54,17 @@
                                 <outlet property="delegate" destination="-1" id="eKY-LQ-diH"/>
                             </connections>
                         </pickerView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7iL-fo-l0Q">
+                            <rect key="frame" x="266" y="8" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Done">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btCloseUnit:" destination="-1" eventType="touchUpInside" id="eQi-9F-dJ1"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                 </view>

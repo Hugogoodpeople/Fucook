@@ -43,7 +43,7 @@
      self.capturedImages = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view from its nib.
     
-    _pickerDataPrep = @[@"10 min", @"20 min", @"30 min", @"40 min", @"50 min", @"1 hr", @"1,5 hr", @"2 hr", @"2,5 hr", @"3 hr"];
+    _pickerDataPrep = @[@"10 min", @"20 min", @"30 min", @"40 min", @"50 min", @"60 min", @"90 min", @"120 min", @"150 min", @"180 min"];
     _pickerDataCat = @[@"Breakfast", @"Lunch", @"Layoff", @"Dinner"];
     _pickerDataServ = @[@"Item 1", @"Item 2", @"Item 3", @"Item 4", @"Item 5", @"Item 6"];
     _pickerDataDifi = @[@"Easy", @"Medium", @"Hard"];
@@ -400,14 +400,26 @@
 }
 
 - (IBAction)btDonePre:(id)sender {
+    long a = [self.pickerPrep selectedRowInComponent:0];
+    self.labelPre.text = [_pickerDataPrep objectAtIndex:a];
+    [self btPretime:self];
 }
 
 - (IBAction)btDoneCate:(id)sender {
+    long b = [self.pickerCate selectedRowInComponent:0];
+    self.labelCat.text = [_pickerDataCat objectAtIndex:b];
+    [self btCategory:self];
 }
 
 - (IBAction)btDoneServ:(id)sender {
+    long c = [self.pickerServi selectedRowInComponent:0];
+    self.labelServ.text = [_pickerDataServ objectAtIndex:c];
+    [self btServings:self];
 }
 
 - (IBAction)btDoneDifi:(id)sender {
+    long d = [self.pickerDifi selectedRowInComponent:0];
+    self.labelDif.text = [_pickerDataDifi objectAtIndex:d];
+    [self btDoneDifi:self];
 }
 @end

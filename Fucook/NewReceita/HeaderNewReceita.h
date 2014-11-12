@@ -39,6 +39,10 @@
 - (IBAction)btDoneServ:(id)sender;
 - (IBAction)btDoneDifi:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelPre;
+@property (weak, nonatomic) IBOutlet UILabel *labelCat;
+@property (weak, nonatomic) IBOutlet UILabel *labelServ;
+@property (weak, nonatomic) IBOutlet UILabel *labelDif;
 
 
 @end
