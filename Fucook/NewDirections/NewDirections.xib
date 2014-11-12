@@ -11,12 +11,14 @@
                 <outlet property="labelTime" destination="dff-4c-EGu" id="ZNw-yA-iYt"/>
                 <outlet property="pickerView" destination="OUa-co-GmU" id="mXn-vc-pGN"/>
                 <outlet property="scrollDir" destination="0Cs-t1-MgY" id="gHl-ww-84Z"/>
+                <outlet property="textDesc" destination="zIg-DY-V43" id="Zxa-n0-OOK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewDown" destination="QqJ-rm-2UD" id="9iT-8M-hYd"/>
                 <outlet property="viewImagem" destination="uo8-8C-UOH" id="mjg-8X-mdP"/>
                 <outlet property="viewLabel1" destination="zVV-Lt-sTP" id="FfZ-Aq-q3t"/>
                 <outlet property="viewLabel2" destination="ZYz-Tk-Fk2" id="kpR-OB-nds"/>
                 <outlet property="viewPicker" destination="EKW-Sw-AOu" id="oLi-eH-2j3"/>
+                <outlet property="viewText" destination="sZG-64-0JU" id="apY-dZ-oyy"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -48,7 +50,7 @@
                                 </pickerView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="um0-Go-Rey">
                                     <rect key="frame" x="271" y="0.0" width="37" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Done">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,25 +109,25 @@
                         </view>
                         <view contentMode="scaleToFill" id="ZYz-Tk-Fk2">
                             <rect key="frame" x="0.0" y="356" width="320" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dff-4c-EGu">
                                     <rect key="frame" x="10" y="13" width="25" height="24"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="csn-Hn-sKp">
                                     <rect key="frame" x="40" y="13" width="30" height="24"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fyh-GA-pfn">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <state key="normal">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -189,7 +191,7 @@
                     </subviews>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="146" y="709"/>
         </view>

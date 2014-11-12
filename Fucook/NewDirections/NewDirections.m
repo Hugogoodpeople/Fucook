@@ -46,14 +46,16 @@
     
     self.navigationItem.title = @"Directions";
     
-    [self.scrollDir setContentSize:CGSizeMake(self.view.frame.size.width, 680)];
+    [self.scrollDir setContentSize:CGSizeMake(self.view.frame.size.width, self.viewDown.frame.origin.y+self.viewDown.frame.size.height+5)];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.capturedImages = [[NSMutableArray alloc] init];
     
-
-
-
+    self.textDesc.delegate=self;
+    self.textDesc.tag=1;
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)];
+    [self.view addGestureRecognizer:singleTap];
 
 }
 
@@ -66,6 +68,25 @@
     [self.navigationController popViewControllerAnimated:YES];
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
 }
+
+- (void)textViewDidBeginEditing:(UITextView *)textView{
+    if(PickerAberto==1){
+        [self btAbrir:self];
+    }
+        CGPoint scrollPoint = CGPointMake(0, 300);
+        [self.scrollDir setContentOffset:scrollPoint animated:YES];
+
+}
+
+
+-(void)handleSingleTap
+{
+    [self.textDesc resignFirstResponder];
+    CGPoint scrollPoint = CGPointMake(0, 0);    
+    [self.scrollDir setContentOffset:scrollPoint animated:YES];
+}
+
+
 
 
 - (IBAction)btFoto:(id)sender {
@@ -292,7 +313,13 @@ numberOfRowsInComponent:(NSInteger)component
 
 
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    
+    
+    return textView.text.length + (text.length - range.length) <= 2000;
 
+}
 
 
 

@@ -23,8 +23,10 @@
 @property (weak, nonatomic) IBOutlet UIView *viewLabel1;
 @property (weak, nonatomic) IBOutlet UIView *viewLabel2;
 
+@property (weak, nonatomic) IBOutlet UIView *viewText;
 
 - (IBAction)btDoneTime:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *textDesc;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTime;
 @end

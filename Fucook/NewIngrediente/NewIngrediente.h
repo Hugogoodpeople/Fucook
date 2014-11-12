@@ -29,6 +29,8 @@
 - (IBAction)btQuant:(id)sender;
 
 - (IBAction)btCloseUnit:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *textName;
+@property (weak, nonatomic) IBOutlet UITextField *textQuant;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelUnit;
 @end

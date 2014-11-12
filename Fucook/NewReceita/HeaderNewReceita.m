@@ -47,12 +47,32 @@
     _pickerDataCat = @[@"Breakfast", @"Lunch", @"Layoff", @"Dinner"];
     _pickerDataServ = @[@"Item 1", @"Item 2", @"Item 3", @"Item 4", @"Item 5", @"Item 6"];
     _pickerDataDifi = @[@"Easy", @"Medium", @"Hard"];
+    
+    self.textName.delegate=self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+
 
 
 /*
@@ -353,8 +373,8 @@
             [self.viewPickerCategory setFrame:CGRectMake(0,  self.viewCategory.frame.origin.y+self.viewCategory.frame.size.height, self.viewPickerCategory.frame.size.width,self.viewPickerCategory.frame.size.height)];
             [self.viewPickerServings setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewPickerServings.frame.size.width,self.viewPickerServings.frame.size.height)];
             [self.viewPickerDificulty setFrame:CGRectMake(0,  self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, self.viewPickerDificulty.frame.size.width,self.viewPickerDificulty.frame.size.height)];
-            ingre = [NIngredientes alloc];
-            [ingre.view setFrame:CGRectMake(0, self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, ingre.view.frame.size.width, ingre.view.frame.size.height )];
+            //ingre = [NIngredientes alloc];
+            //[ingre.view setFrame:CGRectMake(0, self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, ingre.view.frame.size.width, ingre.view.frame.size.height )];
         }];
         pickerTime=1;
     }

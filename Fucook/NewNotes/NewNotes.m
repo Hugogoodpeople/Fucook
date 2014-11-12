@@ -33,7 +33,8 @@
     self.navigationItem.leftBarButtonItem = anotherButtonback;
     
     self.navigationItem.title = @"Notes";
-    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)];
+    [self.view addGestureRecognizer:singleTap];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +44,13 @@
 
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)handleSingleTap
+{
+    [self.textNote resignFirstResponder];
+    //CGPoint scrollPoint = CGPointMake(0, 0);
+    //[self.viewNote setContentOffset:scrollPoint animated:YES];
 }
 
 /*

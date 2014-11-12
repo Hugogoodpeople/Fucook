@@ -62,7 +62,6 @@
     self.txt2.leftView = paddingView;}
 
 - (IBAction)back:(id)sender {
-    NSLog(@"clicou pesquisa");
     // Receita *objYourViewController = [[Receita alloc] initWithNibName:@"Receita" bundle:nil];
     [self.navigationController popViewControllerAnimated:YES];
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];

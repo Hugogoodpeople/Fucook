@@ -44,5 +44,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelServ;
 @property (weak, nonatomic) IBOutlet UILabel *labelDif;
 
+@property (weak, nonatomic) IBOutlet UITextField *textName;
 
 @end

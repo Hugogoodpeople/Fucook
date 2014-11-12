@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface NewNotes : UIViewController
+@property (strong, nonatomic) IBOutlet UIView *viewNote;
+@property (weak, nonatomic) IBOutlet UITextView *textNote;
 
 @end

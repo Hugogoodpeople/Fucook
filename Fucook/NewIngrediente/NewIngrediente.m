@@ -39,6 +39,12 @@
     self.navigationItem.title = @"Ingredient";
     
     _pickerDataUnit = @[@"g", @"Kg", @"ml", @"dl", @"cl", @"L", @"un", @"tbsp"];
+    
+     self.textName.delegate=self;
+     self.textQuant.delegate=self;
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)];
+    [self.view addGestureRecognizer:singleTap];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +55,32 @@
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+}
+
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    if(pickerQuantA==0){
+        [self btUnit:self];
+    }
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    //CGPoint scrollPoint = CGPointMake(0.0, -50);
+    
+    //[self.scrollView setContentOffset:scrollPoint animated:YES];
+}
+
+-(void)handleSingleTap
+{
+
+    [self.textQuant resignFirstResponder];
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    
+    return YES;
 }
 
 /*
@@ -80,28 +112,6 @@
 
 }
 
-/*- (IBAction)btQuant:(id)sender {
-    
-    if(pickerQuantA){
-         NSLog(@"Esconde %u",pickerQuantA);
-        [UIView animateWithDuration:0.5 animations:^{
-            [self.viewUnit setFrame:CGRectMake(0, self.viewQuantity.frame.origin.y+self.viewQuantity.frame.size.height, self.viewUnit.frame.size.width,self.viewUnit.frame.size.height)];
-            [self.viewPickerUnit setFrame:CGRectMake(0, self.viewUnit.frame.origin.y+self.viewUnit.frame.size.height, self.viewPickerUnit.frame.size.width,self.viewPickerUnit.frame.size.height)];
-            [self.viewNutricao setFrame:CGRectMake(0,  self.viewUnit.frame.origin.y+self.viewUnit.frame.size.height, self.viewNutricao.frame.size.width,self.viewNutricao.frame.size.height)];
-            [self.viewCobrir setFrame:CGRectMake(0, self.viewNutricao.frame.origin.y+self.viewNutricao.frame.size.height, self.viewCobrir.frame.size.width,self.viewCobrir.frame.size.height)];
-        }];
-        pickerQuantA=0;
-    }else{
-         NSLog(@"Mostra %u",pickerQuantA);
-        [UIView animateWithDuration:0.5 animations:^{
-            [self.viewUnit setFrame:CGRectMake(0, self.viewPickerQuant.frame.origin.y+self.viewPickerQuant.frame.size.height, self.viewUnit.frame.size.width,self.viewUnit.frame.size.height)];
-            [self.viewPickerUnit setFrame:CGRectMake(0, self.viewUnit.frame.origin.y+self.viewUnit.frame.size.height, self.viewPickerUnit.frame.size.width,self.viewPickerUnit.frame.size.height)];
-            [self.viewNutricao setFrame:CGRectMake(0, self.viewUnit.frame.origin.y+self.viewUnit.frame.size.height, self.viewNutricao.frame.size.width,self.viewNutricao.frame.size.height)];
-            [self.viewCobrir setFrame:CGRectMake(0, self.viewNutricao.frame.origin.y+self.viewNutricao.frame.size.height, self.viewCobrir.frame.size.width,self.viewCobrir.frame.size.height)];
-        }];
-        pickerQuantA=1;
-    }
-}*/
 
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
