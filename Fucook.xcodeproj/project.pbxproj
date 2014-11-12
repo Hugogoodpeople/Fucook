@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA023B451A135D38000B4754 /* DirectionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B431A135D38000B4754 /* DirectionsCell.m */; };
+		BA023B461A135D38000B4754 /* DirectionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B441A135D38000B4754 /* DirectionsCell.xib */; };
+		BA023B4A1A1367B2000B4754 /* ObjectDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B491A1367B2000B4754 /* ObjectDirections.m */; };
+		BA023B511A137BEC000B4754 /* DirectionsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B4F1A137BEC000B4754 /* DirectionsHeader.m */; };
+		BA023B521A137BEC000B4754 /* DirectionsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B501A137BEC000B4754 /* DirectionsHeader.xib */; };
 		BA66E5C51A1230B60090F99D /* NewDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5BB1A1230B60090F99D /* NewDirections.m */; };
 		BA66E5C61A1230B60090F99D /* NewDirections.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5BC1A1230B60090F99D /* NewDirections.xib */; };
 		BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5BF1A1230B60090F99D /* NewIngrediente.m */; };
@@ -51,6 +56,8 @@
 		BA66E6151A1258160090F99D /* imglogofucook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5F51A1258160090F99D /* imglogofucook@2x.png */; };
 		BA66E6161A1258160090F99D /* imglogofucook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5F61A1258160090F99D /* imglogofucook@3x.png */; };
 		BA66E61A1A1262910090F99D /* ObjecteIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E6191A1262910090F99D /* ObjecteIngrediente.m */; };
+		BA66E61F1A1282160090F99D /* DirectionsHugo.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E61D1A1282160090F99D /* DirectionsHugo.m */; };
+		BA66E6201A1282160090F99D /* DirectionsHugo.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E61E1A1282160090F99D /* DirectionsHugo.xib */; };
 		BAC6394F1A07ED420049E3BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC6394E1A07ED420049E3BD /* main.m */; };
 		BAC639521A07ED420049E3BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC639511A07ED420049E3BD /* AppDelegate.m */; };
 		BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAC639531A07ED420049E3BD /* Fucook.xcdatamodeld */; };
@@ -157,6 +164,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA023B421A135D38000B4754 /* DirectionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionsCell.h; path = Fucook/Receita/DirectionsCell.h; sourceTree = "<group>"; };
+		BA023B431A135D38000B4754 /* DirectionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionsCell.m; path = Fucook/Receita/DirectionsCell.m; sourceTree = "<group>"; };
+		BA023B441A135D38000B4754 /* DirectionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DirectionsCell.xib; path = Fucook/Receita/DirectionsCell.xib; sourceTree = "<group>"; };
+		BA023B481A1367B2000B4754 /* ObjectDirections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectDirections.h; path = Fucook/Receita/ObjectDirections.h; sourceTree = "<group>"; };
+		BA023B491A1367B2000B4754 /* ObjectDirections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectDirections.m; path = Fucook/Receita/ObjectDirections.m; sourceTree = "<group>"; };
+		BA023B4E1A137BEC000B4754 /* DirectionsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionsHeader.h; path = Fucook/Receita/DirectionsHeader.h; sourceTree = "<group>"; };
+		BA023B4F1A137BEC000B4754 /* DirectionsHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionsHeader.m; path = Fucook/Receita/DirectionsHeader.m; sourceTree = "<group>"; };
+		BA023B501A137BEC000B4754 /* DirectionsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DirectionsHeader.xib; path = Fucook/Receita/DirectionsHeader.xib; sourceTree = "<group>"; };
 		BA05F5821A08D24300E752E7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		BA05F5831A08D24300E752E7 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
 		BA05F5841A08D24300E752E7 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
@@ -210,6 +225,9 @@
 		BA66E5F61A1258160090F99D /* imglogofucook@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imglogofucook@3x.png"; path = "Fucook/Imagens/imglogofucook@3x.png"; sourceTree = "<group>"; };
 		BA66E6181A1262910090F99D /* ObjecteIngrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjecteIngrediente.h; path = Fucook/Receita/ObjecteIngrediente.h; sourceTree = "<group>"; };
 		BA66E6191A1262910090F99D /* ObjecteIngrediente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjecteIngrediente.m; path = Fucook/Receita/ObjecteIngrediente.m; sourceTree = "<group>"; };
+		BA66E61C1A1282160090F99D /* DirectionsHugo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionsHugo.h; path = Fucook/Receita/DirectionsHugo.h; sourceTree = "<group>"; };
+		BA66E61D1A1282160090F99D /* DirectionsHugo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionsHugo.m; path = Fucook/Receita/DirectionsHugo.m; sourceTree = "<group>"; };
+		BA66E61E1A1282160090F99D /* DirectionsHugo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DirectionsHugo.xib; path = Fucook/Receita/DirectionsHugo.xib; sourceTree = "<group>"; };
 		BAC639491A07ED420049E3BD /* Fucook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fucook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC6394D1A07ED420049E3BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAC6394E1A07ED420049E3BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -354,6 +372,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA023B471A136788000B4754 /* ObjectDirections */ = {
+			isa = PBXGroup;
+			children = (
+				BA023B481A1367B2000B4754 /* ObjectDirections.h */,
+				BA023B491A1367B2000B4754 /* ObjectDirections.m */,
+			);
+			name = ObjectDirections;
+			sourceTree = "<group>";
+		};
 		BA66E5B91A1230B60090F99D /* NewDirections */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +418,23 @@
 				BA66E6191A1262910090F99D /* ObjecteIngrediente.m */,
 			);
 			name = ObjectIngrediente;
+			sourceTree = "<group>";
+		};
+		BA66E61B1A1281F10090F99D /* Directions */ = {
+			isa = PBXGroup;
+			children = (
+				BA023B471A136788000B4754 /* ObjectDirections */,
+				BA66E61C1A1282160090F99D /* DirectionsHugo.h */,
+				BA66E61D1A1282160090F99D /* DirectionsHugo.m */,
+				BA66E61E1A1282160090F99D /* DirectionsHugo.xib */,
+				BA023B421A135D38000B4754 /* DirectionsCell.h */,
+				BA023B431A135D38000B4754 /* DirectionsCell.m */,
+				BA023B441A135D38000B4754 /* DirectionsCell.xib */,
+				BA023B4E1A137BEC000B4754 /* DirectionsHeader.h */,
+				BA023B4F1A137BEC000B4754 /* DirectionsHeader.m */,
+				BA023B501A137BEC000B4754 /* DirectionsHeader.xib */,
+			);
+			name = Directions;
 			sourceTree = "<group>";
 		};
 		BAC639401A07ED420049E3BD = {
@@ -490,6 +534,7 @@
 		BAE467F51A10CB3600D3F596 /* Receita */ = {
 			isa = PBXGroup;
 			children = (
+				BA66E61B1A1281F10090F99D /* Directions */,
 				BAE468071A111E7500D3F596 /* Ingredientes */,
 				BAE467FB1A10CBA300D3F596 /* outros */,
 			);
@@ -869,6 +914,7 @@
 				BA66E5C61A1230B60090F99D /* NewDirections.xib in Resources */,
 				BAF955631A0A9D6900277B94 /* btncall2@3x.png in Resources */,
 				BA66E6031A1258160090F99D /* icoabout@2x.png in Resources */,
+				BA023B461A135D38000B4754 /* DirectionsCell.xib in Resources */,
 				BA66E5D61A1231910090F99D /* Ingredientes.xib in Resources */,
 				BAF955781A0A9D6900277B94 /* btnshop1@2x.png in Resources */,
 				BA66E60D1A1258160090F99D /* icoimport@2x.png in Resources */,
@@ -901,6 +947,7 @@
 				BA66E60F1A1258160090F99D /* icorating@2x.png in Resources */,
 				BAC639851A07F0C40049E3BD /* Book.xib in Resources */,
 				BA66E6121A1258160090F99D /* icosettings@3x.png in Resources */,
+				BA66E6201A1282160090F99D /* DirectionsHugo.xib in Resources */,
 				BAF76B501A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.xib in Resources */,
 				BAF955691A0A9D6900277B94 /* btnedit1@3x.png in Resources */,
 				BAF66E281A0B7DA900E90B7D /* imgbckhome@2x.png in Resources */,
@@ -937,6 +984,7 @@
 				BA66E6071A1258160090F99D /* icocloud@2x.png in Resources */,
 				BA66E5D21A12310A0090F99D /* Directions.xib in Resources */,
 				BA66E5CA1A1230B60090F99D /* NewNotes.xib in Resources */,
+				BA023B521A137BEC000B4754 /* DirectionsHeader.xib in Resources */,
 				BAF9557C1A0A9D6900277B94 /* imgsample001.jpg in Resources */,
 				BAF9557A1A0A9D6900277B94 /* btnshop2@2x.png in Resources */,
 				BAF955621A0A9D6900277B94 /* btncall2@2x.png in Resources */,
@@ -975,6 +1023,7 @@
 				BAF76B601A0D314700D2CC13 /* BookCell.m in Sources */,
 				BAF955141A0A4BA300277B94 /* ATSDragToReorderTableViewController.m in Sources */,
 				BA66E5C51A1230B60090F99D /* NewDirections.m in Sources */,
+				BA023B511A137BEC000B4754 /* DirectionsHeader.m in Sources */,
 				CE253F991A10B9C7003DA45C /* HeaderNewReceita.m in Sources */,
 				BAE467F41A10C7F500D3F596 /* THTinderNavigationController.m in Sources */,
 				CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */,
@@ -982,8 +1031,10 @@
 				BAF76B551A0D0FD200D2CC13 /* Settings.m in Sources */,
 				CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */,
 				BAF9551E1A0A7B7200277B94 /* Home.m in Sources */,
+				BA023B4A1A1367B2000B4754 /* ObjectDirections.m in Sources */,
 				CE253F9B1A10B9C7003DA45C /* NewReceita.m in Sources */,
 				BAC639841A07F0C40049E3BD /* Book.m in Sources */,
+				BA023B451A135D38000B4754 /* DirectionsCell.m in Sources */,
 				CE253FA81A10C290003DA45C /* FooterNewReceita.m in Sources */,
 				BAF76B5B1A0D2AAE00D2CC13 /* DragableTableReceitas.m in Sources */,
 				BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */,
@@ -999,6 +1050,7 @@
 				BAE467FE1A10CBB900D3F596 /* NavigationBarItem.m in Sources */,
 				BA66E5D11A12310A0090F99D /* Directions.m in Sources */,
 				CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */,
+				BA66E61F1A1282160090F99D /* DirectionsHugo.m in Sources */,
 				BAE468101A11214A00D3F596 /* HeaderIngrediente.m in Sources */,
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
 				BA66E61A1A1262910090F99D /* ObjecteIngrediente.m in Sources */,

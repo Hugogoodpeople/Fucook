@@ -9,7 +9,7 @@
 #import "Book.h"
 #import "DragableTableReceitas.h"
 #import "LivroCellTableViewCell.h"
-//#import "ReceitaController.h"
+#import "DirectionsHugo.h"
 #import "THTinderNavigationController.h"
 #import "Ingredientes.h"
 #import "NavigationBarItem.h"
@@ -91,10 +91,15 @@
     
     
     Ingredientes *viewController1 = [[Ingredientes alloc] init];
-    [viewController1.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-88)];
+    [viewController1.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
     viewController1.view.backgroundColor = [UIColor whiteColor];
-    UIViewController *viewController2 = [[UIViewController alloc] init];
+    
+    DirectionsHugo *viewController2 = [[DirectionsHugo alloc] init];
+    [viewController2.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
+    viewController2.view.clipsToBounds = YES;
     viewController2.view.backgroundColor = [UIColor whiteColor];
+
+    
     UIViewController *viewController3 = [[UIViewController alloc] init];
     viewController3.view.backgroundColor = [UIColor blueColor];
     UIViewController *viewController4 = [[UIViewController alloc] init];
