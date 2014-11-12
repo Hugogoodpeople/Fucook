@@ -100,14 +100,14 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UILabel  * label = [[UILabel alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width -16  , 9999)];
+    UILabel  * label = [[UILabel alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width - 0  , 9999)];
     label.numberOfLines=0;
     label.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:13];
     label.text = ((ObjectDirections *)[self.items objectAtIndex:indexPath.section]).descricao;
     
     CGSize maximumLabelSize = CGSizeMake(320, 9999);
     CGSize expectedSize = [label sizeThatFits:maximumLabelSize];
-    return expectedSize.height + 40 ;
+    return expectedSize.height + 35 ;
 }
 
 

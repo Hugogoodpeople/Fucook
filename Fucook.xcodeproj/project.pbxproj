@@ -12,6 +12,13 @@
 		BA023B4A1A1367B2000B4754 /* ObjectDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B491A1367B2000B4754 /* ObjectDirections.m */; };
 		BA023B511A137BEC000B4754 /* DirectionsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B4F1A137BEC000B4754 /* DirectionsHeader.m */; };
 		BA023B521A137BEC000B4754 /* DirectionsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B501A137BEC000B4754 /* DirectionsHeader.xib */; };
+		BA023B571A13AD4E000B4754 /* Notas.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B551A13AD4E000B4754 /* Notas.m */; };
+		BA023B581A13AD4E000B4754 /* Notas.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B561A13AD4E000B4754 /* Notas.xib */; };
+		BA023B5C1A13AE59000B4754 /* ObjectNotas.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B5B1A13AE59000B4754 /* ObjectNotas.m */; };
+		BA023B601A13AF32000B4754 /* NotasCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B5E1A13AF32000B4754 /* NotasCell.m */; };
+		BA023B611A13AF32000B4754 /* NotasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B5F1A13AF32000B4754 /* NotasCell.xib */; };
+		BA023B651A13AFF9000B4754 /* NotasHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B631A13AFF9000B4754 /* NotasHeader.m */; };
+		BA023B661A13AFF9000B4754 /* NotasHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B641A13AFF9000B4754 /* NotasHeader.xib */; };
 		BA66E5C51A1230B60090F99D /* NewDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5BB1A1230B60090F99D /* NewDirections.m */; };
 		BA66E5C61A1230B60090F99D /* NewDirections.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5BC1A1230B60090F99D /* NewDirections.xib */; };
 		BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5BF1A1230B60090F99D /* NewIngrediente.m */; };
@@ -172,6 +179,17 @@
 		BA023B4E1A137BEC000B4754 /* DirectionsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionsHeader.h; path = Fucook/Receita/DirectionsHeader.h; sourceTree = "<group>"; };
 		BA023B4F1A137BEC000B4754 /* DirectionsHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionsHeader.m; path = Fucook/Receita/DirectionsHeader.m; sourceTree = "<group>"; };
 		BA023B501A137BEC000B4754 /* DirectionsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DirectionsHeader.xib; path = Fucook/Receita/DirectionsHeader.xib; sourceTree = "<group>"; };
+		BA023B541A13AD4E000B4754 /* Notas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notas.h; path = Fucook/Receita/Notas.h; sourceTree = "<group>"; };
+		BA023B551A13AD4E000B4754 /* Notas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notas.m; path = Fucook/Receita/Notas.m; sourceTree = "<group>"; };
+		BA023B561A13AD4E000B4754 /* Notas.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Notas.xib; path = Fucook/Receita/Notas.xib; sourceTree = "<group>"; };
+		BA023B5A1A13AE59000B4754 /* ObjectNotas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectNotas.h; path = Fucook/Receita/ObjectNotas.h; sourceTree = "<group>"; };
+		BA023B5B1A13AE59000B4754 /* ObjectNotas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectNotas.m; path = Fucook/Receita/ObjectNotas.m; sourceTree = "<group>"; };
+		BA023B5D1A13AF32000B4754 /* NotasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotasCell.h; path = Fucook/Receita/NotasCell.h; sourceTree = "<group>"; };
+		BA023B5E1A13AF32000B4754 /* NotasCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotasCell.m; path = Fucook/Receita/NotasCell.m; sourceTree = "<group>"; };
+		BA023B5F1A13AF32000B4754 /* NotasCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotasCell.xib; path = Fucook/Receita/NotasCell.xib; sourceTree = "<group>"; };
+		BA023B621A13AFF9000B4754 /* NotasHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotasHeader.h; path = Fucook/Receita/NotasHeader.h; sourceTree = "<group>"; };
+		BA023B631A13AFF9000B4754 /* NotasHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotasHeader.m; path = Fucook/Receita/NotasHeader.m; sourceTree = "<group>"; };
+		BA023B641A13AFF9000B4754 /* NotasHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotasHeader.xib; path = Fucook/Receita/NotasHeader.xib; sourceTree = "<group>"; };
 		BA05F5821A08D24300E752E7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		BA05F5831A08D24300E752E7 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
 		BA05F5841A08D24300E752E7 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
@@ -381,6 +399,32 @@
 			name = ObjectDirections;
 			sourceTree = "<group>";
 		};
+		BA023B531A13ABE3000B4754 /* Notas */ = {
+			isa = PBXGroup;
+			children = (
+				BA023B591A13ADA4000B4754 /* ObjectNotas */,
+				BA023B541A13AD4E000B4754 /* Notas.h */,
+				BA023B551A13AD4E000B4754 /* Notas.m */,
+				BA023B561A13AD4E000B4754 /* Notas.xib */,
+				BA023B5D1A13AF32000B4754 /* NotasCell.h */,
+				BA023B5E1A13AF32000B4754 /* NotasCell.m */,
+				BA023B5F1A13AF32000B4754 /* NotasCell.xib */,
+				BA023B621A13AFF9000B4754 /* NotasHeader.h */,
+				BA023B631A13AFF9000B4754 /* NotasHeader.m */,
+				BA023B641A13AFF9000B4754 /* NotasHeader.xib */,
+			);
+			name = Notas;
+			sourceTree = "<group>";
+		};
+		BA023B591A13ADA4000B4754 /* ObjectNotas */ = {
+			isa = PBXGroup;
+			children = (
+				BA023B5A1A13AE59000B4754 /* ObjectNotas.h */,
+				BA023B5B1A13AE59000B4754 /* ObjectNotas.m */,
+			);
+			name = ObjectNotas;
+			sourceTree = "<group>";
+		};
 		BA66E5B91A1230B60090F99D /* NewDirections */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +578,7 @@
 		BAE467F51A10CB3600D3F596 /* Receita */ = {
 			isa = PBXGroup;
 			children = (
+				BA023B531A13ABE3000B4754 /* Notas */,
 				BA66E61B1A1281F10090F99D /* Directions */,
 				BAE468071A111E7500D3F596 /* Ingredientes */,
 				BAE467FB1A10CBA300D3F596 /* outros */,
@@ -910,6 +955,7 @@
 				BAF9555B1A0A9D6900277B94 /* btnaddbook@3x.png in Resources */,
 				CE253FA31A10BB27003DA45C /* btnphoto2@2x.png in Resources */,
 				BA66E6151A1258160090F99D /* imglogofucook@2x.png in Resources */,
+				BA023B611A13AF32000B4754 /* NotasCell.xib in Resources */,
 				BA66E6141A1258160090F99D /* icoshare@3x.png in Resources */,
 				BA66E5C61A1230B60090F99D /* NewDirections.xib in Resources */,
 				BAF955631A0A9D6900277B94 /* btncall2@3x.png in Resources */,
@@ -949,6 +995,7 @@
 				BA66E6121A1258160090F99D /* icosettings@3x.png in Resources */,
 				BA66E6201A1282160090F99D /* DirectionsHugo.xib in Resources */,
 				BAF76B501A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.xib in Resources */,
+				BA023B661A13AFF9000B4754 /* NotasHeader.xib in Resources */,
 				BAF955691A0A9D6900277B94 /* btnedit1@3x.png in Resources */,
 				BAF66E281A0B7DA900E90B7D /* imgbckhome@2x.png in Resources */,
 				BAF9555C1A0A9D6900277B94 /* btnbook1@2x.png in Resources */,
@@ -980,6 +1027,7 @@
 				BAF9556B1A0A9D6900277B94 /* btnedit2@3x.png in Resources */,
 				BA66E5FE1A1258160090F99D /* btnmore@3x.png in Resources */,
 				BA66E5F71A1258160090F99D /* btleft2@2x.png in Resources */,
+				BA023B581A13AD4E000B4754 /* Notas.xib in Resources */,
 				BAF955751A0A9D6900277B94 /* btnsetting1@3x.png in Resources */,
 				BA66E6071A1258160090F99D /* icocloud@2x.png in Resources */,
 				BA66E5D21A12310A0090F99D /* Directions.xib in Resources */,
@@ -1034,8 +1082,11 @@
 				BA023B4A1A1367B2000B4754 /* ObjectDirections.m in Sources */,
 				CE253F9B1A10B9C7003DA45C /* NewReceita.m in Sources */,
 				BAC639841A07F0C40049E3BD /* Book.m in Sources */,
+				BA023B5C1A13AE59000B4754 /* ObjectNotas.m in Sources */,
+				BA023B651A13AFF9000B4754 /* NotasHeader.m in Sources */,
 				BA023B451A135D38000B4754 /* DirectionsCell.m in Sources */,
 				CE253FA81A10C290003DA45C /* FooterNewReceita.m in Sources */,
+				BA023B601A13AF32000B4754 /* NotasCell.m in Sources */,
 				BAF76B5B1A0D2AAE00D2CC13 /* DragableTableReceitas.m in Sources */,
 				BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */,
 				BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */,
@@ -1053,6 +1104,7 @@
 				BA66E61F1A1282160090F99D /* DirectionsHugo.m in Sources */,
 				BAE468101A11214A00D3F596 /* HeaderIngrediente.m in Sources */,
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
+				BA023B571A13AD4E000B4754 /* Notas.m in Sources */,
 				BA66E61A1A1262910090F99D /* ObjecteIngrediente.m in Sources */,
 				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,
 			);

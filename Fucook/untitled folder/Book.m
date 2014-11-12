@@ -12,6 +12,7 @@
 #import "DirectionsHugo.h"
 #import "THTinderNavigationController.h"
 #import "Ingredientes.h"
+#import "Notas.h"
 #import "NavigationBarItem.h"
 #import "NewReceita.h"
 
@@ -98,10 +99,13 @@
     [viewController2.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
     viewController2.view.clipsToBounds = YES;
     viewController2.view.backgroundColor = [UIColor whiteColor];
+    
+    Notas *viewController3 = [[Notas alloc] init];
+    [viewController3.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
+    viewController3.view.clipsToBounds = YES;
+    viewController3.view.backgroundColor = [UIColor whiteColor];
 
     
-    UIViewController *viewController3 = [[UIViewController alloc] init];
-    viewController3.view.backgroundColor = [UIColor blueColor];
     UIViewController *viewController4 = [[UIViewController alloc] init];
     viewController4.view.backgroundColor = [UIColor greenColor];
     
