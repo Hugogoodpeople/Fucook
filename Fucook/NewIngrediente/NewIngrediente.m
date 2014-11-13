@@ -59,9 +59,7 @@
 
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
-    if(pickerQuantA==0){
-        [self btUnit:self];
-    }
+
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     //CGPoint scrollPoint = CGPointMake(0.0, -50);

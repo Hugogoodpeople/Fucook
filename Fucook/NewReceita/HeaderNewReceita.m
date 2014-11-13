@@ -16,7 +16,6 @@
     BOOL pickerTime;
     NSArray *_pickerDataPrep;
     NSArray *_pickerDataCat;
-    NSArray *_pickerDataServ;
     NSArray *_pickerDataDifi;
     
      NIngredientes * ingre;
@@ -45,7 +44,6 @@
     
     _pickerDataPrep = @[@"10 min", @"20 min", @"30 min", @"40 min", @"50 min", @"60 min", @"90 min", @"120 min", @"150 min", @"180 min"];
     _pickerDataCat = @[@"Breakfast", @"Lunch", @"Layoff", @"Dinner"];
-    _pickerDataServ = @[@"Item 1", @"Item 2", @"Item 3", @"Item 4", @"Item 5", @"Item 6"];
     _pickerDataDifi = @[@"Easy", @"Medium", @"Hard"];
     
     self.textName.delegate=self;
@@ -107,7 +105,7 @@
                     NSLog(@"photo");
                     //[self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
                     //if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-                    //[self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
+                    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
                     //}
                     break;
                 default:
@@ -278,27 +276,44 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self dismissViewControllerAnimated:NO completion:NULL];
 }
 
 
 
 - (IBAction)btCategory:(id)sender {
+    if(pickerServings==1){[self btServings:self];}
+    if(pickerDificulty==1){[self btDificulty:self];}
+    if(pickerTime==1){[self btPretime:self];}
     if(pickerCategory){
         [UIView animateWithDuration:0.5 animations:^{
+            [self.viewPickerCategory setFrame:CGRectMake(0,  self.viewName.frame.origin.y+self.viewName.frame.size.height, self.viewPickerCategory.frame.size.width,self.viewPickerCategory.frame.size.height)];
             [self.viewServings setFrame:CGRectMake(0,  self.viewCategory.frame.origin.y+self.viewCategory   .frame.size.height, self.viewServings.frame.size.width,self.viewServings.frame.size.height)];
             [self.viewDificulty setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewDificulty.frame.size.width,self.viewDificulty.frame.size.height)];
-            [self.viewPickerServings setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewPickerServings.frame.size.width,self.viewPickerServings.frame.size.height)];
-            [self.viewPickerDificulty setFrame:CGRectMake(0,  self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, self.viewPickerDificulty.frame.size.width,self.viewPickerDificulty.frame.size.height)];
+            //[self.viewPickerServings setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewPickerServings.frame.size.width,self.viewPickerServings.frame.size.height)];
+            //[self.viewPickerDificulty setFrame:CGRectMake(0,  self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, self.viewPickerDificulty.frame.size.width,self.viewPickerDificulty.frame.size.height)];
+            NSNumber *num = [NSNumber numberWithFloat:(self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
+            NSNumber *tamPicker = [NSNumber numberWithFloat:(self.pickerCate.frame.size.height)];
+            if (self.delegate) {
+                [self.delegate performSelector:@selector(animarIngre:outro:) withObject:num withObject:tamPicker];
+            }
+            [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
             
         }];
         pickerCategory=0;
     }else{
         [UIView animateWithDuration:0.5 animations:^{
+            [self.viewPickerCategory setFrame:CGRectMake(0,  self.viewCategory.frame.origin.y+self.viewCategory.frame.size.height, self.viewPickerCategory.frame.size.width,self.viewPickerCategory.frame.size.height)];
             [self.viewServings setFrame:CGRectMake(0,  self.viewPickerCategory.frame.origin.y+self.viewPickerCategory.frame.size.height, self.viewServings.frame.size.width,self.viewServings.frame.size.height)];
             [self.viewDificulty setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewDificulty.frame.size.width,self.viewDificulty.frame.size.height)];
-            [self.viewPickerServings setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewPickerServings.frame.size.width,self.viewPickerServings.frame.size.height)];
-            [self.viewPickerDificulty setFrame:CGRectMake(0,  self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, self.viewPickerDificulty.frame.size.width,self.viewPickerDificulty.frame.size.height)];
+            //[self.viewPickerServings setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewPickerServings.frame.size.width,self.viewPickerServings.frame.size.height)];
+            //[self.viewPickerDificulty setFrame:CGRectMake(0,  self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, self.viewPickerDificulty.frame.size.width,self.viewPickerDificulty.frame.size.height)];
+            NSNumber *num = [NSNumber numberWithFloat:(self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
+            NSNumber *tamPicker = [NSNumber numberWithFloat:(self.pickerCate.frame.size.height)];
+            if (self.delegate) {
+                [self.delegate performSelector:@selector(animarIngre:outro:) withObject:num withObject:tamPicker];
+            }
+            [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
             
         }];
         pickerCategory=1;
@@ -308,20 +323,29 @@
 }
 
 - (IBAction)btDificulty:(id)sender {
-    
+    if(pickerCategory==1){[self btCategory:self];}
+    if(pickerServings==1){[self btServings:self];}
+    if(pickerTime==1){[self btPretime:self];}
     if(pickerDificulty){
         [UIView animateWithDuration:0.5 animations:^{
-            //[self.viewServings setFrame:CGRectMake(0,  self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, self.viewServings.frame.size.width,self.viewServings.frame.size.height)];
-            //[self.viewDificulty setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewDificulty.frame.size.width,self.viewDificulty.frame.size.height)];
-            //[self.viewPickerPrepa setFrame:CGRectMake(0,  self.viewPre.frame.origin.y+self.viewPre.frame.size.height, self.viewPickerPrepa.frame.size.width,self.viewPickerPrepa.frame.size.height)];
-            
+            [self.viewPickerDificulty setFrame:CGRectMake(0,  self.viewPre.frame.origin.y+self.viewPre.frame.size.height, self.viewPickerDificulty.frame.size.width,self.viewPickerDificulty.frame.size.height)];
+            NSNumber *num = [NSNumber numberWithFloat:(self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
+            NSNumber *tamPicker = [NSNumber numberWithFloat:(self.viewDificulty.frame.size.height)];
+            if (self.delegate) {
+                [self.delegate performSelector:@selector(animarIngre:outro:) withObject:num withObject:tamPicker ];
+            }
+            [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
         }];
         pickerDificulty=0;
     }else{
         [UIView animateWithDuration:0.5 animations:^{
-            //[self.viewServings setFrame:CGRectMake(0,  self.viewPickerCategory.frame.origin.y+self.viewPickerCategory.frame.size.height, self.viewServings.frame.size.width,self.viewServings.frame.size.height)];
-            //[self.viewDificulty setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewDificulty.frame.size.width,self.viewDificulty.frame.size.height)];
-            //[self.viewPickerPrepa setFrame:CGRectMake(0,  self.viewPickerCategory.frame.origin.y+self.viewPickerCategory.frame.size.height, self.viewPickerPrepa.frame.size.width,self.viewPickerPrepa.frame.size.height)];
+            [self.viewPickerDificulty setFrame:CGRectMake(0,  self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, self.viewPickerDificulty.frame.size.width,self.viewPickerDificulty.frame.size.height)];
+            NSNumber *num = [NSNumber numberWithFloat:(self.viewPickerDificulty.frame.origin.y+self.viewPickerDificulty.frame.size.height)];
+            NSNumber *tamPicker = [NSNumber numberWithFloat:(self.viewPickerDificulty.frame.size.height)];
+            if (self.delegate) {
+                [self.delegate performSelector:@selector(animarIngre:outro:) withObject:num withObject:tamPicker];
+            }
+            [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.viewPickerDificulty.frame.origin.y+self.viewPickerDificulty.frame.size.height)];
         }];
         pickerDificulty=1;
     }
@@ -329,17 +353,33 @@
 }
 
 - (IBAction)btServings:(id)sender {
+    if(pickerCategory==1){[self btCategory:self];}
+    if(pickerDificulty==1){[self btDificulty:self];}
+    if(pickerTime==1){[self btPretime:self];}
     if(pickerServings){
         [UIView animateWithDuration:0.5 animations:^{
+            [self.viewPickerServings setFrame:CGRectMake(0,  self.viewAddD.frame.origin.y+self.viewAddD.frame.size.height, self.viewPickerServings.frame.size.width,self.viewPickerServings.frame.size.height)];
             [self.viewDificulty setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewDificulty.frame.size.width,self.viewDificulty.frame.size.height)];
             [self.viewPickerDificulty setFrame:CGRectMake(0,  self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, self.viewPickerDificulty.frame.size.width,self.viewPickerDificulty.frame.size.height)];
-            
+            NSNumber *num = [NSNumber numberWithFloat:(self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
+             NSNumber *tamPicker = [NSNumber numberWithFloat:(self.pickerServi.frame.size.height)];
+            if (self.delegate) {
+                [self.delegate performSelector:@selector(animarIngre:outro:) withObject:num withObject:tamPicker];
+            }
+            [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
         }];
         pickerServings=0;
     }else{
         [UIView animateWithDuration:0.5 animations:^{
+            [self.viewPickerServings setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewPickerServings.frame.size.width,self.viewPickerServings.frame.size.height)];
             [self.viewDificulty setFrame:CGRectMake(0,  self.viewPickerServings.frame.origin.y+self.viewPickerServings.frame.size.height, self.viewDificulty.frame.size.width,self.viewDificulty.frame.size.height)];
             [self.viewPickerDificulty setFrame:CGRectMake(0,  self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, self.viewPickerDificulty.frame.size.width,self.viewPickerDificulty.frame.size.height)];
+            NSNumber *num = [NSNumber numberWithFloat:(self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
+            NSNumber *tamPicker = [NSNumber numberWithFloat:(self.pickerServi.frame.size.height)];
+            if (self.delegate) {
+                [self.delegate performSelector:@selector(animarIngre:outro:) withObject:num withObject:tamPicker];
+            }
+            [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
         }];
         pickerServings=1;
     }
@@ -348,33 +388,44 @@
 }
 
 - (IBAction)btPretime:(id)sender {
-    NSLog(@"cliclou");
-    NSLog(@"%f",self.view.frame.size.height);
-     NSLog(@"%f",self.viewPre.frame.origin.y+self.viewPre.frame.size.height);
-    NSLog(@"%f",self.viewPickerPrepa.frame.origin.y+self.viewPickerPrepa.frame.size.height);
+    if(pickerCategory==1){[self btCategory:self];}
+    if(pickerDificulty==1){[self btDificulty:self];}
+    if(pickerServings==1){[self btDoneServ:self];}
+    
     if(pickerTime){
         [UIView animateWithDuration:0.5 animations:^{
+            [self.viewPickerPrepa setFrame:CGRectMake(0,  self.viewChoose.frame.origin.y+self.viewChoose.frame.size.height, self.viewPickerPrepa.frame.size.width,self.viewPickerPrepa.frame.size.height)];
             [self.viewCategory setFrame:CGRectMake(0,  self.viewPre.frame.origin.y+self.viewPre.frame.size.height, self.viewCategory.frame.size.width,self.viewCategory.frame.size.height)];
             [self.viewServings setFrame:CGRectMake(0,  self.viewCategory.frame.origin.y+self.viewCategory.frame.size.height, self.viewServings.frame.size.width,self.viewServings.frame.size.height)];
             [self.viewDificulty setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewDificulty.frame.size.width,self.viewDificulty.frame.size.height)];
-            [self.viewPickerCategory setFrame:CGRectMake(0,  self.viewCategory.frame.origin.y+self.viewCategory.frame.size.height, self.viewPickerCategory.frame.size.width,self.viewPickerCategory.frame.size.height)];
-            [self.viewPickerServings setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewPickerServings.frame.size.width,self.viewPickerServings.frame.size.height)];
-            [self.viewPickerDificulty setFrame:CGRectMake(0,  self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, self.viewPickerDificulty.frame.size.width,self.viewPickerDificulty.frame.size.height)];
-            ingre = [NIngredientes alloc];
-            [ingre.view setFrame:CGRectMake(0, self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, ingre.view.frame.size.width, ingre.view.frame.size.height )];
-
+            //[self.viewPickerCategory setFrame:CGRectMake(0,  self.viewCategory.frame.origin.y+self.viewCategory.frame.size.height, self.viewPickerCategory.frame.size.width,self.viewPickerCategory.frame.size.height)];
+            //[self.viewPickerServings setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewPickerServings.frame.size.width,self.viewPickerServings.frame.size.height)];
+            //[self.viewPickerDificulty setFrame:CGRectMake(0,  self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, self.viewPickerDificulty.frame.size.width,self.viewPickerDificulty.frame.size.height)];
+            
+            NSNumber *num = [NSNumber numberWithFloat:(self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
+            NSNumber *tamPicker = [NSNumber numberWithFloat:(self.pickerPrep.frame.size.height)];
+            if (self.delegate) {
+                [self.delegate performSelector:@selector(animarIngre:outro:) withObject:num withObject:tamPicker];
+            }
+            [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
         }];
         pickerTime=0;
     }else{
         [UIView animateWithDuration:0.5 animations:^{
+            [self.viewPickerPrepa setFrame:CGRectMake(0,  self.viewPre.frame.origin.y+self.viewPre.frame.size.height, self.viewPickerPrepa.frame.size.width,self.viewPickerPrepa.frame.size.height)];
             [self.viewCategory setFrame:CGRectMake(0, self.viewPickerPrepa.frame.origin.y+self.viewPickerPrepa.frame.size.height, self.viewCategory.frame.size.width,self.viewCategory.frame.size.height)];
             [self.viewServings setFrame:CGRectMake(0, self.viewCategory.frame.origin.y+self.viewCategory.frame.size.height, self.viewServings.frame.size.width,self.viewServings.frame.size.height)];
             [self.viewDificulty setFrame:CGRectMake(0, self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewDificulty.frame.size.width,self.viewDificulty.frame.size.height)];
-            [self.viewPickerCategory setFrame:CGRectMake(0,  self.viewCategory.frame.origin.y+self.viewCategory.frame.size.height, self.viewPickerCategory.frame.size.width,self.viewPickerCategory.frame.size.height)];
-            [self.viewPickerServings setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewPickerServings.frame.size.width,self.viewPickerServings.frame.size.height)];
-            [self.viewPickerDificulty setFrame:CGRectMake(0,  self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, self.viewPickerDificulty.frame.size.width,self.viewPickerDificulty.frame.size.height)];
-            //ingre = [NIngredientes alloc];
-            //[ingre.view setFrame:CGRectMake(0, self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, ingre.view.frame.size.width, ingre.view.frame.size.height )];
+            //[self.viewPickerCategory setFrame:CGRectMake(0,  self.viewCategory.frame.origin.y+self.viewCategory.frame.size.height, self.viewPickerCategory.frame.size.width,self.viewPickerCategory.frame.size.height)];
+            //[self.viewPickerServings setFrame:CGRectMake(0,  self.viewServings.frame.origin.y+self.viewServings.frame.size.height, self.viewPickerServings.frame.size.width,self.viewPickerServings.frame.size.height)];
+            //[self.viewPickerDificulty setFrame:CGRectMake(0,  self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height, self.viewPickerDificulty.frame.size.width,self.viewPickerDificulty.frame.size.height)];
+            NSNumber *num = [NSNumber numberWithFloat:(self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
+            NSNumber *tamPicker = [NSNumber numberWithFloat:(self.pickerPrep.frame.size.height)];
+            if (self.delegate) {
+                [self.delegate performSelector:@selector(animarIngre:outro:) withObject:num withObject:tamPicker];
+            }
+            [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
+            
         }];
         pickerTime=1;
     }
@@ -384,20 +435,20 @@
 
 
 
-- (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
 }
 
-- (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    int number;
+    NSInteger number;
     if(pickerView.tag==1){
         number = _pickerDataPrep.count;
     }else if(pickerView.tag==2){
         number = _pickerDataCat.count;
     }else if(pickerView.tag==3){
-        number = _pickerDataServ.count;
+        number = 25;
     }else if(pickerView.tag==4){
         number = _pickerDataDifi.count;
     }
@@ -412,7 +463,7 @@
     }else if(pickerView.tag==2){
         baseString = _pickerDataCat[row];
     }else if(pickerView.tag==3){
-        baseString = _pickerDataServ[row];
+        baseString = [NSString stringWithFormat:@"%ld Servings",(long)row+1];
     }else if(pickerView.tag==4){
         baseString = _pickerDataDifi[row];
     }
@@ -432,14 +483,13 @@
 }
 
 - (IBAction)btDoneServ:(id)sender {
-    long c = [self.pickerServi selectedRowInComponent:0];
-    self.labelServ.text = [_pickerDataServ objectAtIndex:c];
+    self.labelServ.text = [NSString stringWithFormat:@"%ld",(long)[self.pickerServi selectedRowInComponent:0]+1];
     [self btServings:self];
 }
 
 - (IBAction)btDoneDifi:(id)sender {
     long d = [self.pickerDifi selectedRowInComponent:0];
     self.labelDif.text = [_pickerDataDifi objectAtIndex:d];
-    [self btDoneDifi:self];
+    [self btDificulty:self];
 }
 @end

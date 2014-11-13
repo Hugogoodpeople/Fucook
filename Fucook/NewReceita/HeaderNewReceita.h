@@ -11,8 +11,6 @@
 @interface HeaderNewReceita : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate,UIPickerViewDataSource, UIPickerViewDelegate>
 @property (nonatomic,assign) id delegate;
 - (IBAction)btFoto:(id)sender;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
 
 - (IBAction)btCategory:(id)sender;
 - (IBAction)btDificulty:(id)sender;
@@ -45,5 +43,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelDif;
 
 @property (weak, nonatomic) IBOutlet UITextField *textName;
+
+@property (weak, nonatomic) IBOutlet UIView *viewChoose;
+@property (weak, nonatomic) IBOutlet UIView *viewName;
+
+@property (weak, nonatomic) IBOutlet UIView *viewAddD;
+
 
 @end
