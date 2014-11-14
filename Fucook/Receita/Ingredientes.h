@@ -14,6 +14,8 @@
 
 @property NSMutableArray * items;
 
+@property NSString * idReceita;
+
 
 
 

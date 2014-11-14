@@ -10,6 +10,7 @@
 #import "HeaderIngrediente.h"
 #import "IngredienteCellTableViewCell.h"
 #import "ObjecteIngrediente.h"
+#import "AppDelegate.h"
 
 @interface Ingredientes ()
 
@@ -40,10 +41,57 @@
     
     self.items = [NSMutableArray new];
     
+    /*
+    NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    
+    
+    
+    // para ver se deu algum erro ao inserir
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    
+    
+    // para ir buscar os dados prestendidos a base de dados
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Ingredientes" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    
+    
+    // aqui vou ter de fazer a magia de passa todos os pedidos
+    // atenção tenho de organizar os headers por datas
+    
+    // ok primeiro vou passar todos os pedidos para um array de pedidos
+    NSMutableArray * ingredientes = [NSMutableArray new];
+    
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject *ingrediente in fetchedObjects)
+    {
+        if(self.idReceita [pedido valueForKey:@"id_ingrediente"])
+        
+        
+        NSLog(@"objecto %@", ingrediente.description);
+        
+        ObjecteIngrediente * ing1 = [ObjecteIngrediente new];
+        ing1.nome = @"Carré de borrego";
+        ing1.quantidade = @"1";
+        ing1.unidade = [@"kg";
+        
+        [self.items addObject:ing1];
+        
+    }
+    */
+     
     ObjecteIngrediente * ing1 = [ObjecteIngrediente new];
     ing1.nome = @"Carré de borrego";
     ing1.quantidade = @"1";
     ing1.unidade = @"kg";
+
+    
     
     ObjecteIngrediente * ing2 = [ObjecteIngrediente new];
     ing2.nome = @"Abóbora";

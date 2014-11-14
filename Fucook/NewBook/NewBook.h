@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewBook : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface NewBook : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate , UITextFieldDelegate, UIActionSheetDelegate>
 
 
 - (IBAction)btcamera:(id)sender;

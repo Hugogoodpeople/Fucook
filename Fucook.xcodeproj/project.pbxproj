@@ -86,6 +86,8 @@
 		BADC32461A1634B4005B1D5A /* PesquisaReceitaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BADC32441A1634B4005B1D5A /* PesquisaReceitaCell.m */; };
 		BADC32471A1634B4005B1D5A /* PesquisaReceitaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADC32451A1634B4005B1D5A /* PesquisaReceitaCell.xib */; };
 		BADC32491A164A80005B1D5A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADC32481A164A80005B1D5A /* CoreData.framework */; };
+		BADC324F1A165FE9005B1D5A /* ListaCompras.m in Sources */ = {isa = PBXBuildFile; fileRef = BADC324D1A165FE9005B1D5A /* ListaCompras.m */; };
+		BADC32501A165FE9005B1D5A /* ListaCompras.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADC324E1A165FE9005B1D5A /* ListaCompras.xib */; };
 		BAE467F31A10C7F500D3F596 /* THTinderNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467F01A10C7F500D3F596 /* THTinderNavigationBar.m */; };
 		BAE467F41A10C7F500D3F596 /* THTinderNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467F21A10C7F500D3F596 /* THTinderNavigationController.m */; };
 		BAE467FE1A10CBB900D3F596 /* NavigationBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467FD1A10CBB900D3F596 /* NavigationBarItem.m */; };
@@ -327,6 +329,9 @@
 		BADC32441A1634B4005B1D5A /* PesquisaReceitaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PesquisaReceitaCell.m; path = Fucook/PesquisaReceitas/PesquisaReceitaCell.m; sourceTree = "<group>"; };
 		BADC32451A1634B4005B1D5A /* PesquisaReceitaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PesquisaReceitaCell.xib; path = Fucook/PesquisaReceitas/PesquisaReceitaCell.xib; sourceTree = "<group>"; };
 		BADC32481A164A80005B1D5A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BADC324C1A165FE9005B1D5A /* ListaCompras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListaCompras.h; path = Fucook/ListaCompras/ListaCompras.h; sourceTree = "<group>"; };
+		BADC324D1A165FE9005B1D5A /* ListaCompras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListaCompras.m; path = Fucook/ListaCompras/ListaCompras.m; sourceTree = "<group>"; };
+		BADC324E1A165FE9005B1D5A /* ListaCompras.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListaCompras.xib; path = Fucook/ListaCompras/ListaCompras.xib; sourceTree = "<group>"; };
 		BAE467EF1A10C7F500D3F596 /* THTinderNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THTinderNavigationBar.h; path = THTinderNavigationController/THTinderNavigationBar.h; sourceTree = "<group>"; };
 		BAE467F01A10C7F500D3F596 /* THTinderNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THTinderNavigationBar.m; path = THTinderNavigationController/THTinderNavigationBar.m; sourceTree = "<group>"; };
 		BAE467F11A10C7F500D3F596 /* THTinderNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THTinderNavigationController.h; path = THTinderNavigationController/THTinderNavigationController.h; sourceTree = "<group>"; };
@@ -614,6 +619,7 @@
 		BAC639401A07ED420049E3BD = {
 			isa = PBXGroup;
 			children = (
+				BADC324B1A165FBC005B1D5A /* ListaCompras */,
 				BADC324A1A164A8E005B1D5A /* Frameworks */,
 				BADC323C1A162D5B005B1D5A /* PesquisaReceitas */,
 				BAF465061A14C6D500FE7926 /* iCarousel */,
@@ -735,6 +741,16 @@
 				BADC32481A164A80005B1D5A /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BADC324B1A165FBC005B1D5A /* ListaCompras */ = {
+			isa = PBXGroup;
+			children = (
+				BADC324C1A165FE9005B1D5A /* ListaCompras.h */,
+				BADC324D1A165FE9005B1D5A /* ListaCompras.m */,
+				BADC324E1A165FE9005B1D5A /* ListaCompras.xib */,
+			);
+			name = ListaCompras;
 			sourceTree = "<group>";
 		};
 		BAE467EE1A10C7D000D3F596 /* THTinderNavigationController */ = {
@@ -1230,6 +1246,7 @@
 				CE4984101A0A9188009EC1A4 /* HeaderReceita.xib in Resources */,
 				CE253FA21A10BB27003DA45C /* btnphoto1@3x.png in Resources */,
 				BAF9556A1A0A9D6900277B94 /* btnedit2@2x.png in Resources */,
+				BADC32501A165FE9005B1D5A /* ListaCompras.xib in Resources */,
 				BADC323B1A160475005B1D5A /* MealPlanerCell.xib in Resources */,
 				BA66E60B1A1258160090F99D /* icoguide@2x.png in Resources */,
 				BAF4653B1A150ADC00FE7926 /* btright3@2x.png in Resources */,
@@ -1379,6 +1396,7 @@
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
 				BA023B571A13AD4E000B4754 /* Notas.m in Sources */,
 				BA66E61A1A1262910090F99D /* ObjecteIngrediente.m in Sources */,
+				BADC324F1A165FE9005B1D5A /* ListaCompras.m in Sources */,
 				BAF465091A14C6E200FE7926 /* iCarousel.m in Sources */,
 				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,
 			);

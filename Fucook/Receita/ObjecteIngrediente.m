@@ -10,4 +10,14 @@
 
 @implementation ObjecteIngrediente
 
+/*
+@dynamic nome;
+@dynamic idIng;
+@dynamic idReceita;
+@dynamic unidade;
+@dynamic quantidade;
+@dynamic nutricao;
+@dynamic selecionado;
+*/
+
 @end

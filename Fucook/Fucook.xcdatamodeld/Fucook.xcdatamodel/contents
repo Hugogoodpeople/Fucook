@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="13F34" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Agenda" syncable="YES">
         <attribute name="categoria" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="data" optional="YES" attributeType="Date" syncable="YES"/>
@@ -15,7 +15,7 @@
         <attribute name="ordem" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tempo" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Ingredientes" syncable="YES">
+    <entity name="Ingredientes" representedClassName="ObjectIngrediente" syncable="YES">
         <attribute name="id_ingrediente" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="id_receita" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
@@ -61,11 +61,11 @@
         <relationship name="relationship2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Nutricao" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Agenda" positionX="-540" positionY="873" width="128" height="118"/>
         <element name="Etapas" positionX="-720" positionY="1199" width="128" height="133"/>
         <element name="Ingredientes" positionX="-893" positionY="1145" width="128" height="133"/>
         <element name="Livros" positionX="-884" positionY="873" width="128" height="118"/>
         <element name="Nutricao" positionX="-524" positionY="1070" width="128" height="253"/>
         <element name="Receitas" positionX="-720" positionY="954" width="128" height="223"/>
-        <element name="Agenda" positionX="-540" positionY="873" width="128" height="118"/>
     </elements>
 </model>

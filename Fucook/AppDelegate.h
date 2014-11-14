@@ -20,6 +20,9 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
+// cenas marada para ir buscar cenas de fora
++ (AppDelegate *)sharedAppDelegate;
+
 
 @end
 

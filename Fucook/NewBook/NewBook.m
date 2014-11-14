@@ -7,6 +7,7 @@
 //
 
 #import "NewBook.h"
+#import "AppDelegate.h"
 
 @interface NewBook ()
 
@@ -37,7 +38,7 @@
     // Do any additional setup after loading the view from its nib.
     /* bt search*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    //[button addTarget:self action:@selector(receita:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(Adicionarlivro) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btnsave2"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -65,6 +66,11 @@
     // Receita *objYourViewController = [[Receita alloc] initWithNibName:@"Receita" bundle:nil];
     [self.navigationController popViewControllerAnimated:YES];
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+}
+
+-(void)Adicionarlivro
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
