@@ -61,6 +61,18 @@
     // depois tenho de activar esta parte
     self.root.tableView.delegate = self;
     
+    UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    [buttonback addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    [buttonback setImage:[UIImage imageNamed:@"btleft2"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
+    self.navigationItem.leftBarButtonItem = anotherButtonback;
+    
+}
+
+-(void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)setUpCarrocel

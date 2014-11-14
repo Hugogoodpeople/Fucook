@@ -81,6 +81,11 @@
 		BAC639851A07F0C40049E3BD /* Book.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC639831A07F0C40049E3BD /* Book.xib */; };
 		BADC323A1A160475005B1D5A /* MealPlanerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BADC32381A160475005B1D5A /* MealPlanerCell.m */; };
 		BADC323B1A160475005B1D5A /* MealPlanerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADC32391A160475005B1D5A /* MealPlanerCell.xib */; };
+		BADC32401A162D87005B1D5A /* PesquisaReceitas.m in Sources */ = {isa = PBXBuildFile; fileRef = BADC323E1A162D87005B1D5A /* PesquisaReceitas.m */; };
+		BADC32411A162D87005B1D5A /* PesquisaReceitas.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADC323F1A162D87005B1D5A /* PesquisaReceitas.xib */; };
+		BADC32461A1634B4005B1D5A /* PesquisaReceitaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BADC32441A1634B4005B1D5A /* PesquisaReceitaCell.m */; };
+		BADC32471A1634B4005B1D5A /* PesquisaReceitaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADC32451A1634B4005B1D5A /* PesquisaReceitaCell.xib */; };
+		BADC32491A164A80005B1D5A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADC32481A164A80005B1D5A /* CoreData.framework */; };
 		BAE467F31A10C7F500D3F596 /* THTinderNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467F01A10C7F500D3F596 /* THTinderNavigationBar.m */; };
 		BAE467F41A10C7F500D3F596 /* THTinderNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467F21A10C7F500D3F596 /* THTinderNavigationController.m */; };
 		BAE467FE1A10CBB900D3F596 /* NavigationBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467FD1A10CBB900D3F596 /* NavigationBarItem.m */; };
@@ -315,6 +320,13 @@
 		BADC32371A160475005B1D5A /* MealPlanerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MealPlanerCell.h; path = Fucook/MealPlanerCell.h; sourceTree = "<group>"; };
 		BADC32381A160475005B1D5A /* MealPlanerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MealPlanerCell.m; path = Fucook/MealPlanerCell.m; sourceTree = "<group>"; };
 		BADC32391A160475005B1D5A /* MealPlanerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MealPlanerCell.xib; path = Fucook/MealPlanerCell.xib; sourceTree = "<group>"; };
+		BADC323D1A162D87005B1D5A /* PesquisaReceitas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PesquisaReceitas.h; path = Fucook/PesquisaReceitas/PesquisaReceitas.h; sourceTree = "<group>"; };
+		BADC323E1A162D87005B1D5A /* PesquisaReceitas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PesquisaReceitas.m; path = Fucook/PesquisaReceitas/PesquisaReceitas.m; sourceTree = "<group>"; };
+		BADC323F1A162D87005B1D5A /* PesquisaReceitas.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PesquisaReceitas.xib; path = Fucook/PesquisaReceitas/PesquisaReceitas.xib; sourceTree = "<group>"; };
+		BADC32431A1634B4005B1D5A /* PesquisaReceitaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PesquisaReceitaCell.h; path = Fucook/PesquisaReceitas/PesquisaReceitaCell.h; sourceTree = "<group>"; };
+		BADC32441A1634B4005B1D5A /* PesquisaReceitaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PesquisaReceitaCell.m; path = Fucook/PesquisaReceitas/PesquisaReceitaCell.m; sourceTree = "<group>"; };
+		BADC32451A1634B4005B1D5A /* PesquisaReceitaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PesquisaReceitaCell.xib; path = Fucook/PesquisaReceitas/PesquisaReceitaCell.xib; sourceTree = "<group>"; };
+		BADC32481A164A80005B1D5A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BAE467EF1A10C7F500D3F596 /* THTinderNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THTinderNavigationBar.h; path = THTinderNavigationController/THTinderNavigationBar.h; sourceTree = "<group>"; };
 		BAE467F01A10C7F500D3F596 /* THTinderNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THTinderNavigationBar.m; path = THTinderNavigationController/THTinderNavigationBar.m; sourceTree = "<group>"; };
 		BAE467F11A10C7F500D3F596 /* THTinderNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THTinderNavigationController.h; path = THTinderNavigationController/THTinderNavigationController.h; sourceTree = "<group>"; };
@@ -466,6 +478,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BADC32491A164A80005B1D5A /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +530,6 @@
 		BA023B691A13BE27000B4754 /* Calendario */ = {
 			isa = PBXGroup;
 			children = (
-				BAF4650A1A14C79400FE7926 /* MealPlanner */,
 				BA023B791A13BE83000B4754 /* Util Calendario */,
 				BA023B7A1A13BEB3000B4754 /* Calendario.h */,
 				BA023B7B1A13BEB3000B4754 /* Calendario.m */,
@@ -602,8 +614,11 @@
 		BAC639401A07ED420049E3BD = {
 			isa = PBXGroup;
 			children = (
+				BADC324A1A164A8E005B1D5A /* Frameworks */,
+				BADC323C1A162D5B005B1D5A /* PesquisaReceitas */,
 				BAF465061A14C6D500FE7926 /* iCarousel */,
 				BAF955201A0A8D3500277B94 /* Imagens */,
+				BAF4650A1A14C79400FE7926 /* MealPlanner */,
 				BAE467F51A10CB3600D3F596 /* Receita */,
 				BAE467EE1A10C7D000D3F596 /* THTinderNavigationController */,
 				BAF76B571A0D216800D2CC13 /* Book */,
@@ -691,6 +706,35 @@
 				BADC32391A160475005B1D5A /* MealPlanerCell.xib */,
 			);
 			name = MealPlanerCell;
+			sourceTree = "<group>";
+		};
+		BADC323C1A162D5B005B1D5A /* PesquisaReceitas */ = {
+			isa = PBXGroup;
+			children = (
+				BADC32421A163432005B1D5A /* PesquisaReceitaCell */,
+				BADC323D1A162D87005B1D5A /* PesquisaReceitas.h */,
+				BADC323E1A162D87005B1D5A /* PesquisaReceitas.m */,
+				BADC323F1A162D87005B1D5A /* PesquisaReceitas.xib */,
+			);
+			name = PesquisaReceitas;
+			sourceTree = "<group>";
+		};
+		BADC32421A163432005B1D5A /* PesquisaReceitaCell */ = {
+			isa = PBXGroup;
+			children = (
+				BADC32431A1634B4005B1D5A /* PesquisaReceitaCell.h */,
+				BADC32441A1634B4005B1D5A /* PesquisaReceitaCell.m */,
+				BADC32451A1634B4005B1D5A /* PesquisaReceitaCell.xib */,
+			);
+			name = PesquisaReceitaCell;
+			sourceTree = "<group>";
+		};
+		BADC324A1A164A8E005B1D5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BADC32481A164A80005B1D5A /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BAE467EE1A10C7D000D3F596 /* THTinderNavigationController */ = {
@@ -1171,6 +1215,7 @@
 				BAF66E2B1A0B809800E90B7D /* imgbookcut@3x.png in Resources */,
 				BAF465221A14D73700FE7926 /* imgtap@3x.png in Resources */,
 				BAE468141A11254700D3F596 /* btnbook5@2x.png in Resources */,
+				BADC32471A1634B4005B1D5A /* PesquisaReceitaCell.xib in Resources */,
 				BAE468151A11254700D3F596 /* btnbook5@3x.png in Resources */,
 				BA66E5FB1A1258160090F99D /* btnless@2x.png in Resources */,
 				BA66E5F91A1258160090F99D /* btnclose2@2x.png in Resources */,
@@ -1259,6 +1304,7 @@
 				CE253F9A1A10B9C7003DA45C /* HeaderNewReceita.xib in Resources */,
 				BAF4651D1A14D73700FE7926 /* iconwithrecipe@2x.png in Resources */,
 				BAF66E2F1A0B851600E90B7D /* imgbookslice@3x.png in Resources */,
+				BADC32411A162D87005B1D5A /* PesquisaReceitas.xib in Resources */,
 				BAF9550C1A0A4B2C00277B94 /* LivroCellTableViewCell.xib in Resources */,
 				BAE468111A11214A00D3F596 /* HeaderIngrediente.xib in Resources */,
 				BAF9556D1A0A9D6900277B94 /* btnfeatured1@3x.png in Resources */,
@@ -1301,6 +1347,7 @@
 				BA023B741A13BE3B000B4754 /* NSDate+convenience.m in Sources */,
 				CE253F9B1A10B9C7003DA45C /* NewReceita.m in Sources */,
 				BA023B751A13BE3B000B4754 /* NSMutableArray+convenience.m in Sources */,
+				BADC32461A1634B4005B1D5A /* PesquisaReceitaCell.m in Sources */,
 				BAC639841A07F0C40049E3BD /* Book.m in Sources */,
 				BA023B5C1A13AE59000B4754 /* ObjectNotas.m in Sources */,
 				BA023B651A13AFF9000B4754 /* NotasHeader.m in Sources */,
@@ -1324,6 +1371,7 @@
 				BAE468191A112CFB00D3F596 /* IngredienteCellTableViewCell.m in Sources */,
 				BA66E5D31A12310A0090F99D /* NIngredientes.m in Sources */,
 				BAE467FE1A10CBB900D3F596 /* NavigationBarItem.m in Sources */,
+				BADC32401A162D87005B1D5A /* PesquisaReceitas.m in Sources */,
 				BA66E5D11A12310A0090F99D /* Directions.m in Sources */,
 				CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */,
 				BA66E61F1A1282160090F99D /* DirectionsHugo.m in Sources */,

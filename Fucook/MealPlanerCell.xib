@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cej-ar-U5I">
                         <rect key="frame" x="82" y="385" width="157" height="50"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnedit1.png" translatesAutoresizingMaskIntoConstraints="NO" id="e0n-gh-Agb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="btndelet1.png" translatesAutoresizingMaskIntoConstraints="NO" id="e0n-gh-Agb">
                                 <rect key="frame" x="10" y="11" width="24" height="27"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -164,12 +164,12 @@
                 <outlet property="labelTitulo" destination="XjD-6N-pmy" id="cht-1M-RQ4"/>
                 <outlet property="viewMovel" destination="lO4-Pk-9az" id="Pef-od-Wpf"/>
             </connections>
-            <point key="canvasLocation" x="114" y="130"/>
+            <point key="canvasLocation" x="-40" y="79"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="btncall1.png" width="23" height="24"/>
-        <image name="btnedit1.png" width="24" height="24"/>
+        <image name="btndelet1.png" width="20" height="24"/>
         <image name="btnshop1.png" width="24" height="24"/>
         <image name="imgtap.png" width="84" height="28"/>
         <image name="imgtopline.png" width="248" height="1"/>

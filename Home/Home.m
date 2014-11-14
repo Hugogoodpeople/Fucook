@@ -14,6 +14,7 @@
 #import "Settings.h"
 #import "Book.h"
 #import "MealPlanner.h"
+#import "PesquisaReceitas.h"
 
 @interface Home ()
 
@@ -47,7 +48,7 @@
     
     /* bt search*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    [button addTarget:self action:@selector(receita:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(Findreceita) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btnsearch"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -99,6 +100,11 @@
     [self.yoolbar setBackgroundImage:[UIImage new] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     self.yoolbar.clipsToBounds = YES;
     
+}
+
+-(void)Findreceita
+{
+    [self.navigationController pushViewController:[PesquisaReceitas new] animated:YES];
 }
 
 -(void)abrirLivro

@@ -31,7 +31,7 @@
     // Do any additional setup after loading the view from its nib.
     [self setUp];
     
-    /* bt search*/
+    /* bt mais*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
     [button addTarget:self action:@selector(addreceita:) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btnaddbook"] forState:UIControlStateNormal];
@@ -40,6 +40,18 @@
     self.navigationItem.rightBarButtonItem = anotherButton;
 
     
+    UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    [buttonback addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    [buttonback setImage:[UIImage imageNamed:@"btleft2"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
+    self.navigationItem.leftBarButtonItem = anotherButtonback;
+    
+}
+
+-(void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(IBAction)addreceita:(id)sender {
