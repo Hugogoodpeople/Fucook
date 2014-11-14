@@ -88,6 +88,7 @@
 		BADC32491A164A80005B1D5A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADC32481A164A80005B1D5A /* CoreData.framework */; };
 		BADC324F1A165FE9005B1D5A /* ListaCompras.m in Sources */ = {isa = PBXBuildFile; fileRef = BADC324D1A165FE9005B1D5A /* ListaCompras.m */; };
 		BADC32501A165FE9005B1D5A /* ListaCompras.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADC324E1A165FE9005B1D5A /* ListaCompras.xib */; };
+		BADC32541A166CD9005B1D5A /* ObjectLivro.m in Sources */ = {isa = PBXBuildFile; fileRef = BADC32531A166CD9005B1D5A /* ObjectLivro.m */; };
 		BAE467F31A10C7F500D3F596 /* THTinderNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467F01A10C7F500D3F596 /* THTinderNavigationBar.m */; };
 		BAE467F41A10C7F500D3F596 /* THTinderNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467F21A10C7F500D3F596 /* THTinderNavigationController.m */; };
 		BAE467FE1A10CBB900D3F596 /* NavigationBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467FD1A10CBB900D3F596 /* NavigationBarItem.m */; };
@@ -332,6 +333,8 @@
 		BADC324C1A165FE9005B1D5A /* ListaCompras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListaCompras.h; path = Fucook/ListaCompras/ListaCompras.h; sourceTree = "<group>"; };
 		BADC324D1A165FE9005B1D5A /* ListaCompras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListaCompras.m; path = Fucook/ListaCompras/ListaCompras.m; sourceTree = "<group>"; };
 		BADC324E1A165FE9005B1D5A /* ListaCompras.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListaCompras.xib; path = Fucook/ListaCompras/ListaCompras.xib; sourceTree = "<group>"; };
+		BADC32521A166CD9005B1D5A /* ObjectLivro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectLivro.h; path = NewBook/ObjectLivro.h; sourceTree = "<group>"; };
+		BADC32531A166CD9005B1D5A /* ObjectLivro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectLivro.m; path = NewBook/ObjectLivro.m; sourceTree = "<group>"; };
 		BAE467EF1A10C7F500D3F596 /* THTinderNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THTinderNavigationBar.h; path = THTinderNavigationController/THTinderNavigationBar.h; sourceTree = "<group>"; };
 		BAE467F01A10C7F500D3F596 /* THTinderNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THTinderNavigationBar.m; path = THTinderNavigationController/THTinderNavigationBar.m; sourceTree = "<group>"; };
 		BAE467F11A10C7F500D3F596 /* THTinderNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THTinderNavigationController.h; path = THTinderNavigationController/THTinderNavigationController.h; sourceTree = "<group>"; };
@@ -753,6 +756,15 @@
 			name = ListaCompras;
 			sourceTree = "<group>";
 		};
+		BADC32511A166C74005B1D5A /* ObjectLivro */ = {
+			isa = PBXGroup;
+			children = (
+				BADC32521A166CD9005B1D5A /* ObjectLivro.h */,
+				BADC32531A166CD9005B1D5A /* ObjectLivro.m */,
+			);
+			name = ObjectLivro;
+			sourceTree = "<group>";
+		};
 		BAE467EE1A10C7D000D3F596 /* THTinderNavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -900,6 +912,7 @@
 		BAF955061A0A4ACF00277B94 /* DragableTable */ = {
 			isa = PBXGroup;
 			children = (
+				BADC32511A166C74005B1D5A /* ObjectLivro */,
 				BAF955101A0A4B7600277B94 /* utilsDragable */,
 				BAF9550D1A0A4B6D00277B94 /* RootViewController.h */,
 				BAF9550E1A0A4B6D00277B94 /* RootViewController.m */,
@@ -1355,6 +1368,7 @@
 				BA023B511A137BEC000B4754 /* DirectionsHeader.m in Sources */,
 				CE253F991A10B9C7003DA45C /* HeaderNewReceita.m in Sources */,
 				BAE467F41A10C7F500D3F596 /* THTinderNavigationController.m in Sources */,
+				BADC32541A166CD9005B1D5A /* ObjectLivro.m in Sources */,
 				CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */,
 				BA66E5C91A1230B60090F99D /* NewNotes.m in Sources */,
 				BAF76B551A0D0FD200D2CC13 /* Settings.m in Sources */,

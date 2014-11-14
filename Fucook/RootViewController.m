@@ -18,10 +18,11 @@
 
 #import "RootViewController.h"
 #import "LivroCellTableViewCell.h"
+#import "ObjectLivro.h"
 
 
 @implementation RootViewController
-
+@synthesize arrayOfItems;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -42,7 +43,7 @@
 		arrayOfItems = [[NSMutableArray alloc] initWithCapacity:numberOfItems];
 		
 		for (NSUInteger i = 0; i < numberOfItems; ++i)
-			[arrayOfItems addObject:[NSString stringWithFormat:@"Item #%i", i + 1]];
+			[arrayOfItems addObject:[ObjectLivro new]];
 	}
     
     //[self.tableView setFrame:self.view.frame];
@@ -56,6 +57,8 @@
    
     
     NSLog(@"altura da tabela %f largura %f", self.tableView.frame.size.height , self.tableView.frame.size.width);
+    
+    
 
 }
 
@@ -123,6 +126,12 @@
         
     }
     
+    ObjectLivro * livro = [self.arrayOfItems objectAtIndex:indexPath.row];
+    
+    
+    cell.labelDescricao.text = livro.descricao;
+    cell.labelTitulo.text = livro.titulo;
+    cell.imageCapa.image = livro.imagem;
     
     [cell setSelected:YES];
     //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];

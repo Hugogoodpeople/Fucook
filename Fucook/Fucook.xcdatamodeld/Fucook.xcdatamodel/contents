@@ -27,6 +27,7 @@
         <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="foto" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id_livro" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="imagem" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Receitas" syncable="YES"/>
     </entity>
@@ -62,9 +63,9 @@
     </entity>
     <elements>
         <element name="Agenda" positionX="-540" positionY="873" width="128" height="118"/>
-        <element name="Etapas" positionX="-720" positionY="1199" width="128" height="133"/>
-        <element name="Ingredientes" positionX="-893" positionY="1145" width="128" height="133"/>
-        <element name="Livros" positionX="-884" positionY="873" width="128" height="118"/>
+        <element name="Etapas" positionX="-720" positionY="1244" width="128" height="133"/>
+        <element name="Ingredientes" positionX="-882" positionY="1172" width="128" height="133"/>
+        <element name="Livros" positionX="-947" positionY="899" width="128" height="133"/>
         <element name="Nutricao" positionX="-524" positionY="1070" width="128" height="253"/>
         <element name="Receitas" positionX="-720" positionY="954" width="128" height="223"/>
     </elements>

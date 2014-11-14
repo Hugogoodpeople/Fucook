@@ -9,11 +9,14 @@
 #import "DragableTableReceitas.h"
 #import "BookCell.h"
 
+
 @interface DragableTableReceitas ()
 
 @end
 
 @implementation DragableTableReceitas
+
+@synthesize arrayOfItems;
 
 #pragma mark -
 #pragma mark View lifecycle

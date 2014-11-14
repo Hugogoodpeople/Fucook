@@ -9,12 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ATSDragToReorderTableViewController.h"
 
-@interface DragableTableReceitas : ATSDragToReorderTableViewController {
-    
-    NSMutableArray *arrayOfItems;
-    
-}
+@interface DragableTableReceitas : ATSDragToReorderTableViewController 
 
+@property NSMutableArray *arrayOfItems;
 @property (nonatomic, assign) id delegate;
 
 @end

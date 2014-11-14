@@ -70,7 +70,62 @@
 
 -(void)Adicionarlivro
 {
+    // é aqui que tenho de ir gravar as cenas que acabei de escrever
     
+    AppDelegate* appDelegate = [AppDelegate sharedAppDelegate];
+    NSManagedObjectContext* context = appDelegate.managedObjectContext;
+    
+    NSManagedObject *pedido = [NSEntityDescription
+                               insertNewObjectForEntityForName:@"Livros"
+                               inManagedObjectContext:context];
+    [pedido setValue:self.txt1.text forKey:@"titulo"];
+    [pedido setValue:self.txt2.text forKey:@"descricao"];
+    
+    NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
+    [pedido setValue:imageData forKey:@"imagem"];
+
+    
+    
+    
+    [self listarTodosLivros];
+    
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    
+}
+
+-(void)listarTodosLivros
+{
+    NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    // para ver se deu algum erro ao inserir
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    
+    
+    // para ir buscar os dados prestendidos a base de dados
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Livros" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    
+    
+    
+    
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject *pedido in fetchedObjects)
+    {
+        
+        
+        NSLog(@"************************************ Pedido ************************************");
+        NSLog(@"titulo: %@", [pedido valueForKey:@"titulo"]);
+        NSLog(@"descrição: %@", [pedido valueForKey:@"descricao"]);
+
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -15,6 +15,8 @@
 #import "Book.h"
 #import "MealPlanner.h"
 #import "PesquisaReceitas.h"
+#import "AppDelegate.h"
+#import "ObjectLivro.h"
 
 @interface Home ()
 
@@ -33,6 +35,11 @@
     //self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     //
     
+    [self preencherTabela];
+    [self.mos.collectionView reloadItemsAtIndexPaths:[self.mos.collectionView indexPathsForVisibleItems]];
+    [self.mos.collectionView reloadData];
+    [self.root.tableView reloadData];
+    
 }
 
 - (void)viewDidLoad {
@@ -45,6 +52,13 @@
     [self.root.view setFrame:CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height)];
     
     self.root.view.backgroundColor = [UIColor clearColor];
+    
+    // tenho de adicionar as cenas da bd aqui
+    
+    
+    
+    
+    
     
     /* bt search*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
@@ -100,6 +114,62 @@
     [self.yoolbar setBackgroundImage:[UIImage new] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     self.yoolbar.clipsToBounds = YES;
     
+    
+    [self preencherTabela];
+    
+}
+
+
+
+-(void)preencherTabela
+{
+    NSMutableArray * items = [NSMutableArray new];
+    
+    NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    // para ver se deu algum erro ao inserir
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    
+    
+    // para ir buscar os dados prestendidos a base de dados
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Livros" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    
+    
+    
+    
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject *pedido in fetchedObjects)
+    {
+        
+        
+        NSLog(@"************************************ Pedido ************************************");
+        NSLog(@"titulo: %@", [pedido valueForKey:@"titulo"]);
+        NSLog(@"descrição: %@", [pedido valueForKey:@"descricao"]);
+        
+        ObjectLivro * livro = [ObjectLivro new];
+        
+        livro.titulo =[pedido valueForKey:@"titulo"];
+        livro.descricao =[pedido valueForKey:@"descricao"];
+        livro.imagem = [UIImage imageWithData:[pedido valueForKey:@"imagem"]];
+    
+        
+        
+        [items addObject:livro];
+    }
+
+
+    
+    self.root.arrayOfItems = items;
+      self.mos.arrayOfItems = items;
+    self.pageControl.numberOfPages = items.count;
+  
 }
 
 -(void)Findreceita

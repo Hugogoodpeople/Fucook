@@ -8,6 +8,7 @@
 
 #import "CollectionLivros.h"
 #import "CollectionLivroCellCollectionViewCell.h"
+#import "ObjectLivro.h"
 
 
 @interface CollectionLivros ()
@@ -15,6 +16,8 @@
 @end
 
 @implementation CollectionLivros
+
+@synthesize arrayOfItems;
 
 static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCell";
 
@@ -53,15 +56,19 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
 
 #pragma mark <UICollectionViewDataSource>
 
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 #warning Incomplete method implementation -- Return the number of sections
-    return 30;
+    return 2;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 #warning Incomplete method implementation -- Return the number of items in the section
-    return 2;
+   // int valor =(arrayOfItems.count/(section + 1)) >= 2? 2: 1;
+    int valor = 3;
+    
+   return valor;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -69,7 +76,13 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
     
     
     CollectionLivroCellCollectionViewCell *cell = (CollectionLivroCellCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+   // ObjectLivro * livro = [arrayOfItems objectAtIndex:indexPath.row+ indexPath.section];
     
+    /*
+    cell.imagemCapa.image = livro.imagem;
+    cell.labelTitulo.text = livro.titulo;
+    cell.labelDescricao.text = livro.descricao;
+     */
     
     return cell;
 }

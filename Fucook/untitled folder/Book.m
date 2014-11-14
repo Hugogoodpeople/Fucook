@@ -16,6 +16,7 @@
 #import "NavigationBarItem.h"
 #import "NewReceita.h"
 #import "Calendario.h"
+#import "AppDelegate.h"
 
 
 @interface Book ()
@@ -81,6 +82,45 @@
     [self.container addSubview:self.root.view];
     self.root.delegate = self;
     self.root.tableView.delegate = self;
+    
+    // tenho de carregar os livros aqui
+    
+    NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    // para ver se deu algum erro ao inserir
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    
+    
+    // para ir buscar os dados prestendidos a base de dados
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Livros" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    
+    
+    
+    
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject *pedido in fetchedObjects)
+    {
+        
+        
+        NSLog(@"************************************ Pedido ************************************");
+        NSLog(@"titulo: %@", [pedido valueForKey:@"titulo"]);
+        NSLog(@"descrição: %@", [pedido valueForKey:@"descricao"]);
+        
+        
+        
+        
+    }
+
+    
+    
+    
 
 }
 

@@ -11,8 +11,10 @@
 
 @interface RootViewController : ATSDragToReorderTableViewController {
 	
-	NSMutableArray *arrayOfItems;
+	//NSMutableArray *arrayOfItems;
 	
 }
+
+@property NSMutableArray * arrayOfItems;
 
 @end

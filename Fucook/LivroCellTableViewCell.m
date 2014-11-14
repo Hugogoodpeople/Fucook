@@ -141,7 +141,7 @@
     
     // imgsample001.jpg
     
-    [self.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
+    //[self.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
     
     
 }
