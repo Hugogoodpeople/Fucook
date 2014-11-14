@@ -330,7 +330,7 @@
         [UIView animateWithDuration:0.5 animations:^{
             [self.viewPickerDificulty setFrame:CGRectMake(0,  self.viewPre.frame.origin.y+self.viewPre.frame.size.height, self.viewPickerDificulty.frame.size.width,self.viewPickerDificulty.frame.size.height)];
             NSNumber *num = [NSNumber numberWithFloat:(self.viewDificulty.frame.origin.y+self.viewDificulty.frame.size.height)];
-            NSNumber *tamPicker = [NSNumber numberWithFloat:(self.viewDificulty.frame.size.height)];
+            NSNumber *tamPicker = [NSNumber numberWithFloat:(self.pickerDifi.frame.size.height)];
             if (self.delegate) {
                 [self.delegate performSelector:@selector(animarIngre:outro:) withObject:num withObject:tamPicker ];
             }

@@ -88,7 +88,7 @@
 }
 
 -(void)animarIngre:(NSNumber *) num outro:(NSNumber *) num2{
-     NSLog(@"Num1 %f", auxIng);
+     NSLog(@"Num1 %d", auxIng);
     if(auxIng==0){
         [UIView animateWithDuration:0.5 animations:^{
             [ingre.view setFrame:CGRectMake(0, num.floatValue, ingre.view.frame.size.width, ingre.view.frame.size.height )];
@@ -97,14 +97,22 @@
             [self.scrollNewReceita setContentSize:CGSizeMake(self.view.frame.size.width, headerFinal.view.frame.size.height+footerFinal.view.frame.size.height+dir.view.frame.size.height+ingre.view.frame.size.height+num2.floatValue)];
         }];
         auxIng=1;
-    }else{
+        NSLog(@"Num2 %d", auxIng);
+        NSLog(@"tamanho o ingredi: %f", ingre.view.frame.size.height);
+         NSLog(@"tamanho o dir: %f", dir.view.frame.size.height);
+         //NSLog(@"tamanho o ingredi: %f", ingre.view.frame.origin.y+ingre.view.frame.size.height);
+    }else if(auxIng==1){
         [UIView animateWithDuration:0.5 animations:^{
             [ingre.view setFrame:CGRectMake(0, num.floatValue, ingre.view.frame.size.width, ingre.view.frame.size.height )];
             [dir.view setFrame:CGRectMake(0, ingre.view.frame.origin.y+ingre.view.frame.size.height, ingre.view.frame.size.width, ingre.view.frame.size.height )];
             [footerFinal.view setFrame:CGRectMake(0, dir.view.frame.origin.y+dir.view.frame.size.height, ingre.view.frame.size.width, ingre.view.frame.size.height )];
-            [self.scrollNewReceita setContentSize:CGSizeMake(self.view.frame.size.width, headerFinal.view.frame.size.height+footerFinal.view.frame.size.height+dir.view.frame.size.height+ingre.view.frame.size.height)];
+            [self.scrollNewReceita setContentSize:CGSizeMake(self.view.frame.size.width, headerFinal.view.frame.size.height+footerFinal.view.frame.size.height+dir.view.frame.size.height+ingre.view.frame.size.height-num2.floatValue+10)];
         }];
         auxIng=0;
+         NSLog(@"Num3 %d", auxIng);
+        NSLog(@"tamanho o ingredi: %f", ingre.view.frame.origin.y+ingre.view.frame.size.height);
+        NSLog(@"tamanho o dir: %f", dir.view.frame.origin.y+dir.view.frame.size.height);
+
     }
     
 }
