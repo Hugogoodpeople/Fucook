@@ -44,7 +44,7 @@
     
     
     if (month==[components month]) {
-        NSArray *dates = [NSArray arrayWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:5], nil];
+        NSArray *dates = [NSArray arrayWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:15], nil];
         [calendarView markDates:dates];
     }
 }

@@ -318,8 +318,8 @@
     NSMutableArray *weekdays = [[NSMutableArray alloc] initWithArray:[dateFormatter shortWeekdaySymbols]];
     [weekdays moveObjectFromIndex:0 toIndex:6];
     
-    CGContextSetFillColorWithColor(context, 
-                                   [UIColor colorWithHexString:@"0x383838"].CGColor);
+    CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0x383838"].CGColor);
+    
     for (int i =0; i<[weekdays count]; i++) {
         NSString *weekdayValue = (NSString *)[weekdays objectAtIndex:i];
         UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:12];
@@ -451,6 +451,7 @@
         
         NSString *date = [NSString stringWithFormat:@"%i",targetDate];
         
+        
         //draw selected date
         if (selectedDate && i==selectedDateBlock) {
             CGRect rectangleGrid = CGRectMake(targetX,targetY,(([UIScreen mainScreen].bounds.size.width -36 )/7)+2,kVRGCalendarViewDayHeight+2);
@@ -479,7 +480,10 @@
     //Draw markings
     if (!self.markedDates || isSelectedDatePreviousMonth || isSelectedDateNextMonth) return;
     
-    for (int i = 0; i<[self.markedDates count]; i++) {
+    
+    
+    for (int i = 0; i<[self.markedDates count]; i++)
+    {
         id markedDateObj = [self.markedDates objectAtIndex:i];
         
         int targetDate;
@@ -498,11 +502,13 @@
         int targetColumn = targetBlock%7;
         int targetRow = targetBlock/7;
         
-        int targetX = targetColumn * ((([UIScreen mainScreen].bounds.size.width -36 )/7)+2) + 7;
-        int targetY = kVRGCalendarViewTopBarHeight + targetRow * (kVRGCalendarViewDayHeight+2) + 38;
+        int targetX = targetColumn * ((([UIScreen mainScreen].bounds.size.width -36 )/7)+2) + ((([UIScreen mainScreen].bounds.size.width -36 )/7)+2)/2 ;
+        int targetY = kVRGCalendarViewTopBarHeight + targetRow * (kVRGCalendarViewDayHeight+1) + 38;
         
-        CGRect rectangle = CGRectMake(targetX,targetY,32,2);
-        CGContextAddRect(context, rectangle);
+        //CGRect rectangle = CGRectMake(targetX-2,targetY,5,5);
+
+        //CGContextAddRect(context, rectangle);
+        CGContextAddArc(context, targetX+2, targetY, 3, 0,  M_PI*2, YES);
         
         UIColor *color;
         if (selectedDate && selectedDateBlock==targetBlock) {
@@ -510,13 +516,23 @@
         }  else if (todayBlock==targetBlock) {
             color = [UIColor whiteColor];
         } else {
-            color  = (UIColor *)[markedColors objectAtIndex:i];
+            //color  = (UIColor *)[markedColors objectAtIndex:i];
+            color = [UIColor colorWithHexString:@"0x973694"];
         }
         
+        /*
+        CGContextSetLineWidth(context, 2.0);
+        CGContextAddEllipseInRect(context, rectangle);
+        
+        CGContextStrokePath(context);
+         */
+        
+       
         
         CGContextSetFillColorWithColor(context, color.CGColor);
         CGContextFillPath(context);
     }
+    
 }
 
 #pragma mark - Draw image for animation

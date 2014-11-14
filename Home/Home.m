@@ -13,6 +13,7 @@
 #import "NewBook.h"
 #import "Settings.h"
 #import "Book.h"
+#import "MealPlanner.h"
 
 @interface Home ()
 
@@ -183,6 +184,7 @@
 }
 
 - (IBAction)clickAgends:(id)sender {
+    [self.navigationController pushViewController:[MealPlanner new] animated:YES];
 }
 
 - (IBAction)clickInApps:(id)sender {

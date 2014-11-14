@@ -1,24 +1,37 @@
 //
-//  BookCell.m
+//  MealPlanerCell.m
 //  Fucook
 //
-//  Created by Hugo Costa on 07/11/14.
+//  Created by Hugo Costa on 14/11/14.
 //  Copyright (c) 2014 Hugo Costa. All rights reserved.
 //
 
-#import "BookCell.h"
+#import "MealPlanerCell.h"
 
-@implementation BookCell
+@implementation MealPlanerCell
 
 - (void)awakeFromNib {
     // Initialization code
-    [self setupViewMovel];
+      [self setupViewMovel];
+    
+}
+
+// tenho de fazer uma verificaçao para os diferentes tamanhos de ecra
+-(void)setupViewMovel
+{
+    // para as sombras
+    
+    
+    
+    [self.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
-   
+    [self setupViewMovel];
     
     
     UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
@@ -33,7 +46,7 @@
     [self.contentView addGestureRecognizer:swipeDown];
     [self.contentView addGestureRecognizer:swipeUp];
     
-    
+     // [self setupViewMovel];
     
 }
 
@@ -67,7 +80,7 @@
     
     
     [UIView animateWithDuration:0.2f animations:^{
-        [self.viewMovel setFrame:CGRectMake(x, 22, width, height)];
+        [self.viewMovel setFrame:CGRectMake(x, -35, width, height)];
     }];
     
     int altura = [[UIScreen mainScreen] bounds].size.height;
@@ -87,7 +100,7 @@
     
     
     [UIView animateWithDuration:0.2f animations:^{
-        [self.viewMovel setFrame:CGRectMake(x, 72, width, height)];
+        [self.viewMovel setFrame:CGRectMake(x, 15, width, height)];
     }];
     
     int altura = [[UIScreen mainScreen] bounds].size.height;
@@ -99,47 +112,14 @@
 
 
 
-// tenho de fazer uma verificaçao para os diferentes tamanhos de ecra
--(void)setupViewMovel
-{
-    // para as sombras
-    
-    
-   /*
-    [self.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
-    
-    UIImage *_maskingImage = [UIImage imageNamed:@"mascara_transparente.png"];
-    CALayer *_maskingLayer = [CALayer layer];
-    _maskingLayer.frame = self.viewMovel.bounds;
-    [_maskingLayer setContents:(id)[_maskingImage CGImage]];
-    [self.viewMovel.layer setMask:_maskingLayer];
-    */
-    
+
+
+- (IBAction)clickDelete:(id)sender {
 }
 
-
-
-- (IBAction)clickEdit:(id)sender
-{
-    NSLog(@"Edit");
-    if (self.delegate) {
-        [self.delegate performSelector:@selector(editarReceita) withObject:nil];
-    }
-    
+- (IBAction)clickCalendario:(id)sender {
 }
 
-- (IBAction)clickCalendario:(id)sender
-{
-    NSLog(@"Calendario");
-    if (self.delegate) {
-        [self.delegate performSelector:@selector(calendarioReceita) withObject:nil];
-    }
-}
-- (IBAction)clickCarrinho:(id)sender
-{
-    NSLog(@"Carrinho");
-    if (self.delegate) {
-        [self.delegate performSelector:@selector(adicionarReceita) withObject:nil];
-    }
+- (IBAction)clickCarrinho:(id)sender {
 }
 @end

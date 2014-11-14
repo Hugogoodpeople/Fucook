@@ -1,19 +1,20 @@
 //
-//  DragableTableReceitas.m
+//  DragableMealPlaner.m
 //  Fucook
 //
-//  Created by Hugo Costa on 07/11/14.
+//  Created by Hugo Costa on 13/11/14.
 //  Copyright (c) 2014 Hugo Costa. All rights reserved.
 //
 
-#import "DragableTableReceitas.h"
-#import "BookCell.h"
+#import "DragableMealPlaner.h"
+#import "MealPlanerCell.h"
 
-@interface DragableTableReceitas ()
+@interface DragableMealPlaner ()
 
 @end
 
-@implementation DragableTableReceitas
+@implementation DragableMealPlaner
+
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -73,7 +74,9 @@
      Disable reordering if there's one or zero items.
      For this example, of course, this will always be YES.
      */
-    [self setReorderingEnabled:( arrayOfItems.count > 1 )];
+    
+#warning activar aqui se quiseres voltar atras para a dragable
+   // [self setReorderingEnabled:( arrayOfItems.count > 1 )];
     
     return arrayOfItems.count;
 }
@@ -99,40 +102,30 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *simpleTableIdentifier = @"BookCell";
+    static NSString *simpleTableIdentifier = @"MealPlanerCell";
     
-    BookCell *cell = (BookCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    MealPlanerCell *cell = (MealPlanerCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-        cell.transform = CGAffineTransformMakeRotation(M_PI/2);
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.contentView.clipsToBounds = YES;
-        //[cell.contentView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-        
-        NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MealPlanerCell" owner:self options:nil];
+    cell = [nib objectAtIndex:0];
+    cell.transform = CGAffineTransformMakeRotation(M_PI/2);
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.contentView.clipsToBounds = YES;
+    // [cell.contentView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    
+    NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
     
     
     
     cell.labelPagina.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
-    
-    
-    [cell setSelected:YES];
-    
-    float altura = [self calcularAltura];
-    
-    
-    
-    
     UIImage *_maskingImage = [UIImage imageNamed:@"mascara_transparente.png"];
     CALayer *_maskingLayer = [CALayer layer];
-    _maskingLayer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width-30, altura);
+    _maskingLayer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width-30, [UIScreen mainScreen].bounds.size.height -180 );
     [_maskingLayer setContents:(id)[_maskingImage CGImage]];
     [cell.viewMovel.layer setMask:_maskingLayer];
-    
-    
-    [cell.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
 
+    
+    [cell setSelected:YES];
     //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];
     
     cell.delegate = self.delegate;
@@ -141,72 +134,38 @@
     
 }
 
--(float)calcularAltura
-{
-    int alturaEcra = [UIScreen mainScreen].bounds.size.height;
-    int devolver;
-    
-    if (alturaEcra == 480) {
-        devolver = 295;
-    }else if (alturaEcra == 568)
-    {
-        devolver = 370;
-    }else if (alturaEcra == 667)
-    {
-        devolver = 450;
-    }
-    else if (alturaEcra == 736)
-    {
-        devolver = 510;
-    }
-    
-    return devolver;
-}
-
-
+/*
 // should be identical to cell returned in -tableView:cellForRowAtIndexPath:
 - (UITableViewCell *)cellIdenticalToCellAtIndexPath:(NSIndexPath *)indexPath forDragTableViewController:(ATSDragToReorderTableViewController *)dragTableViewController {
     
-    /*
-     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-     cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];
-     
-     return cell;
-     */
+  
     static NSString *simpleTableIdentifier = @"BookCell";
     
-    BookCell *cell = (BookCell *)[self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
+    MealPlanerCell *cell = (MealPlanerCell *)[self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookCell" owner:self options:nil];
     cell = [nib objectAtIndex:0];
     cell.transform = CGAffineTransformMakeRotation(M_PI/2);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.contentView.clipsToBounds = YES;
-    //[cell.contentView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+   // [cell.contentView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     
-    NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
+   // NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
     
     
     
     cell.labelPagina.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
     
     
-    //[cell setSelected:YES];
+    [cell setSelected:YES];
+    //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];
     
-    
-    float altura = [self calcularAltura];
-    UIImage *_maskingImage = [UIImage imageNamed:@"mascara_transparente.png"];
-    CALayer *_maskingLayer = [CALayer layer];
-    _maskingLayer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width-30, altura);
-    [_maskingLayer setContents:(id)[_maskingImage CGImage]];
-    [cell.viewMovel.layer setMask:_maskingLayer];
-
-    
-    [cell.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
-    
+    cell.delegate = self.delegate;
     
     return cell;
+
+    
 }
+ */
 
 /*
 	Required for drag tableview controller

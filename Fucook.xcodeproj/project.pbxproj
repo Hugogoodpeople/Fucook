@@ -79,6 +79,8 @@
 		BAC6396C1A07ED420049E3BD /* FucookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC6396B1A07ED420049E3BD /* FucookTests.m */; };
 		BAC639841A07F0C40049E3BD /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC639821A07F0C40049E3BD /* Book.m */; };
 		BAC639851A07F0C40049E3BD /* Book.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC639831A07F0C40049E3BD /* Book.xib */; };
+		BADC323A1A160475005B1D5A /* MealPlanerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BADC32381A160475005B1D5A /* MealPlanerCell.m */; };
+		BADC323B1A160475005B1D5A /* MealPlanerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADC32391A160475005B1D5A /* MealPlanerCell.xib */; };
 		BAE467F31A10C7F500D3F596 /* THTinderNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467F01A10C7F500D3F596 /* THTinderNavigationBar.m */; };
 		BAE467F41A10C7F500D3F596 /* THTinderNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467F21A10C7F500D3F596 /* THTinderNavigationController.m */; };
 		BAE467FE1A10CBB900D3F596 /* NavigationBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467FD1A10CBB900D3F596 /* NavigationBarItem.m */; };
@@ -89,6 +91,36 @@
 		BAE468151A11254700D3F596 /* btnbook5@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE468131A11254700D3F596 /* btnbook5@3x.png */; };
 		BAE468191A112CFB00D3F596 /* IngredienteCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE468171A112CFB00D3F596 /* IngredienteCellTableViewCell.m */; };
 		BAE4681A1A112CFB00D3F596 /* IngredienteCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE468181A112CFB00D3F596 /* IngredienteCellTableViewCell.xib */; };
+		BAF465041A14C57100FE7926 /* MealPlanner.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF465021A14C57100FE7926 /* MealPlanner.m */; };
+		BAF465051A14C57100FE7926 /* MealPlanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF465031A14C57100FE7926 /* MealPlanner.xib */; };
+		BAF465091A14C6E200FE7926 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF465081A14C6E200FE7926 /* iCarousel.m */; };
+		BAF4650F1A14C7D100FE7926 /* DiaCalendario.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF4650D1A14C7D100FE7926 /* DiaCalendario.m */; };
+		BAF465101A14C7D100FE7926 /* DiaCalendario.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF4650E1A14C7D100FE7926 /* DiaCalendario.xib */; };
+		BAF4651B1A14D73700FE7926 /* iconnonrecipe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465111A14D73700FE7926 /* iconnonrecipe@2x.png */; };
+		BAF4651C1A14D73700FE7926 /* iconnonrecipe@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465121A14D73700FE7926 /* iconnonrecipe@3x.png */; };
+		BAF4651D1A14D73700FE7926 /* iconwithrecipe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465131A14D73700FE7926 /* iconwithrecipe@2x.png */; };
+		BAF4651E1A14D73700FE7926 /* iconwithrecipe@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465141A14D73700FE7926 /* iconwithrecipe@3x.png */; };
+		BAF4651F1A14D73700FE7926 /* imgdateselect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465151A14D73700FE7926 /* imgdateselect@2x.png */; };
+		BAF465201A14D73700FE7926 /* imgdateselect@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465161A14D73700FE7926 /* imgdateselect@3x.png */; };
+		BAF465211A14D73700FE7926 /* imgtap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465171A14D73700FE7926 /* imgtap@2x.png */; };
+		BAF465221A14D73700FE7926 /* imgtap@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465181A14D73700FE7926 /* imgtap@3x.png */; };
+		BAF465231A14D73700FE7926 /* imgtopline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465191A14D73700FE7926 /* imgtopline@2x.png */; };
+		BAF465241A14D73700FE7926 /* imgtopline@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF4651A1A14D73700FE7926 /* imgtopline@3x.png */; };
+		BAF465311A150ADC00FE7926 /* btleft1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465251A150ADC00FE7926 /* btleft1@2x.png */; };
+		BAF465321A150ADC00FE7926 /* btleft1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465261A150ADC00FE7926 /* btleft1@3x.png */; };
+		BAF465331A150ADC00FE7926 /* btleft2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465271A150ADC00FE7926 /* btleft2@2x.png */; };
+		BAF465341A150ADC00FE7926 /* btleft2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465281A150ADC00FE7926 /* btleft2@3x.png */; };
+		BAF465351A150ADC00FE7926 /* btleft3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465291A150ADC00FE7926 /* btleft3@2x.png */; };
+		BAF465361A150ADC00FE7926 /* btleft3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF4652A1A150ADC00FE7926 /* btleft3@3x.png */; };
+		BAF465371A150ADC00FE7926 /* btright1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF4652B1A150ADC00FE7926 /* btright1@2x.png */; };
+		BAF465381A150ADC00FE7926 /* btright1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF4652C1A150ADC00FE7926 /* btright1@3x.png */; };
+		BAF465391A150ADC00FE7926 /* btright2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF4652D1A150ADC00FE7926 /* btright2@2x.png */; };
+		BAF4653A1A150ADC00FE7926 /* btright2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF4652E1A150ADC00FE7926 /* btright2@3x.png */; };
+		BAF4653B1A150ADC00FE7926 /* btright3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF4652F1A150ADC00FE7926 /* btright3@2x.png */; };
+		BAF4653C1A150ADC00FE7926 /* btright3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF465301A150ADC00FE7926 /* btright3@3x.png */; };
+		BAF4653F1A150BAF00FE7926 /* imgshadowcalendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF4653D1A150BAF00FE7926 /* imgshadowcalendar@2x.png */; };
+		BAF465401A150BAF00FE7926 /* imgshadowcalendar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF4653E1A150BAF00FE7926 /* imgshadowcalendar@3x.png */; };
+		BAF465441A151DB200FE7926 /* DragableMealPlaner.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF465421A151DB200FE7926 /* DragableMealPlaner.m */; };
 		BAF66E281A0B7DA900E90B7D /* imgbckhome@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF66E261A0B7DA900E90B7D /* imgbckhome@2x.png */; };
 		BAF66E291A0B7DA900E90B7D /* imgbckhome@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF66E271A0B7DA900E90B7D /* imgbckhome@3x.png */; };
 		BAF66E2B1A0B809800E90B7D /* imgbookcut@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF66E2A1A0B809800E90B7D /* imgbookcut@3x.png */; };
@@ -280,6 +312,9 @@
 		BAC639821A07F0C40049E3BD /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Book.m; path = "Fucook/untitled folder/Book.m"; sourceTree = "<group>"; };
 		BAC639831A07F0C40049E3BD /* Book.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Book.xib; path = "Fucook/untitled folder/Book.xib"; sourceTree = "<group>"; };
 		BAC639871A07F10A0049E3BD /* mzl.khrfwdoi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mzl.khrfwdoi.jpg; sourceTree = "<group>"; };
+		BADC32371A160475005B1D5A /* MealPlanerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MealPlanerCell.h; path = Fucook/MealPlanerCell.h; sourceTree = "<group>"; };
+		BADC32381A160475005B1D5A /* MealPlanerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MealPlanerCell.m; path = Fucook/MealPlanerCell.m; sourceTree = "<group>"; };
+		BADC32391A160475005B1D5A /* MealPlanerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MealPlanerCell.xib; path = Fucook/MealPlanerCell.xib; sourceTree = "<group>"; };
 		BAE467EF1A10C7F500D3F596 /* THTinderNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THTinderNavigationBar.h; path = THTinderNavigationController/THTinderNavigationBar.h; sourceTree = "<group>"; };
 		BAE467F01A10C7F500D3F596 /* THTinderNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THTinderNavigationBar.m; path = THTinderNavigationController/THTinderNavigationBar.m; sourceTree = "<group>"; };
 		BAE467F11A10C7F500D3F596 /* THTinderNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THTinderNavigationController.h; path = THTinderNavigationController/THTinderNavigationController.h; sourceTree = "<group>"; };
@@ -296,6 +331,40 @@
 		BAE468161A112CFB00D3F596 /* IngredienteCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IngredienteCellTableViewCell.h; path = Fucook/Receita/IngredienteCellTableViewCell.h; sourceTree = "<group>"; };
 		BAE468171A112CFB00D3F596 /* IngredienteCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IngredienteCellTableViewCell.m; path = Fucook/Receita/IngredienteCellTableViewCell.m; sourceTree = "<group>"; };
 		BAE468181A112CFB00D3F596 /* IngredienteCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IngredienteCellTableViewCell.xib; path = Fucook/Receita/IngredienteCellTableViewCell.xib; sourceTree = "<group>"; };
+		BAF465011A14C57100FE7926 /* MealPlanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MealPlanner.h; path = Fucook/Receita/MealPlanner.h; sourceTree = "<group>"; };
+		BAF465021A14C57100FE7926 /* MealPlanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MealPlanner.m; path = Fucook/Receita/MealPlanner.m; sourceTree = "<group>"; };
+		BAF465031A14C57100FE7926 /* MealPlanner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MealPlanner.xib; path = Fucook/Receita/MealPlanner.xib; sourceTree = "<group>"; };
+		BAF465071A14C6E200FE7926 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iCarousel.h; path = Fucook/iCarousel/iCarousel.h; sourceTree = "<group>"; };
+		BAF465081A14C6E200FE7926 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iCarousel.m; path = Fucook/iCarousel/iCarousel.m; sourceTree = "<group>"; };
+		BAF4650C1A14C7D100FE7926 /* DiaCalendario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiaCalendario.h; path = Fucook/Calendario/DiaCalendario.h; sourceTree = "<group>"; };
+		BAF4650D1A14C7D100FE7926 /* DiaCalendario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiaCalendario.m; path = Fucook/Calendario/DiaCalendario.m; sourceTree = "<group>"; };
+		BAF4650E1A14C7D100FE7926 /* DiaCalendario.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DiaCalendario.xib; path = Fucook/Calendario/DiaCalendario.xib; sourceTree = "<group>"; };
+		BAF465111A14D73700FE7926 /* iconnonrecipe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconnonrecipe@2x.png"; path = "imgs/iconnonrecipe@2x.png"; sourceTree = "<group>"; };
+		BAF465121A14D73700FE7926 /* iconnonrecipe@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconnonrecipe@3x.png"; path = "imgs/iconnonrecipe@3x.png"; sourceTree = "<group>"; };
+		BAF465131A14D73700FE7926 /* iconwithrecipe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconwithrecipe@2x.png"; path = "imgs/iconwithrecipe@2x.png"; sourceTree = "<group>"; };
+		BAF465141A14D73700FE7926 /* iconwithrecipe@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconwithrecipe@3x.png"; path = "imgs/iconwithrecipe@3x.png"; sourceTree = "<group>"; };
+		BAF465151A14D73700FE7926 /* imgdateselect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgdateselect@2x.png"; path = "imgs/imgdateselect@2x.png"; sourceTree = "<group>"; };
+		BAF465161A14D73700FE7926 /* imgdateselect@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgdateselect@3x.png"; path = "imgs/imgdateselect@3x.png"; sourceTree = "<group>"; };
+		BAF465171A14D73700FE7926 /* imgtap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgtap@2x.png"; path = "imgs/imgtap@2x.png"; sourceTree = "<group>"; };
+		BAF465181A14D73700FE7926 /* imgtap@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgtap@3x.png"; path = "imgs/imgtap@3x.png"; sourceTree = "<group>"; };
+		BAF465191A14D73700FE7926 /* imgtopline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgtopline@2x.png"; path = "imgs/imgtopline@2x.png"; sourceTree = "<group>"; };
+		BAF4651A1A14D73700FE7926 /* imgtopline@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgtopline@3x.png"; path = "imgs/imgtopline@3x.png"; sourceTree = "<group>"; };
+		BAF465251A150ADC00FE7926 /* btleft1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft1@2x.png"; path = "imgs/btleft1@2x.png"; sourceTree = "<group>"; };
+		BAF465261A150ADC00FE7926 /* btleft1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft1@3x.png"; path = "imgs/btleft1@3x.png"; sourceTree = "<group>"; };
+		BAF465271A150ADC00FE7926 /* btleft2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft2@2x.png"; path = "imgs/btleft2@2x.png"; sourceTree = "<group>"; };
+		BAF465281A150ADC00FE7926 /* btleft2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft2@3x.png"; path = "imgs/btleft2@3x.png"; sourceTree = "<group>"; };
+		BAF465291A150ADC00FE7926 /* btleft3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft3@2x.png"; path = "imgs/btleft3@2x.png"; sourceTree = "<group>"; };
+		BAF4652A1A150ADC00FE7926 /* btleft3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft3@3x.png"; path = "imgs/btleft3@3x.png"; sourceTree = "<group>"; };
+		BAF4652B1A150ADC00FE7926 /* btright1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btright1@2x.png"; path = "imgs/btright1@2x.png"; sourceTree = "<group>"; };
+		BAF4652C1A150ADC00FE7926 /* btright1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btright1@3x.png"; path = "imgs/btright1@3x.png"; sourceTree = "<group>"; };
+		BAF4652D1A150ADC00FE7926 /* btright2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btright2@2x.png"; path = "imgs/btright2@2x.png"; sourceTree = "<group>"; };
+		BAF4652E1A150ADC00FE7926 /* btright2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btright2@3x.png"; path = "imgs/btright2@3x.png"; sourceTree = "<group>"; };
+		BAF4652F1A150ADC00FE7926 /* btright3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btright3@2x.png"; path = "imgs/btright3@2x.png"; sourceTree = "<group>"; };
+		BAF465301A150ADC00FE7926 /* btright3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btright3@3x.png"; path = "imgs/btright3@3x.png"; sourceTree = "<group>"; };
+		BAF4653D1A150BAF00FE7926 /* imgshadowcalendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgshadowcalendar@2x.png"; path = "imgs/imgshadowcalendar@2x.png"; sourceTree = "<group>"; };
+		BAF4653E1A150BAF00FE7926 /* imgshadowcalendar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgshadowcalendar@3x.png"; path = "imgs/imgshadowcalendar@3x.png"; sourceTree = "<group>"; };
+		BAF465411A151DB200FE7926 /* DragableMealPlaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DragableMealPlaner.h; path = Fucook/DragableMealPlaner.h; sourceTree = "<group>"; };
+		BAF465421A151DB200FE7926 /* DragableMealPlaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DragableMealPlaner.m; path = Fucook/DragableMealPlaner.m; sourceTree = "<group>"; };
 		BAF66E261A0B7DA900E90B7D /* imgbckhome@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgbckhome@2x.png"; path = "imgs/imgbckhome@2x.png"; sourceTree = "<group>"; };
 		BAF66E271A0B7DA900E90B7D /* imgbckhome@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgbckhome@3x.png"; path = "imgs/imgbckhome@3x.png"; sourceTree = "<group>"; };
 		BAF66E2A1A0B809800E90B7D /* imgbookcut@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgbookcut@3x.png"; path = "imgs/imgbookcut@3x.png"; sourceTree = "<group>"; };
@@ -448,6 +517,7 @@
 		BA023B691A13BE27000B4754 /* Calendario */ = {
 			isa = PBXGroup;
 			children = (
+				BAF4650A1A14C79400FE7926 /* MealPlanner */,
 				BA023B791A13BE83000B4754 /* Util Calendario */,
 				BA023B7A1A13BEB3000B4754 /* Calendario.h */,
 				BA023B7B1A13BEB3000B4754 /* Calendario.m */,
@@ -532,6 +602,7 @@
 		BAC639401A07ED420049E3BD = {
 			isa = PBXGroup;
 			children = (
+				BAF465061A14C6D500FE7926 /* iCarousel */,
 				BAF955201A0A8D3500277B94 /* Imagens */,
 				BAE467F51A10CB3600D3F596 /* Receita */,
 				BAE467EE1A10C7D000D3F596 /* THTinderNavigationController */,
@@ -612,6 +683,16 @@
 			name = Imagens;
 			sourceTree = "<group>";
 		};
+		BADC32361A160434005B1D5A /* MealPlanerCell */ = {
+			isa = PBXGroup;
+			children = (
+				BADC32371A160475005B1D5A /* MealPlanerCell.h */,
+				BADC32381A160475005B1D5A /* MealPlanerCell.m */,
+				BADC32391A160475005B1D5A /* MealPlanerCell.xib */,
+			);
+			name = MealPlanerCell;
+			sourceTree = "<group>";
+		};
 		BAE467EE1A10C7D000D3F596 /* THTinderNavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -659,6 +740,39 @@
 				BAE468181A112CFB00D3F596 /* IngredienteCellTableViewCell.xib */,
 			);
 			name = Ingredientes;
+			sourceTree = "<group>";
+		};
+		BAF465061A14C6D500FE7926 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				BAF465071A14C6E200FE7926 /* iCarousel.h */,
+				BAF465081A14C6E200FE7926 /* iCarousel.m */,
+			);
+			name = iCarousel;
+			sourceTree = "<group>";
+		};
+		BAF4650A1A14C79400FE7926 /* MealPlanner */ = {
+			isa = PBXGroup;
+			children = (
+				BADC32361A160434005B1D5A /* MealPlanerCell */,
+				BAF4650B1A14C7A200FE7926 /* DiaCalendario */,
+				BAF465011A14C57100FE7926 /* MealPlanner.h */,
+				BAF465021A14C57100FE7926 /* MealPlanner.m */,
+				BAF465031A14C57100FE7926 /* MealPlanner.xib */,
+				BAF465411A151DB200FE7926 /* DragableMealPlaner.h */,
+				BAF465421A151DB200FE7926 /* DragableMealPlaner.m */,
+			);
+			name = MealPlanner;
+			sourceTree = "<group>";
+		};
+		BAF4650B1A14C7A200FE7926 /* DiaCalendario */ = {
+			isa = PBXGroup;
+			children = (
+				BAF4650C1A14C7D100FE7926 /* DiaCalendario.h */,
+				BAF4650D1A14C7D100FE7926 /* DiaCalendario.m */,
+				BAF4650E1A14C7D100FE7926 /* DiaCalendario.xib */,
+			);
+			name = DiaCalendario;
 			sourceTree = "<group>";
 		};
 		BAF76B451A0CCE2F00D2CC13 /* CollectionLivros */ = {
@@ -767,6 +881,30 @@
 		BAF955201A0A8D3500277B94 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BAF4653D1A150BAF00FE7926 /* imgshadowcalendar@2x.png */,
+				BAF4653E1A150BAF00FE7926 /* imgshadowcalendar@3x.png */,
+				BAF465251A150ADC00FE7926 /* btleft1@2x.png */,
+				BAF465261A150ADC00FE7926 /* btleft1@3x.png */,
+				BAF465271A150ADC00FE7926 /* btleft2@2x.png */,
+				BAF465281A150ADC00FE7926 /* btleft2@3x.png */,
+				BAF465291A150ADC00FE7926 /* btleft3@2x.png */,
+				BAF4652A1A150ADC00FE7926 /* btleft3@3x.png */,
+				BAF4652B1A150ADC00FE7926 /* btright1@2x.png */,
+				BAF4652C1A150ADC00FE7926 /* btright1@3x.png */,
+				BAF4652D1A150ADC00FE7926 /* btright2@2x.png */,
+				BAF4652E1A150ADC00FE7926 /* btright2@3x.png */,
+				BAF4652F1A150ADC00FE7926 /* btright3@2x.png */,
+				BAF465301A150ADC00FE7926 /* btright3@3x.png */,
+				BAF465111A14D73700FE7926 /* iconnonrecipe@2x.png */,
+				BAF465121A14D73700FE7926 /* iconnonrecipe@3x.png */,
+				BAF465131A14D73700FE7926 /* iconwithrecipe@2x.png */,
+				BAF465141A14D73700FE7926 /* iconwithrecipe@3x.png */,
+				BAF465151A14D73700FE7926 /* imgdateselect@2x.png */,
+				BAF465161A14D73700FE7926 /* imgdateselect@3x.png */,
+				BAF465171A14D73700FE7926 /* imgtap@2x.png */,
+				BAF465181A14D73700FE7926 /* imgtap@3x.png */,
+				BAF465191A14D73700FE7926 /* imgtopline@2x.png */,
+				BAF4651A1A14D73700FE7926 /* imgtopline@3x.png */,
 				BA66E5D71A1258160090F99D /* btleft2@2x.png */,
 				BA66E5D81A1258160090F99D /* btleft2@3x.png */,
 				BA66E5D91A1258160090F99D /* btnclose2@2x.png */,
@@ -996,6 +1134,7 @@
 				BA66E60C1A1258160090F99D /* icoguide@3x.png in Resources */,
 				BA66E6091A1258160090F99D /* icoexport@2x.png in Resources */,
 				BAF955671A0A9D6900277B94 /* btndelet2@3x.png in Resources */,
+				BAF465391A150ADC00FE7926 /* btright2@2x.png in Resources */,
 				BA66E5FC1A1258160090F99D /* btnless@3x.png in Resources */,
 				BAF955641A0A9D6900277B94 /* btndelet1@2x.png in Resources */,
 				BAF955741A0A9D6900277B94 /* btnsetting1@2x.png in Resources */,
@@ -1003,6 +1142,7 @@
 				BAF955721A0A9D6900277B94 /* btnsearch@2x.png in Resources */,
 				BAF9555B1A0A9D6900277B94 /* btnaddbook@3x.png in Resources */,
 				CE253FA31A10BB27003DA45C /* btnphoto2@2x.png in Resources */,
+				BAF465321A150ADC00FE7926 /* btleft1@3x.png in Resources */,
 				BA66E6151A1258160090F99D /* imglogofucook@2x.png in Resources */,
 				BA023B611A13AF32000B4754 /* NotasCell.xib in Resources */,
 				BA66E6141A1258160090F99D /* icoshare@3x.png in Resources */,
@@ -1020,13 +1160,21 @@
 				BA66E5FF1A1258160090F99D /* btnopen1@2x.png in Resources */,
 				BAF9555E1A0A9D6900277B94 /* btnbook2@2x.png in Resources */,
 				CE253FA11A10BB27003DA45C /* btnphoto1@2x.png in Resources */,
+				BAF465361A150ADC00FE7926 /* btleft3@3x.png in Resources */,
 				BA66E6041A1258160090F99D /* icoabout@3x.png in Resources */,
+				BAF4651F1A14D73700FE7926 /* imgdateselect@2x.png in Resources */,
+				BAF4651C1A14D73700FE7926 /* iconnonrecipe@3x.png in Resources */,
+				BAF465211A14D73700FE7926 /* imgtap@2x.png in Resources */,
 				BAF76B4A1A0CCE6B00D2CC13 /* CollectionLivros.xib in Resources */,
+				BAF465341A150ADC00FE7926 /* btleft2@3x.png in Resources */,
+				BAF4653C1A150ADC00FE7926 /* btright3@3x.png in Resources */,
 				BAF66E2B1A0B809800E90B7D /* imgbookcut@3x.png in Resources */,
+				BAF465221A14D73700FE7926 /* imgtap@3x.png in Resources */,
 				BAE468141A11254700D3F596 /* btnbook5@2x.png in Resources */,
 				BAE468151A11254700D3F596 /* btnbook5@3x.png in Resources */,
 				BA66E5FB1A1258160090F99D /* btnless@2x.png in Resources */,
 				BA66E5F91A1258160090F99D /* btnclose2@2x.png in Resources */,
+				BAF4653F1A150BAF00FE7926 /* imgshadowcalendar@2x.png in Resources */,
 				BA66E6131A1258160090F99D /* icoshare@2x.png in Resources */,
 				BAF76B651A0D3F1200D2CC13 /* mascara_transparente.png in Resources */,
 				BAF9555A1A0A9D6900277B94 /* btnaddbook@2x.png in Resources */,
@@ -1037,15 +1185,21 @@
 				CE4984101A0A9188009EC1A4 /* HeaderReceita.xib in Resources */,
 				CE253FA21A10BB27003DA45C /* btnphoto1@3x.png in Resources */,
 				BAF9556A1A0A9D6900277B94 /* btnedit2@2x.png in Resources */,
+				BADC323B1A160475005B1D5A /* MealPlanerCell.xib in Resources */,
 				BA66E60B1A1258160090F99D /* icoguide@2x.png in Resources */,
+				BAF4653B1A150ADC00FE7926 /* btright3@2x.png in Resources */,
 				CE253FA91A10C290003DA45C /* FooterNewReceita.xib in Resources */,
 				BA66E60F1A1258160090F99D /* icorating@2x.png in Resources */,
+				BAF465201A14D73700FE7926 /* imgdateselect@3x.png in Resources */,
 				BAC639851A07F0C40049E3BD /* Book.xib in Resources */,
 				BA66E6121A1258160090F99D /* icosettings@3x.png in Resources */,
 				BA66E6201A1282160090F99D /* DirectionsHugo.xib in Resources */,
 				BAF76B501A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.xib in Resources */,
+				BAF4651E1A14D73700FE7926 /* iconwithrecipe@3x.png in Resources */,
+				BAF4651B1A14D73700FE7926 /* iconnonrecipe@2x.png in Resources */,
 				BA023B661A13AFF9000B4754 /* NotasHeader.xib in Resources */,
 				BAF955691A0A9D6900277B94 /* btnedit1@3x.png in Resources */,
+				BAF465351A150ADC00FE7926 /* btleft3@2x.png in Resources */,
 				BAF66E281A0B7DA900E90B7D /* imgbckhome@2x.png in Resources */,
 				BAF9555C1A0A9D6900277B94 /* btnbook1@2x.png in Resources */,
 				BAF955731A0A9D6900277B94 /* btnsearch@3x.png in Resources */,
@@ -1055,11 +1209,17 @@
 				BA66E6061A1258160090F99D /* icobug@3x.png in Resources */,
 				BAF955611A0A9D6900277B94 /* btncall1@3x.png in Resources */,
 				BAF9557B1A0A9D6900277B94 /* btnshop2@3x.png in Resources */,
+				BAF465101A14C7D100FE7926 /* DiaCalendario.xib in Resources */,
+				BAF4653A1A150ADC00FE7926 /* btright2@3x.png in Resources */,
 				BA66E6101A1258160090F99D /* icorating@3x.png in Resources */,
+				BAF465241A14D73700FE7926 /* imgtopline@3x.png in Resources */,
 				CE253FA41A10BB27003DA45C /* btnphoto2@3x.png in Resources */,
 				CE475F251A0CCEB500D33A1A /* NewBook.xib in Resources */,
 				BA66E6051A1258160090F99D /* icobug@2x.png in Resources */,
+				BAF465331A150ADC00FE7926 /* btleft2@2x.png in Resources */,
+				BAF465311A150ADC00FE7926 /* btleft1@2x.png in Resources */,
 				BA66E6011A1258160090F99D /* btnsave2@2x.png in Resources */,
+				BAF465231A14D73700FE7926 /* imgtopline@2x.png in Resources */,
 				BAF9556E1A0A9D6900277B94 /* btnfeatured2@2x.png in Resources */,
 				BAF955701A0A9D6900277B94 /* btnmosaic@2x.png in Resources */,
 				BAF9555F1A0A9D6900277B94 /* btnbook2@3x.png in Resources */,
@@ -1067,13 +1227,17 @@
 				BA66E6111A1258160090F99D /* icosettings@2x.png in Resources */,
 				CE3AE1761A0BEEAC006C4B2E /* btleft3@3x.png in Resources */,
 				BAE4681A1A112CFB00D3F596 /* IngredienteCellTableViewCell.xib in Resources */,
+				BAF465401A150BAF00FE7926 /* imgshadowcalendar@3x.png in Resources */,
+				BAF465051A14C57100FE7926 /* MealPlanner.xib in Resources */,
 				BA66E5F81A1258160090F99D /* btleft2@3x.png in Resources */,
+				BAF465381A150ADC00FE7926 /* btright1@3x.png in Resources */,
 				BA66E60A1A1258160090F99D /* icoexport@3x.png in Resources */,
 				BA66E60E1A1258160090F99D /* icoimport@3x.png in Resources */,
 				BA66E6001A1258160090F99D /* btnopen1@3x.png in Resources */,
 				BAF9551F1A0A7B7200277B94 /* Home.xib in Resources */,
 				BAF955791A0A9D6900277B94 /* btnshop1@3x.png in Resources */,
 				BAF9556B1A0A9D6900277B94 /* btnedit2@3x.png in Resources */,
+				BAF465371A150ADC00FE7926 /* btright1@2x.png in Resources */,
 				BA66E5FE1A1258160090F99D /* btnmore@3x.png in Resources */,
 				BA66E5F71A1258160090F99D /* btleft2@2x.png in Resources */,
 				BA023B581A13AD4E000B4754 /* Notas.xib in Resources */,
@@ -1093,6 +1257,7 @@
 				BAF9556F1A0A9D6900277B94 /* btnfeatured2@3x.png in Resources */,
 				BA66E6021A1258160090F99D /* btnsave2@3x.png in Resources */,
 				CE253F9A1A10B9C7003DA45C /* HeaderNewReceita.xib in Resources */,
+				BAF4651D1A14D73700FE7926 /* iconwithrecipe@2x.png in Resources */,
 				BAF66E2F1A0B851600E90B7D /* imgbookslice@3x.png in Resources */,
 				BAF9550C1A0A4B2C00277B94 /* LivroCellTableViewCell.xib in Resources */,
 				BAE468111A11214A00D3F596 /* HeaderIngrediente.xib in Resources */,
@@ -1120,6 +1285,7 @@
 				BAE467F31A10C7F500D3F596 /* THTinderNavigationBar.m in Sources */,
 				BA023B761A13BE3B000B4754 /* UIColor+expanded.m in Sources */,
 				BAF76B601A0D314700D2CC13 /* BookCell.m in Sources */,
+				BADC323A1A160475005B1D5A /* MealPlanerCell.m in Sources */,
 				BA023B781A13BE3B000B4754 /* VRGCalendarView.m in Sources */,
 				BAF955141A0A4BA300277B94 /* ATSDragToReorderTableViewController.m in Sources */,
 				BA66E5C51A1230B60090F99D /* NewDirections.m in Sources */,
@@ -1139,9 +1305,11 @@
 				BA023B5C1A13AE59000B4754 /* ObjectNotas.m in Sources */,
 				BA023B651A13AFF9000B4754 /* NotasHeader.m in Sources */,
 				BA023B451A135D38000B4754 /* DirectionsCell.m in Sources */,
+				BAF465041A14C57100FE7926 /* MealPlanner.m in Sources */,
 				BA023B771A13BE3B000B4754 /* UIView+convenience.m in Sources */,
 				CE253FA81A10C290003DA45C /* FooterNewReceita.m in Sources */,
 				BA023B601A13AF32000B4754 /* NotasCell.m in Sources */,
+				BAF465441A151DB200FE7926 /* DragableMealPlaner.m in Sources */,
 				BAF76B5B1A0D2AAE00D2CC13 /* DragableTableReceitas.m in Sources */,
 				BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */,
 				BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */,
@@ -1151,6 +1319,7 @@
 				BAE4680B1A111E8E00D3F596 /* Ingredientes.m in Sources */,
 				BA023B7D1A13BEB3000B4754 /* Calendario.m in Sources */,
 				BAF9550B1A0A4B2C00277B94 /* LivroCellTableViewCell.m in Sources */,
+				BAF4650F1A14C7D100FE7926 /* DiaCalendario.m in Sources */,
 				BAF76B4F1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.m in Sources */,
 				BAE468191A112CFB00D3F596 /* IngredienteCellTableViewCell.m in Sources */,
 				BA66E5D31A12310A0090F99D /* NIngredientes.m in Sources */,
@@ -1162,6 +1331,7 @@
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
 				BA023B571A13AD4E000B4754 /* Notas.m in Sources */,
 				BA66E61A1A1262910090F99D /* ObjecteIngrediente.m in Sources */,
+				BAF465091A14C6E200FE7926 /* iCarousel.m in Sources */,
 				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
