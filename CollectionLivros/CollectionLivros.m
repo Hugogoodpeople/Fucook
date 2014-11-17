@@ -59,14 +59,14 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 #warning Incomplete method implementation -- Return the number of sections
-    return 2;
+    return 3;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 #warning Incomplete method implementation -- Return the number of items in the section
-   // int valor =(arrayOfItems.count/(section + 1)) >= 2? 2: 1;
-    int valor = 3;
+    int valor =(arrayOfItems.count/(section + 1)) >= 2? 2: 1;
+   // int valor = 3;
     
    return valor;
 }
@@ -76,13 +76,13 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
     
     
     CollectionLivroCellCollectionViewCell *cell = (CollectionLivroCellCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-   // ObjectLivro * livro = [arrayOfItems objectAtIndex:indexPath.row+ indexPath.section];
+    ObjectLivro * livro = [arrayOfItems objectAtIndex:(indexPath.row+ (indexPath.section * 2))];
     
-    /*
+    
     cell.imagemCapa.image = livro.imagem;
     cell.labelTitulo.text = livro.titulo;
     cell.labelDescricao.text = livro.descricao;
-     */
+    
     
     return cell;
 }
