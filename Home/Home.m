@@ -109,7 +109,7 @@
     self.yoolbar.clipsToBounds = YES;
     
     
-    [self preencherTabela];
+    //[self preencherTabela];
     
 }
 
@@ -130,9 +130,12 @@
     
     // para ir buscar os dados prestendidos a base de dados
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.returnsObjectsAsFaults = NO;
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Livros" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
+    
+    
     
     
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
@@ -148,17 +151,25 @@
         
         livro.titulo =[pedido valueForKey:@"titulo"];
         livro.descricao =[pedido valueForKey:@"descricao"];
-        livro.imagem = [[UIImage imageWithData:[pedido valueForKey:@"imagem"]] fixOrientation];
+        
+        
+        NSManagedObject * imagem = [pedido valueForKey:@"contem_imagem"];
+        
+        livro.imagem = imagem;
+        //livro.imagem = [[UIImage imageWithData:[imagem valueForKey:@"imagem"]] fixOrientation];
+        
         
         
         [items addObject:livro];
     }
 
 
+    NSArray* reversed = [[items reverseObjectEnumerator] allObjects];
     
-    self.root.arrayOfItems = items;
-    self.mos.arrayOfItems = items;
-    self.pageControl.numberOfPages = items.count;
+    
+    self.root.arrayOfItems = [NSMutableArray arrayWithArray:reversed];
+    self.mos.arrayOfItems = [NSMutableArray arrayWithArray:reversed];
+    self.pageControl.numberOfPages = reversed.count;
   
 }
 
@@ -206,7 +217,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"Table did Scrool %f" , scrollView.contentOffset.y);
+    //NSLog(@"Table did Scrool %f" , scrollView.contentOffset.y);
     
     int pagina = (scrollView.contentOffset.y/self.view.frame.size.width);
     

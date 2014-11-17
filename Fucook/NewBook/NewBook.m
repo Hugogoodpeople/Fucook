@@ -79,19 +79,23 @@
     AppDelegate* appDelegate = [AppDelegate sharedAppDelegate];
     NSManagedObjectContext* context = appDelegate.managedObjectContext;
     
-    NSManagedObject *pedido = [NSEntityDescription
+    NSManagedObject *Livro = [NSEntityDescription
                                insertNewObjectForEntityForName:@"Livros"
                                inManagedObjectContext:context];
-    [pedido setValue:self.txt1.text forKey:@"titulo"];
-    [pedido setValue:self.txt2.text forKey:@"descricao"];
+    [Livro setValue:self.txt1.text forKey:@"titulo"];
+    [Livro setValue:self.txt2.text forKey:@"descricao"];
     
-    NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
-    [pedido setValue:imageData forKey:@"imagem"];
-
+    NSManagedObject *Imagem = [NSEntityDescription
+                               insertNewObjectForEntityForName:@"Imagens"
+                               inManagedObjectContext:context];
     
     
     
-    [self listarTodosLivros];
+    NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.25);
+    [Imagem setValue:imageData forKey:@"imagem"];
+    [Livro setValue:Imagem forKey:@"contem_imagem"];
+    
+    //[self listarTodosLivros];
     
     
     [self.navigationController popViewControllerAnimated:YES];
@@ -101,6 +105,7 @@
 
 -(void)listarTodosLivros
 {
+    
     NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
     
     // para ver se deu algum erro ao inserir
@@ -130,6 +135,7 @@
         NSLog(@"descrição: %@", [pedido valueForKey:@"descricao"]);
 
     }
+    
 }
 
 - (void)didReceiveMemoryWarning {

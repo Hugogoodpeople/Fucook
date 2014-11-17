@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FXImageView.h"
 
 @interface LivroCellTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTitulo;
 @property (weak, nonatomic) IBOutlet UILabel *labelDescricao;
-@property (weak, nonatomic) IBOutlet UIImageView *imageCapa;
+@property (weak, nonatomic) IBOutlet FXImageView *imageCapa;
 
 
 - (IBAction)ClickDelete:(id)sender;

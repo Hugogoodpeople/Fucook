@@ -19,7 +19,9 @@
 #import "RootViewController.h"
 #import "LivroCellTableViewCell.h"
 #import "ObjectLivro.h"
-
+#import "UIImage+fixOrientation.h"
+#import "FTWCache.h"
+#import "NSString+MD5.h"
 
 @implementation RootViewController
 @synthesize arrayOfItems;
@@ -111,6 +113,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *simpleTableIdentifier = @"Cell";
+    ObjectLivro * livro = [self.arrayOfItems objectAtIndex:indexPath.row];
     
     LivroCellTableViewCell *cell = (LivroCellTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
@@ -126,12 +129,57 @@
         
     }
     
-    ObjectLivro * livro = [self.arrayOfItems objectAtIndex:indexPath.row];
-    
+    cell.imageCapa.asynchronous = YES;
     
     cell.labelDescricao.text = livro.descricao;
     cell.labelTitulo.text = livro.titulo;
-    cell.imageCapa.image = livro.imagem;
+    
+    /*
+    FXImageView * imagem = (id)[cell viewWithTag:6];
+    if(!imagem.image)
+    {
+        imagem = [FXImageView new];
+        imagem.tag = 6;
+        
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+        dispatch_async(queue, ^{
+            
+            UIImage *image = [[UIImage imageWithData:[livro.imagem valueForKey:@"imagem"]] fixOrientation];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.imageCapa.image = image;
+            });
+        });
+
+    }
+     */
+    
+    NSString *key = [livro.imagem.description MD5Hash];
+    NSData *data = [FTWCache objectForKey:key];
+    if (data) {
+        UIImage *image = [[UIImage imageWithData:[livro.imagem valueForKey:@"imagem"]] fixOrientation];
+        cell.imageCapa.image = image;
+    } else {
+        cell.imageCapa.image = [UIImage imageNamed:@"icn_default"];
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+        dispatch_async(queue, ^{
+            NSData * data = [livro.imagem valueForKey:@"imagem"];
+            [FTWCache setObject:data forKey:key];
+            UIImage *image = [UIImage imageWithData:data];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.imageCapa.image = image;
+            });
+        });
+    }
+    
+    
+    //cell.imageCapa.image = livro.imagem;
+    
+    
+    
+    
+//cell.imageCapa.image = [[UIImage imageWithData:[livro.imagem valueForKey:@"imagem"]] fixOrientation];
+    
+    
     
     [cell setSelected:YES];
     //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];

@@ -9,6 +9,9 @@
 #import "CollectionLivros.h"
 #import "CollectionLivroCellCollectionViewCell.h"
 #import "ObjectLivro.h"
+#import "NSString+MD5.h"
+#import "FTWCache.h"
+#import "UIImage+fixOrientation.h"
 
 
 @interface CollectionLivros ()
@@ -81,9 +84,28 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
     ObjectLivro * livro = [arrayOfItems objectAtIndex:(indexPath.row+ (indexPath.section * 2))];
     
     
-    cell.imagemCapa.image = livro.imagem;
+    //cell.imagemCapa.image = livro.imagem;
     cell.labelTitulo.text = livro.titulo;
     cell.labelDescricao.text = livro.descricao;
+    
+    NSString *key = [livro.imagem.description MD5Hash];
+    NSData *data = [FTWCache objectForKey:key];
+    if (data) {
+        UIImage *image = [[UIImage imageWithData:[livro.imagem valueForKey:@"imagem"]] fixOrientation];
+        cell.imagemCapa.image = image;
+    } else {
+        cell.imagemCapa.image = [UIImage imageNamed:@"icn_default"];
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+        dispatch_async(queue, ^{
+            NSData * data = [livro.imagem valueForKey:@"imagem"];
+            [FTWCache setObject:data forKey:key];
+            UIImage *image = [UIImage imageWithData:data];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.imagemCapa.image = image;
+            });
+        });
+    }
+
     
     
     return cell;

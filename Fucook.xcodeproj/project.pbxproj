@@ -28,6 +28,10 @@
 		BA023B7E1A13BEB3000B4754 /* Calendario.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B7C1A13BEB3000B4754 /* Calendario.xib */; };
 		BA55AC3E1A1A017C00381726 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC3D1A1A017C00381726 /* UIImage+fixOrientation.m */; };
 		BA55AC401A1A021000381726 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA55AC3F1A1A021000381726 /* OverlayView.xib */; };
+		BA55AC461A1A16C900381726 /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC451A1A16C900381726 /* FXImageView.m */; };
+		BA55AC491A1A182200381726 /* UIImage+FX.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC481A1A182200381726 /* UIImage+FX.m */; };
+		BA55AC4C1A1A3ED200381726 /* FTWCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC4B1A1A3ED200381726 /* FTWCache.m */; };
+		BA55AC4F1A1A3ED800381726 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC4E1A1A3ED800381726 /* NSString+MD5.m */; };
 		BA66E5C51A1230B60090F99D /* NewDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5BB1A1230B60090F99D /* NewDirections.m */; };
 		BA66E5C61A1230B60090F99D /* NewDirections.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5BC1A1230B60090F99D /* NewDirections.xib */; };
 		BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5BF1A1230B60090F99D /* NewIngrediente.m */; };
@@ -274,6 +278,14 @@
 		BA55AC3C1A1A017C00381726 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+fixOrientation.h"; path = "Fucook/UIImage+fixOrientation.h"; sourceTree = "<group>"; };
 		BA55AC3D1A1A017C00381726 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+fixOrientation.m"; path = "Fucook/UIImage+fixOrientation.m"; sourceTree = "<group>"; };
 		BA55AC3F1A1A021000381726 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OverlayView.xib; path = NewBook/OverlayView.xib; sourceTree = "<group>"; };
+		BA55AC441A1A16C900381726 /* FXImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXImageView.h; path = Fucook/FXImageView.h; sourceTree = "<group>"; };
+		BA55AC451A1A16C900381726 /* FXImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FXImageView.m; path = Fucook/FXImageView.m; sourceTree = "<group>"; };
+		BA55AC471A1A182200381726 /* UIImage+FX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FX.h"; sourceTree = "<group>"; };
+		BA55AC481A1A182200381726 /* UIImage+FX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FX.m"; sourceTree = "<group>"; };
+		BA55AC4A1A1A3ED200381726 /* FTWCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTWCache.h; sourceTree = "<group>"; };
+		BA55AC4B1A1A3ED200381726 /* FTWCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTWCache.m; sourceTree = "<group>"; };
+		BA55AC4D1A1A3ED800381726 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		BA55AC4E1A1A3ED800381726 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		BA66E5BA1A1230B60090F99D /* NewDirections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDirections.h; sourceTree = "<group>"; };
 		BA66E5BB1A1230B60090F99D /* NewDirections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDirections.m; sourceTree = "<group>"; };
 		BA66E5BC1A1230B60090F99D /* NewDirections.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDirections.xib; sourceTree = "<group>"; };
@@ -621,6 +633,14 @@
 		BA55AC3B1A1A013C00381726 /* Utils Image */ = {
 			isa = PBXGroup;
 			children = (
+				BA55AC4D1A1A3ED800381726 /* NSString+MD5.h */,
+				BA55AC4E1A1A3ED800381726 /* NSString+MD5.m */,
+				BA55AC4A1A1A3ED200381726 /* FTWCache.h */,
+				BA55AC4B1A1A3ED200381726 /* FTWCache.m */,
+				BA55AC471A1A182200381726 /* UIImage+FX.h */,
+				BA55AC481A1A182200381726 /* UIImage+FX.m */,
+				BA55AC441A1A16C900381726 /* FXImageView.h */,
+				BA55AC451A1A16C900381726 /* FXImageView.m */,
 				BA55AC3C1A1A017C00381726 /* UIImage+fixOrientation.h */,
 				BA55AC3D1A1A017C00381726 /* UIImage+fixOrientation.m */,
 			);
@@ -1494,11 +1514,14 @@
 				CE5327B11A19F85800FCC558 /* ObjectLista.m in Sources */,
 				CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */,
 				BAF9551E1A0A7B7200277B94 /* Home.m in Sources */,
+				BA55AC491A1A182200381726 /* UIImage+FX.m in Sources */,
+				BA55AC4C1A1A3ED200381726 /* FTWCache.m in Sources */,
 				BA023B4A1A1367B2000B4754 /* ObjectDirections.m in Sources */,
 				CE5327AF1A19F85800FCC558 /* ListaComprasCell.m in Sources */,
 				CE2767031A166E21003A225B /* RABatchChanges.m in Sources */,
 				BA023B741A13BE3B000B4754 /* NSDate+convenience.m in Sources */,
 				CE27670A1A166E21003A225B /* RATreeView+Private.m in Sources */,
+				BA55AC461A1A16C900381726 /* FXImageView.m in Sources */,
 				CE27670C1A166E21003A225B /* RATreeView+TableViewDataSource.m in Sources */,
 				CE2767041A166E21003A225B /* RATreeNode.m in Sources */,
 				CE253F9B1A10B9C7003DA45C /* NewReceita.m in Sources */,
@@ -1518,6 +1541,7 @@
 				BAF76B5B1A0D2AAE00D2CC13 /* DragableTableReceitas.m in Sources */,
 				BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */,
 				BA55AC3E1A1A017C00381726 /* UIImage+fixOrientation.m in Sources */,
+				BA55AC4F1A1A3ED800381726 /* NSString+MD5.m in Sources */,
 				BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */,
 				BAF76B491A0CCE6B00D2CC13 /* CollectionLivros.m in Sources */,
 				CE49840F1A0A9188009EC1A4 /* HeaderReceita.m in Sources */,

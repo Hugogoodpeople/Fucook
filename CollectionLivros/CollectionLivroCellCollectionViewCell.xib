@@ -73,6 +73,7 @@
                 <outlet property="ViewMovel" destination="pOh-eg-051" id="6GJ-Rg-oi9"/>
                 <outlet property="imagemCapa" destination="fCz-Ap-PZs" id="pEW-BR-YHm"/>
                 <outlet property="labelDescricao" destination="AP7-Xx-e0l" id="i5G-4H-ntl"/>
+                <outlet property="labelTitulo" destination="gol-N3-FOT" id="OAI-Wh-XAa"/>
             </connections>
             <point key="canvasLocation" x="-113" y="401.5"/>
         </collectionViewCell>

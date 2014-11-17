@@ -15,6 +15,9 @@
         <attribute name="ordem" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tempo" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Imagens" syncable="YES">
+        <attribute name="imagem" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+    </entity>
     <entity name="Ingredientes" representedClassName="ObjectIngrediente" syncable="YES">
         <attribute name="id_ingrediente" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="id_receita" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -27,8 +30,8 @@
         <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="foto" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id_livro" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
-        <attribute name="imagem" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contem_imagem" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Imagens" syncable="YES"/>
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Receitas" syncable="YES"/>
     </entity>
     <entity name="Nutricao" syncable="YES">
@@ -65,8 +68,9 @@
         <element name="Agenda" positionX="-540" positionY="873" width="128" height="118"/>
         <element name="Etapas" positionX="-720" positionY="1244" width="128" height="133"/>
         <element name="Ingredientes" positionX="-882" positionY="1172" width="128" height="133"/>
-        <element name="Livros" positionX="-947" positionY="899" width="128" height="133"/>
+        <element name="Livros" positionX="-1008" positionY="893" width="128" height="133"/>
         <element name="Nutricao" positionX="-524" positionY="1070" width="128" height="253"/>
         <element name="Receitas" positionX="-720" positionY="954" width="128" height="223"/>
+        <element name="Imagens" positionX="-1172" positionY="1053" width="128" height="58"/>
     </elements>
 </model>

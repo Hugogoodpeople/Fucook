@@ -101,9 +101,7 @@
     [fetchRequest setEntity:entity];
     
     
-    
-    
-    
+    /*
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     for (NSManagedObject *pedido in fetchedObjects)
     {
@@ -113,12 +111,9 @@
         NSLog(@"titulo: %@", [pedido valueForKey:@"titulo"]);
         NSLog(@"descrição: %@", [pedido valueForKey:@"descricao"]);
         
-        
-        
-        
     }
 
-    
+    */
     
     
 
