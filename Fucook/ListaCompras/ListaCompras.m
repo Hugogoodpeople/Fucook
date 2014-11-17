@@ -12,11 +12,9 @@
 #import "ObjectLista.h"
 #import "ListaComprasCell.h"
 
-@interface ListaCompras () <RATreeViewDelegate, RATreeViewDataSource>
+@interface ListaCompras ()
 
-@property (strong, nonatomic) NSArray *data;
-@property (weak, nonatomic) RATreeView *treeView;
-
+@property (strong, nonatomic) IBOutlet UITableView *tabbleView;
 
 @end
 
@@ -24,28 +22,87 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabbleView.delegate = self;
+    self.tabbleView.dataSource = self;
+    
+    selectedIndex = -1;
+    
+    titleArray = [[NSMutableArray alloc] init];
+    NSString *string;
+    
+    for(int ii=1;ii<=8;ii++){
+        string = [[NSString alloc] initWithFormat:@"ROW %i",ii];
+        [titleArray addObject:string];
+    }
+    subtitleArray = [[NSArray alloc] initWithObjects:@"1 ROW",@"2",@"3",@"4",@"5",@"6",@"7",@"8", nil];
+    textArray = [[NSArray alloc] initWithObjects:@"Manteiga",@"Amendoin",@"Sal",@"Pimenta",@"Frango",@"Batatas",@"Cenouras",@"Tomates", nil];
+    
+    [self.tabbleView registerNib:[UINib nibWithNibName:@"TableHeader" bundle:nil] forHeaderFooterViewReuseIdentifier:@"TableHeader"];
     
     [self loadData];
     
-    RATreeView *treeView = [[RATreeView alloc] initWithFrame:self.view.bounds];
-    
-    treeView.delegate = self;
-    treeView.dataSource = self;
-    treeView.separatorStyle = RATreeViewCellSeparatorStyleSingleLine;
-    
-    [treeView reloadData];
-    [treeView setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1.0]];
-    
-    
-    self.treeView = treeView;
-    [self.view insertSubview:treeView atIndex:0];
-    
-    [self.navigationController setNavigationBarHidden:NO];
-    self.navigationItem.title = NSLocalizedString(@"Things", nil);
-   // [self updateNavigationItemButton];
-    
-    [self.treeView registerNib:[UINib nibWithNibName:NSStringFromClass([ListaComprasCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([ListaComprasCell class])];
 }
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+/*- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [subtitleArray objectAtIndex:section];
+}*/
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return titleArray.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *simpleTableIdentifier = @"ListaComprasCell";
+    
+    ListaComprasCell *cell = (ListaComprasCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ListaComprasCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    if(selectedIndex == indexPath.row){
+        
+    }else{
+        
+    }
+    
+    cell.labelTitle.text = [textArray objectAtIndex:indexPath.row];
+    cell.labelSub.text = [subtitleArray objectAtIndex:indexPath.row];
+    int calc = (indexPath.row + 1)*25;
+    return cell;
+
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(selectedIndex == indexPath.row){
+        return 87;
+    }else{
+        return 44;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(selectedIndex == indexPath.row){
+        selectedIndex  = -1;
+        //[tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath.row] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationFade];
+        return;
+    }
+    if(selectedIndex != -1){
+        NSIndexPath *prev = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
+        selectedIndex = indexPath.row;
+        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:prev, nil] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    selectedIndex = indexPath.row;
+    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationFade];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -54,139 +111,22 @@
 
 
 
-#pragma mark TreeView Delegate methods
-
-- (CGFloat)treeView:(RATreeView *)treeView heightForRowForItem:(id)item
-{
-    return 44;
-}
-
-- (BOOL)treeView:(RATreeView *)treeView canEditRowForItem:(id)item
-{
-    return YES;
-}
-
-- (void)treeView:(RATreeView *)treeView willExpandRowForItem:(id)item
-{
-    ListaComprasCell *cell = (ListaComprasCell *)[treeView cellForItem:item];
-    [cell setAdditionButtonHidden:NO animated:YES];
-}
-
-- (void)treeView:(RATreeView *)treeView willCollapseRowForItem:(id)item
-{
-    ListaComprasCell *cell = (ListaComprasCell *)[treeView cellForItem:item];
-    [cell setAdditionButtonHidden:YES animated:YES];
-}
-
-- (void)treeView:(RATreeView *)treeView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowForItem:(id)item
-{
-    if (editingStyle != UITableViewCellEditingStyleDelete) {
-        return;
-    }
-    
-    ObjectLista *parent = [self.treeView parentForItem:item];
-    NSInteger index = 0;
-    
-    if (parent == nil) {
-        index = [self.data indexOfObject:item];
-        NSMutableArray *children = [self.data mutableCopy];
-        [children removeObject:item];
-        self.data = [children copy];
-        
-    } else {
-        index = [parent.children indexOfObject:item];
-        [parent removeChild:item];
-    }
-    
-    [self.treeView deleteItemsAtIndexes:[NSIndexSet indexSetWithIndex:index] inParent:parent withAnimation:RATreeViewRowAnimationRight];
-    if (parent) {
-        [self.treeView reloadRowsForItems:@[parent] withRowAnimation:RATreeViewRowAnimationNone];
-    }
-}
-
-#pragma mark TreeView Data Source
-
-- (UITableViewCell *)treeView:(RATreeView *)treeView cellForItem:(id)item
-{
-    ObjectLista *dataObject = item;
-    
-    NSInteger level = [self.treeView levelForCellForItem:item];
-    NSInteger numberOfChildren = [dataObject.children count];
-    NSString *detailText = [NSString localizedStringWithFormat:@"Number of children %@", [@(numberOfChildren) stringValue]];
-    BOOL expanded = [self.treeView isCellForItemExpanded:item];
-    
-    ListaComprasCell *cell = [self.treeView dequeueReusableCellWithIdentifier:NSStringFromClass([ListaComprasCell class])];
-    [cell setupWithTitle:dataObject.name detailText:detailText level:level additionButtonHidden:!expanded];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    __weak typeof(self) weakSelf = self;
-    cell.additionButtonTapAction = ^(id sender){
-        if (![weakSelf.treeView isCellForItemExpanded:dataObject] || weakSelf.treeView.isEditing) {
-            return;
-        }
-        ObjectLista *newDataObject = [[ObjectLista alloc] initWithName:@"Added value" children:@[]];
-        [dataObject addChild:newDataObject];
-        [weakSelf.treeView insertItemsAtIndexes:[NSIndexSet indexSetWithIndex:0] inParent:dataObject withAnimation:RATreeViewRowAnimationLeft];
-        [weakSelf.treeView reloadRowsForItems:@[dataObject] withRowAnimation:RATreeViewRowAnimationNone];
-    };
-    
-    return cell;
-}
-
-- (NSInteger)treeView:(RATreeView *)treeView numberOfChildrenOfItem:(id)item
-{
-    if (item == nil) {
-        return [self.data count];
-    }
-    
-    ObjectLista *data = item;
-    return [data.children count];
-}
-
-- (id)treeView:(RATreeView *)treeView child:(NSInteger)index ofItem:(id)item
-{
-    ObjectLista *data = item;
-    if (item == nil) {
-        return [self.data objectAtIndex:index];
-    }
-    
-    return data.children[index];
-}
 
 
 
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (void)loadData
 {
     ObjectLista *phone1 = [ObjectLista dataObjectWithName:@"Phone 1" children:nil];
-    ObjectLista *phone2 = [ObjectLista dataObjectWithName:@"Phone 2" children:nil];
-    ObjectLista *phone3 = [ObjectLista dataObjectWithName:@"Phone 3" children:nil];
-    ObjectLista *phone4 = [ObjectLista dataObjectWithName:@"Phone 4" children:nil];
-    
     ObjectLista *phone = [ObjectLista dataObjectWithName:@"Phones"
-                                                  children:[NSArray arrayWithObjects:phone1, phone2, phone3, phone4, nil]];
+                                                  children:[NSArray arrayWithObjects:phone1, nil]];
     
-    ObjectLista *notebook1 = [ObjectLista dataObjectWithName:@"Notebook 1" children:nil];
-    ObjectLista *notebook2 = [ObjectLista dataObjectWithName:@"Notebook 2" children:nil];
     
-    ObjectLista *computer1 = [ObjectLista dataObjectWithName:@"Computer 1"
-                                                      children:[NSArray arrayWithObjects:notebook1, notebook2, nil]];
-    ObjectLista *computer2 = [ObjectLista dataObjectWithName:@"Computer 2" children:nil];
-    ObjectLista *computer3 = [ObjectLista dataObjectWithName:@"Computer 3" children:nil];
+    ObjectLista *computer1 = [ObjectLista dataObjectWithName:@"Computer 1" children:nil];
     
     ObjectLista *computer = [ObjectLista dataObjectWithName:@"Computers"
-                                                     children:[NSArray arrayWithObjects:computer1, computer2, computer3, nil]];
+                                                     children:[NSArray arrayWithObjects:computer1, nil]];
     ObjectLista *car = [ObjectLista dataObjectWithName:@"Cars" children:nil];
     ObjectLista *bike = [ObjectLista dataObjectWithName:@"Bikes" children:nil];
     ObjectLista *house = [ObjectLista dataObjectWithName:@"Houses" children:nil];
@@ -198,7 +138,7 @@
     ObjectLista *watches = [ObjectLista dataObjectWithName:@"Watches" children:nil];
     ObjectLista *walls = [ObjectLista dataObjectWithName:@"Walls" children:nil];
     
-    self.data = [NSArray arrayWithObjects:phone, computer, car, bike, house, flats, motorbike, drinks, food, sweets, watches, walls, nil];
+    //self.data = [NSArray arrayWithObjects:phone, computer, car, bike, house, flats, motorbike, drinks, food, sweets, watches, walls, nil];
 
 }
 

@@ -18,6 +18,7 @@
 #import "AppDelegate.h"
 #import "ObjectLivro.h"
 #import "UIImage+fixOrientation.h"
+#import "ListaCompras.h"
 
 @interface Home ()
 
@@ -270,6 +271,7 @@
 }
 
 - (IBAction)clickCarrinho:(id)sender {
+     [self.navigationController pushViewController:[ListaCompras new] animated:YES];
 }
 
 - (IBAction)clickAgends:(id)sender {

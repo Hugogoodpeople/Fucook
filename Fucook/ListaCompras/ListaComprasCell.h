@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ListaComprasCell : UITableViewCell
-@property (nonatomic, copy) void (^additionButtonTapAction)(id sender);
-@property (nonatomic) BOOL additionButtonHidden;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UILabel *labelSub;
 
-- (void)setupWithTitle:(NSString *)title detailText:(NSString *)detailText level:(NSInteger)level additionButtonHidden:(BOOL)additionButtonHidden;
-- (void)setAdditionButtonHidden:(BOOL)additionButtonHidden animated:(BOOL)animated;
+- (IBAction)btVer:(id)sender;
+- (IBAction)btProcurar:(id)sender;
+- (IBAction)btAdd:(id)sender;
+- (IBAction)btDelete:(id)sender;
+
 @end

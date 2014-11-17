@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListaCompras : UIViewController
-
-
-
+@interface ListaCompras : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    
+    int selectedIndex;
+    NSMutableArray *titleArray;
+    NSArray *subtitleArray;
+    NSArray *textArray;
+    
+}
 @end
