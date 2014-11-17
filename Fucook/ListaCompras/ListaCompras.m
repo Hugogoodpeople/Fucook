@@ -9,6 +9,9 @@
 #import "ListaCompras.h"
 #import "RATreeView.h"
 
+#import "ObjectLista.h"
+#import "ListaComprasCell.h"
+
 @interface ListaCompras () <RATreeViewDelegate, RATreeViewDataSource>
 
 @property (strong, nonatomic) NSArray *data;
@@ -21,10 +24,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self loadData];
-
+    
     RATreeView *treeView = [[RATreeView alloc] initWithFrame:self.view.bounds];
-
+    
     treeView.delegate = self;
     treeView.dataSource = self;
     treeView.separatorStyle = RATreeViewCellSeparatorStyleSingleLine;
@@ -36,12 +40,11 @@
     self.treeView = treeView;
     [self.view insertSubview:treeView atIndex:0];
     
-    //[self.navigationController setNavigationBarHidden:NO];
+    [self.navigationController setNavigationBarHidden:NO];
+    self.navigationItem.title = NSLocalizedString(@"Things", nil);
+   // [self updateNavigationItemButton];
     
-    //[self updateNavigationItemButton];
-    
-    //[self.treeView registerNib:[UINib nibWithNibName:NSStringFromClass([RATableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([RATableViewCell class])];
-    // Do any additional setup after loading the view from its nib.
+    [self.treeView registerNib:[UINib nibWithNibName:NSStringFromClass([ListaComprasCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([ListaComprasCell class])];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,14 +68,14 @@
 
 - (void)treeView:(RATreeView *)treeView willExpandRowForItem:(id)item
 {
-    //RATableViewCell *cell = (RATableViewCell *)[treeView cellForItem:item];
-    //[cell setAdditionButtonHidden:NO animated:YES];
+    ListaComprasCell *cell = (ListaComprasCell *)[treeView cellForItem:item];
+    [cell setAdditionButtonHidden:NO animated:YES];
 }
 
 - (void)treeView:(RATreeView *)treeView willCollapseRowForItem:(id)item
 {
-    //RATableViewCell *cell = (RATableViewCell *)[treeView cellForItem:item];
-    //[cell setAdditionButtonHidden:YES animated:YES];
+    ListaComprasCell *cell = (ListaComprasCell *)[treeView cellForItem:item];
+    [cell setAdditionButtonHidden:YES animated:YES];
 }
 
 - (void)treeView:(RATreeView *)treeView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowForItem:(id)item
@@ -81,7 +84,7 @@
         return;
     }
     
-   /*RADataObject *parent = [self.treeView parentForItem:item];
+    ObjectLista *parent = [self.treeView parentForItem:item];
     NSInteger index = 0;
     
     if (parent == nil) {
@@ -98,21 +101,21 @@
     [self.treeView deleteItemsAtIndexes:[NSIndexSet indexSetWithIndex:index] inParent:parent withAnimation:RATreeViewRowAnimationRight];
     if (parent) {
         [self.treeView reloadRowsForItems:@[parent] withRowAnimation:RATreeViewRowAnimationNone];
-    }*/
+    }
 }
 
 #pragma mark TreeView Data Source
 
 - (UITableViewCell *)treeView:(RATreeView *)treeView cellForItem:(id)item
 {
-    /*RADataObject *dataObject = item;
+    ObjectLista *dataObject = item;
     
     NSInteger level = [self.treeView levelForCellForItem:item];
     NSInteger numberOfChildren = [dataObject.children count];
     NSString *detailText = [NSString localizedStringWithFormat:@"Number of children %@", [@(numberOfChildren) stringValue]];
     BOOL expanded = [self.treeView isCellForItemExpanded:item];
     
-    RATableViewCell *cell = [self.treeView dequeueReusableCellWithIdentifier:NSStringFromClass([RATableViewCell class])];
+    ListaComprasCell *cell = [self.treeView dequeueReusableCellWithIdentifier:NSStringFromClass([ListaComprasCell class])];
     [cell setupWithTitle:dataObject.name detailText:detailText level:level additionButtonHidden:!expanded];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -121,12 +124,12 @@
         if (![weakSelf.treeView isCellForItemExpanded:dataObject] || weakSelf.treeView.isEditing) {
             return;
         }
-        RADataObject *newDataObject = [[RADataObject alloc] initWithName:@"Added value" children:@[]];
+        ObjectLista *newDataObject = [[ObjectLista alloc] initWithName:@"Added value" children:@[]];
         [dataObject addChild:newDataObject];
         [weakSelf.treeView insertItemsAtIndexes:[NSIndexSet indexSetWithIndex:0] inParent:dataObject withAnimation:RATreeViewRowAnimationLeft];
         [weakSelf.treeView reloadRowsForItems:@[dataObject] withRowAnimation:RATreeViewRowAnimationNone];
     };
-    */
+    
     return cell;
 }
 
@@ -136,19 +139,22 @@
         return [self.data count];
     }
     
-    //RADataObject *data = item;
-    //return [data.children count];
+    ObjectLista *data = item;
+    return [data.children count];
 }
 
 - (id)treeView:(RATreeView *)treeView child:(NSInteger)index ofItem:(id)item
 {
-    //RADataObject *data = item;
+    ObjectLista *data = item;
     if (item == nil) {
         return [self.data objectAtIndex:index];
     }
     
-    //return data.children[index];
+    return data.children[index];
 }
+
+
+
 
 
 /*
@@ -163,37 +169,37 @@
 
 - (void)loadData
 {
-    /*RADataObject *phone1 = [RADataObject dataObjectWithName:@"Phone 1" children:nil];
-    RADataObject *phone2 = [RADataObject dataObjectWithName:@"Phone 2" children:nil];
-    RADataObject *phone3 = [RADataObject dataObjectWithName:@"Phone 3" children:nil];
-    RADataObject *phone4 = [RADataObject dataObjectWithName:@"Phone 4" children:nil];
+    ObjectLista *phone1 = [ObjectLista dataObjectWithName:@"Phone 1" children:nil];
+    ObjectLista *phone2 = [ObjectLista dataObjectWithName:@"Phone 2" children:nil];
+    ObjectLista *phone3 = [ObjectLista dataObjectWithName:@"Phone 3" children:nil];
+    ObjectLista *phone4 = [ObjectLista dataObjectWithName:@"Phone 4" children:nil];
     
-    RADataObject *phone = [RADataObject dataObjectWithName:@"Phones"
+    ObjectLista *phone = [ObjectLista dataObjectWithName:@"Phones"
                                                   children:[NSArray arrayWithObjects:phone1, phone2, phone3, phone4, nil]];
     
-    RADataObject *notebook1 = [RADataObject dataObjectWithName:@"Notebook 1" children:nil];
-    RADataObject *notebook2 = [RADataObject dataObjectWithName:@"Notebook 2" children:nil];
+    ObjectLista *notebook1 = [ObjectLista dataObjectWithName:@"Notebook 1" children:nil];
+    ObjectLista *notebook2 = [ObjectLista dataObjectWithName:@"Notebook 2" children:nil];
     
-    RADataObject *computer1 = [RADataObject dataObjectWithName:@"Computer 1"
+    ObjectLista *computer1 = [ObjectLista dataObjectWithName:@"Computer 1"
                                                       children:[NSArray arrayWithObjects:notebook1, notebook2, nil]];
-    RADataObject *computer2 = [RADataObject dataObjectWithName:@"Computer 2" children:nil];
-    RADataObject *computer3 = [RADataObject dataObjectWithName:@"Computer 3" children:nil];
+    ObjectLista *computer2 = [ObjectLista dataObjectWithName:@"Computer 2" children:nil];
+    ObjectLista *computer3 = [ObjectLista dataObjectWithName:@"Computer 3" children:nil];
     
-    RADataObject *computer = [RADataObject dataObjectWithName:@"Computers"
+    ObjectLista *computer = [ObjectLista dataObjectWithName:@"Computers"
                                                      children:[NSArray arrayWithObjects:computer1, computer2, computer3, nil]];
-    RADataObject *car = [RADataObject dataObjectWithName:@"Cars" children:nil];
-    RADataObject *bike = [RADataObject dataObjectWithName:@"Bikes" children:nil];
-    RADataObject *house = [RADataObject dataObjectWithName:@"Houses" children:nil];
-    RADataObject *flats = [RADataObject dataObjectWithName:@"Flats" children:nil];
-    RADataObject *motorbike = [RADataObject dataObjectWithName:@"Motorbikes" children:nil];
-    RADataObject *drinks = [RADataObject dataObjectWithName:@"Drinks" children:nil];
-    RADataObject *food = [RADataObject dataObjectWithName:@"Food" children:nil];
-    RADataObject *sweets = [RADataObject dataObjectWithName:@"Sweets" children:nil];
-    RADataObject *watches = [RADataObject dataObjectWithName:@"Watches" children:nil];
-    RADataObject *walls = [RADataObject dataObjectWithName:@"Walls" children:nil];
+    ObjectLista *car = [ObjectLista dataObjectWithName:@"Cars" children:nil];
+    ObjectLista *bike = [ObjectLista dataObjectWithName:@"Bikes" children:nil];
+    ObjectLista *house = [ObjectLista dataObjectWithName:@"Houses" children:nil];
+    ObjectLista *flats = [ObjectLista dataObjectWithName:@"Flats" children:nil];
+    ObjectLista *motorbike = [ObjectLista dataObjectWithName:@"Motorbikes" children:nil];
+    ObjectLista *drinks = [ObjectLista dataObjectWithName:@"Drinks" children:nil];
+    ObjectLista *food = [ObjectLista dataObjectWithName:@"Food" children:nil];
+    ObjectLista *sweets = [ObjectLista dataObjectWithName:@"Sweets" children:nil];
+    ObjectLista *watches = [ObjectLista dataObjectWithName:@"Watches" children:nil];
+    ObjectLista *walls = [ObjectLista dataObjectWithName:@"Walls" children:nil];
     
     self.data = [NSArray arrayWithObjects:phone, computer, car, bike, house, flats, motorbike, drinks, food, sweets, watches, walls, nil];
-    */
+
 }
 
 

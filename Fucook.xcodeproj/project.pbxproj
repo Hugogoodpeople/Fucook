@@ -26,28 +26,8 @@
 		BA023B781A13BE3B000B4754 /* VRGCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B731A13BE3B000B4754 /* VRGCalendarView.m */; };
 		BA023B7D1A13BEB3000B4754 /* Calendario.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B7B1A13BEB3000B4754 /* Calendario.m */; };
 		BA023B7E1A13BEB3000B4754 /* Calendario.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B7C1A13BEB3000B4754 /* Calendario.xib */; };
-<<<<<<< HEAD
-		BA55AC011A19F5D700381726 /* RATreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC001A19F5D700381726 /* RATreeView.m */; };
-		BA55AC1D1A19F5DF00381726 /* RABatchChanges.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC031A19F5DF00381726 /* RABatchChanges.m */; };
-		BA55AC1E1A19F5DF00381726 /* RATreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC061A19F5DF00381726 /* RATreeNode.m */; };
-		BA55AC1F1A19F5DF00381726 /* RATreeNodeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC081A19F5DF00381726 /* RATreeNodeCollectionController.m */; };
-		BA55AC201A19F5DF00381726 /* RATreeNodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC0A1A19F5DF00381726 /* RATreeNodeController.m */; };
-		BA55AC211A19F5DF00381726 /* RATreeNodeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC0C1A19F5DF00381726 /* RATreeNodeItem.m */; };
-		BA55AC221A19F5DF00381726 /* RATreeNodeItem+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC0F1A19F5DF00381726 /* RATreeNodeItem+Private.m */; };
-		BA55AC231A19F5DF00381726 /* RATreeView+Enums.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC121A19F5DF00381726 /* RATreeView+Enums.m */; };
-		BA55AC241A19F5DF00381726 /* RATreeView+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC141A19F5DF00381726 /* RATreeView+Private.m */; };
-		BA55AC251A19F5DF00381726 /* RATreeView+RATreeNodeCollectionControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC161A19F5DF00381726 /* RATreeView+RATreeNodeCollectionControllerDataSource.m */; };
-		BA55AC261A19F5DF00381726 /* RATreeView+TableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC181A19F5DF00381726 /* RATreeView+TableViewDataSource.m */; };
-		BA55AC271A19F5DF00381726 /* RATreeView+TableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC1A1A19F5DF00381726 /* RATreeView+TableViewDelegate.m */; };
-		BA55AC281A19F5DF00381726 /* RATreeView+UIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC1C1A19F5DF00381726 /* RATreeView+UIScrollView.m */; };
-		BA55AC2C1A19F61000381726 /* ListaComprasCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC2A1A19F61000381726 /* ListaComprasCell.m */; };
-		BA55AC2D1A19F61000381726 /* ListaComprasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA55AC2B1A19F61000381726 /* ListaComprasCell.xib */; };
-		BA55AC301A19F63500381726 /* ObjectLista.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC2F1A19F63500381726 /* ObjectLista.m */; };
-		BA55AC361A19FA5A00381726 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC351A19FA5A00381726 /* UIImage+fixOrientation.m */; };
-		BA55AC381A19FF0C00381726 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA55AC371A19FF0C00381726 /* AVFoundation.framework */; };
-		BA55AC3A1A19FFF300381726 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA55AC391A19FFF300381726 /* OverlayView.xib */; };
-=======
->>>>>>> FETCH_HEAD
+		BA55AC3E1A1A017C00381726 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC3D1A1A017C00381726 /* UIImage+fixOrientation.m */; };
+		BA55AC401A1A021000381726 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA55AC3F1A1A021000381726 /* OverlayView.xib */; };
 		BA66E5C51A1230B60090F99D /* NewDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5BB1A1230B60090F99D /* NewDirections.m */; };
 		BA66E5C61A1230B60090F99D /* NewDirections.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5BC1A1230B60090F99D /* NewDirections.xib */; };
 		BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5BF1A1230B60090F99D /* NewIngrediente.m */; };
@@ -240,6 +220,9 @@
 		CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4983FA1A0A90B7009EC1A4 /* TGLStackedViewController.m */; };
 		CE49840F1A0A9188009EC1A4 /* HeaderReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE49840D1A0A9188009EC1A4 /* HeaderReceita.m */; };
 		CE4984101A0A9188009EC1A4 /* HeaderReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE49840E1A0A9188009EC1A4 /* HeaderReceita.xib */; };
+		CE5327AF1A19F85800FCC558 /* ListaComprasCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5327AB1A19F85800FCC558 /* ListaComprasCell.m */; };
+		CE5327B01A19F85800FCC558 /* ListaComprasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5327AC1A19F85800FCC558 /* ListaComprasCell.xib */; };
+		CE5327B11A19F85800FCC558 /* ObjectLista.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5327AE1A19F85800FCC558 /* ObjectLista.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -288,47 +271,9 @@
 		BA05F5821A08D24300E752E7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		BA05F5831A08D24300E752E7 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
 		BA05F5841A08D24300E752E7 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		BA55ABFF1A19F5D700381726 /* RATreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RATreeView.h; path = RATreeView/RATreeView.h; sourceTree = "<group>"; };
-		BA55AC001A19F5D700381726 /* RATreeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RATreeView.m; path = RATreeView/RATreeView.m; sourceTree = "<group>"; };
-		BA55AC021A19F5DF00381726 /* RABatchChanges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RABatchChanges.h; path = "RATreeView/Private Files/RABatchChanges.h"; sourceTree = "<group>"; };
-		BA55AC031A19F5DF00381726 /* RABatchChanges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RABatchChanges.m; path = "RATreeView/Private Files/RABatchChanges.m"; sourceTree = "<group>"; };
-		BA55AC041A19F5DF00381726 /* RATreeNode_ClassExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RATreeNode_ClassExtension.h; path = "RATreeView/Private Files/RATreeNode_ClassExtension.h"; sourceTree = "<group>"; };
-		BA55AC051A19F5DF00381726 /* RATreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RATreeNode.h; path = "RATreeView/Private Files/RATreeNode.h"; sourceTree = "<group>"; };
-		BA55AC061A19F5DF00381726 /* RATreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RATreeNode.m; path = "RATreeView/Private Files/RATreeNode.m"; sourceTree = "<group>"; };
-		BA55AC071A19F5DF00381726 /* RATreeNodeCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RATreeNodeCollectionController.h; path = "RATreeView/Private Files/RATreeNodeCollectionController.h"; sourceTree = "<group>"; };
-		BA55AC081A19F5DF00381726 /* RATreeNodeCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RATreeNodeCollectionController.m; path = "RATreeView/Private Files/RATreeNodeCollectionController.m"; sourceTree = "<group>"; };
-		BA55AC091A19F5DF00381726 /* RATreeNodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RATreeNodeController.h; path = "RATreeView/Private Files/RATreeNodeController.h"; sourceTree = "<group>"; };
-		BA55AC0A1A19F5DF00381726 /* RATreeNodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RATreeNodeController.m; path = "RATreeView/Private Files/RATreeNodeController.m"; sourceTree = "<group>"; };
-		BA55AC0B1A19F5DF00381726 /* RATreeNodeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RATreeNodeItem.h; path = "RATreeView/Private Files/RATreeNodeItem.h"; sourceTree = "<group>"; };
-		BA55AC0C1A19F5DF00381726 /* RATreeNodeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RATreeNodeItem.m; path = "RATreeView/Private Files/RATreeNodeItem.m"; sourceTree = "<group>"; };
-		BA55AC0D1A19F5DF00381726 /* RATreeNodeItem+ClassExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RATreeNodeItem+ClassExtension.h"; path = "RATreeView/Private Files/RATreeNodeItem+ClassExtension.h"; sourceTree = "<group>"; };
-		BA55AC0E1A19F5DF00381726 /* RATreeNodeItem+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RATreeNodeItem+Private.h"; path = "RATreeView/Private Files/RATreeNodeItem+Private.h"; sourceTree = "<group>"; };
-		BA55AC0F1A19F5DF00381726 /* RATreeNodeItem+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RATreeNodeItem+Private.m"; path = "RATreeView/Private Files/RATreeNodeItem+Private.m"; sourceTree = "<group>"; };
-		BA55AC101A19F5DF00381726 /* RATreeView_ClassExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RATreeView_ClassExtension.h; path = "RATreeView/Private Files/RATreeView_ClassExtension.h"; sourceTree = "<group>"; };
-		BA55AC111A19F5DF00381726 /* RATreeView+Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RATreeView+Enums.h"; path = "RATreeView/Private Files/RATreeView+Enums.h"; sourceTree = "<group>"; };
-		BA55AC121A19F5DF00381726 /* RATreeView+Enums.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RATreeView+Enums.m"; path = "RATreeView/Private Files/RATreeView+Enums.m"; sourceTree = "<group>"; };
-		BA55AC131A19F5DF00381726 /* RATreeView+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RATreeView+Private.h"; path = "RATreeView/Private Files/RATreeView+Private.h"; sourceTree = "<group>"; };
-		BA55AC141A19F5DF00381726 /* RATreeView+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RATreeView+Private.m"; path = "RATreeView/Private Files/RATreeView+Private.m"; sourceTree = "<group>"; };
-		BA55AC151A19F5DF00381726 /* RATreeView+RATreeNodeCollectionControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RATreeView+RATreeNodeCollectionControllerDataSource.h"; path = "RATreeView/Private Files/RATreeView+RATreeNodeCollectionControllerDataSource.h"; sourceTree = "<group>"; };
-		BA55AC161A19F5DF00381726 /* RATreeView+RATreeNodeCollectionControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RATreeView+RATreeNodeCollectionControllerDataSource.m"; path = "RATreeView/Private Files/RATreeView+RATreeNodeCollectionControllerDataSource.m"; sourceTree = "<group>"; };
-		BA55AC171A19F5DF00381726 /* RATreeView+TableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RATreeView+TableViewDataSource.h"; path = "RATreeView/Private Files/RATreeView+TableViewDataSource.h"; sourceTree = "<group>"; };
-		BA55AC181A19F5DF00381726 /* RATreeView+TableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RATreeView+TableViewDataSource.m"; path = "RATreeView/Private Files/RATreeView+TableViewDataSource.m"; sourceTree = "<group>"; };
-		BA55AC191A19F5DF00381726 /* RATreeView+TableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RATreeView+TableViewDelegate.h"; path = "RATreeView/Private Files/RATreeView+TableViewDelegate.h"; sourceTree = "<group>"; };
-		BA55AC1A1A19F5DF00381726 /* RATreeView+TableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RATreeView+TableViewDelegate.m"; path = "RATreeView/Private Files/RATreeView+TableViewDelegate.m"; sourceTree = "<group>"; };
-		BA55AC1B1A19F5DF00381726 /* RATreeView+UIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RATreeView+UIScrollView.h"; path = "RATreeView/Private Files/RATreeView+UIScrollView.h"; sourceTree = "<group>"; };
-		BA55AC1C1A19F5DF00381726 /* RATreeView+UIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RATreeView+UIScrollView.m"; path = "RATreeView/Private Files/RATreeView+UIScrollView.m"; sourceTree = "<group>"; };
-		BA55AC291A19F61000381726 /* ListaComprasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListaComprasCell.h; path = Fucook/ListaCompras/ListaComprasCell.h; sourceTree = "<group>"; };
-		BA55AC2A1A19F61000381726 /* ListaComprasCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListaComprasCell.m; path = Fucook/ListaCompras/ListaComprasCell.m; sourceTree = "<group>"; };
-		BA55AC2B1A19F61000381726 /* ListaComprasCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListaComprasCell.xib; path = Fucook/ListaCompras/ListaComprasCell.xib; sourceTree = "<group>"; };
-		BA55AC2E1A19F63500381726 /* ObjectLista.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectLista.h; path = Fucook/ListaCompras/ObjectLista.h; sourceTree = "<group>"; };
-		BA55AC2F1A19F63500381726 /* ObjectLista.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectLista.m; path = Fucook/ListaCompras/ObjectLista.m; sourceTree = "<group>"; };
-		BA55AC341A19FA5A00381726 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+fixOrientation.h"; path = "Fucook/UIImage+fixOrientation.h"; sourceTree = "<group>"; };
-		BA55AC351A19FA5A00381726 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+fixOrientation.m"; path = "Fucook/UIImage+fixOrientation.m"; sourceTree = "<group>"; };
-		BA55AC371A19FF0C00381726 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		BA55AC391A19FFF300381726 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OverlayView.xib; path = NewBook/OverlayView.xib; sourceTree = "<group>"; };
-=======
->>>>>>> FETCH_HEAD
+		BA55AC3C1A1A017C00381726 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+fixOrientation.h"; path = "Fucook/UIImage+fixOrientation.h"; sourceTree = "<group>"; };
+		BA55AC3D1A1A017C00381726 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+fixOrientation.m"; path = "Fucook/UIImage+fixOrientation.m"; sourceTree = "<group>"; };
+		BA55AC3F1A1A021000381726 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OverlayView.xib; path = NewBook/OverlayView.xib; sourceTree = "<group>"; };
 		BA66E5BA1A1230B60090F99D /* NewDirections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDirections.h; sourceTree = "<group>"; };
 		BA66E5BB1A1230B60090F99D /* NewDirections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDirections.m; sourceTree = "<group>"; };
 		BA66E5BC1A1230B60090F99D /* NewDirections.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDirections.xib; sourceTree = "<group>"; };
@@ -584,6 +529,11 @@
 		CE49840C1A0A9188009EC1A4 /* HeaderReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderReceita.h; sourceTree = "<group>"; };
 		CE49840D1A0A9188009EC1A4 /* HeaderReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderReceita.m; sourceTree = "<group>"; };
 		CE49840E1A0A9188009EC1A4 /* HeaderReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderReceita.xib; sourceTree = "<group>"; };
+		CE5327AA1A19F85800FCC558 /* ListaComprasCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListaComprasCell.h; path = Fucook/ListaCompras/ListaComprasCell.h; sourceTree = "<group>"; };
+		CE5327AB1A19F85800FCC558 /* ListaComprasCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListaComprasCell.m; path = Fucook/ListaCompras/ListaComprasCell.m; sourceTree = "<group>"; };
+		CE5327AC1A19F85800FCC558 /* ListaComprasCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListaComprasCell.xib; path = Fucook/ListaCompras/ListaComprasCell.xib; sourceTree = "<group>"; };
+		CE5327AD1A19F85800FCC558 /* ObjectLista.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectLista.h; path = Fucook/ListaCompras/ObjectLista.h; sourceTree = "<group>"; };
+		CE5327AE1A19F85800FCC558 /* ObjectLista.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectLista.m; path = Fucook/ListaCompras/ObjectLista.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -591,7 +541,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA55AC381A19FF0C00381726 /* AVFoundation.framework in Frameworks */,
 				BADC32491A164A80005B1D5A /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,54 +618,15 @@
 			name = "Util Calendario";
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-		BA55ABFE1A19F53E00381726 /* RATreeView */ = {
+		BA55AC3B1A1A013C00381726 /* Utils Image */ = {
 			isa = PBXGroup;
 			children = (
-				BA55AC021A19F5DF00381726 /* RABatchChanges.h */,
-				BA55AC031A19F5DF00381726 /* RABatchChanges.m */,
-				BA55AC041A19F5DF00381726 /* RATreeNode_ClassExtension.h */,
-				BA55AC051A19F5DF00381726 /* RATreeNode.h */,
-				BA55AC061A19F5DF00381726 /* RATreeNode.m */,
-				BA55AC071A19F5DF00381726 /* RATreeNodeCollectionController.h */,
-				BA55AC081A19F5DF00381726 /* RATreeNodeCollectionController.m */,
-				BA55AC091A19F5DF00381726 /* RATreeNodeController.h */,
-				BA55AC0A1A19F5DF00381726 /* RATreeNodeController.m */,
-				BA55AC0B1A19F5DF00381726 /* RATreeNodeItem.h */,
-				BA55AC0C1A19F5DF00381726 /* RATreeNodeItem.m */,
-				BA55AC0D1A19F5DF00381726 /* RATreeNodeItem+ClassExtension.h */,
-				BA55AC0E1A19F5DF00381726 /* RATreeNodeItem+Private.h */,
-				BA55AC0F1A19F5DF00381726 /* RATreeNodeItem+Private.m */,
-				BA55AC101A19F5DF00381726 /* RATreeView_ClassExtension.h */,
-				BA55AC111A19F5DF00381726 /* RATreeView+Enums.h */,
-				BA55AC121A19F5DF00381726 /* RATreeView+Enums.m */,
-				BA55AC131A19F5DF00381726 /* RATreeView+Private.h */,
-				BA55AC141A19F5DF00381726 /* RATreeView+Private.m */,
-				BA55AC151A19F5DF00381726 /* RATreeView+RATreeNodeCollectionControllerDataSource.h */,
-				BA55AC161A19F5DF00381726 /* RATreeView+RATreeNodeCollectionControllerDataSource.m */,
-				BA55AC171A19F5DF00381726 /* RATreeView+TableViewDataSource.h */,
-				BA55AC181A19F5DF00381726 /* RATreeView+TableViewDataSource.m */,
-				BA55AC191A19F5DF00381726 /* RATreeView+TableViewDelegate.h */,
-				BA55AC1A1A19F5DF00381726 /* RATreeView+TableViewDelegate.m */,
-				BA55AC1B1A19F5DF00381726 /* RATreeView+UIScrollView.h */,
-				BA55AC1C1A19F5DF00381726 /* RATreeView+UIScrollView.m */,
-				BA55ABFF1A19F5D700381726 /* RATreeView.h */,
-				BA55AC001A19F5D700381726 /* RATreeView.m */,
-			);
-			name = RATreeView;
-			sourceTree = "<group>";
-		};
-		BA55AC311A19F9A800381726 /* Utils Image */ = {
-			isa = PBXGroup;
-			children = (
-				BA55AC341A19FA5A00381726 /* UIImage+fixOrientation.h */,
-				BA55AC351A19FA5A00381726 /* UIImage+fixOrientation.m */,
+				BA55AC3C1A1A017C00381726 /* UIImage+fixOrientation.h */,
+				BA55AC3D1A1A017C00381726 /* UIImage+fixOrientation.m */,
 			);
 			name = "Utils Image";
 			sourceTree = "<group>";
 		};
-=======
->>>>>>> FETCH_HEAD
 		BA66E5B91A1230B60090F99D /* NewDirections */ = {
 			isa = PBXGroup;
 			children = (
@@ -776,12 +686,8 @@
 		BAC639401A07ED420049E3BD = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				BA55AC311A19F9A800381726 /* Utils Image */,
-				BA55ABFE1A19F53E00381726 /* RATreeView */,
-=======
+				BA55AC3B1A1A013C00381726 /* Utils Image */,
 				CE2766E41A166E21003A225B /* RATreeView */,
->>>>>>> FETCH_HEAD
 				BADC324B1A165FBC005B1D5A /* ListaCompras */,
 				BADC324A1A164A8E005B1D5A /* Frameworks */,
 				BADC323C1A162D5B005B1D5A /* PesquisaReceitas */,
@@ -901,7 +807,6 @@
 		BADC324A1A164A8E005B1D5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BA55AC371A19FF0C00381726 /* AVFoundation.framework */,
 				BADC32481A164A80005B1D5A /* CoreData.framework */,
 			);
 			name = Frameworks;
@@ -910,6 +815,11 @@
 		BADC324B1A165FBC005B1D5A /* ListaCompras */ = {
 			isa = PBXGroup;
 			children = (
+				CE5327AA1A19F85800FCC558 /* ListaComprasCell.h */,
+				CE5327AB1A19F85800FCC558 /* ListaComprasCell.m */,
+				CE5327AC1A19F85800FCC558 /* ListaComprasCell.xib */,
+				CE5327AD1A19F85800FCC558 /* ObjectLista.h */,
+				CE5327AE1A19F85800FCC558 /* ObjectLista.m */,
 				BADC324C1A165FE9005B1D5A /* ListaCompras.h */,
 				BADC324D1A165FE9005B1D5A /* ListaCompras.m */,
 				BADC324E1A165FE9005B1D5A /* ListaCompras.xib */,
@@ -1295,10 +1205,10 @@
 		CE475F201A0CCE9200D33A1A /* NewBook */ = {
 			isa = PBXGroup;
 			children = (
-				BA55AC391A19FFF300381726 /* OverlayView.xib */,
 				CE475F211A0CCEB500D33A1A /* NewBook.h */,
 				CE475F221A0CCEB500D33A1A /* NewBook.m */,
 				CE475F231A0CCEB500D33A1A /* NewBook.xib */,
+				BA55AC3F1A1A021000381726 /* OverlayView.xib */,
 			);
 			name = NewBook;
 			sourceTree = "<group>";
@@ -1417,7 +1327,7 @@
 				BA66E5FC1A1258160090F99D /* btnless@3x.png in Resources */,
 				BAF955641A0A9D6900277B94 /* btndelet1@2x.png in Resources */,
 				BAF955741A0A9D6900277B94 /* btnsetting1@2x.png in Resources */,
-				BA55AC3A1A19FFF300381726 /* OverlayView.xib in Resources */,
+				BA55AC401A1A021000381726 /* OverlayView.xib in Resources */,
 				BAF955661A0A9D6900277B94 /* btndelet2@2x.png in Resources */,
 				BAF955721A0A9D6900277B94 /* btnsearch@2x.png in Resources */,
 				BAF9555B1A0A9D6900277B94 /* btnaddbook@3x.png in Resources */,
@@ -1473,6 +1383,7 @@
 				CE253FA91A10C290003DA45C /* FooterNewReceita.xib in Resources */,
 				BA66E60F1A1258160090F99D /* icorating@2x.png in Resources */,
 				BAF465201A14D73700FE7926 /* imgdateselect@3x.png in Resources */,
+				CE5327B01A19F85800FCC558 /* ListaComprasCell.xib in Resources */,
 				BAC639851A07F0C40049E3BD /* Book.xib in Resources */,
 				BA66E6121A1258160090F99D /* icosettings@3x.png in Resources */,
 				BA66E6201A1282160090F99D /* DirectionsHugo.xib in Resources */,
@@ -1580,9 +1491,11 @@
 				CE4983FD1A0A90B7009EC1A4 /* TGLStackedViewController.m in Sources */,
 				BA66E5C91A1230B60090F99D /* NewNotes.m in Sources */,
 				BAF76B551A0D0FD200D2CC13 /* Settings.m in Sources */,
+				CE5327B11A19F85800FCC558 /* ObjectLista.m in Sources */,
 				CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */,
 				BAF9551E1A0A7B7200277B94 /* Home.m in Sources */,
 				BA023B4A1A1367B2000B4754 /* ObjectDirections.m in Sources */,
+				CE5327AF1A19F85800FCC558 /* ListaComprasCell.m in Sources */,
 				CE2767031A166E21003A225B /* RABatchChanges.m in Sources */,
 				BA023B741A13BE3B000B4754 /* NSDate+convenience.m in Sources */,
 				CE27670A1A166E21003A225B /* RATreeView+Private.m in Sources */,
@@ -1603,8 +1516,8 @@
 				BAF465441A151DB200FE7926 /* DragableMealPlaner.m in Sources */,
 				CE27670D1A166E21003A225B /* RATreeView+TableViewDelegate.m in Sources */,
 				BAF76B5B1A0D2AAE00D2CC13 /* DragableTableReceitas.m in Sources */,
-				BA55AC361A19FA5A00381726 /* UIImage+fixOrientation.m in Sources */,
 				BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */,
+				BA55AC3E1A1A017C00381726 /* UIImage+fixOrientation.m in Sources */,
 				BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */,
 				BAF76B491A0CCE6B00D2CC13 /* CollectionLivros.m in Sources */,
 				CE49840F1A0A9188009EC1A4 /* HeaderReceita.m in Sources */,

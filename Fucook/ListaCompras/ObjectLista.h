@@ -10,4 +10,14 @@
 
 @interface ObjectLista : NSObject
 
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSArray *children;
+
+- (id)initWithName:(NSString *)name children:(NSArray *)array;
+
++ (id)dataObjectWithName:(NSString *)name children:(NSArray *)children;
+
+- (void)addChild:(id)child;
+- (void)removeChild:(id)child;
+
 @end
