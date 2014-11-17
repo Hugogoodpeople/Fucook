@@ -100,10 +100,16 @@
 
 - (IBAction)ClickDelete:(id)sender {
     NSLog(@"Click Delete");
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(apagarLivro:) withObject:self.managedObject ];
+    }
 }
 
 - (IBAction)ClickEdit:(id)sender {
      NSLog(@"Click Edit");
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(editBook:) withObject:self.managedObject ];
+    }
 }
 
 // tenho de fazer uma verificaçao para os diferentes tamanhos de ecra

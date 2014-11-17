@@ -15,6 +15,7 @@
 	
 }
 
+@property (nonatomic, assign) id delegate;
 @property NSMutableArray * arrayOfItems;
 
 @end

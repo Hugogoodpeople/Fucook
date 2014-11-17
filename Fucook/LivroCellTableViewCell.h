@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "FXImageView.h"
+#import <CoreData/CoreData.h>
 
 @interface LivroCellTableViewCell : UITableViewCell
+
+@property (nonatomic, assign) id delegate;
+@property NSManagedObject * managedObject;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTitulo;
 @property (weak, nonatomic) IBOutlet UILabel *labelDescricao;

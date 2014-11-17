@@ -15,5 +15,6 @@
 @property NSString * titulo;
 @property NSString * descricao;
 @property NSManagedObject * imagem;
+@property NSManagedObject * managedObject;
 
 @end

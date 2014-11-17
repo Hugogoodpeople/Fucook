@@ -34,12 +34,17 @@
 {
     [super viewWillAppear:animated];
  
+    [self actualizarTudo];
     
+}
+
+-(void)actualizarTudo
+{
     [self preencherTabela];
     [self.mos.collectionView reloadData];
     [self.mos.collectionView reloadItemsAtIndexPaths:[self.mos.collectionView indexPathsForVisibleItems]];
     [self.root.tableView reloadData];
-    
+
 }
 
 - (void)viewDidLoad {
@@ -47,11 +52,10 @@
     // Do any additional setup after loading the view from its nib.
 
     self.root = [RootViewController new];
+    self.root.delegate = self;
     [self.root.view setFrame:CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height)];
     self.root.view.backgroundColor = [UIColor clearColor];
 
-    
-    
     
     
     /* bt search*/
@@ -64,7 +68,7 @@
     
     /* bt add*/
     UIButton * buttonadd = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    [buttonadd addTarget:self action:@selector(addbook:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonadd addTarget:self action:@selector(addbook) forControlEvents:UIControlEventTouchUpInside];
     [buttonadd setImage:[UIImage imageNamed:@"btnaddbook"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButtonadd = [[UIBarButtonItem alloc] initWithCustomView:buttonadd];
@@ -136,8 +140,6 @@
     [fetchRequest setEntity:entity];
     
     
-    
-    
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     for (NSManagedObject *pedido in fetchedObjects)
     {
@@ -149,16 +151,16 @@
         
         ObjectLivro * livro = [ObjectLivro new];
         
+        // para mais tarde poder apagar
+        livro.managedObject = pedido;
+        
+        
         livro.titulo =[pedido valueForKey:@"titulo"];
         livro.descricao =[pedido valueForKey:@"descricao"];
         
         
         NSManagedObject * imagem = [pedido valueForKey:@"contem_imagem"];
-        
         livro.imagem = imagem;
-        //livro.imagem = [[UIImage imageWithData:[imagem valueForKey:@"imagem"]] fixOrientation];
-        
-        
         
         [items addObject:livro];
     }
@@ -206,11 +208,21 @@
     return [[UIScreen mainScreen] bounds].size.width ;
 }
 
--(IBAction)addbook:(id)sender {
+-(void)addbook {
     NSLog(@"clicou add");
 
     NewBook *objYourViewController = [[NewBook alloc] initWithNibName:@"NewBook" bundle:nil];
     [self.navigationController pushViewController:objYourViewController animated:YES];
+}
+
+-(void)editBook:(NSManagedObject *) managedObject
+{
+    NSLog(@"clicou add");
+    
+    NewBook *objYourViewController = [[NewBook alloc] initWithNibName:@"NewBook" bundle:nil];
+    objYourViewController.managedObject = managedObject;
+    [self.navigationController pushViewController:objYourViewController animated:YES];
+
 }
 
 

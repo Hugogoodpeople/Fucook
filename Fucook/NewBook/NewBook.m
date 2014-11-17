@@ -7,7 +7,9 @@
 //
 
 #import "NewBook.h"
-#import "AppDelegate.h"
+#import "ObjectLivro.h"
+#import "UIImage+fixOrientation.h"
+
 
 @interface NewBook ()
 
@@ -64,7 +66,36 @@
     self.txt1.tag=1;
     self.txt2.tag=2;
     UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 10, 20)];
-    self.txt2.leftView = paddingView;}
+    self.txt2.leftView = paddingView;
+
+    // tenho de preencher tudo caso já tenha cenas para serem carregadas
+    
+    if (self.managedObject) {
+        
+        NSLog(@"************************************ Livro ************************************");
+        NSLog(@"titulo: %@", [self.managedObject valueForKey:@"titulo"]);
+        NSLog(@"descrição: %@", [self.managedObject valueForKey:@"descricao"]);
+    
+        ObjectLivro * livro = [ObjectLivro new];
+    
+        // para mais tarde poder apagar
+        livro.managedObject = self.managedObject;
+    
+    
+        livro.titulo =[self.managedObject valueForKey:@"titulo"];
+        livro.descricao =[self.managedObject valueForKey:@"descricao"];
+    
+    
+        NSManagedObject * imagem = [self.managedObject valueForKey:@"contem_imagem"];
+        livro.imagem = imagem;
+    
+        self.txt1.text = livro.titulo;
+        self.txt2.text = livro.descricao;
+    
+        [self.imageView setImage:[[UIImage imageWithData:[livro.imagem valueForKey:@"imagem"]] fixOrientation]];
+    }
+
+}
 
 - (IBAction)back:(id)sender {
     // Receita *objYourViewController = [[Receita alloc] initWithNibName:@"Receita" bundle:nil];
@@ -76,27 +107,55 @@
 {
     // é aqui que tenho de ir gravar as cenas que acabei de escrever
     
+    
+    
+    
     AppDelegate* appDelegate = [AppDelegate sharedAppDelegate];
     NSManagedObjectContext* context = appDelegate.managedObjectContext;
     
-    NSManagedObject *Livro = [NSEntityDescription
-                               insertNewObjectForEntityForName:@"Livros"
-                               inManagedObjectContext:context];
-    [Livro setValue:self.txt1.text forKey:@"titulo"];
-    [Livro setValue:self.txt2.text forKey:@"descricao"];
+    if(!self.managedObject)
+    {
+        
+        NSManagedObject *Livro = [NSEntityDescription
+                                  insertNewObjectForEntityForName:@"Livros"
+                                  inManagedObjectContext:context];
+        [Livro setValue:self.txt1.text forKey:@"titulo"];
+        [Livro setValue:self.txt2.text forKey:@"descricao"];
     
-    NSManagedObject *Imagem = [NSEntityDescription
-                               insertNewObjectForEntityForName:@"Imagens"
-                               inManagedObjectContext:context];
+        NSManagedObject *Imagem = [NSEntityDescription
+                                   insertNewObjectForEntityForName:@"Imagens"
+                                   inManagedObjectContext:context];
     
+        NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.25);
+        [Imagem setValue:imageData forKey:@"imagem"];
+        [Livro setValue:Imagem forKey:@"contem_imagem"];
     
+        //[self listarTodosLivros];
     
-    NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.25);
-    [Imagem setValue:imageData forKey:@"imagem"];
-    [Livro setValue:Imagem forKey:@"contem_imagem"];
-    
-    //[self listarTodosLivros];
-    
+    }else
+    {
+        
+        NSManagedObject *Livro = self.managedObject;
+        
+        [Livro setValue:self.txt1.text forKey:@"titulo"];
+        [Livro setValue:self.txt2.text forKey:@"descricao"];
+        
+        NSManagedObject *Imagem = [NSEntityDescription
+                                   insertNewObjectForEntityForName:@"Imagens"
+                                   inManagedObjectContext:context];
+        
+        
+        NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.25);
+        [Imagem setValue:imageData forKey:@"imagem"];
+        [Livro setValue:Imagem forKey:@"contem_imagem"];
+        
+        NSError *error = nil;
+        if (![context save:&error]) {
+            NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+            return;
+        }
+
+    }
     
     [self.navigationController popViewControllerAnimated:YES];
     

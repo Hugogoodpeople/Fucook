@@ -22,9 +22,14 @@
 #import "UIImage+fixOrientation.h"
 #import "FTWCache.h"
 #import "NSString+MD5.h"
+#import "AppDelegate.h"
+
+
 
 @implementation RootViewController
 @synthesize arrayOfItems;
+
+NSManagedObject * managedObject;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -126,9 +131,11 @@
         [cell.contentView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         
         NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
+        cell.delegate = self;
         
     }
     
+    cell.managedObject = livro.managedObject;
     cell.imageCapa.asynchronous = YES;
     
     cell.labelDescricao.text = livro.descricao;
@@ -207,8 +214,9 @@
         cell = [nib objectAtIndex:0];
         cell.contentView.transform = CGAffineTransformMakeRotation(M_PI/2);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
     }
-    
+
     //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];
     [cell setSelected:YES];
     
@@ -226,7 +234,6 @@
 	[arrayOfItems insertObject:itemToMove atIndex:toIndexPath.row];
 
 }
-
 
 
 
@@ -250,6 +257,50 @@
 }
 */
 
+-(void)editBook:(NSManagedObject *)managedObject
+{
+    NSLog(@"clicou edit");
+    
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(editBook:) withObject:managedObject];
+    }
+}
+
+
+-(void)apagarLivro:(NSManagedObject*)mo
+{
+    
+    managedObject = mo;
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Are you sure you want to delete this recipe book?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    alert.tag = 1;
+    [alert show];
+    
+ 
+ 
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 1) {
+        if (buttonIndex == 1) {
+            
+            NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
+            [context deleteObject:managedObject];
+            
+            // tenho de actualizar as tabelas
+            if (self.delegate) {
+                [self.delegate performSelector:@selector(actualizarTudo) withObject:nil ];
+            }
+            
+            NSError *error = nil;
+            if (![context save:&error]) {
+                NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+                return;
+            }
+        }
+    }
+  
+}
 
 @end
 

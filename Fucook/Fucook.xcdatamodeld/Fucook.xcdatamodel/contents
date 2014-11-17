@@ -31,7 +31,7 @@
         <attribute name="foto" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id_livro" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="contem_imagem" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Imagens" syncable="YES"/>
+        <relationship name="contem_imagem" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Imagens" syncable="YES"/>
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Receitas" syncable="YES"/>
     </entity>
     <entity name="Nutricao" syncable="YES">
