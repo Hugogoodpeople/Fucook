@@ -17,6 +17,7 @@
 #import "PesquisaReceitas.h"
 #import "AppDelegate.h"
 #import "ObjectLivro.h"
+#import "UIImage+fixOrientation.h"
 
 @interface Home ()
 
@@ -31,13 +32,12 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    //[super viewWillAppear:animated];
-    //self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-    //
+    [super viewWillAppear:animated];
+ 
     
     [self preencherTabela];
-    [self.mos.collectionView reloadItemsAtIndexPaths:[self.mos.collectionView indexPathsForVisibleItems]];
     [self.mos.collectionView reloadData];
+    [self.mos.collectionView reloadItemsAtIndexPaths:[self.mos.collectionView indexPathsForVisibleItems]];
     [self.root.tableView reloadData];
     
 }
@@ -47,15 +47,9 @@
     // Do any additional setup after loading the view from its nib.
 
     self.root = [RootViewController new];
-    //[self.root.view setFrame:[[UIScreen mainScreen] bounds] ];
-    
     [self.root.view setFrame:CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height)];
-    
     self.root.view.backgroundColor = [UIColor clearColor];
-    
-    // tenho de adicionar as cenas da bd aqui
-    
-    
+
     
     
     
@@ -141,9 +135,6 @@
     [fetchRequest setEntity:entity];
     
     
-    
-    
-    
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     for (NSManagedObject *pedido in fetchedObjects)
     {
@@ -157,8 +148,7 @@
         
         livro.titulo =[pedido valueForKey:@"titulo"];
         livro.descricao =[pedido valueForKey:@"descricao"];
-        livro.imagem = [UIImage imageWithData:[pedido valueForKey:@"imagem"]];
-    
+        livro.imagem = [[UIImage imageWithData:[pedido valueForKey:@"imagem"]] fixOrientation];
         
         
         [items addObject:livro];
@@ -167,7 +157,7 @@
 
     
     self.root.arrayOfItems = items;
-      self.mos.arrayOfItems = items;
+    self.mos.arrayOfItems = items;
     self.pageControl.numberOfPages = items.count;
   
 }

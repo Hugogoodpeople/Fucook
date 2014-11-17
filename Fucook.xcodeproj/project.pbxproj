@@ -42,6 +42,9 @@
 		BA55AC2C1A19F61000381726 /* ListaComprasCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC2A1A19F61000381726 /* ListaComprasCell.m */; };
 		BA55AC2D1A19F61000381726 /* ListaComprasCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA55AC2B1A19F61000381726 /* ListaComprasCell.xib */; };
 		BA55AC301A19F63500381726 /* ObjectLista.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC2F1A19F63500381726 /* ObjectLista.m */; };
+		BA55AC361A19FA5A00381726 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC351A19FA5A00381726 /* UIImage+fixOrientation.m */; };
+		BA55AC381A19FF0C00381726 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA55AC371A19FF0C00381726 /* AVFoundation.framework */; };
+		BA55AC3A1A19FFF300381726 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA55AC391A19FFF300381726 /* OverlayView.xib */; };
 		BA66E5C51A1230B60090F99D /* NewDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5BB1A1230B60090F99D /* NewDirections.m */; };
 		BA66E5C61A1230B60090F99D /* NewDirections.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5BC1A1230B60090F99D /* NewDirections.xib */; };
 		BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5BF1A1230B60090F99D /* NewIngrediente.m */; };
@@ -303,6 +306,10 @@
 		BA55AC2B1A19F61000381726 /* ListaComprasCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListaComprasCell.xib; path = Fucook/ListaCompras/ListaComprasCell.xib; sourceTree = "<group>"; };
 		BA55AC2E1A19F63500381726 /* ObjectLista.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectLista.h; path = Fucook/ListaCompras/ObjectLista.h; sourceTree = "<group>"; };
 		BA55AC2F1A19F63500381726 /* ObjectLista.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectLista.m; path = Fucook/ListaCompras/ObjectLista.m; sourceTree = "<group>"; };
+		BA55AC341A19FA5A00381726 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+fixOrientation.h"; path = "Fucook/UIImage+fixOrientation.h"; sourceTree = "<group>"; };
+		BA55AC351A19FA5A00381726 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+fixOrientation.m"; path = "Fucook/UIImage+fixOrientation.m"; sourceTree = "<group>"; };
+		BA55AC371A19FF0C00381726 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BA55AC391A19FFF300381726 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OverlayView.xib; path = NewBook/OverlayView.xib; sourceTree = "<group>"; };
 		BA66E5BA1A1230B60090F99D /* NewDirections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDirections.h; sourceTree = "<group>"; };
 		BA66E5BB1A1230B60090F99D /* NewDirections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDirections.m; sourceTree = "<group>"; };
 		BA66E5BC1A1230B60090F99D /* NewDirections.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDirections.xib; sourceTree = "<group>"; };
@@ -536,6 +543,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA55AC381A19FF0C00381726 /* AVFoundation.framework in Frameworks */,
 				BADC32491A164A80005B1D5A /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,6 +657,15 @@
 			name = RATreeView;
 			sourceTree = "<group>";
 		};
+		BA55AC311A19F9A800381726 /* Utils Image */ = {
+			isa = PBXGroup;
+			children = (
+				BA55AC341A19FA5A00381726 /* UIImage+fixOrientation.h */,
+				BA55AC351A19FA5A00381726 /* UIImage+fixOrientation.m */,
+			);
+			name = "Utils Image";
+			sourceTree = "<group>";
+		};
 		BA66E5B91A1230B60090F99D /* NewDirections */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,6 +725,7 @@
 		BAC639401A07ED420049E3BD = {
 			isa = PBXGroup;
 			children = (
+				BA55AC311A19F9A800381726 /* Utils Image */,
 				BA55ABFE1A19F53E00381726 /* RATreeView */,
 				BADC324B1A165FBC005B1D5A /* ListaCompras */,
 				BADC324A1A164A8E005B1D5A /* Frameworks */,
@@ -828,6 +846,7 @@
 		BADC324A1A164A8E005B1D5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA55AC371A19FF0C00381726 /* AVFoundation.framework */,
 				BADC32481A164A80005B1D5A /* CoreData.framework */,
 			);
 			name = Frameworks;
@@ -1182,6 +1201,7 @@
 		CE475F201A0CCE9200D33A1A /* NewBook */ = {
 			isa = PBXGroup;
 			children = (
+				BA55AC391A19FFF300381726 /* OverlayView.xib */,
 				CE475F211A0CCEB500D33A1A /* NewBook.h */,
 				CE475F221A0CCEB500D33A1A /* NewBook.m */,
 				CE475F231A0CCEB500D33A1A /* NewBook.xib */,
@@ -1303,6 +1323,7 @@
 				BA66E5FC1A1258160090F99D /* btnless@3x.png in Resources */,
 				BAF955641A0A9D6900277B94 /* btndelet1@2x.png in Resources */,
 				BAF955741A0A9D6900277B94 /* btnsetting1@2x.png in Resources */,
+				BA55AC3A1A19FFF300381726 /* OverlayView.xib in Resources */,
 				BAF955661A0A9D6900277B94 /* btndelet2@2x.png in Resources */,
 				BAF955721A0A9D6900277B94 /* btnsearch@2x.png in Resources */,
 				BAF9555B1A0A9D6900277B94 /* btnaddbook@3x.png in Resources */,
@@ -1492,6 +1513,7 @@
 				BA023B601A13AF32000B4754 /* NotasCell.m in Sources */,
 				BAF465441A151DB200FE7926 /* DragableMealPlaner.m in Sources */,
 				BAF76B5B1A0D2AAE00D2CC13 /* DragableTableReceitas.m in Sources */,
+				BA55AC361A19FA5A00381726 /* UIImage+fixOrientation.m in Sources */,
 				BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */,
 				BA55AC251A19F5DF00381726 /* RATreeView+RATreeNodeCollectionControllerDataSource.m in Sources */,
 				BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */,

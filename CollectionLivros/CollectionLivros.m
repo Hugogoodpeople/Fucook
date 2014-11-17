@@ -57,9 +57,11 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
 #pragma mark <UICollectionViewDataSource>
 
 
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 #warning Incomplete method implementation -- Return the number of sections
-    return 3;
+    int valor = (int) (arrayOfItems.count +1 )/2;
+    return valor;
 }
 
 
