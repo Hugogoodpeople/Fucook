@@ -196,6 +196,19 @@
 		CE253FA41A10BB27003DA45C /* btnphoto2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE253FA01A10BB27003DA45C /* btnphoto2@3x.png */; };
 		CE253FA81A10C290003DA45C /* FooterNewReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE253FA61A10C290003DA45C /* FooterNewReceita.m */; };
 		CE253FA91A10C290003DA45C /* FooterNewReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE253FA71A10C290003DA45C /* FooterNewReceita.xib */; };
+		CE2767031A166E21003A225B /* RABatchChanges.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2766E71A166E21003A225B /* RABatchChanges.m */; };
+		CE2767041A166E21003A225B /* RATreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2766E91A166E21003A225B /* RATreeNode.m */; };
+		CE2767051A166E21003A225B /* RATreeNodeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2766EC1A166E21003A225B /* RATreeNodeCollectionController.m */; };
+		CE2767061A166E21003A225B /* RATreeNodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2766EE1A166E21003A225B /* RATreeNodeController.m */; };
+		CE2767071A166E21003A225B /* RATreeNodeItem+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2766F11A166E21003A225B /* RATreeNodeItem+Private.m */; };
+		CE2767081A166E21003A225B /* RATreeNodeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2766F31A166E21003A225B /* RATreeNodeItem.m */; };
+		CE2767091A166E21003A225B /* RATreeView+Enums.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2766F51A166E21003A225B /* RATreeView+Enums.m */; };
+		CE27670A1A166E21003A225B /* RATreeView+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2766F71A166E21003A225B /* RATreeView+Private.m */; };
+		CE27670B1A166E21003A225B /* RATreeView+RATreeNodeCollectionControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2766F91A166E21003A225B /* RATreeView+RATreeNodeCollectionControllerDataSource.m */; };
+		CE27670C1A166E21003A225B /* RATreeView+TableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2766FB1A166E21003A225B /* RATreeView+TableViewDataSource.m */; };
+		CE27670D1A166E21003A225B /* RATreeView+TableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2766FD1A166E21003A225B /* RATreeView+TableViewDelegate.m */; };
+		CE27670E1A166E21003A225B /* RATreeView+UIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2766FF1A166E21003A225B /* RATreeView+UIScrollView.m */; };
+		CE27670F1A166E21003A225B /* RATreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2767021A166E21003A225B /* RATreeView.m */; };
 		CE3AE1751A0BEEAC006C4B2E /* btleft3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3AE1731A0BEEAC006C4B2E /* btleft3@2x.png */; };
 		CE3AE1761A0BEEAC006C4B2E /* btleft3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3AE1741A0BEEAC006C4B2E /* btleft3@3x.png */; };
 		CE475F241A0CCEB500D33A1A /* NewBook.m in Sources */ = {isa = PBXBuildFile; fileRef = CE475F221A0CCEB500D33A1A /* NewBook.m */; };
@@ -465,6 +478,35 @@
 		CE253FA51A10C290003DA45C /* FooterNewReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FooterNewReceita.h; path = Fucook/NewReceita/FooterNewReceita.h; sourceTree = "<group>"; };
 		CE253FA61A10C290003DA45C /* FooterNewReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FooterNewReceita.m; path = Fucook/NewReceita/FooterNewReceita.m; sourceTree = "<group>"; };
 		CE253FA71A10C290003DA45C /* FooterNewReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FooterNewReceita.xib; path = Fucook/NewReceita/FooterNewReceita.xib; sourceTree = "<group>"; };
+		CE2766E61A166E21003A225B /* RABatchChanges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RABatchChanges.h; sourceTree = "<group>"; };
+		CE2766E71A166E21003A225B /* RABatchChanges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RABatchChanges.m; sourceTree = "<group>"; };
+		CE2766E81A166E21003A225B /* RATreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeNode.h; sourceTree = "<group>"; };
+		CE2766E91A166E21003A225B /* RATreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeNode.m; sourceTree = "<group>"; };
+		CE2766EA1A166E21003A225B /* RATreeNode_ClassExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeNode_ClassExtension.h; sourceTree = "<group>"; };
+		CE2766EB1A166E21003A225B /* RATreeNodeCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeNodeCollectionController.h; sourceTree = "<group>"; };
+		CE2766EC1A166E21003A225B /* RATreeNodeCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeNodeCollectionController.m; sourceTree = "<group>"; };
+		CE2766ED1A166E21003A225B /* RATreeNodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeNodeController.h; sourceTree = "<group>"; };
+		CE2766EE1A166E21003A225B /* RATreeNodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeNodeController.m; sourceTree = "<group>"; };
+		CE2766EF1A166E21003A225B /* RATreeNodeItem+ClassExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RATreeNodeItem+ClassExtension.h"; sourceTree = "<group>"; };
+		CE2766F01A166E21003A225B /* RATreeNodeItem+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RATreeNodeItem+Private.h"; sourceTree = "<group>"; };
+		CE2766F11A166E21003A225B /* RATreeNodeItem+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeNodeItem+Private.m"; sourceTree = "<group>"; };
+		CE2766F21A166E21003A225B /* RATreeNodeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeNodeItem.h; sourceTree = "<group>"; };
+		CE2766F31A166E21003A225B /* RATreeNodeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeNodeItem.m; sourceTree = "<group>"; };
+		CE2766F41A166E21003A225B /* RATreeView+Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RATreeView+Enums.h"; sourceTree = "<group>"; };
+		CE2766F51A166E21003A225B /* RATreeView+Enums.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeView+Enums.m"; sourceTree = "<group>"; };
+		CE2766F61A166E21003A225B /* RATreeView+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RATreeView+Private.h"; sourceTree = "<group>"; };
+		CE2766F71A166E21003A225B /* RATreeView+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeView+Private.m"; sourceTree = "<group>"; };
+		CE2766F81A166E21003A225B /* RATreeView+RATreeNodeCollectionControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RATreeView+RATreeNodeCollectionControllerDataSource.h"; sourceTree = "<group>"; };
+		CE2766F91A166E21003A225B /* RATreeView+RATreeNodeCollectionControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeView+RATreeNodeCollectionControllerDataSource.m"; sourceTree = "<group>"; };
+		CE2766FA1A166E21003A225B /* RATreeView+TableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RATreeView+TableViewDataSource.h"; sourceTree = "<group>"; };
+		CE2766FB1A166E21003A225B /* RATreeView+TableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeView+TableViewDataSource.m"; sourceTree = "<group>"; };
+		CE2766FC1A166E21003A225B /* RATreeView+TableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RATreeView+TableViewDelegate.h"; sourceTree = "<group>"; };
+		CE2766FD1A166E21003A225B /* RATreeView+TableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeView+TableViewDelegate.m"; sourceTree = "<group>"; };
+		CE2766FE1A166E21003A225B /* RATreeView+UIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RATreeView+UIScrollView.h"; sourceTree = "<group>"; };
+		CE2766FF1A166E21003A225B /* RATreeView+UIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RATreeView+UIScrollView.m"; sourceTree = "<group>"; };
+		CE2767001A166E21003A225B /* RATreeView_ClassExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeView_ClassExtension.h; sourceTree = "<group>"; };
+		CE2767011A166E21003A225B /* RATreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATreeView.h; sourceTree = "<group>"; };
+		CE2767021A166E21003A225B /* RATreeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATreeView.m; sourceTree = "<group>"; };
 		CE3AE1731A0BEEAC006C4B2E /* btleft3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft3@2x.png"; path = "Fucook/Imagens/btleft3@2x.png"; sourceTree = "<group>"; };
 		CE3AE1741A0BEEAC006C4B2E /* btleft3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft3@3x.png"; path = "Fucook/Imagens/btleft3@3x.png"; sourceTree = "<group>"; };
 		CE475F211A0CCEB500D33A1A /* NewBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewBook.h; path = NewBook/NewBook.h; sourceTree = "<group>"; };
@@ -622,6 +664,7 @@
 		BAC639401A07ED420049E3BD = {
 			isa = PBXGroup;
 			children = (
+				CE2766E41A166E21003A225B /* RATreeView */,
 				BADC324B1A165FBC005B1D5A /* ListaCompras */,
 				BADC324A1A164A8E005B1D5A /* Frameworks */,
 				BADC323C1A162D5B005B1D5A /* PesquisaReceitas */,
@@ -1087,6 +1130,50 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		CE2766E41A166E21003A225B /* RATreeView */ = {
+			isa = PBXGroup;
+			children = (
+				CE2766E51A166E21003A225B /* Private Files */,
+				CE2767011A166E21003A225B /* RATreeView.h */,
+				CE2767021A166E21003A225B /* RATreeView.m */,
+			);
+			path = RATreeView;
+			sourceTree = "<group>";
+		};
+		CE2766E51A166E21003A225B /* Private Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE2766E61A166E21003A225B /* RABatchChanges.h */,
+				CE2766E71A166E21003A225B /* RABatchChanges.m */,
+				CE2766E81A166E21003A225B /* RATreeNode.h */,
+				CE2766E91A166E21003A225B /* RATreeNode.m */,
+				CE2766EA1A166E21003A225B /* RATreeNode_ClassExtension.h */,
+				CE2766EB1A166E21003A225B /* RATreeNodeCollectionController.h */,
+				CE2766EC1A166E21003A225B /* RATreeNodeCollectionController.m */,
+				CE2766ED1A166E21003A225B /* RATreeNodeController.h */,
+				CE2766EE1A166E21003A225B /* RATreeNodeController.m */,
+				CE2766EF1A166E21003A225B /* RATreeNodeItem+ClassExtension.h */,
+				CE2766F01A166E21003A225B /* RATreeNodeItem+Private.h */,
+				CE2766F11A166E21003A225B /* RATreeNodeItem+Private.m */,
+				CE2766F21A166E21003A225B /* RATreeNodeItem.h */,
+				CE2766F31A166E21003A225B /* RATreeNodeItem.m */,
+				CE2766F41A166E21003A225B /* RATreeView+Enums.h */,
+				CE2766F51A166E21003A225B /* RATreeView+Enums.m */,
+				CE2766F61A166E21003A225B /* RATreeView+Private.h */,
+				CE2766F71A166E21003A225B /* RATreeView+Private.m */,
+				CE2766F81A166E21003A225B /* RATreeView+RATreeNodeCollectionControllerDataSource.h */,
+				CE2766F91A166E21003A225B /* RATreeView+RATreeNodeCollectionControllerDataSource.m */,
+				CE2766FA1A166E21003A225B /* RATreeView+TableViewDataSource.h */,
+				CE2766FB1A166E21003A225B /* RATreeView+TableViewDataSource.m */,
+				CE2766FC1A166E21003A225B /* RATreeView+TableViewDelegate.h */,
+				CE2766FD1A166E21003A225B /* RATreeView+TableViewDelegate.m */,
+				CE2766FE1A166E21003A225B /* RATreeView+UIScrollView.h */,
+				CE2766FF1A166E21003A225B /* RATreeView+UIScrollView.m */,
+				CE2767001A166E21003A225B /* RATreeView_ClassExtension.h */,
+			);
+			path = "Private Files";
+			sourceTree = "<group>";
+		};
 		CE475F201A0CCE9200D33A1A /* NewBook */ = {
 			isa = PBXGroup;
 			children = (
@@ -1361,6 +1448,7 @@
 				BAE467F31A10C7F500D3F596 /* THTinderNavigationBar.m in Sources */,
 				BA023B761A13BE3B000B4754 /* UIColor+expanded.m in Sources */,
 				BAF76B601A0D314700D2CC13 /* BookCell.m in Sources */,
+				CE2767091A166E21003A225B /* RATreeView+Enums.m in Sources */,
 				BADC323A1A160475005B1D5A /* MealPlanerCell.m in Sources */,
 				BA023B781A13BE3B000B4754 /* VRGCalendarView.m in Sources */,
 				BAF955141A0A4BA300277B94 /* ATSDragToReorderTableViewController.m in Sources */,
@@ -1375,8 +1463,13 @@
 				CE4983FB1A0A90B7009EC1A4 /* TGLExposedLayout.m in Sources */,
 				BAF9551E1A0A7B7200277B94 /* Home.m in Sources */,
 				BA023B4A1A1367B2000B4754 /* ObjectDirections.m in Sources */,
+				CE2767031A166E21003A225B /* RABatchChanges.m in Sources */,
 				BA023B741A13BE3B000B4754 /* NSDate+convenience.m in Sources */,
+				CE27670A1A166E21003A225B /* RATreeView+Private.m in Sources */,
+				CE27670C1A166E21003A225B /* RATreeView+TableViewDataSource.m in Sources */,
+				CE2767041A166E21003A225B /* RATreeNode.m in Sources */,
 				CE253F9B1A10B9C7003DA45C /* NewReceita.m in Sources */,
+				CE2767081A166E21003A225B /* RATreeNodeItem.m in Sources */,
 				BA023B751A13BE3B000B4754 /* NSMutableArray+convenience.m in Sources */,
 				BADC32461A1634B4005B1D5A /* PesquisaReceitaCell.m in Sources */,
 				BAC639841A07F0C40049E3BD /* Book.m in Sources */,
@@ -1388,6 +1481,7 @@
 				CE253FA81A10C290003DA45C /* FooterNewReceita.m in Sources */,
 				BA023B601A13AF32000B4754 /* NotasCell.m in Sources */,
 				BAF465441A151DB200FE7926 /* DragableMealPlaner.m in Sources */,
+				CE27670D1A166E21003A225B /* RATreeView+TableViewDelegate.m in Sources */,
 				BAF76B5B1A0D2AAE00D2CC13 /* DragableTableReceitas.m in Sources */,
 				BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */,
 				BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */,
@@ -1400,6 +1494,8 @@
 				BAF4650F1A14C7D100FE7926 /* DiaCalendario.m in Sources */,
 				BAF76B4F1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.m in Sources */,
 				BAE468191A112CFB00D3F596 /* IngredienteCellTableViewCell.m in Sources */,
+				CE27670E1A166E21003A225B /* RATreeView+UIScrollView.m in Sources */,
+				CE2767061A166E21003A225B /* RATreeNodeController.m in Sources */,
 				BA66E5D31A12310A0090F99D /* NIngredientes.m in Sources */,
 				BAE467FE1A10CBB900D3F596 /* NavigationBarItem.m in Sources */,
 				BADC32401A162D87005B1D5A /* PesquisaReceitas.m in Sources */,
@@ -1410,7 +1506,11 @@
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
 				BA023B571A13AD4E000B4754 /* Notas.m in Sources */,
 				BA66E61A1A1262910090F99D /* ObjecteIngrediente.m in Sources */,
+				CE27670F1A166E21003A225B /* RATreeView.m in Sources */,
+				CE2767051A166E21003A225B /* RATreeNodeCollectionController.m in Sources */,
 				BADC324F1A165FE9005B1D5A /* ListaCompras.m in Sources */,
+				CE2767071A166E21003A225B /* RATreeNodeItem+Private.m in Sources */,
+				CE27670B1A166E21003A225B /* RATreeView+RATreeNodeCollectionControllerDataSource.m in Sources */,
 				BAF465091A14C6E200FE7926 /* iCarousel.m in Sources */,
 				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,
 			);
