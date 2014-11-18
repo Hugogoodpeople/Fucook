@@ -23,25 +23,37 @@
 #import "FTWCache.h"
 #import "NSString+MD5.h"
 #import "AppDelegate.h"
+#import "Globals.h"
+
 
 
 
 @implementation RootViewController
-@synthesize arrayOfItems;
+@synthesize arrayOfItems, imagens;
+
+
 
 NSManagedObject * managedObject;
+
 
 #pragma mark -
 #pragma mark View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    imagens = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i < 1000; ++i)
+    {
+        [imagens addObject:[NSNull null]];
+    }
 
 	self.navigationItem.title = @"Reordering";
 	
 	/*
 		Populate array.
-	 */
+	 
 	if (arrayOfItems == nil)
     {
 		
@@ -52,6 +64,7 @@ NSManagedObject * managedObject;
 		for (NSUInteger i = 0; i < numberOfItems; ++i)
 			[arrayOfItems addObject:[ObjectLivro new]];
 	}
+    */
     
     //[self.tableView setFrame:self.view.frame];
     //[self.tableView.layer setAnchorPoint:CGPointMake(0.0, 0.0)];
@@ -132,14 +145,41 @@ NSManagedObject * managedObject;
         
         NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
         cell.delegate = self;
+        cell.imageCapa.asynchronous = YES;
+        
+        // vou trocar o sistema todo aqui
+        
+       // NSString *key = [livro.imagem.description MD5Hash];
+       // NSData *data = [FTWCache objectForKey:key];
+        if ([imagens objectAtIndex:indexPath.row]!= [NSNull null])
+        {
+            //UIImage *image = [UIImage imageWithData:data];
+            cell.imageCapa.image = [imagens objectAtIndex:indexPath.row];
+        }
+        else
+        {
+            //cell.imageCapa.image = [UIImage imageNamed:@"icn_default"];
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+            dispatch_async(queue, ^{
+                NSData * data = [livro.imagem valueForKey:@"imagem"];
+                //[FTWCache setObject:data forKey:key];
+                UIImage *image = [UIImage imageWithData:data];
+                NSInteger index = indexPath.row;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    cell.imageCapa.image = image;
+                    [imagens replaceObjectAtIndex:index withObject:image];
+                });
+            });
+        }
+
         
     }
     
     cell.managedObject = livro.managedObject;
-    cell.imageCapa.asynchronous = YES;
+    
     
     cell.labelDescricao.text = livro.descricao;
-    cell.labelTitulo.text = livro.titulo;
+    cell.labelTitulo.text = [livro.titulo uppercaseString];
     
     /*
     FXImageView * imagem = (id)[cell viewWithTag:6];
@@ -157,29 +197,38 @@ NSManagedObject * managedObject;
             });
         });
 
-    }
-     */
     
-    NSString *key = [livro.imagem.description MD5Hash];
-    NSData *data = [FTWCache objectForKey:key];
-    if (data) {
-        UIImage *image = [[UIImage imageWithData:[livro.imagem valueForKey:@"imagem"]] fixOrientation];
+     }
+     */
+     //cell.imageCapa.image = livro.imagem;
+     
+     
+    
+    
+    
+    /*
+    cell.imageCapa = [Globals imagemAtIndex:indexPath.row];
+    
+    if (cell.imageCapa) {
+        //cell.imageCapa.image = image;
+        UIImage *image = [Globals imagemAtIndex:indexPath.row];
         cell.imageCapa.image = image;
     } else {
-        cell.imageCapa.image = [UIImage imageNamed:@"icn_default"];
+        //cell.imageCapa.image = [UIImage imageNamed:@"icn_default"];
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^{
             NSData * data = [livro.imagem valueForKey:@"imagem"];
-            [FTWCache setObject:data forKey:key];
             UIImage *image = [UIImage imageWithData:data];
             dispatch_async(dispatch_get_main_queue(), ^{
                 cell.imageCapa.image = image;
+                [Globals addImageToTemp:cell.imageCapa];
             });
         });
     }
+*/
     
     
-    //cell.imageCapa.image = livro.imagem;
+    
     
     
     

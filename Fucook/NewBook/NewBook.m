@@ -126,7 +126,7 @@
                                    insertNewObjectForEntityForName:@"Imagens"
                                    inManagedObjectContext:context];
     
-        NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.25);
+        NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.15);
         [Imagem setValue:imageData forKey:@"imagem"];
         [Livro setValue:Imagem forKey:@"contem_imagem"];
     
@@ -145,7 +145,7 @@
                                    inManagedObjectContext:context];
         
         
-        NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.25);
+        NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.15);
         [Imagem setValue:imageData forKey:@"imagem"];
         [Livro setValue:Imagem forKey:@"contem_imagem"];
         

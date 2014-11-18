@@ -20,7 +20,7 @@
 
 @implementation CollectionLivros
 
-@synthesize arrayOfItems;
+@synthesize arrayOfItems, imagens;
 
 static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCell";
 
@@ -33,6 +33,13 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
     // Register cell classes
     //[self.collectionView registerClass:[CollectionLivroCellCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
+    imagens = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i < 1000; ++i)
+    {
+        [imagens addObject:[NSNull null]];
+    }
+
     
     UINib *nib = [UINib nibWithNibName:reuseIdentifier bundle: nil];
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:reuseIdentifier];
@@ -88,20 +95,29 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
     cell.labelTitulo.text = livro.titulo;
     cell.labelDescricao.text = livro.descricao;
     
-    NSString *key = [livro.imagem.description MD5Hash];
-    NSData *data = [FTWCache objectForKey:key];
-    if (data) {
-        UIImage *image = [[UIImage imageWithData:[livro.imagem valueForKey:@"imagem"]] fixOrientation];
-        cell.imagemCapa.image = image;
-    } else {
-        cell.imagemCapa.image = [UIImage imageNamed:@"icn_default"];
+    //cell.imagemCapa.asynchronous = YES;
+    
+    // vou trocar o sistema todo aqui
+    
+    // NSString *key = [livro.imagem.description MD5Hash];
+    // NSData *data = [FTWCache objectForKey:key];
+    if ([imagens objectAtIndex:indexPath.row]!= [NSNull null])
+    {
+        //UIImage *image = [UIImage imageWithData:data];
+        cell.imagemCapa.image = [imagens objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        //cell.imageCapa.image = [UIImage imageNamed:@"icn_default"];
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^{
             NSData * data = [livro.imagem valueForKey:@"imagem"];
-            [FTWCache setObject:data forKey:key];
+            //[FTWCache setObject:data forKey:key];
             UIImage *image = [UIImage imageWithData:data];
+            NSInteger index = indexPath.row;
             dispatch_async(dispatch_get_main_queue(), ^{
                 cell.imagemCapa.image = image;
+                [imagens replaceObjectAtIndex:index withObject:image];
             });
         });
     }

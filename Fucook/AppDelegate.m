@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Home.h"
+#import "Globals.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,9 @@
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
 
+    // inicializar o globals
+
+    [Globals setimagensTemp:[NSMutableArray new]];
     
     Home * cenas = [Home new];
     

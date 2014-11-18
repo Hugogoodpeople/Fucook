@@ -32,6 +32,7 @@
 		BA55AC491A1A182200381726 /* UIImage+FX.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC481A1A182200381726 /* UIImage+FX.m */; };
 		BA55AC4C1A1A3ED200381726 /* FTWCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC4B1A1A3ED200381726 /* FTWCache.m */; };
 		BA55AC4F1A1A3ED800381726 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC4E1A1A3ED800381726 /* NSString+MD5.m */; };
+		BA55AC531A1A62DD00381726 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC521A1A62DD00381726 /* Globals.m */; };
 		BA66E5C51A1230B60090F99D /* NewDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5BB1A1230B60090F99D /* NewDirections.m */; };
 		BA66E5C61A1230B60090F99D /* NewDirections.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5BC1A1230B60090F99D /* NewDirections.xib */; };
 		BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5BF1A1230B60090F99D /* NewIngrediente.m */; };
@@ -286,6 +287,8 @@
 		BA55AC4B1A1A3ED200381726 /* FTWCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTWCache.m; sourceTree = "<group>"; };
 		BA55AC4D1A1A3ED800381726 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		BA55AC4E1A1A3ED800381726 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		BA55AC511A1A62DD00381726 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		BA55AC521A1A62DD00381726 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
 		BA66E5BA1A1230B60090F99D /* NewDirections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDirections.h; sourceTree = "<group>"; };
 		BA66E5BB1A1230B60090F99D /* NewDirections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDirections.m; sourceTree = "<group>"; };
 		BA66E5BC1A1230B60090F99D /* NewDirections.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDirections.xib; sourceTree = "<group>"; };
@@ -647,6 +650,15 @@
 			name = "Utils Image";
 			sourceTree = "<group>";
 		};
+		BA55AC501A1A62CD00381726 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BA55AC511A1A62DD00381726 /* Globals.h */,
+				BA55AC521A1A62DD00381726 /* Globals.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		BA66E5B91A1230B60090F99D /* NewDirections */ = {
 			isa = PBXGroup;
 			children = (
@@ -706,6 +718,7 @@
 		BAC639401A07ED420049E3BD = {
 			isa = PBXGroup;
 			children = (
+				BA55AC501A1A62CD00381726 /* Utils */,
 				BA55AC3B1A1A013C00381726 /* Utils Image */,
 				CE2766E41A166E21003A225B /* RATreeView */,
 				BADC324B1A165FBC005B1D5A /* ListaCompras */,
@@ -1497,6 +1510,7 @@
 			files = (
 				BAC639521A07ED420049E3BD /* AppDelegate.m in Sources */,
 				BAE467F31A10C7F500D3F596 /* THTinderNavigationBar.m in Sources */,
+				BA55AC531A1A62DD00381726 /* Globals.m in Sources */,
 				BA023B761A13BE3B000B4754 /* UIColor+expanded.m in Sources */,
 				BAF76B601A0D314700D2CC13 /* BookCell.m in Sources */,
 				CE2767091A166E21003A225B /* RATreeView+Enums.m in Sources */,
