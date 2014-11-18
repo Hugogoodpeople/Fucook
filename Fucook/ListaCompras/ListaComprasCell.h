@@ -11,10 +11,14 @@
 @interface ListaComprasCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelSub;
+@property (nonatomic , assign) id delegate;
+@property NSString *index;
 
 - (IBAction)btVer:(id)sender;
 - (IBAction)btProcurar:(id)sender;
 - (IBAction)btAdd:(id)sender;
 - (IBAction)btDelete:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelPeso;
+@property (weak, nonatomic) IBOutlet UILabel *labelUnit;
 @end

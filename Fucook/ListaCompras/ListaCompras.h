@@ -8,12 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListaCompras : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface ListaCompras : UIViewController <UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate> {
     
     int selectedIndex;
     NSMutableArray *titleArray;
-    NSArray *subtitleArray;
-    NSArray *textArray;
+    NSMutableArray *subtitleArray;
+    NSMutableArray *textArray;
+     NSMutableArray *pesoArray;
+     NSMutableArray *unitArray;
+    NSMutableArray * arrayOfItems;
     
 }
+//@property NSManagedObject * managedObject;
+
+@property (nonatomic , assign) id delegate;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerQuant;
+@property (weak, nonatomic) IBOutlet UIView *viewBlock;
+@property (weak, nonatomic) IBOutlet UIView *viewPicker;
+- (IBAction)btDone:(id)sender;
 @end

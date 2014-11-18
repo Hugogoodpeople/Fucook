@@ -154,32 +154,24 @@
     viewController3.view.backgroundColor = [UIColor whiteColor];
 
     
-    UIViewController *viewController4 = [[UIViewController alloc] init];
-    viewController4.view.backgroundColor = [UIColor greenColor];
-    
-    
     tinderNavigationController.viewControllers = @[
                                                    viewController2,
                                                    viewController1,
-                                                   viewController3,
-                                                   viewController4
+                                                   viewController3
                                                    ];
     
     NavigationBarItem * item1 = [[NavigationBarItem alloc] init];
     NavigationBarItem * item2 = [[NavigationBarItem alloc] init];
     NavigationBarItem * item3 = [[NavigationBarItem alloc] init];
-    NavigationBarItem * item4 = [[NavigationBarItem alloc] init];
     
     item1.titulo = @"Directions";
     item2.titulo = @"Ingredients";
     item3.titulo = @"Notes";
-    item4.titulo = @"Nutrition";
     
     tinderNavigationController.navbarItemViews = @[
                                                    item1,
                                                    item2,
-                                                   item3,
-                                                   item4
+                                                   item3
                                                    ];
     [tinderNavigationController setCurrentPage:1 animated:NO];
     

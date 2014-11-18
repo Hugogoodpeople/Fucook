@@ -7,12 +7,17 @@
 //
 
 #import "ListaComprasCell.h"
+#import "THTinderNavigationController.h"
+#import "Ingredientes.h"
+#import "DirectionsHugo.h"
+#import "Notas.h"
 
 
 
-@interface ListaComprasCell()
+@interface ListaComprasCell(){
 
-
+ BOOL aux;
+}
 @end
 
 @implementation ListaComprasCell
@@ -25,14 +30,26 @@
 
 
 - (IBAction)btVer:(id)sender {
+     NSLog(@"VER");
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(OpenReceita:) withObject:self.index];
+    }
 }
 
 - (IBAction)btProcurar:(id)sender {
+     NSLog(@"PROCURAR");
 }
 
 - (IBAction)btAdd:(id)sender {
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(editQuant:) withObject:self.index];
+    }
 }
 
 - (IBAction)btDelete:(id)sender {
+    NSLog(@"DELETE");
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(deleteRow:) withObject:self.index];
+    }
 }
 @end
