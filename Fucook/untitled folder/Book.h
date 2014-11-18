@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "ObjectLivro.h"
 
 @interface Book : UIViewController <UITableViewDelegate >
 
+
+@property ObjectLivro * livro;
+
 @property (weak, nonatomic) IBOutlet UIView *container;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitulo;
+@property (weak, nonatomic) IBOutlet UIImageView *imagemLivro;
 
 @end

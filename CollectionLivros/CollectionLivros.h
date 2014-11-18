@@ -15,4 +15,6 @@
 @property NSMutableArray * arrayOfItems;
 @property NSMutableArray * imagens;
 
+-(void)actualizarImagens;
+
 @end

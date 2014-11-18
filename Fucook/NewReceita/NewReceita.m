@@ -15,6 +15,8 @@
 #import "NewNotes.h"
 #import "NewDirections.h"
 
+#import "AppDelegate.h"
+
 @interface NewReceita (){
     HeaderNewReceita * headerFinal;
     NIngredientes * ingre;
@@ -24,6 +26,12 @@
     BOOL auxIng;
     BOOL auxDir;
     BOOL auxNotes;
+    
+    
+    NSMutableArray * arrayIngredientes;
+    NSMutableArray * arraydireccoes;
+    NSMutableArray * arrayNotas;
+    
 }
 
 @end
@@ -32,6 +40,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self setUp];
+    
+     [self listarTodasReceitas];
+}
+
+-(void)setUp
+{
+    /* bt search*/
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    [button addTarget:self action:@selector(AdicionarReceita) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btnsave2"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = anotherButton;
+    
     
     headerFinal = [HeaderNewReceita alloc];
     [headerFinal.view setFrame:CGRectMake(0, 0, headerFinal.view.frame.size.width, headerFinal.view.frame.size.height )];
@@ -61,15 +85,96 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.navigationItem.title = @"Your Recipe";
+    
 
-    //[self.scrollNewReceita setContentSize:CGSizeMake(320, 1000)];
+    // inicializar os arrays
+    arrayIngredientes = [NSMutableArray new];
+    arraydireccoes    = [NSMutableArray new];
+    arrayNotas        = [NSMutableArray new];
+    
+    
 
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)AdicionarReceita
+{
+    NSLog(@"adicionar receita");
+#warning tenho de fazer todo o codigo de de adicionar a base de dados aqui
+    
+    AppDelegate* appDelegate = [AppDelegate sharedAppDelegate];
+    NSManagedObjectContext* context = appDelegate.managedObjectContext;
+
+    NSManagedObject *Receita = [NSEntityDescription
+                              insertNewObjectForEntityForName:@"Receitas"
+                              inManagedObjectContext:context];
+    
+    NSString * nomeReceita = headerFinal.textName.text;
+    
+    [Receita setValue:nomeReceita forKey:@"nome"];
+    
+    NSManagedObject *Imagem = [NSEntityDescription
+                               insertNewObjectForEntityForName:@"Imagens"
+                               inManagedObjectContext:context];
+    
+    
+    
+    //[self.livro.managedObject setValue:Receita forKey:@"contem_receitas"];
+    // tenho de adicionar um array com o novo elemento
+    
+    NSMutableArray * arrayReceitas = [NSMutableArray new];
+    
+    NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
+    
+    for (NSManagedObject * rec in receitas)
+    {
+        [arrayReceitas addObject:rec];
+    }
+    
+    NSData *imageData = UIImageJPEGRepresentation(headerFinal.img.image, 0.15);
+    [Imagem setValue:imageData forKey:@"imagem"];
+    [Receita setValue:Imagem forKey:@"contem_imagem"];
+    
+    [arrayReceitas addObject:Receita];
+    
+    
+    
+    [self.livro.managedObject setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayReceitas]]  forKey:@"contem_receitas"];
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+        return;
+    }
+
+    [self listarTodasReceitas];
+    
+}
+
+-(void)listarTodasReceitas
+{
+    
+    // tenho de fazer de maneira a apenas listar as receitas de um livro
+    
+    NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    // para ver se deu algum erro ao inserir
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    
+    
+    // para ir buscar os dados prestendidos a base de dados
+        NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
+        for (NSManagedObject * receita in receitas) {
+            NSLog(@"************************** Receita ***************************");
+            NSLog(@"Nome receita: %@", [receita valueForKey:@"nome"]);
+        }
 }
 
 -(void)novoIng{

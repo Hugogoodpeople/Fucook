@@ -8,6 +8,7 @@
 
 #import "DragableTableReceitas.h"
 #import "BookCell.h"
+#import "ObjectReceita.h"
 
 
 @interface DragableTableReceitas ()
@@ -16,7 +17,7 @@
 
 @implementation DragableTableReceitas
 
-@synthesize arrayOfItems;
+@synthesize arrayOfItems, imagens;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -32,12 +33,12 @@
     if (arrayOfItems == nil)
     {
         
-        NSUInteger numberOfItems = 20;
+        NSUInteger numberOfItems = 5;
         
         arrayOfItems = [[NSMutableArray alloc] initWithCapacity:numberOfItems];
         
         for (NSUInteger i = 0; i < numberOfItems; ++i)
-            [arrayOfItems addObject:[NSString stringWithFormat:@"Item #%i", i + 1]];
+            [arrayOfItems addObject:[ObjectReceita new]];
     }
     
     //[self.tableView setFrame:self.view.frame];
@@ -104,8 +105,11 @@
     
     static NSString *simpleTableIdentifier = @"BookCell";
     
-    BookCell *cell = (BookCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
+    ObjectReceita * receita = [self.arrayOfItems objectAtIndex:indexPath.row];
+    
+    BookCell *cell = (BookCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if(cell == nil){
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
         cell.transform = CGAffineTransformMakeRotation(M_PI/2);
@@ -115,7 +119,33 @@
         
         NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
     
-    
+        
+        // vou trocar o sistema todo aqui
+        
+        // NSString *key = [livro.imagem.description MD5Hash];
+        // NSData *data = [FTWCache objectForKey:key];
+        if ([imagens objectAtIndex:indexPath.row]!= [NSNull null])
+        {
+            //UIImage *image = [UIImage imageWithData:data];
+            cell.imageCapa.image = [imagens objectAtIndex:indexPath.row];
+        }
+        else
+        {
+            //cell.imageCapa.image = [UIImage imageNamed:@"icn_default"];
+            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+            dispatch_async(queue, ^{
+                NSData * data = [receita.imagem valueForKey:@"imagem"];
+                //[FTWCache setObject:data forKey:key];
+                UIImage *image = [UIImage imageWithData:data];
+                NSInteger index = indexPath.row;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    cell.imageCapa.image = image;
+                    [imagens replaceObjectAtIndex:index withObject:image];
+                });
+            });
+        }
+
+    }
     
     cell.labelPagina.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
     
@@ -133,7 +163,11 @@
     [_maskingLayer setContents:(id)[_maskingImage CGImage]];
     [cell.viewMovel.layer setMask:_maskingLayer];
     
+   
     
+    
+    cell.labelTitulo.text = receita.nome;
+    cell.labelTempo.text = receita.tempo;
     [cell.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
 
     //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];

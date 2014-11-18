@@ -21,4 +21,6 @@
 
 @property NSMutableArray * imagens;
 
+-(void)actualizarImagens;
+
 @end

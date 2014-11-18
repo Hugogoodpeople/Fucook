@@ -49,5 +49,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *viewAddD;
 
+@property (weak, nonatomic) IBOutlet UIImageView *img;
+
 
 @end

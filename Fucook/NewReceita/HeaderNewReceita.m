@@ -23,7 +23,7 @@
 
 @property (nonatomic, weak) IBOutlet UIToolbar *toolBar;
 @property (nonatomic) UIImagePickerController *imagePickerController;
-@property (weak, nonatomic) IBOutlet UIImageView *img;
+
 
 @property (nonatomic) IBOutlet UIView *overlayView;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *takePictureButton;

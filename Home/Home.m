@@ -19,11 +19,13 @@
 #import "ObjectLivro.h"
 #import "UIImage+fixOrientation.h"
 #import "ListaCompras.h"
+#import "PlaceHolderCreateBook.h"
 
 @interface Home ()
 
 @property RootViewController * root;
 @property CollectionLivros * mos;
+@property PlaceHolderCreateBook * placeHolder;
 
 @property bool selectedView;
 
@@ -34,17 +36,32 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
- 
     [self actualizarTudo];
-    
 }
 
 -(void)actualizarTudo
 {
     [self preencherTabela];
+    [self.mos actualizarImagens];
     [self.mos.collectionView reloadData];
     [self.mos.collectionView reloadItemsAtIndexPaths:[self.mos.collectionView indexPathsForVisibleItems]];
+    [self.root actualizarImagens];
+    
     [self.root.tableView reloadData];
+    
+    if (self.root.arrayOfItems.count == 0)
+    {
+        [self.mos.view removeFromSuperview];
+        [self.root.view removeFromSuperview];
+        [self.placeHolder.view removeFromSuperview];
+        [self.container addSubview:self.placeHolder.view];
+    }else
+    {
+        [self.placeHolder.view removeFromSuperview];
+        [self.mos.view removeFromSuperview];
+        [self.container addSubview:self.root.view];
+        [self.pageControl setAlpha:1];
+    }
 
 }
 
@@ -57,6 +74,9 @@
     [self.root.view setFrame:CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height)];
     self.root.view.backgroundColor = [UIColor clearColor];
 
+    
+    self.placeHolder = [PlaceHolderCreateBook new];
+    self.placeHolder.delegate = self;
     
     
     /* bt search*/
@@ -173,6 +193,15 @@
     self.root.arrayOfItems = [NSMutableArray arrayWithArray:reversed];
     self.mos.arrayOfItems = [NSMutableArray arrayWithArray:reversed];
     self.pageControl.numberOfPages = reversed.count;
+    
+    if (reversed.count == 0)
+    {
+        
+        [self.mos.view removeFromSuperview];
+        [self.root.view removeFromSuperview];
+        [self.placeHolder.view removeFromSuperview];
+        [self.container addSubview:self.placeHolder.view];
+    }
   
 }
 
@@ -181,8 +210,11 @@
     [self.navigationController pushViewController:[PesquisaReceitas new] animated:YES];
 }
 
--(void)abrirLivro
+-(void)abrirLivro:(ObjectLivro *)livro
 {
+    Book * receitas = [Book new];
+    receitas.livro =livro;
+    
     [self.navigationController pushViewController:[Book new] animated:YES];
 }
 
@@ -201,6 +233,18 @@
     }
     
     self.selectedView = !self.selectedView;
+    
+    if (self.root.arrayOfItems.count == 0)
+    {
+        
+        [self.mos.view removeFromSuperview];
+        [self.root.view removeFromSuperview];
+        [self.placeHolder.view removeFromSuperview];
+        [self.container addSubview:self.placeHolder.view];
+    }else
+    {
+        [self.placeHolder.view removeFromSuperview];
+    }
     
 }
 
@@ -233,9 +277,7 @@
     //NSLog(@"Table did Scrool %f" , scrollView.contentOffset.y);
     
     int pagina = (scrollView.contentOffset.y/self.view.frame.size.width);
-    
     [self.pageControl setCurrentPage: pagina];
-    
     
 }
 
@@ -251,10 +293,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"selected %ld", (long)indexPath.row);
-    [self.navigationController pushViewController:[Book new] animated:YES];
+    
+    // tenho de ir buscar os valores a tabela para poder abrir o objecto correcto
+    ObjectLivro * livro = [self.root.arrayOfItems objectAtIndex:indexPath.row];
+    Book * recietas = [Book new];
+    recietas.livro = livro;
+    
+    [self.navigationController pushViewController:recietas animated:YES];
 }
-
-
 
 
 /*

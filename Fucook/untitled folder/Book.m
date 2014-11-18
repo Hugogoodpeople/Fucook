@@ -17,6 +17,7 @@
 #import "NewReceita.h"
 #import "Calendario.h"
 #import "AppDelegate.h"
+#import "ObjectReceita.h"
 
 
 @interface Book ()
@@ -48,6 +49,11 @@
     UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
     self.navigationItem.leftBarButtonItem = anotherButtonback;
     
+    self.imagemLivro.image = [UIImage imageWithData:[self.livro.imagem valueForKey:@"imagem"]];
+    self.labelTitulo.text = self.livro.titulo;
+    
+    // tenho de criar um metodo para poder listar todas as receitas dentro do livro
+    
 }
 
 -(void)back
@@ -59,6 +65,7 @@
     NSLog(@"clicou add");
     
     NewReceita *objYourViewController = [NewReceita new];
+    objYourViewController.livro = self.livro;
     [self.navigationController pushViewController:objYourViewController animated:YES];
 }
 
@@ -72,19 +79,6 @@
 
 -(void)setUp
 {
-    self.root = [DragableTableReceitas new];
-    //[self.root.view setFrame:[[UIScreen mainScreen] bounds] ];
-    
-    [self.root.view setFrame:CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height)];
-    
-    self.root.view.backgroundColor = [UIColor clearColor];
-    
-    [self.container addSubview:self.root.view];
-    self.root.delegate = self;
-    self.root.tableView.delegate = self;
-    
-    // tenho de carregar os livros aqui
-    
     NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
     
     // para ver se deu algum erro ao inserir
@@ -101,22 +95,41 @@
     [fetchRequest setEntity:entity];
     
     
-    /*
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (NSManagedObject *pedido in fetchedObjects)
-    {
+    NSMutableArray * arrayReceitas = [NSMutableArray new];
+    
+    // para ir buscar os dados prestendidos a base de dados
+    NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
+    for (NSManagedObject * receita in receitas) {
+        NSLog(@"************************** Receita ***************************");
+        NSLog(@"Nome receita: %@", [receita valueForKey:@"nome"]);
         
+        ObjectReceita * receita = [ObjectReceita new];
+        receita.nome = [receita valueForKey:@"nome"];
         
-        NSLog(@"************************************ Pedido ************************************");
-        NSLog(@"titulo: %@", [pedido valueForKey:@"titulo"]);
-        NSLog(@"descrição: %@", [pedido valueForKey:@"descricao"]);
-        
+        [arrayReceitas addObject:receita];
     }
-
-    */
     
     
+    // agora tenho de listar as novas receitas neste controlador
+    
 
+    
+    self.root = [DragableTableReceitas new];
+    //[self.root.view setFrame:[[UIScreen mainScreen] bounds] ];
+    
+    self.root.arrayOfItems = arrayReceitas;
+    
+    [self.root.view setFrame:CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height)];
+    
+    self.root.view.backgroundColor = [UIColor clearColor];
+    
+    [self.container addSubview:self.root.view];
+    self.root.delegate = self;
+    self.root.tableView.delegate = self;
+    
+    // tenho de carregar os livros aqui
+    
+   
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -137,6 +150,8 @@
      THTinderNavigationController * tinderNavigationController = [THTinderNavigationController new];
     
     //[tinderNavigationController.view setFrame:CGRectMake(0,64, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width-64)];
+    
+    // tenho de dar o NSmanagedObject para poder ir buscar o resto das coisas dentro de cada controlador da receita
     
     
     Ingredientes *viewController1 = [[Ingredientes alloc] init];

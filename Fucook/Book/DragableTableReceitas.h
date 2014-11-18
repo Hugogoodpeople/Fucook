@@ -14,4 +14,7 @@
 @property NSMutableArray *arrayOfItems;
 @property (nonatomic, assign) id delegate;
 
+
+@property NSMutableArray * imagens;
+
 @end

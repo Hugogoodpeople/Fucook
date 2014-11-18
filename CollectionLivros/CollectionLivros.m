@@ -49,7 +49,10 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
 
 }
 
--(void)viewWillAppear:(BOOL)animated
+
+
+
+-(void)actualizarImagens
 {
     imagens = [[NSMutableArray alloc] init];
     
@@ -61,6 +64,7 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
     [self.collectionView reloadData];
 
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -156,8 +160,11 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"selected %ld", (long)indexPath.row);
-    if (self.delegate) {
-        [self.delegate performSelector:@selector(abrirLivro) withObject:nil];
+    if (self.delegate)
+    {
+        ObjectLivro * livro = [self.arrayOfItems objectAtIndex:indexPath.row + (indexPath.section*2)];
+        
+        [self.delegate performSelector:@selector(abrirLivro:) withObject:livro];
     }
 }
 

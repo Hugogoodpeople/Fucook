@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ObjectLivro.h"
 
 @interface NewReceita : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollNewReceita;
 
+@property ObjectLivro * livro;
 
 @end

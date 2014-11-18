@@ -25,17 +25,11 @@
     UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
     
-    
     UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
     
-    
-    
     [self.contentView addGestureRecognizer:swipeDown];
     [self.contentView addGestureRecognizer:swipeUp];
-    
-    
-    
 }
 
 

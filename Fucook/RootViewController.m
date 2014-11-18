@@ -87,6 +87,19 @@ NSManagedObject * managedObject;
 
 }
 
+-(void)actualizarImagens
+{
+    imagens = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i < 1000; ++i)
+    {
+        [imagens addObject:[NSNull null]];
+    }
+    
+    [self.tableView reloadData];
+    
+}
+
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
@@ -286,12 +299,14 @@ NSManagedObject * managedObject;
     [objectToMove1 setValue:livro2.titulo forKey:@"titulo"];
     [objectToMove1 setValue:livro2.descricao forKey:@"descricao"];
     [objectToMove1 setValue:livro2.imagem forKey:@"contem_imagem"];
-    
+    [objectToMove1 setValue:[livro2.managedObject valueForKey:@"contem_receitas"] forKey:@"contem_receitas"];
+    // tenho de mover tambem o resto senao nao funcionam direito as receitas
     
     
     [objectToMove2 setValue:livro1.titulo forKey:@"titulo"];
     [objectToMove2 setValue:livro1.descricao forKey:@"descricao"];
     [objectToMove2 setValue:livro1.imagem forKey:@"contem_imagem"];
+    [objectToMove2 setValue:[livro1.managedObject valueForKey:@"contem_receitas"] forKey:@"contem_receitas"];
     
     
     
