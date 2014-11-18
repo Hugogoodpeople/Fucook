@@ -145,11 +145,11 @@
     for (NSManagedObject *pedido in fetchedObjects)
     {
         
-        
+        /*
         NSLog(@"************************************ Pedido ************************************");
         NSLog(@"titulo: %@", [pedido valueForKey:@"titulo"]);
         NSLog(@"descrição: %@", [pedido valueForKey:@"descricao"]);
-        
+        */
         ObjectLivro * livro = [ObjectLivro new];
         
         // para mais tarde poder apagar

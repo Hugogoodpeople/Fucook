@@ -42,6 +42,11 @@ NSManagedObject * managedObject;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    userDrivenDataModelChange = NO;
+    
+    context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
     imagens = [[NSMutableArray alloc] init];
     
     for (NSInteger i = 0; i < 1000; ++i)
@@ -143,7 +148,7 @@ NSManagedObject * managedObject;
         cell.contentView.clipsToBounds = YES;
         [cell.contentView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         
-        NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
+        //NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
         cell.delegate = self;
         cell.imageCapa.asynchronous = YES;
         
@@ -240,12 +245,7 @@ NSManagedObject * managedObject;
                 });
             });
         }
-        
-        
     }
-    
-   
-    
     
     cell.managedObject = livro.managedObject;
     
@@ -265,16 +265,96 @@ NSManagedObject * managedObject;
 /*
 	Required for drag tableview controller
  */
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-	
-	NSString *itemToMove = [arrayOfItems objectAtIndex:fromIndexPath.row];
-	[arrayOfItems removeObjectAtIndex:fromIndexPath.row];
-	[arrayOfItems insertObject:itemToMove atIndex:toIndexPath.row];
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+    
+    
+    NSInteger fromInd = fromIndexPath.row;
+    NSInteger toInd   = toIndexPath.row;
+    
+    // tenho de trocar no array o cenas tbm para ele nao baralhar
+    // tenho de por aqui a salvar no core data as alterações do drag and drop
+    ObjectLivro * livro1 = [self.arrayOfItems objectAtIndex:fromInd];
+    ObjectLivro * livro2 = [self.arrayOfItems objectAtIndex:toInd];
+   
+    
+
+    NSManagedObject * objectToMove1 = livro1.managedObject;
+    NSManagedObject * objectToMove2 = livro2.managedObject;
+    
+    // esta parte qui é que está mal por algum motivo que nao sei qual
+    [objectToMove1 setValue:livro2.titulo forKey:@"titulo"];
+    [objectToMove1 setValue:livro2.descricao forKey:@"descricao"];
+    [objectToMove1 setValue:livro2.imagem forKey:@"contem_imagem"];
+    
+    
+    
+    [objectToMove2 setValue:livro1.titulo forKey:@"titulo"];
+    [objectToMove2 setValue:livro1.descricao forKey:@"descricao"];
+    [objectToMove2 setValue:livro1.imagem forKey:@"contem_imagem"];
+    
+    
+    
+    // para ir buscar os dados prestendidos a base de dados
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Livros" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    userDrivenDataModelChange = YES;
+    NSError *error = nil;
+    if (![context save:&error])
+    {
+        NSLog(@"Can't replace! %@ %@", error, [error localizedDescription]);
+        return;
+    }
+    userDrivenDataModelChange = NO;
+    
+    // este é o array com os livros
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+
+    
+    
+    NSLog(@"************************************ Livros reordenados ************************************");
+    
+    for (NSManagedObject *pedido in fetchedObjects)
+    {
+        
+        
+        NSLog(@"titulo: %@", [pedido valueForKey:@"titulo"]);
+        //NSLog(@"descrição: %@", [pedido valueForKey:@"descricao"]);
+        
+    }
+
+    
+    
+    // este metudo é burro e dize sempre de onde troquei originalmente
+    // tenho de ver se move para a frente ou para traz e adicionar ou remover 1 conforme a direcção
+  
+    
+    // em vez de remove e depois insert vou fazer o replace
+    NSString *itemToMove = [arrayOfItems objectAtIndex:fromIndexPath.row];
+    [self.arrayOfItems removeObjectAtIndex:fromIndexPath.row];
+    [self.arrayOfItems insertObject:itemToMove atIndex:toIndexPath.row];
+    
+    
+    
     
     // tenho de trocar o indice das imagens aqui
     UIImage * tempImage1 = [imagens objectAtIndex:fromIndexPath.row];
     [imagens removeObjectAtIndex:fromIndexPath.row];
     [imagens insertObject:tempImage1 atIndex:toIndexPath.row];
+    
+    
+    
+
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(actualizarTudo) withObject:nil ];
+    }
+    
+    
+   
 
 }
 
@@ -307,6 +387,14 @@ NSManagedObject * managedObject;
     if (self.delegate) {
         [self.delegate performSelector:@selector(editBook:) withObject:managedObject];
     }
+    
+    imagens = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i < 1000; ++i)
+    {
+        [imagens addObject:[NSNull null]];
+    }
+
 }
 
 
@@ -334,6 +422,14 @@ NSManagedObject * managedObject;
             if (self.delegate) {
                 [self.delegate performSelector:@selector(actualizarTudo) withObject:nil ];
             }
+            
+            imagens = [[NSMutableArray alloc] init];
+            
+            for (NSInteger i = 0; i < 1000; ++i)
+            {
+                [imagens addObject:[NSNull null]];
+            }
+
             
             NSError *error = nil;
             if (![context save:&error]) {

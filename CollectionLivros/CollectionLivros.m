@@ -49,6 +49,19 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
 
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    imagens = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i < 1000; ++i)
+    {
+        [imagens addObject:[NSNull null]];
+    }
+    
+    [self.collectionView reloadData];
+
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -69,12 +82,14 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
 
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+#warning Incomplete method implementation -- Return the number of sections
     int valor = (int) (arrayOfItems.count +1 )/2;
     return valor;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+#warning Incomplete method implementation -- Return the number of items in the section
     int valor =(arrayOfItems.count/(section + 1)) >= 2? 2: 1;
    // int valor = 3;
     
@@ -99,10 +114,10 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
     
     // NSString *key = [livro.imagem.description MD5Hash];
     // NSData *data = [FTWCache objectForKey:key];
-    if ([imagens objectAtIndex:indexPath.row]!= [NSNull null])
+    if ([imagens objectAtIndex:indexPath.row +(indexPath.section * 2)]!= [NSNull null])
     {
         //UIImage *image = [UIImage imageWithData:data];
-        cell.imagemCapa.image = [imagens objectAtIndex:indexPath.row];
+        cell.imagemCapa.image = [imagens objectAtIndex:indexPath.row +(indexPath.section * 2) ];
     }
     else
     {
@@ -112,16 +127,17 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
             NSData * data = [livro.imagem valueForKey:@"imagem"];
             //[FTWCache setObject:data forKey:key];
             UIImage *image = [UIImage imageWithData:data];
-            NSInteger index = indexPath.row;
+            NSInteger index =indexPath.row +(indexPath.section * 2);
             dispatch_async(dispatch_get_main_queue(), ^{
                 cell.imagemCapa.image = image;
                 [imagens replaceObjectAtIndex:index withObject:image];
             });
         });
+    
     }
 
-    
-    
+
+
     return cell;
 }
 
