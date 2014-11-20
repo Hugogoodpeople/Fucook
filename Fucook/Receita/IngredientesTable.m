@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Hugo Costa. All rights reserved.
 //
 
-#import "Ingredientes.h"
+#import "IngredientesTable.h"
 #import "HeaderIngrediente.h"
 #import "IngredienteCellTableViewCell.h"
-#import "ObjecteIngrediente.h"
+#import "ObjectIngrediente.h"
 #import "AppDelegate.h"
 
-@interface Ingredientes ()
+@interface IngredientesTable ()
 
 @property HeaderIngrediente * header;
 @property BOOL servingsOpen;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation Ingredientes
+@implementation IngredientesTable
 
 @synthesize header;
 
@@ -41,88 +41,44 @@
     
     self.items = [NSMutableArray new];
     
-    /*
-    NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
-    
-    
-    
-    
-    // para ver se deu algum erro ao inserir
-    NSError *error;
-    if (![context save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }
-    
-    
-    // para ir buscar os dados prestendidos a base de dados
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"Ingredientes" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    
-    
-    
-    // aqui vou ter de fazer a magia de passa todos os pedidos
-    // atenção tenho de organizar os headers por datas
-    
-    // ok primeiro vou passar todos os pedidos para um array de pedidos
-    NSMutableArray * ingredientes = [NSMutableArray new];
-    
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (NSManagedObject *ingrediente in fetchedObjects)
-    {
-        if(self.idReceita [pedido valueForKey:@"id_ingrediente"])
-        
-        
-        NSLog(@"objecto %@", ingrediente.description);
-        
-        ObjecteIngrediente * ing1 = [ObjecteIngrediente new];
-        ing1.nome = @"Carré de borrego";
-        ing1.quantidade = @"1";
-        ing1.unidade = [@"kg";
-        
-        [self.items addObject:ing1];
-        
-    }
-    */
-     
-    ObjecteIngrediente * ing1 = [ObjecteIngrediente new];
-    ing1.nome = @"Carré de borrego";
-    ing1.quantidade = @"1";
-    ing1.unidade = @"kg";
 
+   
     
     
-    ObjecteIngrediente * ing2 = [ObjecteIngrediente new];
-    ing2.nome = @"Abóbora";
-    ing2.quantidade = @"1,5";
-    ing2.unidade = @"kg";
-    
-    ObjecteIngrediente * ing3 = [ObjecteIngrediente new];
-    ing3.nome = @"Batata";
-    ing3.quantidade = @"2";
-    ing3.unidade = @"kg";
-    
-    ObjecteIngrediente * ing4 = [ObjecteIngrediente new];
-    ing4.nome = @"Figo";
-    ing4.quantidade = @"150";
-    ing4.unidade = @"g";
-    
-    ObjecteIngrediente * ing5 = [ObjecteIngrediente new];
-    ing5.nome = @"Cogumelos";
-    ing5.quantidade = @"200";
-    ing5.unidade = @"g";
-    
-    [self.items addObject:ing1];
-    [self.items addObject:ing2];
-    [self.items addObject:ing3];
-    [self.items addObject:ing4];
-    [self.items addObject:ing5];
+    NSSet * receitas = [self.receita.managedObject valueForKey:@"contem_ingredientes"];
+    for (NSManagedObject *pedido in receitas)
+    {
+        
+        
+        ObjectIngrediente * ingred = [ObjectIngrediente new];
+        
+        // para mais tarde poder apagar
+        ingred.managedObject        = pedido;
+        ingred.nome                 = [pedido valueForKey:@"nome"];
+        ingred.quantidade           = [pedido valueForKey:@"quantidade"];
+        ingred.quantidadeDecimal    = [pedido valueForKey:@"quantidade_decimal"];
+        ingred.unidade              = [pedido valueForKey:@"unidade"];
+        
+        
+        [self.items addObject:ingred];
+    }
 
     
     
     header = [HeaderIngrediente new];
     header.delegate = self;
+    
+    
+    header.dificuldade      = self.receita.dificuldade;
+    header.tempo            = self.receita.tempo;
+    header.nome             = self.receita.nome;
+    header.servings         = self.receita.servings;
+    NSData * data = [self.receita.imagem valueForKey:@"imagem"];
+   
+    
+    header.imagem = [UIImage imageWithData:data];
+    
+    
     
     self.tabela.tableHeaderView = header.view;
 }
@@ -168,7 +124,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    ObjecteIngrediente * ing = [self.items objectAtIndex:indexPath.row];
+    ObjectIngrediente * ing = [self.items objectAtIndex:indexPath.row];
 
     cell.LabelTitulo.text = ing.nome;
     cell.ingrediente = ing;
@@ -184,7 +140,7 @@
 
 -(NSString *)calcularValor:(NSIndexPath *)indexPath
 {
-    ObjecteIngrediente * ing = [self.items objectAtIndex:indexPath.row];
+    ObjectIngrediente * ing = [self.items objectAtIndex:indexPath.row];
 
     float calculado = [ing.quantidade floatValue] * [header.labelNumberServings.text floatValue];
     
@@ -201,13 +157,13 @@
     
     if (self.cartAllSelected){
         
-        for (ObjecteIngrediente * ing in self.items) {
+        for (ObjectIngrediente * ing in self.items) {
             ing.selecionado = NO;
         }
     }
     else
     {
-        for (ObjecteIngrediente * ing in self.items) {
+        for (ObjectIngrediente * ing in self.items) {
             ing.selecionado = YES;
         }
     }
@@ -221,7 +177,7 @@
 {
  
     BOOL muda = YES;
-    for (ObjecteIngrediente * ing in self.items) {
+    for (ObjectIngrediente * ing in self.items) {
         if (ing.selecionado != self.cartAllSelected) {
             muda = NO;
         }

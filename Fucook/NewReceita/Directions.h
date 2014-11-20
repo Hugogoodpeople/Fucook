@@ -11,5 +11,9 @@
 @interface Directions : UIViewController
 @property (nonatomic,assign) id delegate;
 - (IBAction)btNewDirection:(id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *tabela;
+
+@property NSMutableArray * arrayOfItems;
+
 
 @end

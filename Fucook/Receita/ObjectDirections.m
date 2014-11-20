@@ -11,5 +11,18 @@
 @implementation ObjectDirections
 
 
+-(NSManagedObject *)getManagedObject:(NSManagedObjectContext *)context
+{
+    NSManagedObject *mangDirection = [NSEntityDescription
+                                        insertNewObjectForEntityForName:@"Etapas"
+                                        inManagedObjectContext:context];
+    
+    [mangDirection setValue:self.idDirection forKey:@"id_etapa"];
+    [mangDirection setValue:[NSString stringWithFormat:@"%d", self.tempoMinutos] forKey:@"tempo"];
+    [mangDirection setValue:self.descricao forKey:@"descricao"];
+    
+    return mangDirection;
+}
+
 
 @end

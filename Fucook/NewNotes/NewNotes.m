@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view from its nib.
     
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    //[button addTarget:self action:@selector(receita:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(AddNota) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btnsave2"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -43,6 +43,16 @@
 }
 
 - (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)AddNota
+{
+    if (self.delegate)
+    {
+        [self.delegate performSelectorInBackground:@selector(adicionarNota:) withObject:self.textNote.text];
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

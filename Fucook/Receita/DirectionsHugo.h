@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ObjectReceita.h"
+#import "AppDelegate.h"
 
 @interface DirectionsHugo : UIViewController
+
+@property ObjectReceita * receita;
 
 @property NSMutableArray * items;
 @property (weak, nonatomic) IBOutlet UITableView *tabela;

@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fucook/RootViewController.m"
-            timestampString = "438024909.574582"
+            timestampString = "438188360.24994"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "372"
-            endingLineNumber = "372"
+            startingLineNumber = "376"
+            endingLineNumber = "376"
             landmarkName = "-tableView:moveRowAtIndexPath:toIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -32,16 +32,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fucook/Book/DragableTableReceitas.m"
-            timestampString = "438026603.191901"
+            filePath = "Fucook/Receita/IngredientesTable.m"
+            timestampString = "438196381.639737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-setUp"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

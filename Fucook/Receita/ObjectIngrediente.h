@@ -7,16 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppDelegate.h"
 
-@interface ObjecteIngrediente : NSObject
+@interface ObjectIngrediente : NSObject
 
 @property NSString * nome;
 @property NSString * idIng;
 @property NSString * idReceita;
 @property NSString * unidade;
+@property NSString * quantidadeDecimal;
 @property NSString * quantidade;
 @property NSString * nutricao;
 @property BOOL selecionado;
+@property NSManagedObject * managedObject;
 
+-(NSManagedObject *)getManagedObject:(NSManagedObjectContext *)context;
 
 @end

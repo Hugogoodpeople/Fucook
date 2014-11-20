@@ -43,8 +43,6 @@ NSManagedObject * managedObject;
     [super viewDidLoad];
     
     
-    userDrivenDataModelChange = NO;
-    
     context = [AppDelegate sharedAppDelegate].managedObjectContext;
     
     imagens = [[NSMutableArray alloc] init];
@@ -281,7 +279,7 @@ NSManagedObject * managedObject;
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
     
-    
+    // esta merda trocas as receitas todas dentro dos livros
     NSInteger fromInd = fromIndexPath.row;
     NSInteger toInd   = toIndexPath.row;
     
@@ -290,23 +288,30 @@ NSManagedObject * managedObject;
     ObjectLivro * livro1 = [self.arrayOfItems objectAtIndex:fromInd];
     ObjectLivro * livro2 = [self.arrayOfItems objectAtIndex:toInd];
    
-    
 
+    
     NSManagedObject * objectToMove1 = livro1.managedObject;
     NSManagedObject * objectToMove2 = livro2.managedObject;
+    NSManagedObject * temp1 = [livro1.managedObject valueForKey:@"contem_receitas"];
+    NSManagedObject * temp2 = [livro2.managedObject valueForKey:@"contem_receitas"];
+    
+    
+    [objectToMove1 setNilValueForKey:@"contem_receitas"];
+    [objectToMove2 setNilValueForKey:@"contem_receitas"];
+    
     
     // esta parte qui é que está mal por algum motivo que nao sei qual
     [objectToMove1 setValue:livro2.titulo forKey:@"titulo"];
     [objectToMove1 setValue:livro2.descricao forKey:@"descricao"];
     [objectToMove1 setValue:livro2.imagem forKey:@"contem_imagem"];
-    [objectToMove1 setValue:[livro2.managedObject valueForKey:@"contem_receitas"] forKey:@"contem_receitas"];
+    [objectToMove1 setValue:temp2 forKey:@"contem_receitas"];
     // tenho de mover tambem o resto senao nao funcionam direito as receitas
     
     
     [objectToMove2 setValue:livro1.titulo forKey:@"titulo"];
     [objectToMove2 setValue:livro1.descricao forKey:@"descricao"];
     [objectToMove2 setValue:livro1.imagem forKey:@"contem_imagem"];
-    [objectToMove2 setValue:[livro1.managedObject valueForKey:@"contem_receitas"] forKey:@"contem_receitas"];
+    [objectToMove2 setValue:temp1 forKey:@"contem_receitas"];
     
     
     
@@ -316,14 +321,13 @@ NSManagedObject * managedObject;
                                    entityForName:@"Livros" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     
-    userDrivenDataModelChange = YES;
+    
     NSError *error = nil;
     if (![context save:&error])
     {
         NSLog(@"Can't replace! %@ %@", error, [error localizedDescription]);
         return;
     }
-    userDrivenDataModelChange = NO;
     
     // este é o array com os livros
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];

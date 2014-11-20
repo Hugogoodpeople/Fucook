@@ -12,4 +12,6 @@
 @property (strong, nonatomic) IBOutlet UIView *viewNote;
 @property (weak, nonatomic) IBOutlet UITextView *textNote;
 
+@property (nonatomic ,assign) id delegate;
+
 @end

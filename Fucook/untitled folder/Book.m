@@ -11,7 +11,7 @@
 #import "LivroCellTableViewCell.h"
 #import "DirectionsHugo.h"
 #import "THTinderNavigationController.h"
-#import "Ingredientes.h"
+#import "IngredientesTable.h"
 #import "Notas.h"
 #import "NavigationBarItem.h"
 #import "NewReceita.h"
@@ -31,7 +31,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self setUp];
+    self.root = [DragableTableReceitas new];
+    //[self.root.view setFrame:[[UIScreen mainScreen] bounds] ];
+    
+    [self preencherTabela];
+    
+    self.root.livro = self.livro;
+    
+    
+    [self.root.view setFrame:CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height)];
+    
+    self.root.view.backgroundColor = [UIColor clearColor];
+    
+    
+    [self.root.view removeFromSuperview];
+    [self.container addSubview:self.root.view];
+    self.root.delegate = self;
+    self.root.tableView.delegate = self;
+
     
     /* bt mais*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
@@ -56,6 +73,33 @@
     
 }
 
+-(void)actualizarTudo
+{
+    [self.root actualizarImagens];
+    [self preencherTabela];
+   
+    
+    [self.root.tableView reloadData];
+    
+    if (self.root.arrayOfItems.count == 0)
+    {
+        [self.root.view removeFromSuperview];
+        //[self.placeHolder.view removeFromSuperview];
+        //[self.container addSubview:self.placeHolder.view];
+    }else
+    {
+        //[self.placeHolder.view removeFromSuperview];
+        [self.container addSubview:self.root.view];
+       // [self.pageControl setAlpha:1];
+    }
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self actualizarTudo];
+}
+
 -(void)back
 {
     [self.navigationController popViewControllerAnimated:YES];
@@ -77,6 +121,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
 -(void)setUp
 {
     NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
@@ -89,10 +134,6 @@
     
     
     // para ir buscar os dados prestendidos a base de dados
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"Livros" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
     
     
     NSMutableArray * arrayReceitas = [NSMutableArray new];
@@ -103,10 +144,12 @@
         NSLog(@"************************** Receita ***************************");
         NSLog(@"Nome receita: %@", [receita valueForKey:@"nome"]);
         
-        ObjectReceita * receita = [ObjectReceita new];
-        receita.nome = [receita valueForKey:@"nome"];
+        ObjectReceita * objReceita = [ObjectReceita new];
+        objReceita.nome = [receita valueForKey:@"nome"];
+        objReceita.imagem = [receita valueForKey:@"contem_imagem"];
+        objReceita.managedObject = receita;
         
-        [arrayReceitas addObject:receita];
+        [arrayReceitas addObject:objReceita];
     }
     
     
@@ -117,12 +160,16 @@
     self.root = [DragableTableReceitas new];
     //[self.root.view setFrame:[[UIScreen mainScreen] bounds] ];
     
+    self.root.livro = self.livro;
+    
     self.root.arrayOfItems = arrayReceitas;
     
     [self.root.view setFrame:CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height)];
     
     self.root.view.backgroundColor = [UIColor clearColor];
     
+    
+    [self.root.view removeFromSuperview];
     [self.container addSubview:self.root.view];
     self.root.delegate = self;
     self.root.tableView.delegate = self;
@@ -131,6 +178,64 @@
     
    
 }
+*/
+
+
+-(void)preencherTabela
+{
+    NSMutableArray * items = [NSMutableArray new];
+   
+    /*
+    NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    
+    // para ver se deu algum erro ao inserir
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    */
+    
+    NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
+    for (NSManagedObject *pedido in receitas)
+    {
+        
+ 
+        ObjectReceita * receita = [ObjectReceita new];
+        
+        // para mais tarde poder apagar
+        receita.managedObject   = pedido;
+        receita.nome            = [pedido valueForKey:@"nome"];
+        receita.dificuldade     = [pedido valueForKey:@"dificuldade"];
+        receita.servings        = [pedido valueForKey:@"nr_pessoas"];
+        receita.categoria       = [pedido valueForKey:@"categoria"];
+        receita.tempo           = [pedido valueForKey:@"tempo"];
+        receita.notas           = [pedido valueForKey:@"notas"];
+        
+        NSManagedObject * imagem = [pedido valueForKey:@"contem_imagem"];
+        receita.imagem = imagem;
+        
+        [items addObject:receita];
+    }
+    
+    
+    NSArray* reversed = [[items reverseObjectEnumerator] allObjects];
+    
+    
+    self.root.arrayOfItems = [NSMutableArray arrayWithArray:reversed];
+    
+    
+    if (reversed.count == 0)
+    {
+        
+        
+        [self.root.view removeFromSuperview];
+        //[self.placeHolder.view removeFromSuperview];
+        //[self.container addSubview:self.placeHolder.view];
+    }
+    
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [[UIScreen mainScreen] bounds].size.width ;
@@ -153,17 +258,24 @@
     
     // tenho de dar o NSmanagedObject para poder ir buscar o resto das coisas dentro de cada controlador da receita
     
+    // tenho de mandar o objecto da receita para poder dentro de cada controlador ter a informação necessária
     
-    Ingredientes *viewController1 = [[Ingredientes alloc] init];
+    ObjectReceita * objR = [self.root.arrayOfItems objectAtIndex:indexPath.row];
+    
+    
+    IngredientesTable *viewController1 = [[IngredientesTable alloc] init];
+    viewController1.receita = objR;
     [viewController1.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
     viewController1.view.backgroundColor = [UIColor whiteColor];
     
     DirectionsHugo *viewController2 = [[DirectionsHugo alloc] init];
+    viewController2.receita = objR;
     [viewController2.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
     viewController2.view.clipsToBounds = YES;
     viewController2.view.backgroundColor = [UIColor whiteColor];
     
     Notas *viewController3 = [[Notas alloc] init];
+    viewController3.receita = objR;
     [viewController3.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
     viewController3.view.clipsToBounds = YES;
     viewController3.view.backgroundColor = [UIColor whiteColor];

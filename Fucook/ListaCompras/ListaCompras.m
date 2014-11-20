@@ -14,7 +14,7 @@
 #import "ListaComprasCell.h"
 
 #import "THTinderNavigationController.h"
-#import "Ingredientes.h"
+#import "IngredientesTable.h"
 #import "DirectionsHugo.h"
 #import "Notas.h"
 #import "NavigationBarItem.h"
@@ -48,7 +48,7 @@
     textArray = [[NSMutableArray alloc] initWithObjects:@"Manteiga",@"Amendoin",@"Sal",@"Pimenta",@"Frango",@"Batatas",@"Cenouras",@"Tomates", nil];
     
     [self.tabbleView registerNib:[UINib nibWithNibName:@"TableHeader" bundle:nil] forHeaderFooterViewReuseIdentifier:@"TableHeader"];
-    self.delegate = self;
+    //self.delegate = self;
     [self.viewBlock setUserInteractionEnabled:NO];
     [self.viewBlock setBackgroundColor:[[UIColor clearColor] colorWithAlphaComponent:0]];
     
@@ -61,7 +61,7 @@
     self.pickerQuant.delegate = self;
     
    // [self loadData];
-    
+
 }
 
 
@@ -88,11 +88,12 @@
     
     
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+ 
     for (NSManagedObject *pedido in fetchedObjects)
     {
         
         
-        NSLog(@"************************************ Pedido ************************************");
+        NSLog(@"************************************ Shopping list ************************************");
         NSLog(@"nome: %@", [pedido valueForKey:@"nome"]);
         NSLog(@"quantidade: %@", [pedido valueForKey:@"quantidade"]);
         NSLog(@"unidade: %@", [pedido valueForKey:@"unidade"]);
@@ -106,7 +107,6 @@
         lista.nome =[pedido valueForKey:@"nome"];
         lista.quantidade =[pedido valueForKey:@"quantidade"];
         lista.unidade =[pedido valueForKey:@"unidade"];
-        
         
         //NSManagedObject * imagem = [pedido valueForKey:@"contem_imagem"];
         //list.imagem = imagem;
@@ -274,15 +274,15 @@
 }
 
 // The number of columns of data
-- (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 3;
 }
 
 // The number of rows of data
-- (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    NSInteger *num;
+    NSInteger num;
     if(component==0){
         num = _pickerPeso.count;
     }else if(component==1){
@@ -351,7 +351,7 @@
     //[tinderNavigationController.view setFrame:CGRectMake(0,64, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width-64)];
     
     
-    Ingredientes *viewController1 = [[Ingredientes alloc] init];
+    IngredientesTable *viewController1 = [[IngredientesTable alloc] init];
     [viewController1.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
     viewController1.view.backgroundColor = [UIColor whiteColor];
     

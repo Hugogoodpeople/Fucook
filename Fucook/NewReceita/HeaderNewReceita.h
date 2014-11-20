@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HeaderNewReceita : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate,UIPickerViewDataSource, UIPickerViewDelegate>
+@interface HeaderNewReceita : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate,UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UIActionSheetDelegate>
 @property (nonatomic,assign) id delegate;
 - (IBAction)btFoto:(id)sender;
 

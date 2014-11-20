@@ -8,7 +8,7 @@
 
 #import "ListaComprasCell.h"
 #import "THTinderNavigationController.h"
-#import "Ingredientes.h"
+#import "IngredientesTable.h"
 #import "DirectionsHugo.h"
 #import "Notas.h"
 

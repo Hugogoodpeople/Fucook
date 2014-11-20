@@ -12,6 +12,9 @@
 
 
 @interface DragableTableReceitas ()
+{
+    NSManagedObjectContext * context;
+}
 
 @end
 
@@ -27,6 +30,8 @@
     
     self.navigationItem.title = @"Reordering";
     
+    context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
     /*
      Populate array.
      */
@@ -41,6 +46,8 @@
             [arrayOfItems addObject:[ObjectReceita new]];
     }
     
+    [self actualizarImagens];
+    
     //[self.tableView setFrame:self.view.frame];
     //[self.tableView.layer setAnchorPoint:CGPointMake(0.0, 0.0)];
     self.tableView.transform = CGAffineTransformMakeRotation(M_PI/-2);
@@ -54,6 +61,20 @@
     NSLog(@"altura da tabela %f largura %f", self.tableView.frame.size.height , self.tableView.frame.size.width);
     
 }
+
+-(void)actualizarImagens
+{
+    imagens = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i < 1000; ++i)
+    {
+        [imagens addObject:[NSNull null]];
+    }
+    
+    //[self.tableView reloadData];
+    
+}
+
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -77,7 +98,8 @@
      Disable reordering if there's one or zero items.
      For this example, of course, this will always be YES.
      */
-    [self setReorderingEnabled:( arrayOfItems.count > 1 )];
+#warning descomentar para poder ter dragable
+    //[self setReorderingEnabled:( arrayOfItems.count > 1 )];
     
     return arrayOfItems.count;
 }
@@ -117,7 +139,7 @@
         cell.contentView.clipsToBounds = YES;
         //[cell.contentView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         
-        NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
+       // NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
     
         
         // vou trocar o sistema todo aqui
@@ -155,8 +177,6 @@
     float altura = [self calcularAltura];
     
     
-    
-    
     UIImage *_maskingImage = [UIImage imageNamed:@"mascara_transparente.png"];
     CALayer *_maskingLayer = [CALayer layer];
     _maskingLayer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width-30, altura);
@@ -164,11 +184,9 @@
     [cell.viewMovel.layer setMask:_maskingLayer];
     
    
-    
-    
     cell.labelTitulo.text = receita.nome;
     cell.labelTempo.text = receita.tempo;
-    [cell.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
+    //[cell.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
 
     //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];
     
@@ -183,7 +201,8 @@
     int alturaEcra = [UIScreen mainScreen].bounds.size.height;
     int devolver;
     
-    if (alturaEcra == 480) {
+    if (alturaEcra == 480)
+    {
         devolver = 295;
     }else if (alturaEcra == 568)
     {
@@ -212,6 +231,9 @@
      */
     static NSString *simpleTableIdentifier = @"BookCell";
     
+    
+    ObjectReceita * receita = [self.arrayOfItems objectAtIndex:indexPath.row];
+    
     BookCell *cell = (BookCell *)[self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookCell" owner:self options:nil];
@@ -221,12 +243,38 @@
     cell.contentView.clipsToBounds = YES;
     //[cell.contentView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     
-    NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
+   // NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
     
     
     
     cell.labelPagina.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
     
+    
+    // NSString *key = [livro.imagem.description MD5Hash];
+    // NSData *data = [FTWCache objectForKey:key];
+    if ([imagens objectAtIndex:indexPath.row]!= [NSNull null])
+    {
+        //UIImage *image = [UIImage imageWithData:data];
+        cell.imageCapa.image = [imagens objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        //cell.imageCapa.image = [UIImage imageNamed:@"icn_default"];
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+        dispatch_async(queue, ^{
+            NSData * data = [receita.imagem valueForKey:@"imagem"];
+            //[FTWCache setObject:data forKey:key];
+            UIImage *image = [UIImage imageWithData:data];
+            NSInteger index = indexPath.row;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.imageCapa.image = image;
+                [imagens replaceObjectAtIndex:index withObject:image];
+            });
+        });
+    }
+
+    cell.labelTitulo.text = receita.nome;
+    cell.labelTempo.text = receita.tempo;
     
     //[cell setSelected:YES];
     
@@ -239,7 +287,6 @@
     [cell.viewMovel.layer setMask:_maskingLayer];
 
     
-    [cell.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
     
     
     return cell;
@@ -250,9 +297,76 @@
  */
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
     
+    NSInteger fromInd = fromIndexPath.row;
+    NSInteger toInd   = toIndexPath.row;
+    
+    // tenho de trocar no array o cenas tbm para ele nao baralhar
+    // tenho de por aqui a salvar no core data as alterações do drag and drop
+    ObjectReceita * receita1 = [self.arrayOfItems objectAtIndex:fromInd];
+    ObjectReceita * receita2 = [self.arrayOfItems objectAtIndex:toInd];
+    
+ 
+    NSManagedObject * objectToMove1 = receita1.managedObject;
+    NSManagedObject * objectToMove2 = receita2.managedObject;
+    
+    // tenho de fazer as trocas das relações aqui
+    
+    
+    // esta parte qui é que está mal por algum motivo que nao sei qual
+    [objectToMove1 setValue:receita2.nome forKey:@"nome"];
+    //[objectToMove1 setValue:livro2.descricao forKey:@"descricao"];
+    [objectToMove1 setValue:receita2.imagem forKey:@"contem_imagem"];
+    //[objectToMove1 setValue:[livro2.managedObject valueForKey:@"contem_receitas"] forKey:@"contem_receitas"];
+    // tenho de mover tambem o resto senao nao funcionam direito as receitas
+    
+    
+    [objectToMove2 setValue:receita1.nome forKey:@"nome"];
+    //[objectToMove2 setValue:livro1.descricao forKey:@"descricao"];
+    [objectToMove2 setValue:receita1.imagem forKey:@"contem_imagem"];
+    //[objectToMove2 setValue:[livro1.managedObject valueForKey:@"contem_receitas"] forKey:@"contem_receitas"];
+    
+    
+    
+    // para ir buscar os dados prestendidos a base de dados
+    
+    NSError *error = nil;
+    if (![context save:&error])
+    {
+        NSLog(@"Can't replace! %@ %@", error, [error localizedDescription]);
+        return;
+    }
+    
+    NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
+    for (NSManagedObject * receita in receitas) {
+        NSLog(@"************************** Receita ***************************");
+        NSLog(@"Nome receita: %@", [receita valueForKey:@"nome"]);
+        
+    }
+    
+    // este metodo é burro e dize sempre de onde troquei originalmente
+    // tenho de ver se move para a frente ou para traz e adicionar ou remover 1 conforme a direcção
+    
+    
+    // em vez de remove e depois insert vou fazer o replace
     NSString *itemToMove = [arrayOfItems objectAtIndex:fromIndexPath.row];
-    [arrayOfItems removeObjectAtIndex:fromIndexPath.row];
-    [arrayOfItems insertObject:itemToMove atIndex:toIndexPath.row];
+    [self.arrayOfItems removeObjectAtIndex:fromIndexPath.row];
+    [self.arrayOfItems insertObject:itemToMove atIndex:toIndexPath.row];
+    
+    
+    
+    
+    // tenho de trocar o indice das imagens aqui
+    UIImage * tempImage1 = [imagens objectAtIndex:fromIndexPath.row];
+    [imagens removeObjectAtIndex:fromIndexPath.row];
+    [imagens insertObject:tempImage1 atIndex:toIndexPath.row];
+    
+    
+    
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(actualizarTudo) withObject:nil ];
+    }
+    
+    
     
 }
 

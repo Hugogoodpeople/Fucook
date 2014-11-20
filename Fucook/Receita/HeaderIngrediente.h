@@ -20,5 +20,16 @@
 - (IBAction)DoneServings:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *addedRemovedView;
 @property (weak, nonatomic) IBOutlet UILabel *labelAllitensAddedRemoved;
+@property (weak, nonatomic) IBOutlet UILabel *labelDificuldade;
+@property (weak, nonatomic) IBOutlet UIImageView *imagemReceita;
+@property (weak, nonatomic) IBOutlet UILabel *labelNome;
+
+@property UIImage * imagem;
+@property NSString * tempo;
+@property NSString * dificuldade;
+@property NSString * nome;
+@property NSString * servings;
+
+@property (weak, nonatomic) IBOutlet UILabel *labelTempo;
 
 @end

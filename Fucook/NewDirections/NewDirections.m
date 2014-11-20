@@ -7,9 +7,12 @@
 //
 
 #import "NewDirections.h"
+#import "ObjectDirections.h"
 
 @interface NewDirections (){
      BOOL PickerAberto;
+    NSArray * tempos;
+    
 }
 
 @property (nonatomic, weak) IBOutlet UIToolbar *toolBar;
@@ -31,7 +34,7 @@
     // Do any additional setup after loading the view from its nib.
     
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    //[button addTarget:self action:@selector(receita:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(AdicionarDirections) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btnsave2"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -56,7 +59,32 @@
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)];
     [self.view addGestureRecognizer:singleTap];
+    
+    tempos = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7.", @"8", @"9.", @"10", @"10",
+               @"11", @"12", @"13", @"14", @"15", @"16", @"17.", @"18", @"19.", @"20",
+               @"21", @"22", @"23", @"24", @"25", @"26", @"27.", @"28", @"29.", @"30",
+               @"31", @"32", @"33", @"34", @"35", @"36", @"37.", @"38", @"39.", @"40",
+               @"41", @"42", @"43", @"44", @"45", @"46", @"47.", @"48", @"49.", @"50",
+               @"51", @"52", @"53", @"54", @"55", @"56", @"57.", @"58", @"59.", @"60",
+               @"75", @"90", @"105", @"120", @"150", @"180", @"240", @"300", @"360"
+               ];
 
+
+}
+
+-(void)AdicionarDirections
+{
+    ObjectDirections * direct = [ObjectDirections new];
+    direct.descricao = self.textDesc.text;
+    
+    NSInteger row = [self.pickerView selectedRowInComponent:0];
+    direct.tempoMinutos = [[tempos objectAtIndex:row] intValue];
+    
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(AdicionarDirections:) withObject:direct];
+    }
+
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,9 +101,10 @@
     if(PickerAberto==1){
         [self btAbrir:self];
     }
+    /*
         CGPoint scrollPoint = CGPointMake(0, 300);
         [self.scrollDir setContentOffset:scrollPoint animated:YES];
-
+     */
 }
 
 
@@ -98,101 +127,17 @@
     [popup showInView:[UIApplication sharedApplication].keyWindow];
 }
 
-- (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    switch (popup.tag) {
-        case 1: {
-            switch (buttonIndex) {
-                case 0:
-                    NSLog(@"library");
-                    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-                    break;
-                case 1:
-                    NSLog(@"photo");
-                    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
-                    //if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-                    //[self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
-                    //}
-                    break;
-                default:
-                    break;
-            }
-            break;
-        }
-        default:
-            break;
-    }
-}
 
-- (void)showImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType
-{
-    if (self.imgView.isAnimating)
-    {
-        [self.imgView stopAnimating];
-    }
-    
-    if (self.capturedImages.count > 0)
-    {
-        [self.capturedImages removeAllObjects];
-    }
-    
-    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-    imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
-    imagePickerController.sourceType = sourceType;
-    imagePickerController.delegate = self;
-    
-    if (sourceType == UIImagePickerControllerSourceTypeCamera)
-    {
-        /*
-         The user wants to use the camera interface. Set up our custom overlay view for the camera.
-         */
-        imagePickerController.showsCameraControls = NO;
-        
-        /*
-         Load the overlay view from the OverlayView nib file. Self is the File's Owner for the nib file, so the overlayView outlet is set to the main view in the nib. Pass that view to the image picker controller to use as its overlay view, and set self's reference to the view to nil.
-         */
-        [[NSBundle mainBundle] loadNibNamed:@"OverlayView" owner:self options:nil];
-        self.overlayView.frame = imagePickerController.cameraOverlayView.frame;
-        imagePickerController.cameraOverlayView = self.overlayView;
-        self.overlayView = nil;
-    }
-    
-    self.imagePickerController = imagePickerController;
-    [self presentViewController:self.imagePickerController animated:YES completion:nil];
-}
+
+
 
 
 #pragma mark - Toolbar actions
 
-- (IBAction)done:(id)sender
-{
-    // Dismiss the camera.
-    if ([self.cameraTimer isValid])
-    {
-        [self.cameraTimer invalidate];
-    }
-    [self finishAndUpdate];
-}
 
 
-- (IBAction)takePhoto:(id)sender
-{
-    [self.imagePickerController takePicture];
-}
 
 
-- (IBAction)delayedTakePhoto:(id)sender
-{
-    // These controls can't be used until the photo has been taken
-    self.doneButton.enabled = NO;
-    self.takePictureButton.enabled = NO;
-    
-    NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:5.0];
-    NSTimer *cameraTimer = [[NSTimer alloc] initWithFireDate:fireDate interval:1.0 target:self selector:@selector(timedPhotoFire:) userInfo:nil repeats:NO];
-    
-    [[NSRunLoop mainRunLoop] addTimer:cameraTimer forMode:NSDefaultRunLoopMode];
-    self.cameraTimer = cameraTimer;
-}
 
 
 - (IBAction)startTakingPicturesAtIntervals:(id)sender
@@ -215,42 +160,8 @@
 }
 
 
-- (IBAction)stopTakingPicturesAtIntervals:(id)sender
-{
-    // Stop and reset the timer.
-    [self.cameraTimer invalidate];
-    self.cameraTimer = nil;
-    
-    [self finishAndUpdate];
-}
 
 
-- (void)finishAndUpdate
-{
-    [self dismissViewControllerAnimated:YES completion:NULL];
-    
-    if ([self.capturedImages count] > 0)
-    {
-        if ([self.capturedImages count] == 1)
-        {
-            // Camera took a single picture.
-            [self.imgView setImage:[self.capturedImages objectAtIndex:0]];
-        }
-        else
-        {
-            // Camera took multiple pictures; use the list of images for animation.
-            self.imgView.animationImages = self.capturedImages;
-            self.imgView.animationDuration = 5.0;    // Show each captured photo for 5 seconds.
-            self.imgView.animationRepeatCount = 0;   // Animate forever (show all photos).
-            [self.imgView startAnimating];
-        }
-        
-        // To be ready to start again, clear the captured images array.
-        [self.capturedImages removeAllObjects];
-    }
-    
-    self.imagePickerController = nil;
-}
 
 
 #pragma mark - Timer
@@ -263,22 +174,6 @@
 
 
 #pragma mark - UIImagePickerControllerDelegate
-
-// This method is called when an image has been chosen from the library or taken from the camera.
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    
-    [self.capturedImages addObject:image];
-    
-    if ([self.cameraTimer isValid])
-    {
-        return;
-    }
-    
-    [self finishAndUpdate];
-}
-
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
@@ -303,38 +198,34 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView
 numberOfRowsInComponent:(NSInteger)component
 {
-    return 60;
+    return tempos.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [NSString stringWithFormat:@"%ld min",(long)row+1];
+    return [NSString stringWithFormat:@"%@ min",[tempos objectAtIndex:row]];
 }
 
 
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    
-    
     return textView.text.length + (text.length - range.length) <= 2000;
-
 }
-
 
 
 - (IBAction)btAbrir:(id)sender {
     NSLog(@"%u",PickerAberto);
     if(PickerAberto){
-
+        
         [UIView animateWithDuration:0.5 animations:^{
-            [self.viewDown setFrame:CGRectMake(0,  self.viewImagem.frame.size.height+self.viewLabel1.frame.size.height+self.viewLabel2.frame.size.height+65, self.viewDown.frame.size.width,self.viewDown.frame.size.height)];
+            [self.viewDown setFrame:CGRectMake(0,  self.viewLabel1.frame.size.height+self.viewLabel2.frame.size.height+65, self.viewDown.frame.size.width,self.viewDown.frame.size.height)];
         }];
         [self.scrollDir setContentSize:CGSizeMake(self.view.frame.size.width, 680)];
         PickerAberto=0;
     }else{
         [UIView animateWithDuration:0.5 animations:^{
-            [self.viewDown setFrame:CGRectMake(0, self.viewImagem.frame.size.height+self.viewLabel1.frame.size.height+self.viewLabel2.frame.size.height+self.viewPicker.frame.size.height+65, self.viewDown.frame.size.width,self.viewDown.frame.size.height)];
+            [self.viewDown setFrame:CGRectMake(0, self.viewLabel1.frame.size.height+self.viewLabel2.frame.size.height+self.viewPicker.frame.size.height+65, self.viewDown.frame.size.width,self.viewDown.frame.size.height)];
         }];
         [self.scrollDir setContentSize:CGSizeMake(self.view.frame.size.width, 1000)];
         PickerAberto=1;
@@ -343,7 +234,9 @@ numberOfRowsInComponent:(NSInteger)component
 }
 - (IBAction)btDoneTime:(id)sender {
     //long d = [self.pickerView selectedRowInComponent:0];
-    self.labelTime.text = [NSString stringWithFormat:@"%ld",(long)[self.pickerView selectedRowInComponent:0]+1];
+   //self.labelTime.text = [NSString stringWithFormat:@"%ld",(long)[self.pickerView selectedRowInComponent:0]+1];
+    self.labelTime.text = [tempos objectAtIndex:[self.pickerView selectedRowInComponent:0]];
+    
     [self btAbrir:self];
 }
 @end

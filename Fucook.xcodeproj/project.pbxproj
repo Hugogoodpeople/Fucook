@@ -43,7 +43,7 @@
 		BA66E5D21A12310A0090F99D /* Directions.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5CD1A12310A0090F99D /* Directions.xib */; };
 		BA66E5D31A12310A0090F99D /* NIngredientes.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E5CF1A12310A0090F99D /* NIngredientes.m */; };
 		BA66E5D41A12310A0090F99D /* NIngredientes.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5D01A12310A0090F99D /* NIngredientes.xib */; };
-		BA66E5D61A1231910090F99D /* Ingredientes.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5D51A1231910090F99D /* Ingredientes.xib */; };
+		BA66E5D61A1231910090F99D /* IngredientesTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5D51A1231910090F99D /* IngredientesTable.xib */; };
 		BA66E5F71A1258160090F99D /* btleft2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5D71A1258160090F99D /* btleft2@2x.png */; };
 		BA66E5F81A1258160090F99D /* btleft2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5D81A1258160090F99D /* btleft2@3x.png */; };
 		BA66E5F91A1258160090F99D /* btnclose2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5D91A1258160090F99D /* btnclose2@2x.png */; };
@@ -76,7 +76,7 @@
 		BA66E6141A1258160090F99D /* icoshare@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5F41A1258160090F99D /* icoshare@3x.png */; };
 		BA66E6151A1258160090F99D /* imglogofucook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5F51A1258160090F99D /* imglogofucook@2x.png */; };
 		BA66E6161A1258160090F99D /* imglogofucook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA66E5F61A1258160090F99D /* imglogofucook@3x.png */; };
-		BA66E61A1A1262910090F99D /* ObjecteIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E6191A1262910090F99D /* ObjecteIngrediente.m */; };
+		BA66E61A1A1262910090F99D /* ObjectIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E6191A1262910090F99D /* ObjectIngrediente.m */; };
 		BA66E61F1A1282160090F99D /* DirectionsHugo.m in Sources */ = {isa = PBXBuildFile; fileRef = BA66E61D1A1282160090F99D /* DirectionsHugo.m */; };
 		BA66E6201A1282160090F99D /* DirectionsHugo.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA66E61E1A1282160090F99D /* DirectionsHugo.xib */; };
 		BAC50E8F1A1B7873003F17CF /* PlaceHolderCreateBook.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC50E8D1A1B7873003F17CF /* PlaceHolderCreateBook.m */; };
@@ -106,7 +106,7 @@
 		BAE467F31A10C7F500D3F596 /* THTinderNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467F01A10C7F500D3F596 /* THTinderNavigationBar.m */; };
 		BAE467F41A10C7F500D3F596 /* THTinderNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467F21A10C7F500D3F596 /* THTinderNavigationController.m */; };
 		BAE467FE1A10CBB900D3F596 /* NavigationBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE467FD1A10CBB900D3F596 /* NavigationBarItem.m */; };
-		BAE4680B1A111E8E00D3F596 /* Ingredientes.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE468091A111E8E00D3F596 /* Ingredientes.m */; };
+		BAE4680B1A111E8E00D3F596 /* IngredientesTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE468091A111E8E00D3F596 /* IngredientesTable.m */; };
 		BAE468101A11214A00D3F596 /* HeaderIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE4680E1A11214A00D3F596 /* HeaderIngrediente.m */; };
 		BAE468111A11214A00D3F596 /* HeaderIngrediente.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE4680F1A11214A00D3F596 /* HeaderIngrediente.xib */; };
 		BAE468141A11254700D3F596 /* btnbook5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE468121A11254700D3F596 /* btnbook5@2x.png */; };
@@ -200,6 +200,8 @@
 		BAF9557A1A0A9D6900277B94 /* btnshop2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF955571A0A9D6900277B94 /* btnshop2@2x.png */; };
 		BAF9557B1A0A9D6900277B94 /* btnshop2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF955581A0A9D6900277B94 /* btnshop2@3x.png */; };
 		BAF9557C1A0A9D6900277B94 /* imgsample001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAF955591A0A9D6900277B94 /* imgsample001.jpg */; };
+		BAFC11581A1CBF5600EA10E7 /* CellIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFC11561A1CBF5600EA10E7 /* CellIngrediente.m */; };
+		BAFC11591A1CBF5600EA10E7 /* CellIngrediente.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFC11571A1CBF5600EA10E7 /* CellIngrediente.xib */; };
 		CE253F991A10B9C7003DA45C /* HeaderNewReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE253F941A10B9C7003DA45C /* HeaderNewReceita.m */; };
 		CE253F9A1A10B9C7003DA45C /* HeaderNewReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE253F951A10B9C7003DA45C /* HeaderNewReceita.xib */; };
 		CE253F9B1A10B9C7003DA45C /* NewReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE253F971A10B9C7003DA45C /* NewReceita.m */; };
@@ -311,7 +313,7 @@
 		BA66E5CE1A12310A0090F99D /* NIngredientes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NIngredientes.h; path = Fucook/NewReceita/NIngredientes.h; sourceTree = "<group>"; };
 		BA66E5CF1A12310A0090F99D /* NIngredientes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NIngredientes.m; path = Fucook/NewReceita/NIngredientes.m; sourceTree = "<group>"; };
 		BA66E5D01A12310A0090F99D /* NIngredientes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NIngredientes.xib; path = Fucook/NewReceita/NIngredientes.xib; sourceTree = "<group>"; };
-		BA66E5D51A1231910090F99D /* Ingredientes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Ingredientes.xib; path = Fucook/Receita/Ingredientes.xib; sourceTree = "<group>"; };
+		BA66E5D51A1231910090F99D /* IngredientesTable.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IngredientesTable.xib; path = Fucook/Receita/IngredientesTable.xib; sourceTree = "<group>"; };
 		BA66E5D71A1258160090F99D /* btleft2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft2@2x.png"; path = "Fucook/Imagens/btleft2@2x.png"; sourceTree = "<group>"; };
 		BA66E5D81A1258160090F99D /* btleft2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft2@3x.png"; path = "Fucook/Imagens/btleft2@3x.png"; sourceTree = "<group>"; };
 		BA66E5D91A1258160090F99D /* btnclose2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnclose2@2x.png"; path = "Fucook/Imagens/btnclose2@2x.png"; sourceTree = "<group>"; };
@@ -344,8 +346,8 @@
 		BA66E5F41A1258160090F99D /* icoshare@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoshare@3x.png"; path = "Fucook/Imagens/icoshare@3x.png"; sourceTree = "<group>"; };
 		BA66E5F51A1258160090F99D /* imglogofucook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imglogofucook@2x.png"; path = "Fucook/Imagens/imglogofucook@2x.png"; sourceTree = "<group>"; };
 		BA66E5F61A1258160090F99D /* imglogofucook@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imglogofucook@3x.png"; path = "Fucook/Imagens/imglogofucook@3x.png"; sourceTree = "<group>"; };
-		BA66E6181A1262910090F99D /* ObjecteIngrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjecteIngrediente.h; path = Fucook/Receita/ObjecteIngrediente.h; sourceTree = "<group>"; };
-		BA66E6191A1262910090F99D /* ObjecteIngrediente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjecteIngrediente.m; path = Fucook/Receita/ObjecteIngrediente.m; sourceTree = "<group>"; };
+		BA66E6181A1262910090F99D /* ObjectIngrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectIngrediente.h; path = Fucook/Receita/ObjectIngrediente.h; sourceTree = "<group>"; };
+		BA66E6191A1262910090F99D /* ObjectIngrediente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectIngrediente.m; path = Fucook/Receita/ObjectIngrediente.m; sourceTree = "<group>"; };
 		BA66E61C1A1282160090F99D /* DirectionsHugo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionsHugo.h; path = Fucook/Receita/DirectionsHugo.h; sourceTree = "<group>"; };
 		BA66E61D1A1282160090F99D /* DirectionsHugo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionsHugo.m; path = Fucook/Receita/DirectionsHugo.m; sourceTree = "<group>"; };
 		BA66E61E1A1282160090F99D /* DirectionsHugo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DirectionsHugo.xib; path = Fucook/Receita/DirectionsHugo.xib; sourceTree = "<group>"; };
@@ -393,8 +395,8 @@
 		BAE467F21A10C7F500D3F596 /* THTinderNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THTinderNavigationController.m; path = THTinderNavigationController/THTinderNavigationController.m; sourceTree = "<group>"; };
 		BAE467FC1A10CBB900D3F596 /* NavigationBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarItem.h; sourceTree = "<group>"; };
 		BAE467FD1A10CBB900D3F596 /* NavigationBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarItem.m; sourceTree = "<group>"; };
-		BAE468081A111E8E00D3F596 /* Ingredientes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ingredientes.h; path = Fucook/Receita/Ingredientes.h; sourceTree = "<group>"; };
-		BAE468091A111E8E00D3F596 /* Ingredientes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ingredientes.m; path = Fucook/Receita/Ingredientes.m; sourceTree = "<group>"; };
+		BAE468081A111E8E00D3F596 /* IngredientesTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IngredientesTable.h; path = Fucook/Receita/IngredientesTable.h; sourceTree = "<group>"; };
+		BAE468091A111E8E00D3F596 /* IngredientesTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IngredientesTable.m; path = Fucook/Receita/IngredientesTable.m; sourceTree = "<group>"; };
 		BAE4680D1A11214A00D3F596 /* HeaderIngrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderIngrediente.h; path = Fucook/Receita/HeaderIngrediente.h; sourceTree = "<group>"; };
 		BAE4680E1A11214A00D3F596 /* HeaderIngrediente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderIngrediente.m; path = Fucook/Receita/HeaderIngrediente.m; sourceTree = "<group>"; };
 		BAE4680F1A11214A00D3F596 /* HeaderIngrediente.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderIngrediente.xib; path = Fucook/Receita/HeaderIngrediente.xib; sourceTree = "<group>"; };
@@ -504,6 +506,9 @@
 		BAF955571A0A9D6900277B94 /* btnshop2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnshop2@2x.png"; path = "imgs/btnshop2@2x.png"; sourceTree = "<group>"; };
 		BAF955581A0A9D6900277B94 /* btnshop2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnshop2@3x.png"; path = "imgs/btnshop2@3x.png"; sourceTree = "<group>"; };
 		BAF955591A0A9D6900277B94 /* imgsample001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = imgsample001.jpg; path = imgs/imgsample001.jpg; sourceTree = "<group>"; };
+		BAFC11551A1CBF5600EA10E7 /* CellIngrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellIngrediente.h; path = Fucook/NewReceita/CellIngrediente.h; sourceTree = "<group>"; };
+		BAFC11561A1CBF5600EA10E7 /* CellIngrediente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellIngrediente.m; path = Fucook/NewReceita/CellIngrediente.m; sourceTree = "<group>"; };
+		BAFC11571A1CBF5600EA10E7 /* CellIngrediente.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CellIngrediente.xib; path = Fucook/NewReceita/CellIngrediente.xib; sourceTree = "<group>"; };
 		CE253F931A10B9C7003DA45C /* HeaderNewReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderNewReceita.h; path = Fucook/NewReceita/HeaderNewReceita.h; sourceTree = "<group>"; };
 		CE253F941A10B9C7003DA45C /* HeaderNewReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderNewReceita.m; path = Fucook/NewReceita/HeaderNewReceita.m; sourceTree = "<group>"; };
 		CE253F951A10B9C7003DA45C /* HeaderNewReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderNewReceita.xib; path = Fucook/NewReceita/HeaderNewReceita.xib; sourceTree = "<group>"; };
@@ -708,8 +713,8 @@
 		BA66E6171A1262680090F99D /* ObjectIngrediente */ = {
 			isa = PBXGroup;
 			children = (
-				BA66E6181A1262910090F99D /* ObjecteIngrediente.h */,
-				BA66E6191A1262910090F99D /* ObjecteIngrediente.m */,
+				BA66E6181A1262910090F99D /* ObjectIngrediente.h */,
+				BA66E6191A1262910090F99D /* ObjectIngrediente.m */,
 			);
 			name = ObjectIngrediente;
 			sourceTree = "<group>";
@@ -931,9 +936,9 @@
 			isa = PBXGroup;
 			children = (
 				BA66E6171A1262680090F99D /* ObjectIngrediente */,
-				BAE468081A111E8E00D3F596 /* Ingredientes.h */,
-				BAE468091A111E8E00D3F596 /* Ingredientes.m */,
-				BA66E5D51A1231910090F99D /* Ingredientes.xib */,
+				BAE468081A111E8E00D3F596 /* IngredientesTable.h */,
+				BAE468091A111E8E00D3F596 /* IngredientesTable.m */,
+				BA66E5D51A1231910090F99D /* IngredientesTable.xib */,
 				BAE4680D1A11214A00D3F596 /* HeaderIngrediente.h */,
 				BAE4680E1A11214A00D3F596 /* HeaderIngrediente.m */,
 				BAE4680F1A11214A00D3F596 /* HeaderIngrediente.xib */,
@@ -1219,6 +1224,9 @@
 				CE253FA51A10C290003DA45C /* FooterNewReceita.h */,
 				CE253FA61A10C290003DA45C /* FooterNewReceita.m */,
 				CE253FA71A10C290003DA45C /* FooterNewReceita.xib */,
+				BAFC11551A1CBF5600EA10E7 /* CellIngrediente.h */,
+				BAFC11561A1CBF5600EA10E7 /* CellIngrediente.m */,
+				BAFC11571A1CBF5600EA10E7 /* CellIngrediente.xib */,
 			);
 			name = NewReceita;
 			path = ..;
@@ -1407,7 +1415,7 @@
 				BAF955631A0A9D6900277B94 /* btncall2@3x.png in Resources */,
 				BA66E6031A1258160090F99D /* icoabout@2x.png in Resources */,
 				BA023B461A135D38000B4754 /* DirectionsCell.xib in Resources */,
-				BA66E5D61A1231910090F99D /* Ingredientes.xib in Resources */,
+				BA66E5D61A1231910090F99D /* IngredientesTable.xib in Resources */,
 				BAF955781A0A9D6900277B94 /* btnshop1@2x.png in Resources */,
 				BA66E60D1A1258160090F99D /* icoimport@2x.png in Resources */,
 				BAF955771A0A9D6900277B94 /* btnsetting2@3x.png in Resources */,
@@ -1520,6 +1528,7 @@
 				BA66E5C81A1230B60090F99D /* NewIngrediente.xib in Resources */,
 				BAF9556F1A0A9D6900277B94 /* btnfeatured2@3x.png in Resources */,
 				BA66E6021A1258160090F99D /* btnsave2@3x.png in Resources */,
+				BAFC11591A1CBF5600EA10E7 /* CellIngrediente.xib in Resources */,
 				CE253F9A1A10B9C7003DA45C /* HeaderNewReceita.xib in Resources */,
 				BAF4651D1A14D73700FE7926 /* iconwithrecipe@2x.png in Resources */,
 				BAF66E2F1A0B851600E90B7D /* imgbookslice@3x.png in Resources */,
@@ -1556,6 +1565,7 @@
 				BAC50E9B1A1BBDF8003F17CF /* ObjectReceita.m in Sources */,
 				BA023B781A13BE3B000B4754 /* VRGCalendarView.m in Sources */,
 				BAF955141A0A4BA300277B94 /* ATSDragToReorderTableViewController.m in Sources */,
+				BAFC11581A1CBF5600EA10E7 /* CellIngrediente.m in Sources */,
 				BA66E5C51A1230B60090F99D /* NewDirections.m in Sources */,
 				BA023B511A137BEC000B4754 /* DirectionsHeader.m in Sources */,
 				CE253F991A10B9C7003DA45C /* HeaderNewReceita.m in Sources */,
@@ -1600,7 +1610,7 @@
 				BAF76B491A0CCE6B00D2CC13 /* CollectionLivros.m in Sources */,
 				CE49840F1A0A9188009EC1A4 /* HeaderReceita.m in Sources */,
 				CE475F241A0CCEB500D33A1A /* NewBook.m in Sources */,
-				BAE4680B1A111E8E00D3F596 /* Ingredientes.m in Sources */,
+				BAE4680B1A111E8E00D3F596 /* IngredientesTable.m in Sources */,
 				BA023B7D1A13BEB3000B4754 /* Calendario.m in Sources */,
 				BAF9550B1A0A4B2C00277B94 /* LivroCellTableViewCell.m in Sources */,
 				BAF4650F1A14C7D100FE7926 /* DiaCalendario.m in Sources */,
@@ -1617,7 +1627,7 @@
 				BAE468101A11214A00D3F596 /* HeaderIngrediente.m in Sources */,
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
 				BA023B571A13AD4E000B4754 /* Notas.m in Sources */,
-				BA66E61A1A1262910090F99D /* ObjecteIngrediente.m in Sources */,
+				BA66E61A1A1262910090F99D /* ObjectIngrediente.m in Sources */,
 				CE27670F1A166E21003A225B /* RATreeView.m in Sources */,
 				CE2767051A166E21003A225B /* RATreeNodeCollectionController.m in Sources */,
 				BADC324F1A165FE9005B1D5A /* ListaCompras.m in Sources */,

@@ -19,6 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.imagemReceita.image    = self.imagem;
+    self.labelTempo.text        = self.tempo;
+    self.labelDificuldade.text  = self.dificuldade;
+    self.labelNome.text         = self.nome;
+    self.labelNumberServings.text = self.servings;
 }
 
 - (void)didReceiveMemoryWarning {

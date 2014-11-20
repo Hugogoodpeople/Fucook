@@ -12,7 +12,6 @@
 @interface RootViewController : ATSDragToReorderTableViewController {
 	
 	//NSMutableArray *arrayOfItems;
-    bool userDrivenDataModelChange;
     NSManagedObjectContext * context;
 }
 

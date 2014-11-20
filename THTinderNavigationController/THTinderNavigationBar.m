@@ -69,8 +69,11 @@
 
 - (void)tapGestureHandle:(UITapGestureRecognizer *)tapGesture
 {
+    // nao quero que faça nada quando clico nos itens do topo
+    /*
     NSInteger pageIndex = [self.itemViews indexOfObject:tapGesture.view];
     [self.navigationController setCurrentPage:pageIndex animated:YES];
+     */
 }
 
 #pragma mark - Propertys

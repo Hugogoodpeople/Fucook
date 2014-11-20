@@ -12,4 +12,8 @@
 @property (nonatomic,assign) id delegatef;
 - (IBAction)btNewNotes:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UITableView *tabela;
+@property NSMutableArray * arrayOfItems;
+
+
 @end

@@ -8,13 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "ATSDragToReorderTableViewController.h"
+#import "ObjectLivro.h"
 
-@interface DragableTableReceitas : ATSDragToReorderTableViewController 
+//@interface DragableTableReceitas : ATSDragToReorderTableViewController
+@interface DragableTableReceitas : UITableViewController
 
 @property NSMutableArray *arrayOfItems;
 @property (nonatomic, assign) id delegate;
 
+@property ObjectLivro * livro;
 
 @property NSMutableArray * imagens;
+
+-(void)actualizarImagens;
+
 
 @end

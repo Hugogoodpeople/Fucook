@@ -28,27 +28,36 @@
 
 -(void)setUp
 {
-    self.items = [NSMutableArray new];
+   
     self.arrayHeaders = [NSMutableArray new];
     
-    // tenho de inicializar as direcçoes
-    ObjectDirections * directions1 = [ObjectDirections new];
-    directions1.idDirection = @"1";
-    directions1.passo = 1;
-    directions1.descricao = @"algum texto descritivo aqui para o passo 1";
-    directions1.tempoMinutos = 5;
     
     
-    ObjectDirections * directions2 = [ObjectDirections new];
-    directions2.idDirection = @"2";
-    directions2.passo = 2;
-    directions2.descricao = @"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-    directions2.tempoMinutos = 10;
+    NSSet * receitas = [self.receita.managedObject valueForKey:@"contem_etapas"];
+    int passo = 0;
     
+    NSMutableArray * arrayTemp = [NSMutableArray new];
+    for (NSManagedObject *pedido in receitas)
+    {
+        passo = passo+1;
+        
+        ObjectDirections * directs = [ObjectDirections new];
+        
+        // para mais tarde poder apagar
+        //directs.managedObject         = pedido;
+        directs.passo                 = passo;
+        directs.descricao             = [pedido valueForKey:@"descricao"];
+        
+        // tenho de remover o cenas
+        NSString * tempo = [pedido valueForKey:@"tempo"];
+        
+        directs.tempoMinutos          = tempo.intValue;
+
+        [arrayTemp addObject:directs];
+    }
     
-    [self.items addObject:directions1];
-    [self.items addObject:directions2];
-    
+   //  [[self.items  reverseObjectEnumerator] allObjects];
+    self.items = [[NSMutableArray alloc] initWithArray:arrayTemp];
     
 }
 

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ObjecteIngrediente.h"
+#import "ObjectIngrediente.h"
 
 @interface IngredienteCellTableViewCell : UITableViewCell
 
-@property ObjecteIngrediente * ingrediente;
+@property ObjectIngrediente * ingrediente;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelQtd;
 @property (weak, nonatomic) IBOutlet UILabel *LabelTitulo;

@@ -13,6 +13,10 @@
 
 @property NSString * nome;
 @property NSString * tempo;
+@property NSString * dificuldade;
+@property NSString * categoria;
+@property NSString * servings;
+@property NSString * notas;
 @property NSManagedObject * imagem;
 @property NSManagedObject * managedObject;
 

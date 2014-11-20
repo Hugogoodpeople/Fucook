@@ -178,7 +178,7 @@
         
         livro.titulo =[pedido valueForKey:@"titulo"];
         livro.descricao =[pedido valueForKey:@"descricao"];
-        
+        livro.managedObject = pedido;
         
         NSManagedObject * imagem = [pedido valueForKey:@"contem_imagem"];
         livro.imagem = imagem;

@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NIngredientes : UIViewController
+@interface NIngredientes : UIViewController <UITableViewDataSource, UITableViewDelegate>
 - (IBAction)btnewIng:(id)sender;
 @property (nonatomic,assign) id delegate;
+@property (weak, nonatomic) IBOutlet UITableView *tabela;
+
+@property NSMutableArray * arrayOfItems;
 
 @end

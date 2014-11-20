@@ -231,6 +231,7 @@ typedef NS_ENUM(NSInteger, THSlideType) {
             
             break;
         case UIGestureRecognizerStateChanged: {
+            
             if (contentOffset.x <= 0) {
                 [panGestureRecognizer setTranslation:CGPointZero inView:panGestureRecognizer.view];
             } else if (contentOffset.x >= contentSize.width - baseWidth) {

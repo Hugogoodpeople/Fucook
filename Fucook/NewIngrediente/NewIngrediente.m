@@ -7,12 +7,18 @@
 //
 
 #import "NewIngrediente.h"
+#import "ObjectIngrediente.h"
 
 @interface NewIngrediente (){
     BOOL pickerQuantA;
     BOOL pickerUnitA;
     
      NSArray *_pickerDataUnit;
+    
+    NSArray * arrayQuantidade;
+    NSArray * arrayDecimal;
+    NSArray * arrayUnidade;
+    
 }
 @end
 
@@ -23,7 +29,7 @@
     // Do any additional setup after loading the view from its nib.
     
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    //[button addTarget:self action:@selector(receita:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(addIngrediente) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btnsave2"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -45,6 +51,36 @@
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)];
     [self.view addGestureRecognizer:singleTap];
+    
+    arrayUnidade = @[@"Tbs", @"g", @"kg", @"mL", @"dL", @"L", @"Btl.", @"Bags", @"Pkgs.", @"Boxes", @"Jars"];
+    arrayQuantidade = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"25", @"30", @"35", @"40", @"45", @"50", @"55", @"60", @"70", @"80", @"90", @"100", @"125", @"150", @"175", @"200", @"250", @"300", @"350", @"400", @"450", @"500", @"600", @"700", @"750", @"800", @"900"];
+    arrayDecimal = @[@" ",@".2", @".25", @".3", @".4", @".5", @".6", @".7", @".75", @".8", @".9"];
+    
+}
+
+-(void)addIngrediente
+{
+    ObjectIngrediente * ingrid = [ObjectIngrediente new];
+    
+    NSInteger row0 = [self.pickerQuant selectedRowInComponent:0];
+    NSInteger row1 = [self.pickerQuant selectedRowInComponent:1];
+    NSInteger row2 = [self.pickerQuant selectedRowInComponent:2];
+    
+    ingrid.quantidade = [arrayQuantidade objectAtIndex:row0];
+    ingrid.quantidadeDecimal = [arrayDecimal objectAtIndex:row1];
+    ingrid.unidade = [arrayUnidade objectAtIndex:row2];
+    ingrid.nome = self.textName.text;
+    
+    
+    // tenho de ir buscar os valores selecionados no picker para poder enviar para o controlador pai
+    // esse controlador é que vai mandar gravar na base de dados os valores que foram criados aqui
+    if (self.delegate)
+    {
+        [self.delegate performSelector:@selector(addIngrediente:) withObject:ingrid];
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,24 +127,6 @@
 }
 */
 
-- (IBAction)btUnit:(id)sender {
-    if(pickerUnitA){
-        [UIView animateWithDuration:0.5 animations:^{
-            [self.viewNutricao setFrame:CGRectMake(0,  self.viewUnit.frame.origin.y+self.viewUnit.frame.size.height, self.viewNutricao.frame.size.width,self.viewNutricao.frame.size.height)];
-            [self.viewCobrir setFrame:CGRectMake(0, self.viewNutricao.frame.origin.y+self.viewNutricao.frame.size.height, self.viewCobrir.frame.size.width,self.viewCobrir.frame.size.height)];
-            [self.viewPickerUnit setFrame:CGRectMake(0, self.viewUnit.frame.origin.y+self.viewUnit.frame.size.height, self.viewPickerUnit.frame.size.width,self.viewPickerUnit.frame.size.height)];
-         }];
-        pickerUnitA=0;
-    }else{
-        [UIView animateWithDuration:0.5 animations:^{
-            [self.viewNutricao setFrame:CGRectMake(0, self.viewPickerUnit.frame.origin.y+self.viewPickerUnit.frame.size.height, self.viewNutricao.frame.size.width,self.viewNutricao.frame.size.height)];
-            [self.viewCobrir setFrame:CGRectMake(0, self.viewNutricao.frame.origin.y+self.viewNutricao.frame.size.height, self.viewCobrir.frame.size.width,self.viewCobrir.frame.size.height)];
-            [self.viewPickerUnit setFrame:CGRectMake(0, self.viewUnit.frame.origin.y+self.viewUnit.frame.size.height, self.viewPickerUnit.frame.size.width,self.viewPickerUnit.frame.size.height)];
-        }];
-        pickerUnitA=1;
-    }
-
-}
 
 
 
@@ -118,6 +136,8 @@
     
 }
 
+// o que tinha antes do hugo passar aqui
+/*
 - (NSInteger)numberOfComponentsInPickerView:
 (UIPickerView *)pickerView
 {
@@ -134,12 +154,83 @@ numberOfRowsInComponent:(NSInteger)component
 {
     return _pickerDataUnit[row];
 }
+*/
 
-
-
-- (IBAction)btCloseUnit:(id)sender {
-    long b = [self.pickerUnit selectedRowInComponent:0];
-    self.labelUnit.text = [_pickerDataUnit objectAtIndex:b];
-    [self btUnit:self];
+// The number of columns of data
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 3;
 }
+
+// The number of rows of data
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    NSInteger num;
+    if(component==0){
+        num = arrayQuantidade.count;
+    }else if(component==1){
+        num = arrayDecimal.count;
+    }else{
+        num = arrayUnidade.count;
+    }
+    return num;
+}
+
+// The data to return for the row and component (column) that's being passed in
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSString *str;
+    if(component==0){
+        str = arrayQuantidade[row];
+    }else if(component==1){
+        str = arrayDecimal[row];
+    }else{
+        str = arrayUnidade[row];
+    }
+    return str;
+}
+
+
+
+- (IBAction)clickQuantidade:(id)sender {
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.viewBlock.alpha = 0.5;
+        [self.viewPicker setFrame:CGRectMake(0,  screenRect.size.height-self.viewPicker.frame.size.height, self.viewPicker.frame.size.width,self.viewPicker.frame.size.height)];
+        
+    }];
+}
+
+
+- (IBAction)btDone:(id)sender {
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.viewBlock.alpha = 0;
+        [self.viewPicker setFrame:CGRectMake(0,  screenRect.size.height+self.viewPicker.frame.size.height, self.viewPicker.frame.size.width,self.viewPicker.frame.size.height)];
+        
+    }];
+    
+    
+    ObjectIngrediente * ingrid = [ObjectIngrediente new];
+    
+    NSInteger row0 = [self.pickerQuant selectedRowInComponent:0];
+    NSInteger row1 = [self.pickerQuant selectedRowInComponent:1];
+    NSInteger row2 = [self.pickerQuant selectedRowInComponent:2];
+    
+    ingrid.quantidade = [arrayQuantidade objectAtIndex:row0];
+    ingrid.quantidadeDecimal = [arrayDecimal objectAtIndex:row1];
+    ingrid.unidade = [arrayUnidade objectAtIndex:row2];
+    ingrid.nome = self.textName.text;
+
+    
+    self.textQuant.text = [NSString stringWithFormat:@"%@%@ %@", ingrid.quantidade, ingrid.quantidadeDecimal , ingrid.unidade];
+
+
+}
+
+
+
+
+
 @end

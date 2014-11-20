@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppDelegate.h"
 
 @interface ObjectDirections : NSObject
 
@@ -14,5 +15,9 @@
 @property int passo;
 @property NSString * descricao;
 @property int tempoMinutos;
+@property NSManagedObject * managedObject;
+
+
+-(NSManagedObject *)getManagedObject:(NSManagedObjectContext *)context;
 
 @end

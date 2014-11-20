@@ -42,7 +42,14 @@
      self.capturedImages = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view from its nib.
     
-    _pickerDataPrep = @[@"10 min", @"20 min", @"30 min", @"40 min", @"50 min", @"60 min", @"90 min", @"120 min", @"150 min", @"180 min"];
+    _pickerDataPrep =  @[@"1", @"2", @"3", @"4", @"5", @"6", @"7.", @"8", @"9.", @"10", @"10",
+                         @"11", @"12", @"13", @"14", @"15", @"16", @"17.", @"18", @"19.", @"20",
+                         @"21", @"22", @"23", @"24", @"25", @"26", @"27.", @"28", @"29.", @"30",
+                         @"31", @"32", @"33", @"34", @"35", @"36", @"37.", @"38", @"39.", @"40",
+                         @"41", @"42", @"43", @"44", @"45", @"46", @"47.", @"48", @"49.", @"50",
+                         @"51", @"52", @"53", @"54", @"55", @"56", @"57.", @"58", @"59.", @"60",
+                         @"75", @"90", @"105", @"120", @"150", @"180", @"240", @"300", @"360"
+                         ];
     _pickerDataCat = @[@"Breakfast", @"Lunch", @"Layoff", @"Dinner"];
     _pickerDataDifi = @[@"Easy", @"Medium", @"Hard"];
     
@@ -90,6 +97,7 @@
                             nil];
     popup.tag = 1;
     [popup showInView:[UIApplication sharedApplication].keyWindow];
+    
 }
 
 - (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -152,7 +160,7 @@
     }
     
     self.imagePickerController = imagePickerController;
-    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+    [self.delegate presentViewController:self.imagePickerController animated:YES completion:nil];
 }
 
 
@@ -221,7 +229,7 @@
 
 - (void)finishAndUpdate
 {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self.imagePickerController dismissViewControllerAnimated:YES completion:NULL];
     
     if ([self.capturedImages count] > 0)
     {
@@ -276,7 +284,7 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [self dismissViewControllerAnimated:NO completion:NULL];
+    [self.imagePickerController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 
@@ -459,7 +467,7 @@
 {
     NSString *baseString;
     if(pickerView.tag==1){
-        baseString = _pickerDataPrep[row];
+        baseString = [NSString stringWithFormat:@"%@ min", _pickerDataPrep[row]];
     }else if(pickerView.tag==2){
         baseString = _pickerDataCat[row];
     }else if(pickerView.tag==3){
@@ -472,7 +480,7 @@
 
 - (IBAction)btDonePre:(id)sender {
     long a = [self.pickerPrep selectedRowInComponent:0];
-    self.labelPre.text = [_pickerDataPrep objectAtIndex:a];
+    self.labelPre.text = [NSString stringWithFormat:@"%@ min",[_pickerDataPrep objectAtIndex:a]];
     [self btPretime:self];
 }
 
