@@ -57,6 +57,7 @@
 
 -(void)AdicionarDirections:(ObjectDirections *) direct
 {
+    direct.passo = (int)arraydireccoes.count +1;
     [arraydireccoes addObject:direct];
     [self actualizarPosicoes];
 }

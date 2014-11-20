@@ -20,9 +20,19 @@
     [mangDirection setValue:self.idDirection forKey:@"id_etapa"];
     [mangDirection setValue:[NSString stringWithFormat:@"%d", self.tempoMinutos] forKey:@"tempo"];
     [mangDirection setValue:self.descricao forKey:@"descricao"];
+    [mangDirection setValue:[NSString stringWithFormat:@"%d", self.passo] forKey:@"ordem"];
     
     return mangDirection;
 }
+
+- (NSComparisonResult)compare:(ObjectDirections *)otherObject {
+    
+    NSString * primeiro = [NSString stringWithFormat:@"%d", self.passo];
+    NSString * segundo  = [NSString stringWithFormat:@"%d", otherObject.passo];
+    
+    return [primeiro compare:segundo];
+}
+
 
 
 @end

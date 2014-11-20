@@ -45,7 +45,7 @@
         
         // para mais tarde poder apagar
         //directs.managedObject         = pedido;
-        directs.passo                 = passo;
+        directs.passo                 = [[pedido valueForKey:@"ordem"] intValue];
         directs.descricao             = [pedido valueForKey:@"descricao"];
         
         // tenho de remover o cenas
@@ -57,7 +57,13 @@
     }
     
    //  [[self.items  reverseObjectEnumerator] allObjects];
-    self.items = [[NSMutableArray alloc] initWithArray:arrayTemp];
+    
+    
+    NSArray *sortedArray;
+    sortedArray = [arrayTemp sortedArrayUsingSelector:@selector(compare:)];
+    
+    
+    self.items = [[NSMutableArray alloc] initWithArray:sortedArray];
     
 }
 

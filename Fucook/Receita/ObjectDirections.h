@@ -20,4 +20,8 @@
 
 -(NSManagedObject *)getManagedObject:(NSManagedObjectContext *)context;
 
+
+
+
+
 @end
