@@ -23,6 +23,7 @@
 @interface Book ()
 
 @property DragableTableReceitas * root;
+@property NSManagedObject * receitaAApagar;
 
 @end
 
@@ -246,40 +247,56 @@
 
 -(void)ApagarReceita:(NSManagedObject *) object
 {
+    
+    
     NSLog(@"delegado apagar receita");
-    NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
     
-    NSManagedObject * temp;
+    self.receitaAApagar = object;
     
-    NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
-    for (NSManagedObject *pedido in receitas)
+    
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Delete recipe?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    
+    alert.tag = 1;
+    [alert show];
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(alertView.tag == 1)
     {
-        if (object == pedido) {
+        if (buttonIndex == 1) {
+            NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
             
-            temp = pedido;
+            NSManagedObject * temp;
             
+            // tenho de ir buscar a receita correcta ao livro para ser apagada
+            NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
+            for (NSManagedObject *pedido in receitas)
+            {
+                if (self.receitaAApagar == pedido) {
+                    
+                    temp = pedido;
+                }
+                
+            }
             
+            // depois de ter a receita uso a relação exitente entre as 2 para que o livro saiba que já não esta relacionado com a receita
+            // depois de cortar a relação já posso apagar a receita
+            [temp setValue:nil forKey:@"pertence_livro"];
+            [context deleteObject:temp];
             
+            NSError *error = nil;
+            if (![context save:&error])
+            {
+                NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+                return;
+            }
+            
+            [self actualizarTudo];
+
         }
-       
     }
-    
-    [temp setValue:nil forKey:@"pertence_livro"];
-    [context deleteObject:temp];
-    
-
-    
-    
-    
-    
-    NSError *error = nil;
-    if (![context save:&error])
-    {
-        NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
-        return;
-    }
-
-    [self actualizarTudo];
 }
 
 @end
