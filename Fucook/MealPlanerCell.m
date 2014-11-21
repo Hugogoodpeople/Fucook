@@ -21,11 +21,6 @@
 {
     // para as sombras
     
-    
-    
-    [self.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
-    
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

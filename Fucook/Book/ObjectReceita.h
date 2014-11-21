@@ -20,4 +20,6 @@
 @property NSManagedObject * imagem;
 @property NSManagedObject * managedObject;
 
+-(void)setTheManagedObject:(NSManagedObject *)managedObject;
+
 @end

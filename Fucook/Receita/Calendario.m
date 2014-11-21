@@ -7,11 +7,19 @@
 //
 
 #import "Calendario.h"
+#import "ObjectCalendario.h"
 
 
 @interface Calendario ()
 
+@property NSMutableArray * items;
+@property NSMutableArray * datas;
+@property VRGCalendarView *calendar;
+@property NSDate * tempDate;
+
 @end
+
+
 
 @implementation Calendario
 
@@ -19,14 +27,48 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    VRGCalendarView *calendar = [[VRGCalendarView alloc] init];
-    calendar.delegate=self;
-    [self.container addSubview:calendar];
+    [self setUp];
+    
+    _calendar = [[VRGCalendarView alloc] init];
+    _calendar.delegate=self;
+    [self.container addSubview:_calendar];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+-(void)setUp
+{
+    _items = [NSMutableArray new];
+    _datas = [NSMutableArray new];
+    
+    NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    // para ir buscar os dados prestendidos a base de dados
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.returnsObjectsAsFaults = NO;
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Agenda" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject *pedido in fetchedObjects)
+    {
+        
+        ObjectCalendario * dia = [ObjectCalendario new];
+        
+        dia.data = [pedido valueForKey:@"data"];
+        dia.categoria = [pedido valueForKey:@"categoria"];
+        dia.managedObject = pedido;
+        
+        [_items addObject:dia];
+        [_datas addObject:dia.data];
+    }
+
 }
 
 /*
@@ -39,18 +81,112 @@
 }
 */
 
--(void)calendarView:(VRGCalendarView *)calendarView switchedToMonth:(int)month targetHeight:(float)targetHeight animated:(BOOL)animated {
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:[NSDate date]];
-    
-    
-    if (month==[components month]) {
-        NSArray *dates = [NSArray arrayWithObjects:[NSNumber numberWithInt:1],[NSNumber numberWithInt:15], nil];
-        [calendarView markDates:dates];
+-(void)calendarView:(VRGCalendarView *)calendarView switchedToMonth:(int)month targetHeight:(float)targetHeight animated:(BOOL)animated
+{
+ 
+    // resumindo muito eu tenho de verificar se o mes
+    NSMutableArray * dias = [NSMutableArray new];
+    for (NSDate * data in _datas) {
+        NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitMonth | NSCalendarUnitDay fromDate:data];
+        if([components month] == month)
+        {
+            [dias addObject:[NSNumber numberWithInteger:[components day]]];
+        }
     }
+    
+    [calendarView markDates:dias];
 }
+
 
 -(void)calendarView:(VRGCalendarView *)calendarView dateSelected:(NSDate *)date {
     NSLog(@"Selected date = %@",date);
+    // aqui tenho de adicionar a receita a uma data
+    
+    self.tempDate = date;
+   
+    // tenho de verificar se na data actualmente escolhida ja tem alguma coisa agendada
+    // se sim tenho de remover da actionsheet os que já estão escolhidos para essa data
+    
+    NSMutableArray * categorias = [[NSMutableArray alloc] initWithArray: @[@"Breakfast",@"Lunch",@"Layoff",@"Dinner"]];
+
+    for (int i = 0 ; i< _datas.count ; i++)
+    {
+        NSDate * data = [_datas objectAtIndex:i];
+        if(data == date)
+        {
+            ObjectCalendario * cal = [_items objectAtIndex:i];
+            // aqui nao pode ser assim... tenho de percorrer varias datas e assim é apenas pela primeira
+            
+            NSLog(@"categoria ja existente %@", cal.categoria);
+            [categorias removeObject:cal.categoria];
+            
+        }
+    }
+    
+    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Select option:" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
+                            nil,
+                            nil];
+    // ObjC Fast Enumeration
+    for (NSString *title in categorias) {
+        [popup addButtonWithTitle:title];
+    }
+    
+    if (categorias.count == 0) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Upss" message:@"All meals filled" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }else
+    {
+        popup.tag = 1;
+        [popup showInView:[UIApplication sharedApplication].keyWindow];
+    }
+}
+
+- (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    switch (popup.tag)
+    {
+        case 1:
+        {
+          
+            NSString * selecionado = [popup buttonTitleAtIndex:buttonIndex];
+            
+            if (![selecionado isEqualToString:@"Cancel"]) {
+                NSLog(@"refeição selecionada: %@", selecionado);
+                [self adacionarAoCalendario:selecionado];
+            }
+        
+        }
+        default:
+            break;
+    }
+}
+
+-(void)adacionarAoCalendario:(NSString *)categoria
+{
+    NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    NSManagedObject *agenda = [NSEntityDescription
+                               insertNewObjectForEntityForName:@"Agenda"
+                               inManagedObjectContext:context];
+    
+    [agenda setValue:self.tempDate forKey:@"data"];
+    [agenda setValue:categoria forKey:@"categoria"];
+    [agenda setValue:self.receita forKey:@"contem_receitas"];
+    
+    
+    NSError *error = nil;
+    if (![context save:&error])
+    {
+        NSLog(@"error core data! %@ %@", error, [error localizedDescription]);
+        return;
+    }
+    else
+    {
+        NSLog(@"Gravado com sucesso");
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FXImageView.h"
 
 @interface MealPlanerCell : UITableViewCell
 
@@ -17,7 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTempo;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitulo;
-@property (weak, nonatomic) IBOutlet FXImageView *imageCapa;
+@property (weak, nonatomic) IBOutlet UIImageView *imageCapa;
 @property (weak, nonatomic) IBOutlet UILabel *labelPagina;
 
 - (IBAction)clickDelete:(id)sender;

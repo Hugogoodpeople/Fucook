@@ -26,6 +26,7 @@
 		BA023B781A13BE3B000B4754 /* VRGCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B731A13BE3B000B4754 /* VRGCalendarView.m */; };
 		BA023B7D1A13BEB3000B4754 /* Calendario.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B7B1A13BEB3000B4754 /* Calendario.m */; };
 		BA023B7E1A13BEB3000B4754 /* Calendario.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B7C1A13BEB3000B4754 /* Calendario.xib */; };
+		BA02FA311A1F60D2008571D6 /* ObjectCalendario.m in Sources */ = {isa = PBXBuildFile; fileRef = BA02FA301A1F60D2008571D6 /* ObjectCalendario.m */; };
 		BA55AC3E1A1A017C00381726 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC3D1A1A017C00381726 /* UIImage+fixOrientation.m */; };
 		BA55AC401A1A021000381726 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA55AC3F1A1A021000381726 /* OverlayView.xib */; };
 		BA55AC461A1A16C900381726 /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC451A1A16C900381726 /* FXImageView.m */; };
@@ -282,6 +283,8 @@
 		BA023B7A1A13BEB3000B4754 /* Calendario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Calendario.h; path = Fucook/Receita/Calendario.h; sourceTree = "<group>"; };
 		BA023B7B1A13BEB3000B4754 /* Calendario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Calendario.m; path = Fucook/Receita/Calendario.m; sourceTree = "<group>"; };
 		BA023B7C1A13BEB3000B4754 /* Calendario.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Calendario.xib; path = Fucook/Receita/Calendario.xib; sourceTree = "<group>"; };
+		BA02FA2F1A1F60D2008571D6 /* ObjectCalendario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectCalendario.h; path = Fucook/Calendario/ObjectCalendario.h; sourceTree = "<group>"; };
+		BA02FA301A1F60D2008571D6 /* ObjectCalendario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectCalendario.m; path = Fucook/Calendario/ObjectCalendario.m; sourceTree = "<group>"; };
 		BA05F5821A08D24300E752E7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		BA05F5831A08D24300E752E7 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
 		BA05F5841A08D24300E752E7 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
@@ -633,6 +636,8 @@
 				BA023B7A1A13BEB3000B4754 /* Calendario.h */,
 				BA023B7B1A13BEB3000B4754 /* Calendario.m */,
 				BA023B7C1A13BEB3000B4754 /* Calendario.xib */,
+				BA02FA2F1A1F60D2008571D6 /* ObjectCalendario.h */,
+				BA02FA301A1F60D2008571D6 /* ObjectCalendario.m */,
 			);
 			name = Calendario;
 			sourceTree = "<group>";
@@ -1627,6 +1632,7 @@
 				BAE468101A11214A00D3F596 /* HeaderIngrediente.m in Sources */,
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
 				BA023B571A13AD4E000B4754 /* Notas.m in Sources */,
+				BA02FA311A1F60D2008571D6 /* ObjectCalendario.m in Sources */,
 				BA66E61A1A1262910090F99D /* ObjectIngrediente.m in Sources */,
 				CE27670F1A166E21003A225B /* RATreeView.m in Sources */,
 				CE2767051A166E21003A225B /* RATreeNodeCollectionController.m in Sources */,

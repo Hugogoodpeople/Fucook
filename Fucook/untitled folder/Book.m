@@ -234,10 +234,13 @@
     NSLog(@"Delegado Editar");
 }
 
--(void)calendarioReceita
+-(void)calendarioReceita:(NSManagedObject *)receitaManaged
 {
     NSLog(@"Delegado Calendario");
-    [self.navigationController pushViewController:[Calendario new] animated:YES];
+    Calendario * cal = [Calendario new];
+    cal.receita = receitaManaged;
+    
+    [self.navigationController pushViewController:cal animated:YES];
 }
 
 -(void)adicionarReceita
@@ -274,13 +277,11 @@
             NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
             for (NSManagedObject *pedido in receitas)
             {
-                if (self.receitaAApagar == pedido) {
-                    
+                if (self.receitaAApagar == pedido)
+                {
                     temp = pedido;
                 }
-                
             }
-            
             // depois de ter a receita uso a relação exitente entre as 2 para que o livro saiba que já não esta relacionado com a receita
             // depois de cortar a relação já posso apagar a receita
             [temp setValue:nil forKey:@"pertence_livro"];

@@ -125,7 +125,7 @@
 {
     NSLog(@"Calendario");
     if (self.delegate) {
-        [self.delegate performSelector:@selector(calendarioReceita) withObject:nil];
+        [self.delegate performSelector:@selector(calendarioReceita:) withObject:self.managedObject];
     }
 }
 - (IBAction)clickCarrinho:(id)sender

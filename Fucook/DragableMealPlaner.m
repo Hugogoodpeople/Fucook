@@ -8,12 +8,15 @@
 
 #import "DragableMealPlaner.h"
 #import "MealPlanerCell.h"
+#import "ObjectReceita.h"
 
 @interface DragableMealPlaner ()
 
 @end
 
 @implementation DragableMealPlaner
+
+@synthesize arrayOfItems,imagens;
 
 
 #pragma mark -
@@ -30,13 +33,14 @@
     if (arrayOfItems == nil)
     {
         
-        NSUInteger numberOfItems = 20;
+        NSUInteger numberOfItems = 0;
         
         arrayOfItems = [[NSMutableArray alloc] initWithCapacity:numberOfItems];
         
-        for (NSUInteger i = 0; i < numberOfItems; ++i)
-            [arrayOfItems addObject:[NSString stringWithFormat:@"Item #%i", i + 1]];
     }
+    
+    [self actualizarImagens];
+
     
     //[self.tableView setFrame:self.view.frame];
     //[self.tableView.layer setAnchorPoint:CGPointMake(0.0, 0.0)];
@@ -123,7 +127,37 @@
     _maskingLayer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width-30, [UIScreen mainScreen].bounds.size.height -180 );
     [_maskingLayer setContents:(id)[_maskingImage CGImage]];
     [cell.viewMovel.layer setMask:_maskingLayer];
+    
+    ObjectReceita * obj = [arrayOfItems objectAtIndex:indexPath.row];
 
+    cell.labelTitulo.text = obj.nome;
+    cell.labelTempo.text = obj.tempo;
+    
+    
+    // NSString *key = [livro.imagem.description MD5Hash];
+    // NSData *data = [FTWCache objectForKey:key];
+    if ([imagens objectAtIndex:indexPath.row]!= [NSNull null])
+    {
+        //UIImage *image = [UIImage imageWithData:data];
+        cell.imageCapa.image = [imagens objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        //cell.imageCapa.image = [UIImage imageNamed:@"icn_default"];
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+        dispatch_async(queue, ^{
+            NSData * data = [obj.imagem valueForKey:@"imagem"];
+            //[FTWCache setObject:data forKey:key];
+            UIImage *image = [UIImage imageWithData:data];
+            NSInteger index = indexPath.row;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.imageCapa.image = image;
+                [imagens replaceObjectAtIndex:index withObject:image];
+            });
+        });
+    }
+    
+    
     
     [cell setSelected:YES];
     //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];
@@ -131,6 +165,19 @@
     cell.delegate = self.delegate;
     
     return cell;
+    
+}
+
+-(void)actualizarImagens
+{
+    imagens = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i < 1000; ++i)
+    {
+        [imagens addObject:[NSNull null]];
+    }
+    
+    //[self.tableView reloadData];
     
 }
 

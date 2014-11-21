@@ -5,7 +5,7 @@
         <attribute name="data" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="id_agenda" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="id_receita" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="contem_receitas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Receitas" syncable="YES"/>
+        <relationship name="contem_receitas" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Receitas" syncable="YES"/>
     </entity>
     <entity name="Etapas" syncable="YES">
         <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
@@ -74,13 +74,13 @@
         <attribute name="unidade" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Agenda" positionX="-65" positionY="-180" width="128" height="120"/>
-        <element name="Etapas" positionX="-72" positionY="45" width="128" height="120"/>
-        <element name="Imagens" positionX="70" positionY="-297" width="128" height="60"/>
-        <element name="Ingredientes" positionX="144" positionY="144" width="128" height="150"/>
-        <element name="Livros" positionX="214" positionY="-306" width="128" height="133"/>
-        <element name="Nutricao" positionX="378" positionY="-264" width="128" height="255"/>
-        <element name="Receitas" positionX="196" positionY="-130" width="128" height="238"/>
-        <element name="ShoppingList" positionX="385" positionY="72" width="128" height="135"/>
+        <element name="Agenda" positionX="7" positionY="72" width="128" height="118"/>
+        <element name="Etapas" positionX="52" positionY="-129" width="128" height="120"/>
+        <element name="Imagens" positionX="-36" positionY="-324" width="128" height="60"/>
+        <element name="Ingredientes" positionX="297" positionY="-324" width="128" height="150"/>
+        <element name="Livros" positionX="151" positionY="-324" width="128" height="133"/>
+        <element name="Nutricao" positionX="387" positionY="-138" width="128" height="255"/>
+        <element name="Receitas" positionX="196" positionY="-135" width="128" height="238"/>
+        <element name="ShoppingList" positionX="-108" positionY="-180" width="128" height="135"/>
     </elements>
 </model>

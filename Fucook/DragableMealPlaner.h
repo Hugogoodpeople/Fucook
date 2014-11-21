@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "ATSDragToReorderTableViewController.h"
 
-@interface DragableMealPlaner : UITableViewController {
-    NSMutableArray *arrayOfItems;
+@interface DragableMealPlaner : UITableViewController
+{
     
 }
 
+@property NSMutableArray * arrayOfItems;
 @property (nonatomic, assign) id delegate;
+
+@property NSMutableArray * imagens;
 
 @end

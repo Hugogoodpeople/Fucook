@@ -11,4 +11,16 @@
 @implementation ObjectReceita
 
 
+-(void)setTheManagedObject:(NSManagedObject *)managedObject
+{
+    self.nome = [managedObject valueForKey:@"nome"];
+    self.categoria = [managedObject valueForKey:@"categoria"];
+    self.servings = [managedObject valueForKey:@"nr_pessoas"];
+    self.dificuldade = [managedObject valueForKey:@"dificuldade"];
+    self.tempo = [managedObject valueForKey:@"tempo"];
+    self.imagem = [managedObject valueForKey:@"contem_imagem"];
+    self.managedObject = managedObject;
+    
+}
+
 @end

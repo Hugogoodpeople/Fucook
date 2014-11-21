@@ -169,7 +169,6 @@
     
     float altura = [self calcularAltura];
     
-    
     UIImage *_maskingImage = [UIImage imageNamed:@"mascara_transparente.png"];
     CALayer *_maskingLayer = [CALayer layer];
     _maskingLayer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width-30, altura);
@@ -179,9 +178,6 @@
    
     cell.labelTitulo.text = receita.nome;
     cell.labelTempo.text = receita.tempo;
-    //[cell.imageCapa setImage:[UIImage imageNamed:@"imgsample001.jpg"]];
-
-    //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];
     
     cell.delegate = self.delegate;
     

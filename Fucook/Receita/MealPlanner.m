@@ -9,8 +9,15 @@
 #import "MealPlanner.h"
 #import "DiaCalendario.h"
 #import "DragableMealPlaner.h"
+#import "AppDelegate.h"
+#import "ObjectCalendario.h"
+#import "ObjectReceita.h"
 
 @interface MealPlanner ()
+{
+    NSMutableArray * arrayDias;
+    NSMutableArray * arrayDatas;
+}
 
 @property (nonatomic, strong) NSMutableArray *items;
 @property DragableMealPlaner * root;
@@ -41,15 +48,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self setUpCarrocel];
     [self setUp];
+    [self setUpCoreData];
+    [self setUpCarrocel];
+    
 }
 
 -(void)setUp
 {
+    
+    
     self.root = [DragableMealPlaner new];
     //[self.root.view setFrame:[[UIScreen mainScreen] bounds] ];
+    
+    // tenho de verificar a data de hoje para meter as receitas
+    
     
     [self.root.view setFrame:CGRectMake(0, 0, self.container.frame.size.width , self.container.frame.size.height)];
     
@@ -67,6 +80,46 @@
     
     UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
     self.navigationItem.leftBarButtonItem = anotherButtonback;
+    
+}
+
+-(void)setUpCoreData
+{
+    NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    arrayDias = [NSMutableArray new];
+    arrayDatas = [NSMutableArray new];
+    
+    // para ir buscar os dados prestendidos a base de dados
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.returnsObjectsAsFaults = NO;
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Agenda" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject *pedido in fetchedObjects)
+    {
+        
+        ObjectCalendario * dia = [ObjectCalendario new];
+        dia.receitas = [NSMutableArray new];
+        dia.data = [pedido valueForKey:@"data"];
+        dia.categoria = [pedido valueForKey:@"categoria"];
+        dia.managedObject = pedido;
+        // dia.receita = [pedido valueForKey:@"contem_receitas"];
+        
+        NSManagedObject * receitaManaged = [pedido valueForKey:@"contem_receitas"];
+        NSLog(@"managed object %@", pedido.description);
+      
+            ObjectReceita * objR = [ObjectReceita new];
+            [objR setTheManagedObject:receitaManaged];
+            [dia.receitas addObject:objR];
+        
+        
+        [arrayDias addObject:dia];
+        [arrayDatas addObject:dia.data];
+    }
     
 }
 
@@ -100,7 +153,7 @@
     
     
     // para ir buscar o mes actual
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:self.dataActual];
+   // NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:self.dataActual];
     
     NSDate *today = self.dataActual; //Get a date object for today's date
     NSCalendar *c = [NSCalendar currentCalendar];
@@ -202,7 +255,7 @@
     // tenho de ir burcar a view actual e mudar algo para ficar diferente
     DiaCalendario * dia = [DiaCalendario new];
     dia.view =[carousel currentItemView];
-    dia.ImgSelected = (UIImageView *)[dia.view viewWithTag:1];;
+    dia.ImgSelected = (UIImageView *)[dia.view viewWithTag:1];
     [UIView animateWithDuration:0.2 animations:^{
         dia.ImgSelected.alpha = 1;
     
@@ -218,7 +271,30 @@
     
     
     self.itemAnterior = dia.view;
+    
+    
+    // aqui tenho de actualizar a view que tem as receitas vindas da BD
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:self.dataActual];
+    [components setDay:carousel.currentItemIndex +1];
+    
+    NSDate * scrollDay = [calendar dateFromComponents:components];
+    
+    NSMutableArray * itensDias = [NSMutableArray new];
+    
+        for (ObjectCalendario * cal in arrayDias) {
+            if (cal.data == scrollDay) {
+                itensDias = cal.receitas;
+            }
+        }
+        
+    
+    self.root.arrayOfItems = itensDias;
+    
+    [self.root.tableView reloadData];
 
+    
 }
 
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value

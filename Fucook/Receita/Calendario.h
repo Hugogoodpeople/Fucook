@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "VRGCalendarView.h"
+#import "AppDelegate.h"
+#import "ObjectReceita.h"
 
 
-@interface Calendario : UIViewController <VRGCalendarViewDelegate>
+@interface Calendario : UIViewController <VRGCalendarViewDelegate, UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UIView *container;
+
+@property NSManagedObject * receita;
+
 
 @end
