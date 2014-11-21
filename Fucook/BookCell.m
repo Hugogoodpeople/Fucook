@@ -18,22 +18,15 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
-   
-    
-    
     UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
     
     
     UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
-    
-    
-    
+
     [self.contentView addGestureRecognizer:swipeDown];
     [self.contentView addGestureRecognizer:swipeUp];
-    
-    
     
 }
 
@@ -140,6 +133,14 @@
     NSLog(@"Carrinho");
     if (self.delegate) {
         [self.delegate performSelector:@selector(adicionarReceita) withObject:nil];
+    }
+}
+
+- (IBAction)clickRemover:(id)sender {
+    
+    NSLog(@"Remover Receita");
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(ApagarReceita:) withObject:self.managedObject];
     }
 }
 @end

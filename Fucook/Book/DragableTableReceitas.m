@@ -37,13 +37,7 @@
      */
     if (arrayOfItems == nil)
     {
-        
-        NSUInteger numberOfItems = 5;
-        
-        arrayOfItems = [[NSMutableArray alloc] initWithCapacity:numberOfItems];
-        
-        for (NSUInteger i = 0; i < numberOfItems; ++i)
-            [arrayOfItems addObject:[ObjectReceita new]];
+        arrayOfItems = [[NSMutableArray alloc] init];
     }
     
     [self actualizarImagens];
@@ -55,8 +49,6 @@
     self.tableView.pagingEnabled = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    
-    
     
     NSLog(@"altura da tabela %f largura %f", self.tableView.frame.size.height , self.tableView.frame.size.width);
     
@@ -146,7 +138,7 @@
         
         // NSString *key = [livro.imagem.description MD5Hash];
         // NSData *data = [FTWCache objectForKey:key];
-        if ([imagens objectAtIndex:indexPath.row]!= [NSNull null])
+        if ( [imagens objectAtIndex:indexPath.row]!= [NSNull null] )
         {
             //UIImage *image = [UIImage imageWithData:data];
             cell.imageCapa.image = [imagens objectAtIndex:indexPath.row];
@@ -162,7 +154,8 @@
                 NSInteger index = indexPath.row;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     cell.imageCapa.image = image;
-                    [imagens replaceObjectAtIndex:index withObject:image];
+                    if (image)
+                        [imagens replaceObjectAtIndex:index withObject:image];
                 });
             });
         }
@@ -170,7 +163,7 @@
     }
     
     cell.labelPagina.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
-    
+    cell.managedObject = receita.managedObject;
     
     [cell setSelected:YES];
     

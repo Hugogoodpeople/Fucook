@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tls-sS-2I8">
-                        <rect key="frame" x="82" y="444" width="157" height="50"/>
+                        <rect key="frame" x="50" y="444" width="220" height="50"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnedit1.png" translatesAutoresizingMaskIntoConstraints="NO" id="HDu-w5-ALO">
                                 <rect key="frame" x="10" y="11" width="24" height="27"/>
@@ -29,6 +29,10 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnshop1.png" translatesAutoresizingMaskIntoConstraints="NO" id="9aN-Pd-0uA">
                                 <rect key="frame" x="123" y="13" width="24" height="24"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btndelet1.png" translatesAutoresizingMaskIntoConstraints="NO" id="u5Q-sO-0kN">
+                                <rect key="frame" x="181" y="11" width="24" height="27"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4U-BA-sfC">
@@ -58,6 +62,15 @@
                                     <action selector="clickCarrinho:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="I45-kL-TB9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taZ-VI-dBb">
+                                <rect key="frame" x="173" y="1" width="47" height="49"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickRemover:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="O7y-sZ-2l1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -74,11 +87,11 @@
                             <constraint firstItem="hNk-PB-c8O" firstAttribute="baseline" secondItem="ddz-Yl-1I2" secondAttribute="baseline" id="Z1a-TH-ey4"/>
                             <constraint firstItem="Kj2-ax-PGi" firstAttribute="leading" secondItem="i4U-BA-sfC" secondAttribute="trailing" constant="18" id="ZAh-Qd-gQq"/>
                             <constraint firstItem="ddz-Yl-1I2" firstAttribute="centerY" secondItem="Kj2-ax-PGi" secondAttribute="centerY" id="Zbg-fe-i4C"/>
-                            <constraint firstItem="Kj2-ax-PGi" firstAttribute="centerX" secondItem="tls-sS-2I8" secondAttribute="centerX" id="b8q-Fm-FIc"/>
+                            <constraint firstItem="Kj2-ax-PGi" firstAttribute="centerX" secondItem="tls-sS-2I8" secondAttribute="centerX" constant="-31.5" id="b8q-Fm-FIc"/>
                             <constraint firstItem="hNk-PB-c8O" firstAttribute="leading" secondItem="ddz-Yl-1I2" secondAttribute="trailing" constant="21" id="dmP-95-4YN"/>
                             <constraint firstItem="i4U-BA-sfC" firstAttribute="leading" secondItem="tls-sS-2I8" secondAttribute="leading" constant="2" id="gKj-XI-Vr0"/>
                             <constraint firstItem="Kj2-ax-PGi" firstAttribute="top" secondItem="9aN-Pd-0uA" secondAttribute="top" id="gdm-P5-fJs"/>
-                            <constraint firstAttribute="trailing" secondItem="hNk-PB-c8O" secondAttribute="trailing" id="jOf-Vu-vAD"/>
+                            <constraint firstAttribute="trailing" secondItem="hNk-PB-c8O" secondAttribute="trailing" constant="63" id="jOf-Vu-vAD"/>
                             <constraint firstItem="ddz-Yl-1I2" firstAttribute="leading" secondItem="HDu-w5-ALO" secondAttribute="trailing" constant="19" id="kEB-2L-f3l"/>
                             <constraint firstItem="i4U-BA-sfC" firstAttribute="bottom" secondItem="ddz-Yl-1I2" secondAttribute="bottom" id="m0K-bC-N1t"/>
                             <constraint firstItem="hNk-PB-c8O" firstAttribute="firstBaseline" secondItem="ddz-Yl-1I2" secondAttribute="firstBaseline" id="p2r-yS-Ti3"/>
@@ -151,7 +164,7 @@
                 <constraints>
                     <constraint firstItem="FM4-qj-ihH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3tE-Bh-rhx"/>
                     <constraint firstAttribute="bottomMargin" secondItem="tls-sS-2I8" secondAttribute="bottom" constant="65.5" id="Q8d-Yu-2HE"/>
-                    <constraint firstItem="tls-sS-2I8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="74" id="V7B-22-KWt"/>
+                    <constraint firstItem="tls-sS-2I8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="42" id="V7B-22-KWt"/>
                     <constraint firstItem="tls-sS-2I8" firstAttribute="centerX" secondItem="FM4-qj-ihH" secondAttribute="centerX" id="hWR-e0-hW8"/>
                     <constraint firstItem="FM4-qj-ihH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="65" id="rTu-Ga-xZR"/>
                     <constraint firstItem="FM4-qj-ihH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="tb5-LT-Hiw"/>
@@ -166,11 +179,12 @@
                 <outlet property="labelTitulo" destination="SYf-bW-CH1" id="CeF-VD-lB8"/>
                 <outlet property="viewMovel" destination="FM4-qj-ihH" id="Skj-jC-uIA"/>
             </connections>
-            <point key="canvasLocation" x="727" y="212"/>
+            <point key="canvasLocation" x="542" y="168"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="btncall1.png" width="23" height="24"/>
+        <image name="btndelet1.png" width="20" height="24"/>
         <image name="btnedit1.png" width="24" height="24"/>
         <image name="btnshop1.png" width="24" height="24"/>
         <image name="imgtap.png" width="84" height="28"/>

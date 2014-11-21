@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FXImageView.h"
+#import "AppDelegate.h"
 
 @interface BookCell : UITableViewCell
 
@@ -20,8 +21,12 @@
 @property (weak, nonatomic) IBOutlet FXImageView *imageCapa;
 @property (weak, nonatomic) IBOutlet UILabel *labelPagina;
 
+@property NSManagedObject * managedObject;
+
 - (IBAction)clickEdit:(id)sender;
 - (IBAction)clickCalendario:(id)sender;
 - (IBAction)clickCarrinho:(id)sender;
+- (IBAction)clickRemover:(id)sender;
+
 
 @end
