@@ -65,8 +65,12 @@
         dia.categoria = [pedido valueForKey:@"categoria"];
         dia.managedObject = pedido;
         
-        [_items addObject:dia];
-        [_datas addObject:dia.data];
+        
+        if([pedido valueForKey:@"contem_receitas"])
+        {
+            [_items addObject:dia];
+            [_datas addObject:dia.data];
+        }
     }
 
 }
@@ -172,6 +176,8 @@
     [agenda setValue:self.tempDate forKey:@"data"];
     [agenda setValue:categoria forKey:@"categoria"];
     [agenda setValue:self.receita forKey:@"contem_receitas"];
+    
+    [self.receita setValue:agenda forKey:@"pertence_agendas"];
     
     
     NSError *error = nil;

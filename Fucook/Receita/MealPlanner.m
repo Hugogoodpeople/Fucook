@@ -112,9 +112,12 @@
         NSManagedObject * receitaManaged = [pedido valueForKey:@"contem_receitas"];
         NSLog(@"managed object %@", pedido.description);
       
+        if (receitaManaged ) {
             ObjectReceita * objR = [ObjectReceita new];
             [objR setTheManagedObject:receitaManaged];
             [dia.receitas addObject:objR];
+        }
+       
         
         
         [arrayDias addObject:dia];
@@ -285,12 +288,13 @@
     
         for (ObjectCalendario * cal in arrayDias) {
             if (cal.data == scrollDay) {
-                itensDias = cal.receitas;
+                [itensDias addObjectsFromArray: cal.receitas];
             }
         }
         
     
     self.root.arrayOfItems = itensDias;
+    [self.root actualizarImagens];
     
     [self.root.tableView reloadData];
 
