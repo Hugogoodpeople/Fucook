@@ -46,7 +46,6 @@
         [self.arrayEtapas addObject:dir];
     }
     
-    
 }
 
 @end

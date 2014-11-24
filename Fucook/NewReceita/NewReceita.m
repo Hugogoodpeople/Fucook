@@ -268,6 +268,18 @@
         [arrayManagedIngredientes addObject:ing];
     }
 
+    // tenho de remover todos os ingredientes anterios que ja tinham sido guardados
+    NSSet * managedIngs = [Receita valueForKey:@"contem_ingredientes"];
+    for (NSManagedObject * objIng in managedIngs)
+    {
+        [context deleteObject:objIng];
+    }
+    NSSet * managedEtapas = [Receita valueForKey:@"contem_etapas"];
+    for (NSManagedObject * objEtp in managedEtapas)
+    {
+        [context deleteObject:objEtp];
+    }
+    
     
     [Receita setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayManagedIngredientes]] forKey:@"contem_ingredientes"];
     ////////////////////// fim ingredientes \\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -279,6 +291,7 @@
     {
         [arrayManagedDirecoes addObject:[Objdirections getManagedObject:context]];
     }
+    
     
     [Receita setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayManagedDirecoes]] forKey:@"contem_etapas"];
     
