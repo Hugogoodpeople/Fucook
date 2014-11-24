@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface ObjectLista : NSObject
 
 @property NSString * nome;
 @property NSString * quantidade;
 @property NSString * unidade;
-@property NSString * descricao;
+@property NSString * quantidade_decimal;
+@property NSManagedObject * managedObject;
 
 @end

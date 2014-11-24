@@ -60,12 +60,9 @@
     self.pickerQuant.dataSource = self;
     self.pickerQuant.delegate = self;
     
-   // [self loadData];
+   //[self loadData];
 
 }
-
-
-
 -(void)preencherTabela
 {
     NSMutableArray * items = [NSMutableArray new];
@@ -88,41 +85,50 @@
     
     
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
- 
     for (NSManagedObject *pedido in fetchedObjects)
     {
-        
         
         NSLog(@"************************************ Shopping list ************************************");
         NSLog(@"nome: %@", [pedido valueForKey:@"nome"]);
         NSLog(@"quantidade: %@", [pedido valueForKey:@"quantidade"]);
         NSLog(@"unidade: %@", [pedido valueForKey:@"unidade"]);
-        
         ObjectLista * list = [ObjectLista new];
         
         // para mais tarde poder apagar
-       // list.managedObject = pedido;
+        list.managedObject = pedido;
         
         
-        lista.nome =[pedido valueForKey:@"nome"];
-        lista.quantidade =[pedido valueForKey:@"quantidade"];
-        lista.unidade =[pedido valueForKey:@"unidade"];
+        list.nome =[pedido valueForKey:@"nome"];
+        list.quantidade =[pedido valueForKey:@"quantidade"];
+        list.quantidade_decimal =[pedido valueForKey:@"quantidade_decimal"];
+        list.unidade =[pedido valueForKey:@"unidade"];
+        list.managedObject = pedido;
         
-        //NSManagedObject * imagem = [pedido valueForKey:@"contem_imagem"];
-        //list.imagem = imagem;
         
         [items addObject:list];
     }
     
-     NSLog(@"%@",lista.nome);
+    
     NSArray* reversed = [[items reverseObjectEnumerator] allObjects];
     
     
-    //titleArray = [NSMutableArray arrayWithArray:reversed];
-    //self.mos.arrayOfItems = [NSMutableArray arrayWithArray:reversed];
-   // self.pageControl.numberOfPages = reversed.count;
+    arrayOfItems = [NSMutableArray arrayWithArray:reversed];
+   // self.mos.arrayOfItems = [NSMutableArray arrayWithArray:reversed];
+    //self.pageControl.numberOfPages = reversed.count;
+    
+    if (reversed.count == 0)
+    {
+        
+        //[self.mos.view removeFromSuperview];
+        //[self.root.view removeFromSuperview];
+        //[self.placeHolder.view removeFromSuperview];
+        //[self.container addSubview:self.placeHolder.view];
+    }
     
 }
+
+
+
 
 
 
@@ -138,12 +144,12 @@
 }*/
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return arrayOfItems.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *simpleTableIdentifier = @"ListaComprasCell";
-    
+    ObjectLista * listas = [arrayOfItems objectAtIndex:indexPath.row];
     ListaComprasCell *cell = (ListaComprasCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
     {
@@ -156,17 +162,12 @@
     }else{
         
     }
-    NSLog(@"%@",lista.nome);
-    cell.labelTitle.text = lista.nome;
+    NSLog(@"%@",listas.unidade);
+    cell.labelTitle.text = listas.nome;
     cell.labelSub.text = [subtitleArray objectAtIndex:indexPath.row];
-    cell.labelPeso.text = lista.quantidade;
-    cell.labelUnit.text = lista.unidade;
-    /*
-    cell.labelTitle.text = [textArray objectAtIndex:indexPath.row];
-    cell.labelSub.text = [subtitleArray objectAtIndex:indexPath.row];
-    cell.labelPeso.text = [pesoArray objectAtIndex:indexPath.row];
-    cell.labelUnit.text = [unitArray objectAtIndex:indexPath.row];
-     */
+    cell.labelPeso.text = listas.quantidade;
+    cell.labelUnit.text = listas.unidade;
+
     cell.index = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
     cell.delegate = self;
     return cell;
@@ -232,9 +233,10 @@
                                   insertNewObjectForEntityForName:@"ShoppingList"
                                   inManagedObjectContext:context];
     
-        [Livro setValue:@"ovos" forKey:@"nome"];
-        [Livro setValue:@"2" forKey:@"quantidade"];
-        [Livro setValue:@"unit" forKey:@"unidade"];
+        [Livro setValue:@"mass" forKey:@"nome"];
+        [Livro setValue:@"4" forKey:@"quantidade"];
+        [Livro setValue:@".5" forKey:@"quantidade_decimal"];
+        [Livro setValue:@"kg" forKey:@"unidade"];
         
      
         
