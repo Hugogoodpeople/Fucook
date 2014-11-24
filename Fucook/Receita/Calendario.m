@@ -11,6 +11,10 @@
 
 
 @interface Calendario ()
+{
+    NSManagedObject * tempAgenda;
+}
+
 
 @property NSMutableArray * items;
 @property NSMutableArray * datas;
@@ -113,6 +117,7 @@
     
     NSMutableArray * categorias = [[NSMutableArray alloc] initWithArray: @[@"Breakfast",@"Lunch",@"Layoff",@"Dinner"]];
 
+    /*
     for (int i = 0 ; i< _datas.count ; i++)
     {
         NSDate * data = [_datas objectAtIndex:i];
@@ -122,8 +127,13 @@
             NSLog(@"categoria ja existente %@", cal.categoria);
             [categorias removeObject:cal.categoria];
             
+ 
+            
         }
     }
+     */
+    /// esta parte funciona perfeitamente removendo as refeições já selecionadas
+    
     
     UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Select option:" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
                             nil,
@@ -165,47 +175,114 @@
 
 -(void)adacionarAoCalendario:(NSString *)categoria
 {
+    BOOL jaTinhaAgendada = false;
+    NSManagedObject *agenda;
+    for (int i = 0 ; i< _datas.count ; i++)
+    {
+        NSDate * data = [_datas objectAtIndex:i];
+        if(data == self.tempDate)
+        {
+            ObjectCalendario * cal = [_items objectAtIndex:i];
+            
+            if ([cal.categoria isEqualToString:categoria]) {
+                agenda = cal.managedObject;
+                jaTinhaAgendada = YES;
+            }
+            
+            
+        }
+    }
+
     NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
     
-    NSManagedObject *agenda = [NSEntityDescription
-                               insertNewObjectForEntityForName:@"Agenda"
-                               inManagedObjectContext:context];
+    if (!agenda) {
+        agenda = [NSEntityDescription
+                  insertNewObjectForEntityForName:@"Agenda"
+                  inManagedObjectContext:context];
+    }
+    
+    tempAgenda = agenda;
     
     [agenda setValue:self.tempDate forKey:@"data"];
     [agenda setValue:categoria forKey:@"categoria"];
-    //[agenda setValue:self.receita forKey:@"contem_receitas"];
-    
-    //[self.receita setValue:agenda forKey:@"pertence_agendas"];
-    
-    //  tenho de fazer um ciclo dentro da receita para poder adicionar a nova agenda
-    
-    NSMutableArray * arrayAgenda = [NSMutableArray new];
-    
-    NSSet * agendamentos = [self.receita valueForKey:@"esta_agendada"];
-    
-    for (NSManagedObject * ag in agendamentos)
-    {
-        [arrayAgenda addObject:ag];
-    }
-    
-    [self.receita setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayAgenda]] forKey:@"esta_agendada"];
-    
-    [agenda setValue:self.receita forKey:@"tem_receita"];
     
     
-    NSError *error = nil;
-    if (![context save:&error])
-    {
-        NSLog(@"error core data! %@ %@", error, [error localizedDescription]);
-        return;
+    // tenho de colocar uma alertview para avisar que estou a alterar alguma coisa
+    if (jaTinhaAgendada) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"The marking already exists! Want to replace with the old one?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+        alert.tag = 1;
+        [alert show];
+        
+        
     }
     else
     {
-        NSLog(@"Gravado com sucesso");
-    }
     
-    [self.navigationController popViewControllerAnimated:YES];
+        NSMutableArray * arrayAgenda = [NSMutableArray new];
+    
+        NSSet * agendamentos = [self.receita valueForKey:@"esta_agendada"];
+    
+        for (NSManagedObject * ag in agendamentos)
+        {
+            [arrayAgenda addObject:ag];
+        }
+    
+        [self.receita setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayAgenda]] forKey:@"esta_agendada"];
+    
+        [agenda setValue:self.receita forKey:@"tem_receita"];
+    
+    
+        NSError *error = nil;
+        if (![context save:&error])
+        {
+            NSLog(@"error core data! %@ %@", error, [error localizedDescription]);
+            return;
+        }
+        else
+        {
+            NSLog(@"Gravado com sucesso");
+        }
+    
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 1) {
+        if (buttonIndex == 1) {
+            NSError *error = nil;
+            NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
+            
+            NSMutableArray * arrayAgenda = [NSMutableArray new];
+            
+            NSSet * agendamentos = [self.receita valueForKey:@"esta_agendada"];
+            
+            for (NSManagedObject * ag in agendamentos)
+            {
+                [arrayAgenda addObject:ag];
+            }
+            
+            [self.receita setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayAgenda]] forKey:@"esta_agendada"];
+            
+            [tempAgenda setValue:self.receita forKey:@"tem_receita"];
+
+
+            if (![context save:&error])
+            {
+                NSLog(@"error core data! %@ %@", error, [error localizedDescription]);
+                return;
+            }
+            else
+            {
+                NSLog(@"Gravado com sucesso");
+            }
+            
+            [self.navigationController popViewControllerAnimated:YES];
+
+        }
+    }
 }
 
 
