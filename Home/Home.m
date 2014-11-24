@@ -65,7 +65,8 @@
 
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
@@ -76,8 +77,10 @@
 
     
     self.placeHolder = [PlaceHolderCreateBook new];
-    self.placeHolder.delegate = self;
+    [self.placeHolder.view setFrame:CGRectMake(0, 44, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height-88) ];
+
     
+    self.placeHolder.delegate = self;
     
     /* bt search*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
@@ -110,8 +113,6 @@
     
     UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
     [self.navigationItem setTitleView:titleView];
-    
-    
 
     UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
     [aFlowLayout setItemSize:CGSizeMake([UIScreen mainScreen].bounds.size.width/2, ([UIScreen mainScreen].bounds.size.height/2) -56 ) ];
@@ -126,7 +127,6 @@
     [self.mos.view setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height )];
     
     [self.mos.collectionView setContentInset:UIEdgeInsetsMake(64, 0, 44, 0)];
-    
     
     [self.yoolbar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.97f]];
     //[nav.navigationBar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.8f]];
@@ -215,7 +215,7 @@
     Book * receitas = [Book new];
     receitas.livro =livro;
     
-    [self.navigationController pushViewController:[Book new] animated:YES];
+    [self.navigationController pushViewController:receitas animated:YES];
 }
 
 -(void)togleViews

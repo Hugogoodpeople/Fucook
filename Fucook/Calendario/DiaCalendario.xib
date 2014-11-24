@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -8,8 +8,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiaCalendario">
             <connections>
                 <outlet property="ImgSelected" destination="Vrt-6x-PvE" id="MZg-cX-RVH"/>
+                <outlet property="img1" destination="zeV-ZS-v14" id="UdK-ar-dHb"/>
+                <outlet property="img3" destination="BYk-8X-0jh" id="xbt-iH-Usp"/>
                 <outlet property="labelDiaSemana" destination="bWe-8s-lUd" id="Q4D-jo-IJc"/>
                 <outlet property="lableDia" destination="93Q-cu-K6a" id="hig-oK-5ql"/>
+                <outlet property="omg2" destination="f0i-nE-vcG" id="sBZ-ul-Akv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -78,7 +81,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="221" y="-146"/>
+            <point key="canvasLocation" x="261" y="-158"/>
         </view>
     </objects>
     <resources>
