@@ -132,21 +132,8 @@
     NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
     for (NSManagedObject *pedido in receitas)
     {
- 
         ObjectReceita * receita = [ObjectReceita new];
-        
-        // para mais tarde poder apagar
-        receita.managedObject   = pedido;
-        receita.nome            = [pedido valueForKey:@"nome"];
-        receita.dificuldade     = [pedido valueForKey:@"dificuldade"];
-        receita.servings        = [pedido valueForKey:@"nr_pessoas"];
-        receita.categoria       = [pedido valueForKey:@"categoria"];
-        receita.tempo           = [pedido valueForKey:@"tempo"];
-        receita.notas           = [pedido valueForKey:@"notas"];
-        
-        NSManagedObject * imagem = [pedido valueForKey:@"contem_imagem"];
-        receita.imagem = imagem;
-        
+        [receita setTheManagedObject:pedido];
         [items addObject:receita];
     }
     
@@ -229,9 +216,15 @@
     [self.navigationController pushViewController:tinderNavigationController animated:YES];
 }
 
--(void)editarReceita
+-(void)editarReceita:(ObjectReceita *) receita
 {
     NSLog(@"Delegado Editar");
+    
+    
+    NewReceita *objYourViewController = [NewReceita new];
+    objYourViewController.livro = self.livro;
+    objYourViewController.receita = receita;
+    [self.navigationController pushViewController:objYourViewController animated:YES];
 }
 
 -(void)calendarioReceita:(NSManagedObject *)receitaManaged
@@ -261,57 +254,43 @@
     
     alert.tag = 1;
     [alert show];
-    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(alertView.tag == 1)
     {
-        if (buttonIndex == 1) {
-            NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
-            
-            NSManagedObject * temp;
-            
-            // tenho de ir buscar a receita correcta ao livro para ser apagada
-            NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
-            for (NSManagedObject *pedido in receitas)
-            {
-                if (self.receitaAApagar == pedido)
-                {
-                    temp = pedido;
-                }
-            }
-            // depois de ter a receita uso a relação exitente entre as 2 para que o livro saiba que já não esta relacionado com a receita
-            // depois de cortar a relação já posso apagar a receita
-            /*
-            [temp setValue:nil forKey:@"pertence_livro"];
-            
-            
-            
-            NSManagedObject * agenda = [temp valueForKey:@"esta_agendada"];
-            
-            [context deleteObject:temp];
-            if(agenda)
-                [context deleteObject:agenda];
-             
-             */
-            // outra solução
-            
-            [context deleteObject:temp];
-            
-            
-            NSError *error = nil;
-            if (![context save:&error])
-            {
-                NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
-                return;
-            }
-            
-            [self actualizarTudo];
-
+        if (buttonIndex == 1)
+        {
+            [self apagarReceita];
         }
     }
+}
+
+-(void)apagarReceita
+{
+    NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    NSManagedObject * temp;
+    
+    // tenho de ir buscar a receita correcta ao livro para ser apagada
+    NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
+    
+    
+    // porque que eu faço isto aqui??? posso passar directamente o valor e apagar logo
+    // tipo [context deleteObject:self.receitaAApagar]; // e fica feito
+    [context deleteObject:self.receitaAApagar];
+  
+    
+    NSError *error = nil;
+    if (![context save:&error])
+    {
+        NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+        return;
+    }
+    
+    [self actualizarTudo];
+
 }
 
 @end

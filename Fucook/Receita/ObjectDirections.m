@@ -25,6 +25,18 @@
     return mangDirection;
 }
 
+
+-(void)setTheManagedObject:(NSManagedObject *)managedObject
+{
+    self.managedObject      = managedObject;
+    
+    self.passo              = [[managedObject valueForKey:@"ordem"] intValue];
+    self.descricao          = [managedObject valueForKey:@"descricao"];
+    self.tempoMinutos       = [[managedObject valueForKey:@"tempo"] intValue];
+    self.idDirection        = [managedObject valueForKey:@"id_etapa"];
+    
+}
+
 - (NSComparisonResult)compare:(ObjectDirections *)otherObject {
     
     NSString * primeiro = [NSString stringWithFormat:@"%d", self.passo];

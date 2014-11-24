@@ -17,6 +17,10 @@
 @property NSString * categoria;
 @property NSString * servings;
 @property NSString * notas;
+
+@property NSMutableArray * arrayIngredientes;
+@property NSMutableArray * arrayEtapas;
+
 @property NSManagedObject * imagem;
 @property NSManagedObject * managedObject;
 

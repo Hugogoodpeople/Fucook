@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FXImageView.h"
 #import "AppDelegate.h"
+#import "ObjectReceita.h"
 
 @interface BookCell : UITableViewCell
 
@@ -21,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageCapa;
 @property (weak, nonatomic) IBOutlet UILabel *labelPagina;
 
-@property NSManagedObject * managedObject;
+@property ObjectReceita * receita;
 
 - (IBAction)clickEdit:(id)sender;
 - (IBAction)clickCalendario:(id)sender;

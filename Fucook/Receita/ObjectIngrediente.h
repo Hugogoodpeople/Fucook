@@ -23,4 +23,6 @@
 
 -(NSManagedObject *)getManagedObject:(NSManagedObjectContext *)context;
 
+-(void)setTheManagedObject:(NSManagedObject *)managedObject;
+
 @end

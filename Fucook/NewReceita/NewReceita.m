@@ -44,9 +44,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self setUp];
+    // aqui tenho de verificar se tenho ou não já uma receita para listar
     
-     //[self listarTodasReceitas];
+    if (self.receita)
+    {
+        [self setUpReceita];
+    }
+    else
+    {
+        [self setUp];
+    }
+    
+    [self actualizarPosicoes];
 }
 -(void)addIngrediente:(ObjectIngrediente *)ingr
 {
@@ -70,6 +79,25 @@
     
 }
 
+-(void)setUpReceita
+{
+    [self setUp];
+    
+    headerFinal.textName.text       = self.receita.nome;
+    headerFinal.labelCat.text       = self.receita.categoria;
+    headerFinal.labelServ.text      = self.receita.servings;
+    headerFinal.labelDif.text       = self.receita.dificuldade;
+    headerFinal.labelPre.text       = self.receita.tempo;
+    headerFinal.img.image = [UIImage imageWithData:[self.receita.imagem valueForKey:@"imagem"]];
+    
+    if (self.receita.notas.length != 0)
+        arrayNotas = [[NSMutableArray alloc] initWithArray:@[self.receita.notas]];
+    
+    arrayIngredientes = self.receita.arrayIngredientes;
+    arraydireccoes    = self.receita.arrayEtapas;
+    
+}
+
 -(void)setUp
 {
     /* bt search*/
@@ -79,7 +107,6 @@
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = anotherButton;
-    
     
     headerFinal = [HeaderNewReceita alloc];
     //////[headerFinal.view setFrame:CGRectMake(0, 0, headerFinal.view.frame.size.width, headerFinal.view.frame.size.height )];
@@ -112,9 +139,8 @@
     
     self.navigationItem.title = @"Your Recipe";
     
-    [self actualizarPosicoes];
     
-
+    
     // inicializar os arrays para poder adicionar os valores
     arrayIngredientes = [NSMutableArray new];
     arraydireccoes    = [NSMutableArray new];
@@ -166,14 +192,23 @@
 -(void)AdicionarReceita
 {
     NSLog(@"adicionar receita");
-#warning tenho de fazer todo o codigo de de adicionar a base de dados aqui
     
     AppDelegate* appDelegate = [AppDelegate sharedAppDelegate];
     NSManagedObjectContext* context = appDelegate.managedObjectContext;
 
-    NSManagedObject *Receita = [NSEntityDescription
+    NSManagedObject *Receita;
+    if (self.receita)
+    {
+        Receita = self.receita.managedObject;
+    }
+    else
+    {
+        Receita = [NSEntityDescription
                               insertNewObjectForEntityForName:@"Receitas"
                               inManagedObjectContext:context];
+    }
+    
+    
     
     NSString * nomeReceita = headerFinal.textName.text;
     NSString * categoria   = headerFinal.labelCat.text;
@@ -185,6 +220,10 @@
         NSString * notas       = [footerFinal.arrayOfItems objectAtIndex:0];
         [Receita setValue:notas         forKey:@"notas"];
 
+    }
+    else
+    {
+        [Receita setValue:@""         forKey:@"notas"];
     }
     
     [Receita setValue:nomeReceita   forKey:@"nome"];
@@ -222,7 +261,8 @@
     // agrora tenho de criar os ingredientes para serem adicionados a receita
     // tem de ser criado um ciclo para os ingredientes
     NSMutableArray * arrayManagedIngredientes = [NSMutableArray new];
-    for (ObjectIngrediente * objIng in arrayIngredientes) {
+    for (ObjectIngrediente * objIng in arrayIngredientes)
+    {
         NSManagedObject * ing =[objIng getManagedObject:context];
        
         [arrayManagedIngredientes addObject:ing];
@@ -235,9 +275,8 @@
     // agrora tenho de criar os ingredientes para serem adicionados a receita
     // tem de ser criado um ciclo para os ingredientes
     NSMutableArray * arrayManagedDirecoes = [NSMutableArray new];
-    for (ObjectDirections * Objdirections in arraydireccoes) {
-        
-        
+    for (ObjectDirections * Objdirections in arraydireccoes)
+    {
         [arrayManagedDirecoes addObject:[Objdirections getManagedObject:context]];
     }
     
@@ -265,7 +304,8 @@
 {
     // para ir buscar os dados prestendidos a base de dados
         NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
-        for (NSManagedObject * receita in receitas) {
+        for (NSManagedObject * receita in receitas)
+        {
             NSLog(@"************************** Receita ***************************");
             NSLog(@"Nome receita: %@", [receita valueForKey:@"nome"]);
         }

@@ -163,7 +163,7 @@
     }
     
     cell.labelPagina.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
-    cell.managedObject = receita.managedObject;
+    cell.receita = receita;
     
     [cell setSelected:YES];
     
