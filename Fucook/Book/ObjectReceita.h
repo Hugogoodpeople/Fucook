@@ -18,6 +18,9 @@
 @property NSString * servings;
 @property NSString * notas;
 
+// dava jeito ter isto aqui para saber o que marcou na agenda
+@property NSString * categoriaAgendada;
+
 @property NSMutableArray * arrayIngredientes;
 @property NSMutableArray * arrayEtapas;
 

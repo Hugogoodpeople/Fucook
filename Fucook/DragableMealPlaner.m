@@ -121,7 +121,8 @@
     
     
     
-    cell.labelPagina.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+    
+   
     UIImage *_maskingImage = [UIImage imageNamed:@"mascara_transparente.png"];
     CALayer *_maskingLayer = [CALayer layer];
     _maskingLayer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width-30, [UIScreen mainScreen].bounds.size.height -180 );
@@ -130,6 +131,8 @@
     
     ObjectReceita * obj = [arrayOfItems objectAtIndex:indexPath.row];
 
+    // aqui tenho de por a refeição da agenda :)
+    cell.labelPagina.text = obj.categoriaAgendada;
     cell.labelTitulo.text = obj.nome;
     cell.labelTempo.text = obj.tempo;
     
@@ -156,8 +159,6 @@
             });
         });
     }
-    
-    
     
     [cell setSelected:YES];
     //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];

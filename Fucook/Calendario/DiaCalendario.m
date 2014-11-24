@@ -20,6 +20,27 @@
     self.labelDiaSemana.text = self.diaSemana;
     self.lableDia.text = self.dia;
     
+    
+    // tambem tenho de mudar aqui os backgrounds
+
+    
+    // aqui tenho de verificar qual foi a refeição selecionada
+    if (self.img1Selected)
+    {
+        [self.img1 setBackgroundColor:[UIColor blackColor]];
+    }
+     if(self.img2Selected)
+    {
+        [self.img2 setBackgroundColor:[UIColor blackColor]];
+    }
+     if(self.img3Selected)
+    {
+        [self.img3 setBackgroundColor:[UIColor blackColor]];
+    }
+     if(self.img4Selected)
+    {
+        [self.img4 setBackgroundColor:[UIColor blackColor]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

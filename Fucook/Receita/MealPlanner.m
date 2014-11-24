@@ -112,9 +112,11 @@
         NSManagedObject * receitaManaged = [pedido valueForKey:@"tem_receita"];
         NSLog(@"managed object %@", pedido.description);
       
-        if (receitaManaged ) {
+        if (receitaManaged )
+        {
             ObjectReceita * objR = [ObjectReceita new];
             [objR setTheManagedObject:receitaManaged];
+            objR.categoriaAgendada = dia.categoria;
             [dia.receitas addObject:objR];
         }
        
@@ -207,7 +209,6 @@
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
 
-    
     NSDateFormatter *dateFormatterSemana = [[NSDateFormatter alloc] init];
     [dateFormatterSemana setDateFormat:@"EEE"];
     //NSLog(@"dia semana %@", [dateFormatter stringFromDate:[self.items objectAtIndex:index]]);
@@ -222,14 +223,34 @@
     DiaCalendario * dia = [DiaCalendario new];
     dia.diaSemana = diaSemana;
     dia.dia = diaMes;
-    
-#warning tenho de passar aqui as receitas agendadas
+
     // basta revificar se tenho algo agendado para o dia em questao
     // se sim entao tenho de mudar as cores das pintas nas celulas
-    
     for (ObjectCalendario * cal in arrayDias)
     {
+        NSString * diaString =[dateFormatterSemana stringFromDate:cal.data];
         
+        if ([diaString isEqualToString:diaSemana])
+        {
+            // aqui tenho de verificar qual foi a refeição selecionada
+            if ([cal.categoria isEqualToString:@"Breakfast"])
+            {
+                dia.img1Selected = true;
+            }
+            else if([cal.categoria isEqualToString:@"Lunch"])
+            {
+                dia.img2Selected = true;
+            }
+            else if([cal.categoria isEqualToString:@"Layoff"])
+            {
+                dia.img3Selected = true;
+            }
+            else if([cal.categoria isEqualToString:@"Dinner"])
+            {
+                dia.img4Selected = true;
+            }
+                
+        }
         
     }
     
@@ -306,7 +327,6 @@
     [self.root actualizarImagens];
     
     [self.root.tableView reloadData];
-
     
 }
 

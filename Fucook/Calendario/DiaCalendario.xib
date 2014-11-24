@@ -9,11 +9,11 @@
             <connections>
                 <outlet property="ImgSelected" destination="Vrt-6x-PvE" id="MZg-cX-RVH"/>
                 <outlet property="img1" destination="zeV-ZS-v14" id="UdK-ar-dHb"/>
+                <outlet property="img2" destination="f0i-nE-vcG" id="Xa1-Dp-eJa"/>
                 <outlet property="img3" destination="BYk-8X-0jh" id="xbt-iH-Usp"/>
                 <outlet property="img4" destination="ffU-9m-44W" id="V9S-IL-SOP"/>
                 <outlet property="labelDiaSemana" destination="bWe-8s-lUd" id="Q4D-jo-IJc"/>
                 <outlet property="lableDia" destination="93Q-cu-K6a" id="hig-oK-5ql"/>
-                <outlet property="omg2" destination="f0i-nE-vcG" id="sBZ-ul-Akv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
