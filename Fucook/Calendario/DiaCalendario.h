@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *img1;
 @property (weak, nonatomic) IBOutlet UIImageView *omg2;
 @property (weak, nonatomic) IBOutlet UIImageView *img3;
+@property (weak, nonatomic) IBOutlet UIImageView *img4;
 
 @property NSString * diaSemana;
 @property NSString * dia;

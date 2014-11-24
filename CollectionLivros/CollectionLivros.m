@@ -103,7 +103,6 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     NSString *identifier = reuseIdentifier;
     
-    
     CollectionLivroCellCollectionViewCell *cell = (CollectionLivroCellCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     ObjectLivro * livro = [arrayOfItems objectAtIndex:(indexPath.row+ (indexPath.section * 2))];
     
@@ -139,8 +138,6 @@ static NSString * const reuseIdentifier = @"CollectionLivroCellCollectionViewCel
         });
     
     }
-
-
 
     return cell;
 }

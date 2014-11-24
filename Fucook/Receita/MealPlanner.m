@@ -118,8 +118,6 @@
             [dia.receitas addObject:objR];
         }
        
-        
-        
         [arrayDias addObject:dia];
         [arrayDatas addObject:dia.data];
     }
@@ -208,6 +206,8 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
+
+    
     NSDateFormatter *dateFormatterSemana = [[NSDateFormatter alloc] init];
     [dateFormatterSemana setDateFormat:@"EEE"];
     //NSLog(@"dia semana %@", [dateFormatter stringFromDate:[self.items objectAtIndex:index]]);
@@ -220,9 +220,18 @@
     NSString * diaMes = [dateFormatterMes stringFromDate:[self.items objectAtIndex:index]];
     
     DiaCalendario * dia = [DiaCalendario new];
-    dia.diaSemana =diaSemana;
+    dia.diaSemana = diaSemana;
     dia.dia = diaMes;
-  
+    
+#warning tenho de passar aqui as receitas agendadas
+    // basta revificar se tenho algo agendado para o dia em questao
+    // se sim entao tenho de mudar as cores das pintas nas celulas
+    
+    for (ObjectCalendario * cal in arrayDias)
+    {
+        
+        
+    }
     
     
     return dia.view;

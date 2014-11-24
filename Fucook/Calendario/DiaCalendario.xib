@@ -10,6 +10,7 @@
                 <outlet property="ImgSelected" destination="Vrt-6x-PvE" id="MZg-cX-RVH"/>
                 <outlet property="img1" destination="zeV-ZS-v14" id="UdK-ar-dHb"/>
                 <outlet property="img3" destination="BYk-8X-0jh" id="xbt-iH-Usp"/>
+                <outlet property="img4" destination="ffU-9m-44W" id="V9S-IL-SOP"/>
                 <outlet property="labelDiaSemana" destination="bWe-8s-lUd" id="Q4D-jo-IJc"/>
                 <outlet property="lableDia" destination="93Q-cu-K6a" id="hig-oK-5ql"/>
                 <outlet property="omg2" destination="f0i-nE-vcG" id="sBZ-ul-Akv"/>
@@ -40,17 +41,22 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="zeV-ZS-v14">
-                            <rect key="frame" x="24" y="50" width="5" height="5"/>
+                            <rect key="frame" x="17" y="50" width="5" height="5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="f0i-nE-vcG">
-                            <rect key="frame" x="38" y="50" width="5" height="5"/>
+                            <rect key="frame" x="31" y="50" width="5" height="5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="BYk-8X-0jh">
-                            <rect key="frame" x="52" y="50" width="5" height="5"/>
+                            <rect key="frame" x="45" y="50" width="5" height="5"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ffU-9m-44W">
+                            <rect key="frame" x="59" y="50" width="5" height="5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                         </imageView>
@@ -81,7 +87,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="261" y="-158"/>
+            <point key="canvasLocation" x="337" y="-140"/>
         </view>
     </objects>
     <resources>

@@ -115,7 +115,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0LU-Za-zKH">
-                                <rect key="frame" x="8" y="15" width="274" height="17"/>
+                                <rect key="frame" x="85" y="15" width="120" height="17"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -123,12 +124,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XjD-6N-pmy" firstAttribute="trailing" secondItem="Zlg-eO-1qg" secondAttribute="trailing" id="1yn-Xr-tb6"/>
-                            <constraint firstItem="0LU-Za-zKH" firstAttribute="leading" secondItem="DlR-g4-Za3" secondAttribute="leading" id="9zi-c2-0ML"/>
+                            <constraint firstItem="0LU-Za-zKH" firstAttribute="leading" secondItem="DlR-g4-Za3" secondAttribute="leading" constant="77" id="9zi-c2-0ML"/>
                             <constraint firstItem="Zlg-eO-1qg" firstAttribute="top" secondItem="Kfa-aA-gKK" secondAttribute="bottom" constant="2" id="CE2-Y7-VFX"/>
                             <constraint firstItem="Zlg-eO-1qg" firstAttribute="leading" secondItem="XjD-6N-pmy" secondAttribute="leading" id="D4X-my-u2o"/>
                             <constraint firstItem="Kfa-aA-gKK" firstAttribute="centerX" secondItem="DlR-g4-Za3" secondAttribute="centerX" id="FeN-rj-drD"/>
                             <constraint firstItem="Zlg-eO-1qg" firstAttribute="trailing" secondItem="DlR-g4-Za3" secondAttribute="trailing" id="Gfh-Js-0aJ"/>
-                            <constraint firstItem="DlR-g4-Za3" firstAttribute="trailing" secondItem="0LU-Za-zKH" secondAttribute="trailing" id="IOJ-UH-SvC"/>
+                            <constraint firstItem="DlR-g4-Za3" firstAttribute="trailing" secondItem="0LU-Za-zKH" secondAttribute="trailing" constant="77" id="IOJ-UH-SvC"/>
                             <constraint firstAttribute="bottom" secondItem="Zlg-eO-1qg" secondAttribute="bottom" constant="57" id="KTy-z0-ebY"/>
                             <constraint firstItem="gJa-Vs-cLq" firstAttribute="leading" secondItem="lO4-Pk-9az" secondAttribute="leading" constant="107" id="OVn-P8-6AQ"/>
                             <constraint firstItem="Kfa-aA-gKK" firstAttribute="leading" secondItem="lO4-Pk-9az" secondAttribute="leading" id="buW-YP-hYm"/>
@@ -164,7 +165,7 @@
                 <outlet property="labelTitulo" destination="XjD-6N-pmy" id="cht-1M-RQ4"/>
                 <outlet property="viewMovel" destination="lO4-Pk-9az" id="Pef-od-Wpf"/>
             </connections>
-            <point key="canvasLocation" x="-242" y="-7"/>
+            <point key="canvasLocation" x="-172" y="-24"/>
         </tableViewCell>
     </objects>
     <resources>

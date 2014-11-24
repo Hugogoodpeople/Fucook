@@ -27,7 +27,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+// ok aqui tenho de ir verificar se tenho ou nao algo reservado neste dia
+// ou tenho algum lado onde possa fazer isto melhor
 
 
 
