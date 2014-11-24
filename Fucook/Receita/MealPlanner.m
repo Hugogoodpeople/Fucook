@@ -109,7 +109,7 @@
         dia.managedObject = pedido;
         // dia.receita = [pedido valueForKey:@"contem_receitas"];
         
-        NSManagedObject * receitaManaged = [pedido valueForKey:@"contem_receitas"];
+        NSManagedObject * receitaManaged = [pedido valueForKey:@"tem_receita"];
         NSLog(@"managed object %@", pedido.description);
       
         if (receitaManaged ) {

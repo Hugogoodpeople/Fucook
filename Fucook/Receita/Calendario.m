@@ -66,7 +66,7 @@
         dia.managedObject = pedido;
         
         
-        if([pedido valueForKey:@"contem_receitas"])
+        if([pedido valueForKey:@"tem_receita"])
         {
             [_items addObject:dia];
             [_datas addObject:dia.data];
@@ -175,9 +175,24 @@
     
     [agenda setValue:self.tempDate forKey:@"data"];
     [agenda setValue:categoria forKey:@"categoria"];
-    [agenda setValue:self.receita forKey:@"contem_receitas"];
+    //[agenda setValue:self.receita forKey:@"contem_receitas"];
     
-    [self.receita setValue:agenda forKey:@"pertence_agendas"];
+    //[self.receita setValue:agenda forKey:@"pertence_agendas"];
+    
+    //  tenho de fazer um ciclo dentro da receita para poder adicionar a nova agenda
+    
+    NSMutableArray * arrayAgenda = [NSMutableArray new];
+    
+    NSSet * agendamentos = [self.receita valueForKey:@"esta_agendada"];
+    
+    for (NSManagedObject * ag in agendamentos)
+    {
+        [arrayAgenda addObject:ag];
+    }
+    
+    [self.receita setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayAgenda]] forKey:@"esta_agendada"];
+    
+    [agenda setValue:self.receita forKey:@"tem_receita"];
     
     
     NSError *error = nil;

@@ -284,13 +284,21 @@
             }
             // depois de ter a receita uso a relação exitente entre as 2 para que o livro saiba que já não esta relacionado com a receita
             // depois de cortar a relação já posso apagar a receita
+            /*
             [temp setValue:nil forKey:@"pertence_livro"];
             
-            NSManagedObject * agenda = [temp valueForKey:@"pertence_agendas"];
+            
+            
+            NSManagedObject * agenda = [temp valueForKey:@"esta_agendada"];
             
             [context deleteObject:temp];
             if(agenda)
                 [context deleteObject:agenda];
+             
+             */
+            // outra solução
+            
+            [context deleteObject:temp];
             
             
             NSError *error = nil;
