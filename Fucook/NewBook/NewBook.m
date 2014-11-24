@@ -107,9 +107,6 @@
 {
     // é aqui que tenho de ir gravar as cenas que acabei de escrever
     
-    
-    
-    
     AppDelegate* appDelegate = [AppDelegate sharedAppDelegate];
     NSManagedObjectContext* context = appDelegate.managedObjectContext;
     
@@ -158,8 +155,6 @@
     }
     
     [self.navigationController popViewControllerAnimated:YES];
-    
-    
 }
 
 -(void)listarTodosLivros

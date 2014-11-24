@@ -119,8 +119,6 @@
         if(data == date)
         {
             ObjectCalendario * cal = [_items objectAtIndex:i];
-            // aqui nao pode ser assim... tenho de percorrer varias datas e assim é apenas pela primeira
-            
             NSLog(@"categoria ja existente %@", cal.categoria);
             [categorias removeObject:cal.categoria];
             
