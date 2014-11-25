@@ -18,6 +18,7 @@
 @property HeaderIngrediente * header;
 @property BOOL servingsOpen;
 @property BOOL cartAllSelected;
+@property NSMutableArray * shopingCart;
 
 @end
 
@@ -25,14 +26,16 @@
 
 NSManagedObjectContext * context ;
 
+
 @synthesize header;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setUp];
-    context = [AppDelegate sharedAppDelegate].managedObjectContext;
     
+    context = [AppDelegate sharedAppDelegate].managedObjectContext;
+  //  [self initializeShoppingCart];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,11 +43,77 @@ NSManagedObjectContext * context ;
     // Dispose of any resources that can be recreated.
 }
 
+-(void)initializeShoppingCart
+{
+    self.shopingCart = [NSMutableArray new];
+    
+    NSError *error;
+    /*
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+     */
+    
+    // para ir buscar os dados prestendidos a base de dados
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.returnsObjectsAsFaults = NO;
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"ShoppingList" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject *pedido in fetchedObjects)
+    {
+        
+        NSLog(@"************************************ Shopping list ************************************");
+        NSLog(@"nome: %@", [pedido valueForKey:@"nome"]);
+        NSLog(@"quantidade: %@", [pedido valueForKey:@"quantidade"]);
+        NSLog(@"unidade: %@", [pedido valueForKey:@"unidade"]);
+        ObjectLista * list = [ObjectLista new];
+        
+        // para mais tarde poder apagar
+        list.managedObject = pedido;
+        
+        list.nome =[pedido valueForKey:@"nome"];
+        list.quantidade =[pedido valueForKey:@"quantidade"];
+        list.quantidade_decimal =[pedido valueForKey:@"quantidade_decimal"];
+        list.unidade =[pedido valueForKey:@"unidade"];
+        
+        //[items addObject:list];
+        
+        // tenho de fazer aqui a comparação e se encontrar entao tenho de remover da base de dados
+        [self.shopingCart addObject:list];
+        
+        
+    }
+
+}
+
+-(BOOL)verificarShoppingList:(ObjectIngrediente *) ingrediente
+{
+    BOOL tem = NO;
+    
+    
+    for (ObjectLista * list in self.shopingCart) {
+        if ([list.nome isEqualToString:ingrediente.nome] && [list.unidade isEqualToString:ingrediente.unidade])
+        {
+            tem = YES;
+        }
+    }
+    
+    
+    return tem;
+
+}
+
 -(void)setUp
 {
     // apenas para textes
     self.items = [NSMutableArray new];
     
+    
+    // tenho de verificar aqui se os ingredientes já estão na shopinglist
     NSSet * receitas = [self.receita.managedObject valueForKey:@"contem_ingredientes"];
     for (NSManagedObject *pedido in receitas)
     {
@@ -56,7 +125,7 @@ NSManagedObjectContext * context ;
         ingred.quantidade           = [pedido valueForKey:@"quantidade"];
         ingred.quantidadeDecimal    = [pedido valueForKey:@"quantidade_decimal"];
         ingred.unidade              = [pedido valueForKey:@"unidade"];
-        
+       // ingred.selecionado          = [self verificarShoppingList:ingred];
         
         [self.items addObject:ingred];
     }
@@ -207,9 +276,6 @@ NSManagedObjectContext * context ;
             [header.addedRemovedView setAlpha:0];
         } completion:0];
     }];
-     
-    
-
     
 }
 
@@ -298,12 +364,7 @@ NSManagedObjectContext * context ;
         {
             [context deleteObject:list.managedObject];
         }
-        
     }
-    
-
-    
-    
 }
 
 

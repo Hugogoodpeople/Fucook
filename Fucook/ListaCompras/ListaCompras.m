@@ -125,6 +125,11 @@
 
 
 
+
+
+
+
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -229,7 +234,9 @@
         [Livro setValue:@"1" forKey:@"quantidade"];
         [Livro setValue:@".4" forKey:@"quantidade_decimal"];
         [Livro setValue:@"g" forKey:@"unidade"];
-    
+
+        
+
         
         NSError *error = nil;
         if (![context save:&error]) {
