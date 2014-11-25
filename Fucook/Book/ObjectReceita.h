@@ -24,6 +24,8 @@
 @property NSMutableArray * arrayIngredientes;
 @property NSMutableArray * arrayEtapas;
 
+@property NSManagedObject * agendamento;
+
 @property NSManagedObject * imagem;
 @property NSManagedObject * managedObject;
 

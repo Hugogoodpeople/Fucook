@@ -110,6 +110,9 @@
 
 
 - (IBAction)clickDelete:(id)sender {
+    if (self.delegate) {
+        [self.delegate performSelectorInBackground:@selector(apagarReceita:) withObject:self.receita];
+    }
 }
 
 - (IBAction)clickCalendario:(id)sender {

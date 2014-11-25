@@ -50,7 +50,7 @@
                          @"51", @"52", @"53", @"54", @"55", @"56", @"57.", @"58", @"59.", @"60",
                          @"75", @"90", @"105", @"120", @"150", @"180", @"240", @"300", @"360"
                          ];
-    _pickerDataCat = @[@"Breakfast", @"Lunch", @"Layoff", @"Dinner"];
+    _pickerDataCat = @[@"Breakfast", @"Lunch", @"Dinner"];
     _pickerDataDifi = @[@"Easy", @"Medium", @"Hard"];
     
     self.textName.delegate=self;
@@ -103,8 +103,10 @@
 - (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     switch (popup.tag) {
-        case 1: {
-            switch (buttonIndex) {
+        case 1:
+        {
+            switch (buttonIndex)
+            {
                 case 0:
                     NSLog(@"library");
                     [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];

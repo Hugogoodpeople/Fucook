@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ObjectReceita.h"
 
 @interface MealPlanerCell : UITableViewCell
 
@@ -23,5 +24,6 @@
 - (IBAction)clickCalendario:(id)sender;
 - (IBAction)clickCarrinho:(id)sender;
 
+@property ObjectReceita * receita;
 
 @end

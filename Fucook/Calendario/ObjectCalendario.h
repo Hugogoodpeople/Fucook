@@ -17,4 +17,6 @@
 
 @property NSManagedObject * managedObject;
 
+@property NSManagedObject * etapa;
+
 @end

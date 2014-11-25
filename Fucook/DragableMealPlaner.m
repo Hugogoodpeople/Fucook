@@ -165,6 +165,7 @@
     //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];
     
     cell.delegate = self.delegate;
+    cell.receita = obj;
     
     return cell;
     

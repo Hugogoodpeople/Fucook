@@ -12,6 +12,11 @@
 #import "AppDelegate.h"
 #import "ObjectCalendario.h"
 #import "ObjectReceita.h"
+#import "THTinderNavigationController.h"
+#import "IngredientesTable.h"
+#import "DirectionsHugo.h"
+#import "Notas.h"
+#import "NavigationBarItem.h"
 
 @interface MealPlanner ()
 {
@@ -126,7 +131,9 @@
             ObjectReceita * objR = [ObjectReceita new];
             [objR setTheManagedObject:receitaManaged];
             objR.categoriaAgendada = dia.categoria;
+            
             [dia.receitas addObject:objR];
+            objR.agendamento = dia.managedObject;
         }
        
         [arrayDias addObject:dia];
@@ -162,10 +169,6 @@
     [comp setDay:1];
     NSDate *firstDayOfMonthDate = [gregorian dateFromComponents:comp];
     
-    
-    
-    // para ir buscar o mes actual
-   // NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:self.dataActual];
     
     NSDate *today = self.dataActual; //Get a date object for today's date
     NSCalendar *c = [NSCalendar currentCalendar];
@@ -250,10 +253,6 @@
             {
                 dia.img2Selected = true;
             }
-            else if([cal.categoria isEqualToString:@"Layoff"])
-            {
-                dia.img3Selected = true;
-            }
             else if([cal.categoria isEqualToString:@"Dinner"])
             {
                 dia.img4Selected = true;
@@ -290,9 +289,7 @@
         dia.view.layer.shadowOpacity = 0.0f;
         dia.view.layer.shadowPath = shadowPath.CGPath;
         
-        
     }
-    
     
     // tenho de ir burcar a view actual e mudar algo para ficar diferente
     DiaCalendario * dia = [DiaCalendario new];
@@ -327,10 +324,10 @@
     
         for (ObjectCalendario * cal in arrayDias) {
             if (cal.data == scrollDay) {
+                // ok aqui tenho de dizer que a receita esta dentro do agendamento
                 [itensDias addObjectsFromArray: cal.receitas];
             }
         }
-    
     
     [self instanciateTable];
     
@@ -386,4 +383,116 @@
     
     [self setUpCarrocel];
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    
+    
+    THTinderNavigationController * tinderNavigationController = [THTinderNavigationController new];
+    
+    //[tinderNavigationController.view setFrame:CGRectMake(0,64, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width-64)];
+    // tenho de dar o NSmanagedObject para poder ir buscar o resto das coisas dentro de cada controlador da receita
+    // tenho de mandar o objecto da receita para poder dentro de cada controlador ter a informação necessária
+    
+    ObjectReceita * objR = [self.root.arrayOfItems objectAtIndex:indexPath.row];
+    
+    IngredientesTable *viewController1 = [[IngredientesTable alloc] init];
+    viewController1.receita = objR;
+    [viewController1.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
+    viewController1.view.backgroundColor = [UIColor whiteColor];
+    
+    DirectionsHugo *viewController2 = [[DirectionsHugo alloc] init];
+    viewController2.receita = objR;
+    [viewController2.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
+    viewController2.view.clipsToBounds = YES;
+    viewController2.view.backgroundColor = [UIColor whiteColor];
+    
+    Notas *viewController3 = [[Notas alloc] init];
+    viewController3.receita = objR;
+    [viewController3.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
+    viewController3.view.clipsToBounds = YES;
+    viewController3.view.backgroundColor = [UIColor whiteColor];
+    
+    
+    tinderNavigationController.viewControllers = @[
+                                                   viewController2,
+                                                   viewController1,
+                                                   viewController3
+                                                   ];
+    
+    NavigationBarItem * item1 = [[NavigationBarItem alloc] init];
+    NavigationBarItem * item2 = [[NavigationBarItem alloc] init];
+    NavigationBarItem * item3 = [[NavigationBarItem alloc] init];
+    
+    item1.titulo = @"Directions";
+    item2.titulo = @"Ingredients";
+    item3.titulo = @"Notes";
+    
+    tinderNavigationController.navbarItemViews = @[
+                                                   item1,
+                                                   item2,
+                                                   item3
+                                                   ];
+    [tinderNavigationController setCurrentPage:1 animated:NO];
+    
+    [self.navigationController pushViewController:tinderNavigationController animated:YES];
+
+    
+    
+}
+
+-(void)apagarReceita:(ObjectReceita *)receita
+{
+    NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    [context deleteObject:receita.agendamento];
+    
+    // aqui tenho de percorrer o agendamento que contem a receita... provavelmente nao preciso de receber a receita
+    
+    
+    
+    NSError *error = nil;
+    if (![context save:&error])
+    {
+        NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+        return;
+    }
+    else
+    {
+        NSLog(@"apagado agendamento com sucesso");
+        
+        [self setUpCoreData];
+        
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        
+        NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:self.dataActual];
+        [components setDay:self.carousel.currentItemIndex +1];
+        
+        NSDate * scrollDay = [calendar dateFromComponents:components];
+        
+        NSMutableArray * itensDias = [NSMutableArray new];
+        
+        for (ObjectCalendario * cal in arrayDias) {
+            if (cal.data == scrollDay) {
+                // ok aqui tenho de dizer que a receita esta dentro do agendamento
+                [itensDias addObjectsFromArray: cal.receitas];
+            }
+        }
+        
+        [self instanciateTable];
+        
+        self.root.arrayOfItems = itensDias;
+        [self.root actualizarImagens];
+        
+        [_carousel reloadItemAtIndex:_carousel.currentItemIndex animated:NO];
+        [self carouselCurrentItemIndexDidChange:_carousel];
+    }
+
+    
+    
+    
+}
+
 @end
