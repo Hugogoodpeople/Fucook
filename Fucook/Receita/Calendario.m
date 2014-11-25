@@ -26,6 +26,7 @@
 
 
 @implementation Calendario
+@synthesize calendar;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,9 +34,9 @@
     
     [self setUp];
     
-    _calendar = [[VRGCalendarView alloc] init];
-    _calendar.delegate=self;
-    [self.container addSubview:_calendar];
+    calendar = [[VRGCalendarView alloc] init];
+    calendar.delegate=self;
+    [self.container addSubview:calendar];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,18 +77,7 @@
             [_datas addObject:dia.data];
         }
     }
-
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 -(void)calendarView:(VRGCalendarView *)calendarView switchedToMonth:(int)month targetHeight:(float)targetHeight animated:(BOOL)animated
 {
@@ -184,21 +174,24 @@
         {
             ObjectCalendario * cal = [_items objectAtIndex:i];
             
-            if ([cal.categoria isEqualToString:categoria]) {
+            if ([cal.categoria isEqualToString:categoria])
+            {
                 agenda = cal.managedObject;
                 jaTinhaAgendada = YES;
             }
-            
-            
         }
     }
 
     NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
     
     if (!agenda) {
-        agenda = [NSEntityDescription
-                  insertNewObjectForEntityForName:@"Agenda"
-                  inManagedObjectContext:context];
+        
+        if (self.calendario) {
+            [context deleteObject:self.calendario];
+        }
+        
+            agenda = [NSEntityDescription insertNewObjectForEntityForName:@"Agenda" inManagedObjectContext:context];
+        
     }
     
     tempAgenda = agenda;

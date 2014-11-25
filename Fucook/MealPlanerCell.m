@@ -116,6 +116,11 @@
 }
 
 - (IBAction)clickCalendario:(id)sender {
+    
+    if (self.delegate) {
+        [self.delegate performSelectorInBackground:@selector(reagendarReceita:) withObject:self.receita];
+    }
+    
 }
 
 - (IBAction)clickCarrinho:(id)sender {

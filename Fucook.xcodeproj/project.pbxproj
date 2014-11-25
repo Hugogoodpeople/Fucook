@@ -27,6 +27,8 @@
 		BA023B7D1A13BEB3000B4754 /* Calendario.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B7B1A13BEB3000B4754 /* Calendario.m */; };
 		BA023B7E1A13BEB3000B4754 /* Calendario.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B7C1A13BEB3000B4754 /* Calendario.xib */; };
 		BA02FA311A1F60D2008571D6 /* ObjectCalendario.m in Sources */ = {isa = PBXBuildFile; fileRef = BA02FA301A1F60D2008571D6 /* ObjectCalendario.m */; };
+		BA44CD241A24D9E70098083E /* CalendarioEditar.m in Sources */ = {isa = PBXBuildFile; fileRef = BA44CD221A24D9E70098083E /* CalendarioEditar.m */; };
+		BA44CD251A24D9E70098083E /* CalendarioEditar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA44CD231A24D9E70098083E /* CalendarioEditar.xib */; };
 		BA55AC3E1A1A017C00381726 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC3D1A1A017C00381726 /* UIImage+fixOrientation.m */; };
 		BA55AC401A1A021000381726 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA55AC3F1A1A021000381726 /* OverlayView.xib */; };
 		BA55AC461A1A16C900381726 /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC451A1A16C900381726 /* FXImageView.m */; };
@@ -288,6 +290,9 @@
 		BA05F5821A08D24300E752E7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		BA05F5831A08D24300E752E7 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
 		BA05F5841A08D24300E752E7 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		BA44CD211A24D9E70098083E /* CalendarioEditar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarioEditar.h; path = Fucook/Calendario/CalendarioEditar.h; sourceTree = "<group>"; };
+		BA44CD221A24D9E70098083E /* CalendarioEditar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarioEditar.m; path = Fucook/Calendario/CalendarioEditar.m; sourceTree = "<group>"; };
+		BA44CD231A24D9E70098083E /* CalendarioEditar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalendarioEditar.xib; path = Fucook/Calendario/CalendarioEditar.xib; sourceTree = "<group>"; };
 		BA55AC3C1A1A017C00381726 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+fixOrientation.h"; path = "Fucook/UIImage+fixOrientation.h"; sourceTree = "<group>"; };
 		BA55AC3D1A1A017C00381726 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+fixOrientation.m"; path = "Fucook/UIImage+fixOrientation.m"; sourceTree = "<group>"; };
 		BA55AC3F1A1A021000381726 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OverlayView.xib; path = NewBook/OverlayView.xib; sourceTree = "<group>"; };
@@ -638,6 +643,9 @@
 				BA023B7C1A13BEB3000B4754 /* Calendario.xib */,
 				BA02FA2F1A1F60D2008571D6 /* ObjectCalendario.h */,
 				BA02FA301A1F60D2008571D6 /* ObjectCalendario.m */,
+				BA44CD211A24D9E70098083E /* CalendarioEditar.h */,
+				BA44CD221A24D9E70098083E /* CalendarioEditar.m */,
+				BA44CD231A24D9E70098083E /* CalendarioEditar.xib */,
 			);
 			name = Calendario;
 			sourceTree = "<group>";
@@ -1528,6 +1536,7 @@
 				BAF955621A0A9D6900277B94 /* btncall2@2x.png in Resources */,
 				BAF955651A0A9D6900277B94 /* btndelet1@3x.png in Resources */,
 				BAF76B671A0D3F3D00D2CC13 /* mascara_branca.png in Resources */,
+				BA44CD251A24D9E70098083E /* CalendarioEditar.xib in Resources */,
 				BA66E6161A1258160090F99D /* imglogofucook@3x.png in Resources */,
 				BAF955601A0A9D6900277B94 /* btncall1@2x.png in Resources */,
 				BA66E5C81A1230B60090F99D /* NewIngrediente.xib in Resources */,
@@ -1630,6 +1639,7 @@
 				CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */,
 				BA66E61F1A1282160090F99D /* DirectionsHugo.m in Sources */,
 				BAE468101A11214A00D3F596 /* HeaderIngrediente.m in Sources */,
+				BA44CD241A24D9E70098083E /* CalendarioEditar.m in Sources */,
 				BAC6394F1A07ED420049E3BD /* main.m in Sources */,
 				BA023B571A13AD4E000B4754 /* Notas.m in Sources */,
 				BA02FA311A1F60D2008571D6 /* ObjectCalendario.m in Sources */,

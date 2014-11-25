@@ -550,7 +550,9 @@
 
 #pragma mark - Init
 -(id)init {
-    self = [super initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width-20, 0)];
+    float largura =[UIScreen mainScreen].bounds.size.width;
+    
+    self = [super initWithFrame:CGRectMake(0, 0, largura-20, 0)];
     if (self) {
         self.contentMode = UIViewContentModeTop;
         self.clipsToBounds=YES;
@@ -563,8 +565,8 @@
         labelCurrentMonth.textColor = [UIColor colorWithHexString:@"0x383838"];
         labelCurrentMonth.textAlignment = UITextAlignmentCenter;
         
-        [self performSelector:@selector(reset) withObject:nil afterDelay:0.1]; //so delegate can be set after init and still get called on init
-        //        [self reset];
+        //[self performSelector:@selector(reset) withObject:nil afterDelay:0.1]; //so delegate can be set after init and still get called on init
+                [self reset];
     }
     return self;
 }

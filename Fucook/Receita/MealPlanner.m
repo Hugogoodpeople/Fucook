@@ -17,6 +17,7 @@
 #import "DirectionsHugo.h"
 #import "Notas.h"
 #import "NavigationBarItem.h"
+#import "Calendario.h"
 
 @interface MealPlanner ()
 {
@@ -53,10 +54,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     [self setUp];
     [self setUpCoreData];
     [self setUpCarrocel];
-    
 }
 
 -(void)setUp
@@ -257,12 +264,8 @@
             {
                 dia.img4Selected = true;
             }
-                
         }
-        
     }
-    
-    
     return dia.view;
 }
 
@@ -322,8 +325,10 @@
     
     NSMutableArray * itensDias = [NSMutableArray new];
     
-        for (ObjectCalendario * cal in arrayDias) {
-            if (cal.data == scrollDay) {
+        for (ObjectCalendario * cal in arrayDias)
+        {
+            if (cal.data == scrollDay)
+            {
                 // ok aqui tenho de dizer que a receita esta dentro do agendamento
                 [itensDias addObjectsFromArray: cal.receitas];
             }
@@ -489,7 +494,22 @@
         [_carousel reloadItemAtIndex:_carousel.currentItemIndex animated:NO];
         [self carouselCurrentItemIndexDidChange:_carousel];
     }
+    
+}
 
+-(void)reagendarReceita:(ObjectReceita *)receita
+{
+    
+    NSLog(@"Delegado Calendario");
+    
+    // tenho de abrir o calendario em modo de edição
+    Calendario * calendarioEditar = [Calendario new];
+    calendarioEditar.receita = receita.managedObject;
+    calendarioEditar.calendario = receita.agendamento;
+    
+    [self.navigationController pushViewController:calendarioEditar animated:YES];
+    // nao sei pk mas o calendario esta aparecer vazio
+    
     
     
     
