@@ -11,6 +11,7 @@
 #import "IngredienteCellTableViewCell.h"
 #import "ObjectIngrediente.h"
 #import "AppDelegate.h"
+#import "ObjectLista.h"
 
 @interface IngredientesTable ()
 
@@ -22,12 +23,16 @@
 
 @implementation IngredientesTable
 
+NSManagedObjectContext * context ;
+
 @synthesize header;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setUp];
+    context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,18 +43,11 @@
 -(void)setUp
 {
     // apenas para textes
-    
     self.items = [NSMutableArray new];
-    
-
-   
-    
     
     NSSet * receitas = [self.receita.managedObject valueForKey:@"contem_ingredientes"];
     for (NSManagedObject *pedido in receitas)
     {
-        
-        
         ObjectIngrediente * ingred = [ObjectIngrediente new];
         
         // para mais tarde poder apagar
@@ -62,7 +60,6 @@
         
         [self.items addObject:ingred];
     }
-
     
     
     header = [HeaderIngrediente new];
@@ -77,8 +74,6 @@
    
     
     header.imagem = [UIImage imageWithData:data];
-    
-    
     
     self.tabela.tableHeaderView = header.view;
 }
@@ -131,6 +126,7 @@
     // tenho de calcular com base no que esta no header
     
     cell.labelQtd.text = [self calcularValor:indexPath];
+    cell.delegate = self;
 
     [cell addRemove: !ing.selecionado];
     
@@ -157,13 +153,15 @@
     
     if (self.cartAllSelected){
         
-        for (ObjectIngrediente * ing in self.items) {
+        for (ObjectIngrediente * ing in self.items)
+        {
             ing.selecionado = NO;
         }
     }
     else
     {
-        for (ObjectIngrediente * ing in self.items) {
+        for (ObjectIngrediente * ing in self.items)
+        {
             ing.selecionado = YES;
         }
     }
@@ -192,7 +190,8 @@
 -(void)mostrarAlteracoesAddRemove:(BOOL)added
 {
     
-    if (added) {
+    if (added)
+    {
         header.labelAllitensAddedRemoved.text = @"All itens added to shopping list";
     }
     else
@@ -223,6 +222,87 @@
     } completion:^(BOOL finished) {
          [self.tabela reloadData];
     }];
+    
+}
+
+-(void)saveIngrediente:(ObjectIngrediente *) ingrediente
+{
+    NSLog(@"adicionar %@", ingrediente.nome);
+    
+    NSManagedObject *listItem = [NSEntityDescription
+                              insertNewObjectForEntityForName:@"ShoppingList"
+                              inManagedObjectContext:context];
+    
+    [listItem setValue:ingrediente.nome forKey:@"nome"];
+    [listItem setValue:ingrediente.quantidade forKey:@"quantidade"];
+    [listItem setValue:ingrediente.quantidadeDecimal forKey:@"quantidade_decimal"];
+    [listItem setValue:ingrediente.unidade forKey:@"unidade"];
+    
+    /*
+    NSError *error = nil;
+    
+    if (![context save:&error]) {
+        NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+        return;
+    }
+    */
+}
+
+-(void)deleteIngrediente:(ObjectIngrediente *) ingrediente
+{
+    NSLog(@"remover %@", ingrediente.nome);
+    // tenho de percorrer todos os ingredientes na shopping list e remover o selecionado
+    
+    
+    // para ver se deu algum erro ao inserir
+    
+    
+    NSError *error;
+    /*
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    */
+    
+    // para ir buscar os dados prestendidos a base de dados
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.returnsObjectsAsFaults = NO;
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"ShoppingList" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject *pedido in fetchedObjects)
+    {
+        
+        NSLog(@"************************************ Shopping list ************************************");
+        NSLog(@"nome: %@", [pedido valueForKey:@"nome"]);
+        NSLog(@"quantidade: %@", [pedido valueForKey:@"quantidade"]);
+        NSLog(@"unidade: %@", [pedido valueForKey:@"unidade"]);
+        ObjectLista * list = [ObjectLista new];
+        
+        // para mais tarde poder apagar
+        list.managedObject = pedido;
+        
+        list.nome =[pedido valueForKey:@"nome"];
+        list.quantidade =[pedido valueForKey:@"quantidade"];
+        list.quantidade_decimal =[pedido valueForKey:@"quantidade_decimal"];
+        list.unidade =[pedido valueForKey:@"unidade"];
+        
+        //[items addObject:list];
+        
+        // tenho de fazer aqui a comparação e se encontrar entao tenho de remover da base de dados
+        
+        if ([list.nome isEqualToString:ingrediente.nome] && [list.unidade isEqualToString:ingrediente.unidade])
+        {
+            [context deleteObject:list.managedObject];
+        }
+        
+    }
+    
+
+    
     
 }
 

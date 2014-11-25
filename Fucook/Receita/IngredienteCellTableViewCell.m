@@ -27,10 +27,17 @@
     {
         [self.imgAddRemove setImage:[UIImage imageNamed:@"btnmore.png"]];
       
+        if (self.delegate) {
+            [self.delegate performSelectorInBackground:@selector(deleteIngrediente:) withObject:self.ingrediente];
+        }
+        
     }
     else
     {
         [self.imgAddRemove setImage:[UIImage imageNamed:@"btnless.png"]];
+        if (self.delegate) {
+            [self.delegate performSelectorInBackground:@selector(saveIngrediente:) withObject:self.ingrediente];
+        }
     }
     
     self.onCart = selecionado;

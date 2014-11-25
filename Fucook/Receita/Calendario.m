@@ -81,7 +81,7 @@
 
 -(void)calendarView:(VRGCalendarView *)calendarView switchedToMonth:(int)month targetHeight:(float)targetHeight animated:(BOOL)animated
 {
- 
+    
     // resumindo muito eu tenho de verificar se o mes
     NSMutableArray * dias = [NSMutableArray new];
     for (NSDate * data in _datas) {
@@ -101,26 +101,26 @@
     // aqui tenho de adicionar a receita a uma data
     
     self.tempDate = date;
-   
+    
     // tenho de verificar se na data actualmente escolhida ja tem alguma coisa agendada
     // se sim tenho de remover da actionsheet os que já estão escolhidos para essa data
     
     NSMutableArray * categorias = [[NSMutableArray alloc] initWithArray: @[@"Breakfast",@"Lunch",@"Dinner"]];
-
+    
     /*
-    for (int i = 0 ; i< _datas.count ; i++)
-    {
-        NSDate * data = [_datas objectAtIndex:i];
-        if(data == date)
-        {
-            ObjectCalendario * cal = [_items objectAtIndex:i];
-            NSLog(@"categoria ja existente %@", cal.categoria);
-            [categorias removeObject:cal.categoria];
-            
- 
-            
-        }
-    }
+     for (int i = 0 ; i< _datas.count ; i++)
+     {
+     NSDate * data = [_datas objectAtIndex:i];
+     if(data == date)
+     {
+     ObjectCalendario * cal = [_items objectAtIndex:i];
+     NSLog(@"categoria ja existente %@", cal.categoria);
+     [categorias removeObject:cal.categoria];
+     
+     
+     
+     }
+     }
      */
     /// esta parte funciona perfeitamente removendo as refeições já selecionadas
     
@@ -149,14 +149,14 @@
     {
         case 1:
         {
-          
+            
             NSString * selecionado = [popup buttonTitleAtIndex:buttonIndex];
             
             if (![selecionado isEqualToString:@"Cancel"]) {
                 NSLog(@"refeição selecionada: %@", selecionado);
                 [self adacionarAoCalendario:selecionado];
             }
-        
+            
         }
         default:
             break;
@@ -181,7 +181,7 @@
             }
         }
     }
-
+    
     NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
     
     if (!agenda) {
@@ -190,7 +190,7 @@
             [context deleteObject:self.calendario];
         }
         
-            agenda = [NSEntityDescription insertNewObjectForEntityForName:@"Agenda" inManagedObjectContext:context];
+        agenda = [NSEntityDescription insertNewObjectForEntityForName:@"Agenda" inManagedObjectContext:context];
         
     }
     
@@ -210,21 +210,21 @@
     }
     else
     {
-    
+        
         NSMutableArray * arrayAgenda = [NSMutableArray new];
-    
+        
         NSSet * agendamentos = [self.receita valueForKey:@"esta_agendada"];
-    
+        
         for (NSManagedObject * ag in agendamentos)
         {
             [arrayAgenda addObject:ag];
         }
-    
+        
         [self.receita setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayAgenda]] forKey:@"esta_agendada"];
-    
+        
         [agenda setValue:self.receita forKey:@"tem_receita"];
-    
-    
+        
+        
         NSError *error = nil;
         if (![context save:&error])
         {
@@ -235,10 +235,10 @@
         {
             NSLog(@"Gravado com sucesso");
         }
-    
+        
         [self.navigationController popViewControllerAnimated:YES];
     }
-
+    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -261,7 +261,7 @@
             [self.receita setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayAgenda]] forKey:@"esta_agendada"];
             
             [tempAgenda setValue:self.receita forKey:@"tem_receita"];
-
+            
             if (![context save:&error])
             {
                 NSLog(@"error core data! %@ %@", error, [error localizedDescription]);

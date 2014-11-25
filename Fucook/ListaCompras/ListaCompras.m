@@ -118,12 +118,10 @@
         //[self.container addSubview:self.placeHolder.view];
     }
     
+    
+    [self.tabbleView reloadData];
+    
 }
-
-
-
-
-
 
 
 
@@ -231,10 +229,7 @@
         [Livro setValue:@"1" forKey:@"quantidade"];
         [Livro setValue:@".4" forKey:@"quantidade_decimal"];
         [Livro setValue:@"g" forKey:@"unidade"];
-        
-     
-        
-
+    
         
         NSError *error = nil;
         if (![context save:&error]) {
@@ -339,16 +334,34 @@
 }
 
 
--(void)deleteRow: (NSString *) index{
+-(void)deleteRow: (NSManagedObject *) managedObject{
     NSLog(@"deleteou");
-    NSLog(@"%@",index);
-    indexCell = index;
-    [arrayOfItems removeObjectAtIndex:[index intValue]];
+   // NSLog(@"%@",index);
     
-    // Delete the row from the data source
-    //[self.tabbleView deleteRowsAtIndexPaths:textArray withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+ 
+    
     selectedIndex = -1;
-    [self.tabbleView reloadData];
+    //[self.tabbleView reloadData];
+    
+    
+    NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    
+    
+    
+    
+    [context deleteObject:managedObject];
+    
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+        return;
+    }
+
+    [self preencherTabela];
+    
 }
 
 -(void)OpenReceita: (NSString *) index{

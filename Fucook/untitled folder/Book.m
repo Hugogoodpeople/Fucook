@@ -243,8 +243,6 @@
 
 -(void)ApagarReceita:(NSManagedObject *) object
 {
-    
-    
     NSLog(@"delegado apagar receita");
     
     self.receitaAApagar = object;
