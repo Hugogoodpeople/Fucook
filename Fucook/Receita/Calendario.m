@@ -251,7 +251,8 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (alertView.tag == 1) {
-        if (buttonIndex == 1) {
+        if (buttonIndex == 1)
+        {
             NSError *error = nil;
             NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
             
@@ -268,7 +269,6 @@
             
             [tempAgenda setValue:self.receita forKey:@"tem_receita"];
 
-
             if (![context save:&error])
             {
                 NSLog(@"error core data! %@ %@", error, [error localizedDescription]);
@@ -280,7 +280,6 @@
             }
             
             [self.navigationController popViewControllerAnimated:YES];
-
         }
     }
 }

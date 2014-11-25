@@ -106,6 +106,7 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     static NSString *simpleTableIdentifier = @"MealPlanerCell";
     
     MealPlanerCell *cell = (MealPlanerCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -167,6 +168,29 @@
     
     return cell;
     
+}
+
+-(float)calcularAltura
+{
+    int alturaEcra = [UIScreen mainScreen].bounds.size.height;
+    int devolver;
+    
+    if (alturaEcra == 480)
+    {
+        devolver = 295;
+    }else if (alturaEcra == 568)
+    {
+        devolver = 370;
+    }else if (alturaEcra == 667)
+    {
+        devolver = 450;
+    }
+    else if (alturaEcra == 736)
+    {
+        devolver = 510;
+    }
+    
+    return devolver;
 }
 
 -(void)actualizarImagens

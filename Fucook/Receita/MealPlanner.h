@@ -18,8 +18,11 @@
 - (IBAction)clickMesAnterior:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *container;
 
+@property NSMutableArray * arrayOfItems;
+@property NSMutableArray * imagens;
 
 @property NSDate * dataActual;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
 @end

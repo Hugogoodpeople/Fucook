@@ -165,7 +165,7 @@
                 <outlet property="labelTitulo" destination="XjD-6N-pmy" id="cht-1M-RQ4"/>
                 <outlet property="viewMovel" destination="lO4-Pk-9az" id="Pef-od-Wpf"/>
             </connections>
-            <point key="canvasLocation" x="-172" y="-24"/>
+            <point key="canvasLocation" x="-162" y="-164"/>
         </tableViewCell>
     </objects>
     <resources>

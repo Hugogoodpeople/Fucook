@@ -159,7 +159,6 @@
                 });
             });
         }
-
     }
     
     cell.labelPagina.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
