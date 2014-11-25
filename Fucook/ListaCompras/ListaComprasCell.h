@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FXImageView.h"
+#import <CoreData/CoreData.h>
 
 @interface ListaComprasCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelSub;
 @property (nonatomic , assign) id delegate;
 @property NSString *index;
+
+@property NSManagedObject * managedObject;
 
 - (IBAction)btVer:(id)sender;
 - (IBAction)btProcurar:(id)sender;
@@ -21,4 +25,5 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *labelPeso;
 @property (weak, nonatomic) IBOutlet UILabel *labelUnit;
+@property (weak, nonatomic) IBOutlet UILabel *labelQuanDeci;
 @end

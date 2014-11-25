@@ -27,6 +27,7 @@
     NSArray *_pickerData;
     NSString *indexCell;
     ObjectLista * lista;
+    NSManagedObject * managedObjectaux;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tabbleView;
@@ -42,13 +43,8 @@
     [self preencherTabela];
     selectedIndex = -1;
     
-    subtitleArray = [[NSMutableArray alloc] initWithObjects:@"1 ROW",@"2",@"3",@"4",@"5",@"6",@"7",@"8", nil];
-    pesoArray = [[NSMutableArray alloc] initWithObjects:@"10",@"22",@"0.32",@"1",@"0.100",@"2.75",@"90",@"100", nil];
-    unitArray = [[NSMutableArray alloc] initWithObjects:@"Tbs",@"g",@"mL",@"L",@"kg",@"dL",@"Bags",@"Jars", nil];
-    textArray = [[NSMutableArray alloc] initWithObjects:@"Manteiga",@"Amendoin",@"Sal",@"Pimenta",@"Frango",@"Batatas",@"Cenouras",@"Tomates", nil];
-    
     [self.tabbleView registerNib:[UINib nibWithNibName:@"TableHeader" bundle:nil] forHeaderFooterViewReuseIdentifier:@"TableHeader"];
-    //self.delegate = self;
+
     [self.viewBlock setUserInteractionEnabled:NO];
     [self.viewBlock setBackgroundColor:[[UIColor clearColor] colorWithAlphaComponent:0]];
     
@@ -95,15 +91,12 @@
         ObjectLista * list = [ObjectLista new];
         
         // para mais tarde poder apagar
-        list.managedObject = pedido;
-        
+        list.managedObject = pedido;        
         
         list.nome =[pedido valueForKey:@"nome"];
         list.quantidade =[pedido valueForKey:@"quantidade"];
         list.quantidade_decimal =[pedido valueForKey:@"quantidade_decimal"];
-        list.unidade =[pedido valueForKey:@"unidade"];
-        list.managedObject = pedido;
-        
+        list.unidade =[pedido valueForKey:@"unidade"];        
         
         [items addObject:list];
     }
@@ -164,10 +157,10 @@
     }
     NSLog(@"%@",listas.unidade);
     cell.labelTitle.text = listas.nome;
-    cell.labelSub.text = [subtitleArray objectAtIndex:indexPath.row];
     cell.labelPeso.text = listas.quantidade;
     cell.labelUnit.text = listas.unidade;
-
+    cell.labelQuanDeci.text = listas.quantidade_decimal;
+    cell.managedObject = listas.managedObject;
     cell.index = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
     cell.delegate = self;
     return cell;
@@ -205,7 +198,7 @@
 }
 
 
--(void)editQuant: (NSString *) index{
+-(void)editQuant:(NSManagedObject *)managedObject{
    
     CGRect screenRect = [[UIScreen mainScreen] bounds];
 
@@ -215,7 +208,8 @@
             [self.viewPicker setFrame:CGRectMake(0,  screenRect.size.height-self.viewPicker.frame.size.height, self.viewPicker.frame.size.width,self.viewPicker.frame.size.height)];
             [self.tabbleView setContentSize:CGSizeMake(self.view.frame.size.width, self.tabbleView.frame.size.height-self.pickerQuant.frame.size.height)];
         }];
-    indexCell = index;
+    //indexCell = index;
+    managedObjectaux=managedObject;
 }
 
 
@@ -233,10 +227,10 @@
                                   insertNewObjectForEntityForName:@"ShoppingList"
                                   inManagedObjectContext:context];
     
-        [Livro setValue:@"mass" forKey:@"nome"];
-        [Livro setValue:@"4" forKey:@"quantidade"];
-        [Livro setValue:@".5" forKey:@"quantidade_decimal"];
-        [Livro setValue:@"kg" forKey:@"unidade"];
+        [Livro setValue:@"sal" forKey:@"nome"];
+        [Livro setValue:@"1" forKey:@"quantidade"];
+        [Livro setValue:@".4" forKey:@"quantidade_decimal"];
+        [Livro setValue:@"g" forKey:@"unidade"];
         
      
         
@@ -311,7 +305,7 @@
 
 
 -(IBAction)btDone:(id)sender{
-    NSLog(@"%@",indexCell);
+    NSLog(@"%@",managedObjectaux);
     CGRect screenRect = [[UIScreen mainScreen] bounds];
      [UIView animateWithDuration:0.5 animations:^{
         [self.viewBlock setUserInteractionEnabled:NO];
@@ -321,14 +315,26 @@
     }];
     
     long a = [self.pickerQuant selectedRowInComponent:0];
-    [_pickerPeso objectAtIndex:a];
+    NSString *quant = [_pickerPeso objectAtIndex:a];
     long b = [self.pickerQuant selectedRowInComponent:1];
-    [_pickerData objectAtIndex:b];
+    NSString *quantdecimal = [_pickerData objectAtIndex:b];
     long c = [self.pickerQuant selectedRowInComponent:2];
-    [_pickerUnit objectAtIndex:c];
-    NSString *as = [NSString stringWithFormat:@"%@%@", [_pickerPeso objectAtIndex:a], [_pickerData objectAtIndex:b]];
-    [pesoArray replaceObjectAtIndex:[indexCell intValue] withObject:as];
-    [unitArray replaceObjectAtIndex:[indexCell intValue] withObject:[_pickerUnit objectAtIndex:c]];
+    NSString *uni = [_pickerUnit objectAtIndex:c];
+    
+    NSManagedObject *listaedit = managedObjectaux;
+    
+    [listaedit setValue:quant forKey:@"quantidade"];
+    [listaedit setValue:quantdecimal forKey:@"quantidade_decimal"];
+    [listaedit setValue:uni forKey:@"unidade"];
+    
+    /*NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+        return;
+    }*/
+
+    [self preencherTabela];
+
     [self.tabbleView reloadData];
 }
 
@@ -337,9 +343,8 @@
     NSLog(@"deleteou");
     NSLog(@"%@",index);
     indexCell = index;
-    [textArray removeObjectAtIndex:[index intValue]];
-    [pesoArray removeObjectAtIndex:[index intValue]];
-    [unitArray removeObjectAtIndex:[index intValue]];
+    [arrayOfItems removeObjectAtIndex:[index intValue]];
+    
     // Delete the row from the data source
     //[self.tabbleView deleteRowsAtIndexPaths:textArray withRowAnimation:UITableViewRowAnimationAutomatic];
     selectedIndex = -1;

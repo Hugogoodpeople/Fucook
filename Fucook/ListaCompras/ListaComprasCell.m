@@ -32,7 +32,7 @@
 - (IBAction)btVer:(id)sender {
      NSLog(@"VER");
     if (self.delegate) {
-        [self.delegate performSelector:@selector(OpenReceita:) withObject:self.index];
+        [self.delegate performSelector:@selector(OpenReceita:) withObject:self.managedObject];
     }
 }
 
@@ -42,14 +42,14 @@
 
 - (IBAction)btAdd:(id)sender {
     if (self.delegate) {
-        [self.delegate performSelector:@selector(editQuant:) withObject:self.index];
+        [self.delegate performSelector:@selector(editQuant:) withObject:self.managedObject];
     }
 }
 
 - (IBAction)btDelete:(id)sender {
     NSLog(@"DELETE");
     if (self.delegate) {
-        [self.delegate performSelector:@selector(deleteRow:) withObject:self.index];
+        [self.delegate performSelector:@selector(deleteRow:) withObject:self.managedObject];
     }
 }
 @end
