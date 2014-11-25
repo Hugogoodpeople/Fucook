@@ -125,7 +125,7 @@ NSManagedObjectContext * context ;
         ingred.quantidade           = [pedido valueForKey:@"quantidade"];
         ingred.quantidadeDecimal    = [pedido valueForKey:@"quantidade_decimal"];
         ingred.unidade              = [pedido valueForKey:@"unidade"];
-       // ingred.selecionado          = [self verificarShoppingList:ingred];
+       // ingred.selecionado        = [self verificarShoppingList:ingred];
         
         [self.items addObject:ingred];
     }
@@ -139,7 +139,7 @@ NSManagedObjectContext * context ;
     header.tempo            = self.receita.tempo;
     header.nome             = self.receita.nome;
     header.servings         = self.receita.servings;
-    NSData * data = [self.receita.imagem valueForKey:@"imagem"];
+    NSData * data           = [self.receita.imagem valueForKey:@"imagem"];
    
     
     header.imagem = [UIImage imageWithData:data];
@@ -321,8 +321,6 @@ NSManagedObjectContext * context ;
     
     
     // para ver se deu algum erro ao inserir
-    
-    
     NSError *error;
     /*
     if (![context save:&error]) {
