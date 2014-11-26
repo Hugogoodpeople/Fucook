@@ -170,7 +170,7 @@
     for (int i = 0 ; i< _datas.count ; i++)
     {
         NSDate * data = [_datas objectAtIndex:i];
-        if(data == self.tempDate)
+        if([data compare: self.tempDate] == NSOrderedSame)
         {
             ObjectCalendario * cal = [_items objectAtIndex:i];
             

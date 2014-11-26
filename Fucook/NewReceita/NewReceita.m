@@ -155,6 +155,10 @@
 
 -(void)actualizarPosicoes
 {
+    
+    [UIView setAnimationsEnabled:NO];
+    
+    
     ingre.arrayOfItems = arrayIngredientes;
     [ingre.tabela reloadData];
     
@@ -163,6 +167,8 @@
     
     footerFinal.arrayOfItems = arrayNotas;
     [footerFinal.tabela reloadData];
+    
+    [UIView setAnimationsEnabled:YES];
     
     CGFloat tempo =.5;
     if (!jaFoiAbertoAntes) {
