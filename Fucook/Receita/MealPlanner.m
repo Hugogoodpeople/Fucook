@@ -203,7 +203,7 @@
     
     int diaHoje =[dateFormatterDia stringFromDate:self.dataActual].intValue;
     
-    
+    [_carousel scrollToItemAtIndex:diaHoje animated:false];
     [_carousel scrollToItemAtIndex:diaHoje-1 animated:false];
 }
 
@@ -402,6 +402,9 @@
     // tenho de mandar o objecto da receita para poder dentro de cada controlador ter a informação necessária
     
     ObjectReceita * objR = [self.root.arrayOfItems objectAtIndex:indexPath.row];
+    
+    self.dataActual = [objR.agendamento valueForKey:@"data"];
+    
     
     IngredientesTable *viewController1 = [[IngredientesTable alloc] init];
     viewController1.receita = objR;
