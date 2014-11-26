@@ -82,25 +82,30 @@
 
 -(void)instanciateTable
 {
-    if (self.root) {
-        [self.root.view removeFromSuperview];
+    if (self.root)
+    {
+       // [self.root.view removeFromSuperview];
+    }
+    else
+    {
+        self.root = [DragableMealPlaner new];
+        //[self.root.view setFrame:[[UIScreen mainScreen] bounds] ];
+        
+        // tenho de verificar a data de hoje para meter as receitas
+        
+        
+        [self.root.view setFrame:CGRectMake(0, 0, self.container.frame.size.width , self.container.frame.size.height)];
+        
+        self.root.view.backgroundColor = [UIColor clearColor];
+        
+        [self.container addSubview:self.root.view];
+        self.root.delegate = self;
+        
+        // depois tenho de activar esta parte
+        self.root.tableView.delegate = self;
     }
     
-    self.root = [DragableMealPlaner new];
-    //[self.root.view setFrame:[[UIScreen mainScreen] bounds] ];
     
-    // tenho de verificar a data de hoje para meter as receitas
-    
-    
-    [self.root.view setFrame:CGRectMake(0, 0, self.container.frame.size.width , self.container.frame.size.height)];
-    
-    self.root.view.backgroundColor = [UIColor clearColor];
-    
-    [self.container addSubview:self.root.view];
-    self.root.delegate = self;
-    
-    // depois tenho de activar esta parte
-    self.root.tableView.delegate = self;
 
 }
 
@@ -314,17 +319,22 @@
     
     self.itemAnterior = dia.view;
     
+    // tenho de executar este codigo numa thread
     
-    // aqui tenho de actualizar a view que tem as receitas vindas da BD
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:self.dataActual];
-    [components setDay:carousel.currentItemIndex +1];
-    
-    NSDate * scrollDay = [calendar dateFromComponents:components];
-    
-    NSMutableArray * itensDias = [NSMutableArray new];
-    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0ul);
+    dispatch_async(queue, ^{
+        
+        // codigo dentro da thread
+        // aqui tenho de actualizar a view que tem as receitas vindas da BD
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        
+        NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:self.dataActual];
+        [components setDay:carousel.currentItemIndex +1];
+        
+        NSDate * scrollDay = [calendar dateFromComponents:components];
+        
+        NSMutableArray * itensDias = [NSMutableArray new];
+        
         for (ObjectCalendario * cal in arrayDias)
         {
             if ([cal.data compare:scrollDay] == NSOrderedSame)
@@ -333,13 +343,23 @@
                 [itensDias addObjectsFromArray: cal.receitas];
             }
         }
-    
-    [self instanciateTable];
-    
-    self.root.arrayOfItems = itensDias;
-    [self.root actualizarImagens];
-    
-    //[self.root.tableView reloadData];
+        
+        
+        //[self instanciateTable];
+        
+        self.root.arrayOfItems = itensDias;
+        [self.root actualizarImagens];
+        
+        
+        //[self.root.tableView reloadData];
+
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                   // codigo a exutar na main thread
+                    [self.root.tableView reloadData];
+        });
+    });
+   
     
 }
 

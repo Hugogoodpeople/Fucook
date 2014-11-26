@@ -148,7 +148,7 @@
     else
     {
         //cell.imageCapa.image = [UIImage imageNamed:@"icn_default"];
-        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0ul);
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^{
             NSData * data = [obj.imagem valueForKey:@"imagem"];
             //[FTWCache setObject:data forKey:key];
@@ -196,6 +196,7 @@
 
 -(void)actualizarImagens
 {
+
     imagens = [[NSMutableArray alloc] init];
     
     for (NSInteger i = 0; i < 1000; ++i)
