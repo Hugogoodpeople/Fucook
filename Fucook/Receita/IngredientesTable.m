@@ -99,7 +99,10 @@ NSManagedObjectContext * context ;
     
     
     for (ObjectLista * list in self.shopingCart) {
-        if ([list.nome isEqualToString:ingrediente.nome] && [list.unidade isEqualToString:ingrediente.unidade])
+        if ([list.nome isEqualToString:ingrediente.nome] &&
+            [list.unidade isEqualToString:ingrediente.unidade] &&
+            [list.quantidade isEqualToString:ingrediente.quantidade] &&
+            [list.quantidade_decimal isEqualToString:ingrediente.quantidadeDecimal])
         {
             tem = YES;
         }
@@ -173,13 +176,6 @@ NSManagedObjectContext * context ;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    
-    return cell;
-     */
-    
-    
     
     static NSString *simpleTableIdentifier = @"IngredienteCellTableViewCell";
     
@@ -210,7 +206,8 @@ NSManagedObjectContext * context ;
 {
     ObjectIngrediente * ing = [self.items objectAtIndex:indexPath.row];
 
-    float calculado = [ing.quantidade floatValue] * [header.labelNumberServings.text floatValue];
+    float calculado = ([ing.quantidade floatValue] + [ing.quantidadeDecimal floatValue])  * [header.labelNumberServings.text floatValue];
+    //ing.quantidade = [NSString stringWithFormat:@"%.2f %@", calculado, ing.unidade];
     
     return [NSString stringWithFormat:@"%.2f %@", calculado, ing.unidade];
 }
@@ -299,6 +296,8 @@ NSManagedObjectContext * context ;
 -(void)saveIngrediente:(ObjectIngrediente *) ingrediente
 {
     // tenhe de verificar se o ingrediente ja foi inserido antes de poder adicionar de novo
+    // quando for salvar os ingredientes tenho de ter em conta a quantidade de servings que tem de mudar os valores na tabela
+    // como é que vou mudar os valores na tabela?
     
     BOOL  podeGravar = YES;
     if (self.shopingCart.count == 0) {
@@ -308,7 +307,10 @@ NSManagedObjectContext * context ;
     // aqui vai ter de ir buscar sempre a base de dados
     for (ObjectLista * ing in self.shopingCart)
     {
-        if ([ing.nome isEqualToString:ingrediente.nome] && [ing.unidade isEqualToString:ingrediente.unidade])
+        if ([ing.nome isEqualToString:ingrediente.nome] &&
+            [ing.unidade isEqualToString:ingrediente.unidade] &&
+            [ing.quantidade isEqualToString:ingrediente.quantidade] &&
+            [ing.quantidade_decimal isEqualToString:ingrediente.quantidadeDecimal])
         {
             podeGravar = NO;
         }
@@ -328,14 +330,6 @@ NSManagedObjectContext * context ;
         [listItem setValue:ingrediente.quantidadeDecimal forKey:@"quantidade_decimal"];
         [listItem setValue:ingrediente.unidade forKey:@"unidade"];
         
-        /*
-         NSError *error = nil;
-         
-         if (![context save:&error]) {
-         NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
-         return;
-         }
-         */
         
         ObjectLista * objLista = [ObjectLista new];
         objLista.nome               = ingrediente.nome;
@@ -391,7 +385,10 @@ NSManagedObjectContext * context ;
         // [items addObject:list];
         // tenho de fazer aqui a comparação e se encontrar entao tenho de remover da base de dados
         
-        if ([list.nome isEqualToString:ingrediente.nome] && [list.unidade isEqualToString:ingrediente.unidade])
+        if ([list.nome isEqualToString:ingrediente.nome] &&
+            [list.unidade isEqualToString:ingrediente.unidade] &&
+            [list.quantidade isEqualToString:ingrediente.quantidade] &&
+            [list.quantidade_decimal isEqualToString:ingrediente.quantidadeDecimal])
         {
             [context deleteObject:list.managedObject];
         }

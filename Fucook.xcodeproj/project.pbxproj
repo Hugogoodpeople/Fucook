@@ -289,9 +289,6 @@
 		BA023B7C1A13BEB3000B4754 /* Calendario.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Calendario.xib; path = Fucook/Receita/Calendario.xib; sourceTree = "<group>"; };
 		BA02FA2F1A1F60D2008571D6 /* ObjectCalendario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectCalendario.h; path = Fucook/Calendario/ObjectCalendario.h; sourceTree = "<group>"; };
 		BA02FA301A1F60D2008571D6 /* ObjectCalendario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectCalendario.m; path = Fucook/Calendario/ObjectCalendario.m; sourceTree = "<group>"; };
-		BA05F5821A08D24300E752E7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		BA05F5831A08D24300E752E7 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
-		BA05F5841A08D24300E752E7 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		BA44CD211A24D9E70098083E /* CalendarioEditar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarioEditar.h; path = Fucook/Calendario/CalendarioEditar.h; sourceTree = "<group>"; };
 		BA44CD221A24D9E70098083E /* CalendarioEditar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarioEditar.m; path = Fucook/Calendario/CalendarioEditar.m; sourceTree = "<group>"; };
 		BA44CD231A24D9E70098083E /* CalendarioEditar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalendarioEditar.xib; path = Fucook/Calendario/CalendarioEditar.xib; sourceTree = "<group>"; };
@@ -383,7 +380,6 @@
 		BAC639811A07F0C40049E3BD /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Book.h; path = "Fucook/untitled folder/Book.h"; sourceTree = "<group>"; };
 		BAC639821A07F0C40049E3BD /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Book.m; path = "Fucook/untitled folder/Book.m"; sourceTree = "<group>"; };
 		BAC639831A07F0C40049E3BD /* Book.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Book.xib; path = "Fucook/untitled folder/Book.xib"; sourceTree = "<group>"; };
-		BAC639871A07F10A0049E3BD /* mzl.khrfwdoi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mzl.khrfwdoi.jpg; sourceTree = "<group>"; };
 		BADC32371A160475005B1D5A /* MealPlanerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MealPlanerCell.h; path = Fucook/MealPlanerCell.h; sourceTree = "<group>"; };
 		BADC32381A160475005B1D5A /* MealPlanerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MealPlanerCell.m; path = Fucook/MealPlanerCell.m; sourceTree = "<group>"; };
 		BADC32391A160475005B1D5A /* MealPlanerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MealPlanerCell.xib; path = Fucook/MealPlanerCell.xib; sourceTree = "<group>"; };
@@ -847,10 +843,6 @@
 		BAC639861A07F0FD0049E3BD /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
-				BA05F5821A08D24300E752E7 /* background.png */,
-				BA05F5831A08D24300E752E7 /* page.png */,
-				BA05F5841A08D24300E752E7 /* placeholder.png */,
-				BAC639871A07F10A0049E3BD /* mzl.khrfwdoi.jpg */,
 			);
 			name = Imagens;
 			sourceTree = "<group>";

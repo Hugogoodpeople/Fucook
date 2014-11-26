@@ -35,6 +35,9 @@
     self.navigationItem.title = @"Notes";
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)];
     [self.view addGestureRecognizer:singleTap];
+    
+    
+    self.textNote.text = self.textoNota;
 }
 
 - (void)didReceiveMemoryWarning {

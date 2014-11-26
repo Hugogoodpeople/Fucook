@@ -14,4 +14,7 @@
 
 @property (nonatomic ,assign) id delegate;
 
+
+@property NSString * textoNota;
+
 @end

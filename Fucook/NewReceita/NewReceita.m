@@ -54,6 +54,8 @@
     {
         [self setUp];
     }
+    
+    // nao deveria ser necessário ter de chamar isto mas assim ele funciona correctamente sem dar algum problema aparente
     double delayInSeconds = 0.00;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -93,7 +95,7 @@
     headerFinal.labelServ.text      = self.receita.servings;
     headerFinal.labelDif.text       = self.receita.dificuldade;
     headerFinal.labelPre.text       = self.receita.tempo;
-    headerFinal.img.image = [UIImage imageWithData:[self.receita.imagem valueForKey:@"imagem"]];
+    headerFinal.img.image           = [UIImage imageWithData:[self.receita.imagem valueForKey:@"imagem"]];
     
     if (self.receita.notas.length != 0)
         arrayNotas = [[NSMutableArray alloc] initWithArray:@[self.receita.notas]];
@@ -143,8 +145,6 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.navigationItem.title = @"Your Recipe";
-    
-    
     
     // inicializar os arrays para poder adicionar os valores
     arrayIngredientes = [NSMutableArray new];
@@ -242,8 +242,6 @@
     [Receita setValue:servings      forKey:@"nr_pessoas"];
     [Receita setValue:dificulty     forKey:@"dificuldade"];
     [Receita setValue:tempo         forKey:@"tempo"];
-
-    
     
     NSManagedObject *Imagem = [NSEntityDescription
                                insertNewObjectForEntityForName:@"Imagens"
@@ -346,6 +344,10 @@
 {
     NewNotes *obj = [NewNotes new];
     obj.delegate = self;
+    // tenho de verificar se ja tinha notas antes para nao ter de escerver tudo de novo
+    if (arrayNotas.count != 0)
+        obj.textoNota = [arrayNotas objectAtIndex:0];
+    
     [self.navigationController pushViewController:obj animated:YES];
 }
 
@@ -366,6 +368,8 @@
             [dir.view setFrame:CGRectMake(0, ingre.view.frame.origin.y+ingre.view.frame.size.height, ingre.view.frame.size.width, 101 + [self calcularTamanhoTabela:dir.tabela].height )];
             [footerFinal.view setFrame:CGRectMake(0, dir.view.frame.origin.y+dir.view.frame.size.height, ingre.view.frame.size.width, 101 + [self calcularTamanhoTabela:footerFinal.tabela].height )];
             [self.scrollNewReceita setContentSize:CGSizeMake(self.view.frame.size.width, headerFinal.view.frame.size.height+footerFinal.view.frame.size.height+dir.view.frame.size.height+ingre.view.frame.size.height+num2.floatValue +50 )];
+        } completion:^(BOOL finished) {
+            // nao preciso fazer nada aqui depois do completion block
         }];
         auxIng=1;
         NSLog(@"Num2 %d", auxIng);
@@ -378,9 +382,11 @@
             [dir.view setFrame:CGRectMake(0, ingre.view.frame.origin.y+ingre.view.frame.size.height, ingre.view.frame.size.width, 101 + [self calcularTamanhoTabela:dir.tabela].height )];
             [footerFinal.view setFrame:CGRectMake(0, dir.view.frame.origin.y+dir.view.frame.size.height, ingre.view.frame.size.width, 101 + [self calcularTamanhoTabela:footerFinal.tabela].height )];
             [self.scrollNewReceita setContentSize:CGSizeMake(self.view.frame.size.width, headerFinal.view.frame.size.height+footerFinal.view.frame.size.height+dir.view.frame.size.height+ingre.view.frame.size.height-num2.floatValue+10 +50 )];
+        }completion:^(BOOL finished) {
+            // nao preciso fazer nada aqui depois do completion block
         }];
         auxIng=0;
-         NSLog(@"Num3 %d", auxIng);
+        NSLog(@"Num3 %d", auxIng);
         NSLog(@"tamanho o ingredi: %f", ingre.view.frame.origin.y+ingre.view.frame.size.height);
         NSLog(@"tamanho o dir: %f", dir.view.frame.origin.y+dir.view.frame.size.height);
 
