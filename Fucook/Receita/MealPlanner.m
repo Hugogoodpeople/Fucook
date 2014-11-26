@@ -327,7 +327,7 @@
     
         for (ObjectCalendario * cal in arrayDias)
         {
-            if (cal.data == scrollDay)
+            if ([cal.data compare:scrollDay] == NSOrderedSame)
             {
                 // ok aqui tenho de dizer que a receita esta dentro do agendamento
                 [itensDias addObjectsFromArray: cal.receitas];
