@@ -132,7 +132,7 @@
 {
     NSLog(@"Carrinho");
     if (self.delegate) {
-        [self.delegate performSelector:@selector(adicionarReceita) withObject:nil];
+        [self.delegate performSelector:@selector(adicionarReceita:) withObject:self.receita];
     }
 }
 

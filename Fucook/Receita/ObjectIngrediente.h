@@ -22,7 +22,7 @@
 @property NSManagedObject * managedObject;
 
 -(NSManagedObject *)getManagedObject:(NSManagedObjectContext *)context;
-
+-(NSManagedObject *)gettheManagedObjectToList:(NSManagedObjectContext *)context;
 -(void)setTheManagedObject:(NSManagedObject *)managedObject;
 
 @end

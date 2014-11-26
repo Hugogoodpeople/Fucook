@@ -18,4 +18,7 @@
 @property NSString * quantidade_decimal;
 @property NSManagedObject * managedObject;
 
+-(void)setTheManagedObject:(NSManagedObject *)managedObject;
+-(NSManagedObject *)gettheManagedObject:(NSManagedObjectContext *)context;
+
 @end

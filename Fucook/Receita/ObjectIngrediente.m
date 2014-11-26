@@ -35,6 +35,23 @@
     
 }
 
+-(NSManagedObject *)gettheManagedObjectToList:(NSManagedObjectContext *)context
+{
+    NSManagedObject *mangIngrediente = [NSEntityDescription
+                                        insertNewObjectForEntityForName:@"ShoppingList"
+                                        inManagedObjectContext:context];
+    
+    [mangIngrediente setValue:self.nome forKey:@"nome"];
+    [mangIngrediente setValue:self.quantidade forKey:@"quantidade"];
+    [mangIngrediente setValue:self.quantidadeDecimal forKey:@"quantidade_decimal"];
+    [mangIngrediente setValue:self.unidade forKey:@"unidade"];
+    
+    return mangIngrediente;
+    
+}
+
+// tenho de criar um para poder adicionar ao carrinho de compras
+
 -(void)setTheManagedObject:(NSManagedObject *)managedObject
 {
     self.nome               = [managedObject valueForKey:@"nome"];
