@@ -124,5 +124,8 @@
 }
 
 - (IBAction)clickCarrinho:(id)sender {
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(adicionarReceita:) withObject:self.receita];
+    }
 }
 @end

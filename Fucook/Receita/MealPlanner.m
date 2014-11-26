@@ -18,6 +18,8 @@
 #import "Notas.h"
 #import "NavigationBarItem.h"
 #import "Calendario.h"
+#import "ObjectIngrediente.h"
+#import "ObjectLista.h"
 
 @interface MealPlanner ()
 {
@@ -525,9 +527,90 @@
     [self.navigationController pushViewController:calendarioEditar animated:YES];
     // nao sei pk mas o calendario esta aparecer vazio
     
-    
-    
-    
 }
+
+-(void)adicionarReceita:(ObjectReceita *) receita
+{
+    NSLog(@"Delegado ingredientes da receita %@", receita.nome);
+    /* tenho de percorrer todos os ingredientes da receita e adicionar ao carrinho de compras :( vai ter de ter varias verificações para verificar se
+     * o ingrediente já se encontra ou não guardado... se já estiver guardado tenho de apagar para poder adicionar de novo com os novos valores
+     */
+    
+    
+    NSMutableArray * arrayIngredientes = [NSMutableArray new];
+    
+    NSSet * resultados = [receita.managedObject valueForKey:@"contem_ingredientes"];
+    for ( NSManagedObject * managedIngre in resultados )
+    {
+        ObjectIngrediente * ingrediente = [ObjectIngrediente new];
+        [ingrediente setTheManagedObject:managedIngre];
+        
+        [arrayIngredientes addObject:ingrediente];
+    }
+    
+#warning tenho de ter cuidado caso já exista um ingrediente com o mesmo nome para esse ser removido
+    // ok agora neste ponto já tenho todos os ingredientes da receita
+    // agora tenho de verificar se esses ingredientes já existem no shopping cart
+    
+    NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    // para ir buscar os dados prestendidos a base de dados
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.returnsObjectsAsFaults = NO;
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"ShoppingList" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSError * error;
+    
+    NSMutableArray * arrayShoppingList = [NSMutableArray new];
+    
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject * managedItemList in fetchedObjects)
+    {
+        ObjectLista * objLista = [ObjectLista new];
+        [objLista setTheManagedObject:managedItemList];
+        
+        [arrayShoppingList addObject:objLista];
+    }
+    
+    // aqui já tenho todos os ingredientes na shoping list pertencentes a todas as receitas
+    // para todos os itens da receita vou ter de correr um ciclo que verifica se o ingrediente já existe ou nao no cart
+    // se existir tenho de remover
+    int count = 0;
+    for (ObjectIngrediente * ingrediente in arrayIngredientes)
+    {
+        for (ObjectLista * listItem in arrayShoppingList)
+        {
+            if ([ingrediente.nome isEqualToString:listItem.nome] && [ingrediente.unidade isEqualToString:listItem.unidade])
+            {
+                [context deleteObject:listItem.managedObject];
+                count = count +1;
+            }
+        }
+    }
+    
+    // aqui já apaguei os que já estavam anteriormente na lista
+    // entao agora tenho de adicionar todos os que tenho na lista a base de dados com mais um ciclo
+    
+    
+    for (ObjectIngrediente * listIgre in arrayIngredientes)
+    {
+        // ele aqui devia gravar os ingredientes 1 a 1 na base de dados
+        [listIgre gettheManagedObjectToList: context];
+        
+    }
+    
+    
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }else
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%d ingredients added to your cart", arrayIngredientes.count - count] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        
+        [alert show];
+    }
+}
+
 
 @end

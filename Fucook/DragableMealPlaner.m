@@ -120,9 +120,6 @@
     
     NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
     
-    
-    
-    
    
     UIImage *_maskingImage = [UIImage imageNamed:@"mascara_transparente.png"];
     CALayer *_maskingLayer = [CALayer layer];
