@@ -32,10 +32,13 @@ NSManagedObjectContext * context ;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self setUp];
     
     context = [AppDelegate sharedAppDelegate].managedObjectContext;
-  //  [self initializeShoppingCart];
+    
+    [self initializeShoppingCart];
+    [self setUp];
+ 
+  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -125,7 +128,7 @@ NSManagedObjectContext * context ;
         ingred.quantidade           = [pedido valueForKey:@"quantidade"];
         ingred.quantidadeDecimal    = [pedido valueForKey:@"quantidade_decimal"];
         ingred.unidade              = [pedido valueForKey:@"unidade"];
-       // ingred.selecionado        = [self verificarShoppingList:ingred];
+        ingred.selecionado          = [self verificarShoppingList:ingred];
         
         [self.items addObject:ingred];
     }
@@ -220,8 +223,8 @@ NSManagedObjectContext * context ;
     // mas quando removo tenho de arranjar forma de salvar as alteraçoes
     [self verificaMudarCartAllSelecte];
     
-    if (self.cartAllSelected){
-        
+    if (self.cartAllSelected)
+    {
         for (ObjectIngrediente * ing in self.items)
         {
             ing.selecionado = NO;
@@ -244,14 +247,16 @@ NSManagedObjectContext * context ;
 {
  
     BOOL muda = YES;
-    for (ObjectIngrediente * ing in self.items) {
-        if (ing.selecionado != self.cartAllSelected) {
+    for (ObjectIngrediente * ing in self.items)
+    {
+        if (ing.selecionado != self.cartAllSelected)
+        {
             muda = YES;
         }
-        
     }
     
-    if (!muda) {
+    if (!muda)
+    {
         self.cartAllSelected = !self.cartAllSelected;
     }
 }
@@ -293,25 +298,54 @@ NSManagedObjectContext * context ;
 
 -(void)saveIngrediente:(ObjectIngrediente *) ingrediente
 {
-    NSLog(@"adicionar %@", ingrediente.nome);
+    // tenhe de verificar se o ingrediente ja foi inserido antes de poder adicionar de novo
     
-    NSManagedObject *listItem = [NSEntityDescription
-                              insertNewObjectForEntityForName:@"ShoppingList"
-                              inManagedObjectContext:context];
-    
-    [listItem setValue:ingrediente.nome forKey:@"nome"];
-    [listItem setValue:ingrediente.quantidade forKey:@"quantidade"];
-    [listItem setValue:ingrediente.quantidadeDecimal forKey:@"quantidade_decimal"];
-    [listItem setValue:ingrediente.unidade forKey:@"unidade"];
-    
-    /*
-    NSError *error = nil;
-    
-    if (![context save:&error]) {
-        NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
-        return;
+    BOOL  podeGravar = YES;
+    if (self.shopingCart.count == 0) {
+        podeGravar = YES;
     }
-    */
+    else
+    // aqui vai ter de ir buscar sempre a base de dados
+    for (ObjectLista * ing in self.shopingCart)
+    {
+        if ([ing.nome isEqualToString:ingrediente.nome] && [ing.unidade isEqualToString:ingrediente.unidade])
+        {
+            podeGravar = NO;
+        }
+        
+    }
+    
+    if (podeGravar)
+    {
+        NSLog(@"adicionar %@", ingrediente.nome);
+        
+        NSManagedObject *listItem = [NSEntityDescription
+                                     insertNewObjectForEntityForName:@"ShoppingList"
+                                     inManagedObjectContext:context];
+        
+        [listItem setValue:ingrediente.nome forKey:@"nome"];
+        [listItem setValue:ingrediente.quantidade forKey:@"quantidade"];
+        [listItem setValue:ingrediente.quantidadeDecimal forKey:@"quantidade_decimal"];
+        [listItem setValue:ingrediente.unidade forKey:@"unidade"];
+        
+        /*
+         NSError *error = nil;
+         
+         if (![context save:&error]) {
+         NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+         return;
+         }
+         */
+        
+        ObjectLista * objLista = [ObjectLista new];
+        objLista.nome               = ingrediente.nome;
+        objLista.quantidade         = ingrediente.quantidade;
+        objLista.quantidade_decimal = ingrediente.quantidadeDecimal;
+        objLista.unidade            = ingrediente.unidade;
+        
+        [self.shopingCart addObject: objLista];
+    }
+   
 }
 
 -(void)deleteIngrediente:(ObjectIngrediente *) ingrediente
@@ -354,8 +388,7 @@ NSManagedObjectContext * context ;
         list.quantidade_decimal =[pedido valueForKey:@"quantidade_decimal"];
         list.unidade =[pedido valueForKey:@"unidade"];
         
-        //[items addObject:list];
-        
+        // [items addObject:list];
         // tenho de fazer aqui a comparação e se encontrar entao tenho de remover da base de dados
         
         if ([list.nome isEqualToString:ingrediente.nome] && [list.unidade isEqualToString:ingrediente.unidade])

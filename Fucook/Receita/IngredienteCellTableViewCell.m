@@ -21,6 +21,7 @@
     [super setSelected:selected animated:animated];    
 }
 
+
 -(void)addRemove:(BOOL)selecionado
 {
     if (selecionado)
@@ -44,10 +45,11 @@
 
 }
 
+
 - (IBAction)clickAddRemove:(id)sender
 {
     self.ingrediente.selecionado = self.onCart;
-      self.onCart = !self.onCart;
+    self.onCart = !self.onCart;
     [self addRemove:self.onCart];
 }
 @end
