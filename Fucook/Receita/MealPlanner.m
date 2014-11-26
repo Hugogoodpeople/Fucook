@@ -343,8 +343,6 @@
                 [itensDias addObjectsFromArray: cal.receitas];
             }
         }
-        
-        
         //[self instanciateTable];
         
         self.root.arrayOfItems = itensDias;
@@ -359,8 +357,6 @@
                     [self.root.tableView reloadData];
         });
     });
-   
-    
 }
 
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
@@ -411,10 +407,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
-    
-    
     THTinderNavigationController * tinderNavigationController = [THTinderNavigationController new];
     
     //[tinderNavigationController.view setFrame:CGRectMake(0,64, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width-64)];

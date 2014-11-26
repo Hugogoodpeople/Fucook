@@ -246,7 +246,7 @@ NSManagedObjectContext * context ;
     BOOL muda = YES;
     for (ObjectIngrediente * ing in self.items) {
         if (ing.selecionado != self.cartAllSelected) {
-            muda = NO;
+            muda = YES;
         }
         
     }

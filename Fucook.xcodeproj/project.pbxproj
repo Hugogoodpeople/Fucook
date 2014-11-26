@@ -162,6 +162,8 @@
 		BAF76B611A0D314700D2CC13 /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF76B5F1A0D314700D2CC13 /* BookCell.xib */; };
 		BAF76B651A0D3F1200D2CC13 /* mascara_transparente.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF76B641A0D3F1200D2CC13 /* mascara_transparente.png */; };
 		BAF76B671A0D3F3D00D2CC13 /* mascara_branca.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF76B661A0D3F3D00D2CC13 /* mascara_branca.png */; };
+		BAF92DE71A25F97C000A52B1 /* PlaceHolderCreateRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF92DE51A25F97C000A52B1 /* PlaceHolderCreateRecipe.m */; };
+		BAF92DE81A25F97C000A52B1 /* PlaceHolderCreateRecipe.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF92DE61A25F97C000A52B1 /* PlaceHolderCreateRecipe.xib */; };
 		BAF9550B1A0A4B2C00277B94 /* LivroCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF955091A0A4B2C00277B94 /* LivroCellTableViewCell.m */; };
 		BAF9550C1A0A4B2C00277B94 /* LivroCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF9550A1A0A4B2C00277B94 /* LivroCellTableViewCell.xib */; };
 		BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF9550E1A0A4B6D00277B94 /* RootViewController.m */; };
@@ -468,6 +470,9 @@
 		BAF76B5F1A0D314700D2CC13 /* BookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookCell.xib; path = Fucook/BookCell.xib; sourceTree = "<group>"; };
 		BAF76B641A0D3F1200D2CC13 /* mascara_transparente.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mascara_transparente.png; path = Fucook/Imagens/mascara_transparente.png; sourceTree = "<group>"; };
 		BAF76B661A0D3F3D00D2CC13 /* mascara_branca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mascara_branca.png; path = Fucook/Imagens/mascara_branca.png; sourceTree = "<group>"; };
+		BAF92DE41A25F97C000A52B1 /* PlaceHolderCreateRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaceHolderCreateRecipe.h; path = Home/PlaceHolderCreateNewReceita/PlaceHolderCreateRecipe.h; sourceTree = SOURCE_ROOT; };
+		BAF92DE51A25F97C000A52B1 /* PlaceHolderCreateRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaceHolderCreateRecipe.m; path = Home/PlaceHolderCreateNewReceita/PlaceHolderCreateRecipe.m; sourceTree = SOURCE_ROOT; };
+		BAF92DE61A25F97C000A52B1 /* PlaceHolderCreateRecipe.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlaceHolderCreateRecipe.xib; path = Home/PlaceHolderCreateNewReceita/PlaceHolderCreateRecipe.xib; sourceTree = SOURCE_ROOT; };
 		BAF955081A0A4B2C00277B94 /* LivroCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivroCellTableViewCell.h; sourceTree = "<group>"; };
 		BAF955091A0A4B2C00277B94 /* LivroCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivroCellTableViewCell.m; sourceTree = "<group>"; };
 		BAF9550A1A0A4B2C00277B94 /* LivroCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LivroCellTableViewCell.xib; sourceTree = "<group>"; };
@@ -1059,6 +1064,16 @@
 			name = BookCell;
 			sourceTree = "<group>";
 		};
+		BAF92DE31A25F938000A52B1 /* CreateNewReceita */ = {
+			isa = PBXGroup;
+			children = (
+				BAF92DE41A25F97C000A52B1 /* PlaceHolderCreateRecipe.h */,
+				BAF92DE51A25F97C000A52B1 /* PlaceHolderCreateRecipe.m */,
+				BAF92DE61A25F97C000A52B1 /* PlaceHolderCreateRecipe.xib */,
+			);
+			name = CreateNewReceita;
+			sourceTree = "<group>";
+		};
 		BAF955061A0A4ACF00277B94 /* DragableTable */ = {
 			isa = PBXGroup;
 			children = (
@@ -1094,6 +1109,7 @@
 		BAF955151A0A7A9400277B94 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BAF92DE31A25F938000A52B1 /* CreateNewReceita */,
 				BAC50E8B1A1B7835003F17CF /* CreateNewBook */,
 				BAF9551B1A0A7B7200277B94 /* Home.h */,
 				BAF9551C1A0A7B7200277B94 /* Home.m */,
@@ -1416,6 +1432,7 @@
 				BAF955741A0A9D6900277B94 /* btnsetting1@2x.png in Resources */,
 				BA55AC401A1A021000381726 /* OverlayView.xib in Resources */,
 				BAF955661A0A9D6900277B94 /* btndelet2@2x.png in Resources */,
+				BAF92DE81A25F97C000A52B1 /* PlaceHolderCreateRecipe.xib in Resources */,
 				BAF955721A0A9D6900277B94 /* btnsearch@2x.png in Resources */,
 				BAF9555B1A0A9D6900277B94 /* btnaddbook@3x.png in Resources */,
 				BAC50E971A1B8E10003F17CF /* imgbcknewbook@2x.png in Resources */,
@@ -1627,6 +1644,7 @@
 				BAE4680B1A111E8E00D3F596 /* IngredientesTable.m in Sources */,
 				BA023B7D1A13BEB3000B4754 /* Calendario.m in Sources */,
 				BAF9550B1A0A4B2C00277B94 /* LivroCellTableViewCell.m in Sources */,
+				BAF92DE71A25F97C000A52B1 /* PlaceHolderCreateRecipe.m in Sources */,
 				BAF4650F1A14C7D100FE7926 /* DiaCalendario.m in Sources */,
 				BAF76B4F1A0CCEA800D2CC13 /* CollectionLivroCellCollectionViewCell.m in Sources */,
 				BAE468191A112CFB00D3F596 /* IngredienteCellTableViewCell.m in Sources */,

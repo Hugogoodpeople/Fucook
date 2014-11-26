@@ -18,6 +18,7 @@
 #import "Calendario.h"
 #import "AppDelegate.h"
 #import "ObjectReceita.h"
+#import "PlaceHolderCreateRecipe.h"
 
 
 @interface Book ()
@@ -25,17 +26,21 @@
 @property DragableTableReceitas * root;
 @property NSManagedObject * receitaAApagar;
 
+@property PlaceHolderCreateRecipe * placeHolder;
+
 @end
 
 @implementation Book
+@synthesize placeHolder;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.root = [DragableTableReceitas new];
-    //[self.root.view setFrame:[[UIScreen mainScreen] bounds] ];
     
-    //[self actualizarTudo];
+    
+    
+    
+    self.root = [DragableTableReceitas new];
+   
     
     self.root.livro = self.livro;
     
@@ -72,6 +77,11 @@
     
     // tenho de criar um metodo para poder listar todas as receitas dentro do livro
     
+    placeHolder = [PlaceHolderCreateRecipe new];
+    placeHolder.delegate = self;
+   
+    
+    
 }
 
 -(void)actualizarTudo
@@ -84,12 +94,13 @@
     
     if (self.root.arrayOfItems.count == 0)
     {
+        [placeHolder.view setFrame:CGRectMake(0, 70, self.container.frame.size.width, self.container.frame.size.height -140)];
         [self.root.view removeFromSuperview];
-        //[self.placeHolder.view removeFromSuperview];
-        //[self.container addSubview:self.placeHolder.view];
+        [self.placeHolder.view removeFromSuperview];
+        [self.container addSubview:self.placeHolder.view];
     }else
     {
-        //[self.placeHolder.view removeFromSuperview];
+        [self.placeHolder.view removeFromSuperview];
         [self.container addSubview:self.root.view];
        // [self.pageControl setAlpha:1];
     }
