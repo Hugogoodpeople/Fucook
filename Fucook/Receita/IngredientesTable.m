@@ -33,6 +33,8 @@ NSManagedObjectContext * context ;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.cartAllSelected = YES;
+    
     context = [AppDelegate sharedAppDelegate].managedObjectContext;
     
     [self initializeShoppingCart];
@@ -100,9 +102,9 @@ NSManagedObjectContext * context ;
     
     for (ObjectLista * list in self.shopingCart) {
         if ([list.nome isEqualToString:ingrediente.nome] &&
-            [list.unidade isEqualToString:ingrediente.unidade] &&
+            [list.unidade isEqualToString:ingrediente.unidade] /* &&
             [list.quantidade isEqualToString:ingrediente.quantidade] &&
-            [list.quantidade_decimal isEqualToString:ingrediente.quantidadeDecimal])
+            [list.quantidade_decimal isEqualToString:ingrediente.quantidadeDecimal] */)
         {
             tem = YES;
         }
@@ -206,7 +208,7 @@ NSManagedObjectContext * context ;
 {
     ObjectIngrediente * ing = [self.items objectAtIndex:indexPath.row];
 
-    float calculado = ([ing.quantidade floatValue] + [ing.quantidadeDecimal floatValue])  * [header.labelNumberServings.text floatValue];
+    float calculado = ([ing.quantidade floatValue] + [ing.quantidadeDecimal floatValue])  * ([header.labelNumberServings.text floatValue] / [self.receita.servings floatValue] );
     //ing.quantidade = [NSString stringWithFormat:@"%.2f %@", calculado, ing.unidade];
     
     return [NSString stringWithFormat:@"%.2f %@", calculado, ing.unidade];
@@ -248,7 +250,7 @@ NSManagedObjectContext * context ;
     {
         if (ing.selecionado != self.cartAllSelected)
         {
-            muda = YES;
+            muda = NO;
         }
     }
     
@@ -308,18 +310,21 @@ NSManagedObjectContext * context ;
     for (ObjectLista * ing in self.shopingCart)
     {
         if ([ing.nome isEqualToString:ingrediente.nome] &&
-            [ing.unidade isEqualToString:ingrediente.unidade] &&
+            [ing.unidade isEqualToString:ingrediente.unidade] /* &&
             [ing.quantidade isEqualToString:ingrediente.quantidade] &&
-            [ing.quantidade_decimal isEqualToString:ingrediente.quantidadeDecimal])
+            [ing.quantidade_decimal isEqualToString:ingrediente.quantidadeDecimal] */)
         {
             podeGravar = NO;
         }
         
     }
     
+    
+    
     if (podeGravar)
     {
         NSLog(@"adicionar %@", ingrediente.nome);
+        
         
         NSManagedObject *listItem = [NSEntityDescription
                                      insertNewObjectForEntityForName:@"ShoppingList"
@@ -330,12 +335,26 @@ NSManagedObjectContext * context ;
         [listItem setValue:ingrediente.quantidadeDecimal forKey:@"quantidade_decimal"];
         [listItem setValue:ingrediente.unidade forKey:@"unidade"];
         
-        
         ObjectLista * objLista = [ObjectLista new];
         objLista.nome               = ingrediente.nome;
         objLista.quantidade         = ingrediente.quantidade;
         objLista.quantidade_decimal = ingrediente.quantidadeDecimal;
         objLista.unidade            = ingrediente.unidade;
+        
+        
+        // tenho de mudar os valores da quantidade do ingrediente antes de gravar
+        
+        if ([header.labelNumberServings.text floatValue] != [self.receita.servings floatValue]) {
+            float calculado = ([ingrediente.quantidade floatValue] + [ingrediente.quantidadeDecimal floatValue])  * ([header.labelNumberServings.text floatValue] / [self.receita.servings floatValue] );
+            [listItem setValue:[NSString stringWithFormat:@"%.2f",calculado] forKey:@"quantidade"];
+            [listItem setValue:@"" forKey:@"quantidade_decimal"];
+            
+            objLista.quantidade         = [NSString stringWithFormat:@"%.2f",calculado];
+            objLista.quantidade_decimal = @"";
+
+        }
+        
+        
         
         [self.shopingCart addObject: objLista];
     }
@@ -386,13 +405,16 @@ NSManagedObjectContext * context ;
         // tenho de fazer aqui a comparação e se encontrar entao tenho de remover da base de dados
         
         if ([list.nome isEqualToString:ingrediente.nome] &&
-            [list.unidade isEqualToString:ingrediente.unidade] &&
+            [list.unidade isEqualToString:ingrediente.unidade] /* &&
             [list.quantidade isEqualToString:ingrediente.quantidade] &&
-            [list.quantidade_decimal isEqualToString:ingrediente.quantidadeDecimal])
+            [list.quantidade_decimal isEqualToString:ingrediente.quantidadeDecimal]*/)
         {
             [context deleteObject:list.managedObject];
+            [self.shopingCart removeObject: list];
         }
     }
+    
+    
 }
 
 
