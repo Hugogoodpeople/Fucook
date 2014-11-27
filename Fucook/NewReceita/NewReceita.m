@@ -353,6 +353,10 @@
         [arraydireccoes removeObject:ingrediente];
     }
     
+    if ([ingrediente isKindOfClass:[NSString class]]) {
+        [arrayNotas removeObject:ingrediente];
+    }
+    
     [self actualizarPosicoes];
 
 }
