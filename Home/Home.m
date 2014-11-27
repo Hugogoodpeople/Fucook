@@ -20,6 +20,7 @@
 #import "UIImage+fixOrientation.h"
 #import "ListaCompras.h"
 #import "PlaceHolderCreateBook.h"
+#import "InApps.h"
 
 @interface Home ()
 
@@ -324,7 +325,10 @@
     [self.navigationController pushViewController:[MealPlanner new] animated:YES];
 }
 
-- (IBAction)clickInApps:(id)sender {
+- (IBAction)clickInApps:(id)sender
+{
+    
+    [self.navigationController pushViewController:[InApps new] animated:YES];
 }
 
 - (IBAction)clickSettings:(id)sender

@@ -27,6 +27,11 @@
 		BA023B7D1A13BEB3000B4754 /* Calendario.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B7B1A13BEB3000B4754 /* Calendario.m */; };
 		BA023B7E1A13BEB3000B4754 /* Calendario.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B7C1A13BEB3000B4754 /* Calendario.xib */; };
 		BA02FA311A1F60D2008571D6 /* ObjectCalendario.m in Sources */ = {isa = PBXBuildFile; fileRef = BA02FA301A1F60D2008571D6 /* ObjectCalendario.m */; };
+		BA1141C71A27729800B77AB6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1141C61A27729800B77AB6 /* StoreKit.framework */; };
+		BA1141CA1A2786F500B77AB6 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1141C91A2786F500B77AB6 /* IAPHelper.m */; };
+		BA1141CD1A2788B600B77AB6 /* FucookIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1141CC1A2788B600B77AB6 /* FucookIAPHelper.m */; };
+		BA1141D21A2791AA00B77AB6 /* InApps.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1141D01A2791AA00B77AB6 /* InApps.m */; };
+		BA1141D31A2791AA00B77AB6 /* InApps.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1141D11A2791AA00B77AB6 /* InApps.xib */; };
 		BA44CD241A24D9E70098083E /* CalendarioEditar.m in Sources */ = {isa = PBXBuildFile; fileRef = BA44CD221A24D9E70098083E /* CalendarioEditar.m */; };
 		BA44CD251A24D9E70098083E /* CalendarioEditar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA44CD231A24D9E70098083E /* CalendarioEditar.xib */; };
 		BA55AC3E1A1A017C00381726 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC3D1A1A017C00381726 /* UIImage+fixOrientation.m */; };
@@ -289,6 +294,14 @@
 		BA023B7C1A13BEB3000B4754 /* Calendario.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Calendario.xib; path = Fucook/Receita/Calendario.xib; sourceTree = "<group>"; };
 		BA02FA2F1A1F60D2008571D6 /* ObjectCalendario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectCalendario.h; path = Fucook/Calendario/ObjectCalendario.h; sourceTree = "<group>"; };
 		BA02FA301A1F60D2008571D6 /* ObjectCalendario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectCalendario.m; path = Fucook/Calendario/ObjectCalendario.m; sourceTree = "<group>"; };
+		BA1141C61A27729800B77AB6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		BA1141C81A2786F500B77AB6 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
+		BA1141C91A2786F500B77AB6 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
+		BA1141CB1A2788B600B77AB6 /* FucookIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FucookIAPHelper.h; sourceTree = "<group>"; };
+		BA1141CC1A2788B600B77AB6 /* FucookIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FucookIAPHelper.m; sourceTree = "<group>"; };
+		BA1141CF1A2791AA00B77AB6 /* InApps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InApps.h; path = InApps/InApps.h; sourceTree = "<group>"; };
+		BA1141D01A2791AA00B77AB6 /* InApps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InApps.m; path = InApps/InApps.m; sourceTree = "<group>"; };
+		BA1141D11A2791AA00B77AB6 /* InApps.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InApps.xib; path = InApps/InApps.xib; sourceTree = "<group>"; };
 		BA44CD211A24D9E70098083E /* CalendarioEditar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarioEditar.h; path = Fucook/Calendario/CalendarioEditar.h; sourceTree = "<group>"; };
 		BA44CD221A24D9E70098083E /* CalendarioEditar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarioEditar.m; path = Fucook/Calendario/CalendarioEditar.m; sourceTree = "<group>"; };
 		BA44CD231A24D9E70098083E /* CalendarioEditar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalendarioEditar.xib; path = Fucook/Calendario/CalendarioEditar.xib; sourceTree = "<group>"; };
@@ -586,6 +599,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA1141C71A27729800B77AB6 /* StoreKit.framework in Frameworks */,
 				BADC32491A164A80005B1D5A /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,6 +680,16 @@
 				BA023B731A13BE3B000B4754 /* VRGCalendarView.m */,
 			);
 			name = "Util Calendario";
+			sourceTree = "<group>";
+		};
+		BA1141CE1A27918000B77AB6 /* InApps */ = {
+			isa = PBXGroup;
+			children = (
+				BA1141CF1A2791AA00B77AB6 /* InApps.h */,
+				BA1141D01A2791AA00B77AB6 /* InApps.m */,
+				BA1141D11A2791AA00B77AB6 /* InApps.xib */,
+			);
+			name = InApps;
 			sourceTree = "<group>";
 		};
 		BA55AC3B1A1A013C00381726 /* Utils Image */ = {
@@ -763,6 +787,7 @@
 		BAC639401A07ED420049E3BD = {
 			isa = PBXGroup;
 			children = (
+				BA1141CE1A27918000B77AB6 /* InApps */,
 				BA55AC501A1A62CD00381726 /* Utils */,
 				BA55AC3B1A1A013C00381726 /* Utils Image */,
 				CE2766E41A166E21003A225B /* RATreeView */,
@@ -809,6 +834,10 @@
 				BAC6395C1A07ED420049E3BD /* Images.xcassets */,
 				BAC639531A07ED420049E3BD /* Fucook.xcdatamodeld */,
 				BAC6394C1A07ED420049E3BD /* Supporting Files */,
+				BA1141C81A2786F500B77AB6 /* IAPHelper.h */,
+				BA1141C91A2786F500B77AB6 /* IAPHelper.m */,
+				BA1141CB1A2788B600B77AB6 /* FucookIAPHelper.h */,
+				BA1141CC1A2788B600B77AB6 /* FucookIAPHelper.m */,
 			);
 			path = Fucook;
 			sourceTree = "<group>";
@@ -881,6 +910,7 @@
 		BADC324A1A164A8E005B1D5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA1141C61A27729800B77AB6 /* StoreKit.framework */,
 				BADC32481A164A80005B1D5A /* CoreData.framework */,
 			);
 			name = Frameworks;
@@ -1380,6 +1410,12 @@
 				TargetAttributes = {
 					BAC639481A07ED420049E3BD = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 8VVX3TJ6FK;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					BAC639641A07ED420049E3BD = {
 						CreatedOnToolsVersion = 6.1;
@@ -1463,6 +1499,7 @@
 				BA66E5FB1A1258160090F99D /* btnless@2x.png in Resources */,
 				BA66E5F91A1258160090F99D /* btnclose2@2x.png in Resources */,
 				BAF4653F1A150BAF00FE7926 /* imgshadowcalendar@2x.png in Resources */,
+				BA1141D31A2791AA00B77AB6 /* InApps.xib in Resources */,
 				BA66E6131A1258160090F99D /* icoshare@2x.png in Resources */,
 				BAF76B651A0D3F1200D2CC13 /* mascara_transparente.png in Resources */,
 				BAF9555A1A0A9D6900277B94 /* btnaddbook@2x.png in Resources */,
@@ -1645,6 +1682,7 @@
 				BA66E5D31A12310A0090F99D /* NIngredientes.m in Sources */,
 				BAE467FE1A10CBB900D3F596 /* NavigationBarItem.m in Sources */,
 				BADC32401A162D87005B1D5A /* PesquisaReceitas.m in Sources */,
+				BA1141CD1A2788B600B77AB6 /* FucookIAPHelper.m in Sources */,
 				BA66E5D11A12310A0090F99D /* Directions.m in Sources */,
 				CE4983FC1A0A90B7009EC1A4 /* TGLStackedLayout.m in Sources */,
 				BA66E61F1A1282160090F99D /* DirectionsHugo.m in Sources */,
@@ -1654,12 +1692,14 @@
 				BA023B571A13AD4E000B4754 /* Notas.m in Sources */,
 				BA02FA311A1F60D2008571D6 /* ObjectCalendario.m in Sources */,
 				BA66E61A1A1262910090F99D /* ObjectIngrediente.m in Sources */,
+				BA1141CA1A2786F500B77AB6 /* IAPHelper.m in Sources */,
 				CE27670F1A166E21003A225B /* RATreeView.m in Sources */,
 				CE2767051A166E21003A225B /* RATreeNodeCollectionController.m in Sources */,
 				BADC324F1A165FE9005B1D5A /* ListaCompras.m in Sources */,
 				CE2767071A166E21003A225B /* RATreeNodeItem+Private.m in Sources */,
 				CE27670B1A166E21003A225B /* RATreeView+RATreeNodeCollectionControllerDataSource.m in Sources */,
 				BAF465091A14C6E200FE7926 /* iCarousel.m in Sources */,
+				BA1141D21A2791AA00B77AB6 /* InApps.m in Sources */,
 				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1720,6 +1760,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "e1c4f119-db9e-4136-94a3-8a7b25c81aaf";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1754,6 +1795,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "e1c4f119-db9e-4136-94a3-8a7b25c81aaf";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1763,10 +1805,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Fucook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e1c4f119-db9e-4136-94a3-8a7b25c81aaf";
 			};
 			name = Debug;
 		};
@@ -1774,10 +1819,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Fucook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e1c4f119-db9e-4136-94a3-8a7b25c81aaf";
 			};
 			name = Release;
 		};

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Home.h"
 #import "Globals.h"
+#import "FucookIAPHelper.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [FucookIAPHelper sharedInstance];
     
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
@@ -51,7 +54,6 @@
     UIImageView * fundo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"imgframedown"]];
     [fundo setFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-10, [[UIScreen mainScreen] bounds].size.width, 10)];
     [nav.view addSubview:fundo];
-    
     
     [nav.navigationBar setBackgroundImage:[UIImage new]
                            forBarPosition:UIBarPositionAny
@@ -173,6 +175,21 @@
             abort();
         }
     }
+}
+
+-(void)applicationWillFinishLaunching:(NSNotification *)notification
+{
+    // Locate the receipt
+    NSURL *receiptURL = [[NSBundle mainBundle] appStoreReceiptURL];
+    
+    // Test whether the receipt is present at the above path
+    if(![[NSFileManager defaultManager] fileExistsAtPath:[receiptURL path]])
+    {
+        // Validation fails
+        exit(173);
+    }
+    
+    // Proceed with further receipt validation steps
 }
 
 @end
