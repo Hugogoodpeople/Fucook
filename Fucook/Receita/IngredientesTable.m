@@ -95,6 +95,12 @@ NSManagedObjectContext * context ;
 
 }
 
+-(void)scrollToTop
+{
+    
+    [self.tabela scrollRectToVisible:header.view.frame animated:YES];
+}
+
 -(BOOL)verificarShoppingList:(ObjectIngrediente *) ingrediente
 {
     BOOL tem = NO;
@@ -110,9 +116,7 @@ NSManagedObjectContext * context ;
         }
     }
     
-    
     return tem;
-
 }
 
 -(void)setUp
@@ -291,6 +295,7 @@ NSManagedObjectContext * context ;
         self.tabela.tableHeaderView = header.view;
     } completion:^(BOOL finished) {
          [self.tabela reloadData];
+        [self scrollToTop];
     }];
     
 }

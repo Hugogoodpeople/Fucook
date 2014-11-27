@@ -329,6 +329,9 @@
         pickerCategory=1;
     }
 
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(scrollToPosition:) withObject:self.viewPickerCategory];
+    }
     
 }
 
@@ -360,6 +363,10 @@
         pickerDificulty=1;
     }
 
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(scrollToPosition:) withObject:self.viewPickerDificulty];
+    }
+    
 }
 
 - (IBAction)btServings:(id)sender {
@@ -394,6 +401,9 @@
         pickerServings=1;
     }
 
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(scrollToPosition:) withObject:self.viewPickerServings];
+    }
     
 }
 
@@ -440,7 +450,10 @@
         pickerTime=1;
     }
 
-    
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(scrollToPosition:) withObject:self.viewPickerPrepa];
+    }
+
 }
 
 
@@ -484,6 +497,8 @@
     long a = [self.pickerPrep selectedRowInComponent:0];
     self.labelPre.text = [NSString stringWithFormat:@"%@ min",[_pickerDataPrep objectAtIndex:a]];
     [self btPretime:self];
+    
+    
 }
 
 - (IBAction)btDoneCate:(id)sender {

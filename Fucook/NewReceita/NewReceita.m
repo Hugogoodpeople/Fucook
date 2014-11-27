@@ -154,6 +154,11 @@
     
 }
 
+-(void)scrollToPosition:(UIView *)rect
+{
+    [self.scrollNewReceita scrollRectToVisible:rect.frame animated:YES];
+}
+
 -(void)actualizarPosicoes
 {
     
