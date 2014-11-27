@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "ObjectIngrediente.h"
 
+
 @interface CellIngrediente : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *labelNome;
 @property (weak, nonatomic) IBOutlet UILabel *labelDesc;
 
 - (IBAction)clickRemover:(id)sender;
 
-@property ObjectIngrediente * ingrediente;
+@property NSObject * ingrediente;
 @property (nonatomic, assign) id delegate;
 
 @end

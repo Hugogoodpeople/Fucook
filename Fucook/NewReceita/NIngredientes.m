@@ -93,8 +93,8 @@
         
         // NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
     }
-    
-    
+    cell.ingrediente = ingrid;
+    cell.delegate = self.delegate;
     
     cell.labelNome.text = ingrid.nome;
     cell.labelDesc.text = [NSString stringWithFormat:@"%@%@ %@", ingrid.quantidade, ingrid.quantidadeDecimal , ingrid.unidade];

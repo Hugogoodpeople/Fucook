@@ -371,13 +371,7 @@ NSManagedObject * managedObject;
     if (self.delegate) {
         [self.delegate performSelector:@selector(actualizarTudo) withObject:nil ];
     }
-    
-    
-   
-
 }
-
-
 
 /*
 #pragma mark -
@@ -434,8 +428,6 @@ NSManagedObject * managedObject;
     if (alertView.tag == 1) {
         if (buttonIndex == 1) {
             
-            NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
-            [context deleteObject:managedObject];
             
             // tenho de actualizar as tabelas
             if (self.delegate) {

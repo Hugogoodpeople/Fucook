@@ -81,6 +81,7 @@
 -(void)adicionarNota:(NSString *) nota
 {
     [arrayNotas removeAllObjects];
+    if (nota.length > 0)
     [arrayNotas addObject:nota];
     [self actualizarPosicoes];
     
@@ -338,6 +339,22 @@
     NewIngrediente *obj = [NewIngrediente new];
     obj.delegate = self;
     [self.navigationController pushViewController:obj animated:YES];
+}
+
+-(void)removerIngrediente:(NSObject *)ingrediente
+{
+    // tenho de verificar o tipo da classe
+    if([ingrediente isKindOfClass:[ObjectIngrediente class]])
+    {
+        [arrayIngredientes removeObject:ingrediente];
+    }
+    
+    if ([ingrediente isKindOfClass:[ObjectDirections class]]) {
+        [arraydireccoes removeObject:ingrediente];
+    }
+    
+    [self actualizarPosicoes];
+
 }
 
 -(void)novoNote

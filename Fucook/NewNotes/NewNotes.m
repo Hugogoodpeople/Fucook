@@ -53,7 +53,8 @@
 {
     if (self.delegate)
     {
-        [self.delegate performSelectorInBackground:@selector(adicionarNota:) withObject:self.textNote.text];
+        //[self.delegate performSelectorInBackground:@selector(adicionarNota:) withObject:self.textNote.text];
+        [self.delegate performSelector:@selector(adicionarNota:) withObject:self.textNote.text afterDelay:0.5];
     }
     
     [self.navigationController popViewControllerAnimated:YES];

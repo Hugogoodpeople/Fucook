@@ -93,7 +93,8 @@
         // NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
     }
     
-    
+    cell.ingrediente = ingrid;
+    cell.delegate = self.delegate;
     
     cell.labelNome.text = ingrid.descricao;
     cell.labelDesc.text = [NSString stringWithFormat:@"%d min", ingrid.tempoMinutos];
