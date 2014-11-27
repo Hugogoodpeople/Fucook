@@ -358,9 +358,6 @@ NSManagedObjectContext * context ;
             objLista.quantidade_decimal = @"";
 
         }
-        
-        
-        
         [self.shopingCart addObject: objLista];
     }
    

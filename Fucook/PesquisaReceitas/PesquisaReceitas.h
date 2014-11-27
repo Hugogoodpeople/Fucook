@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PesquisaReceitas : UIViewController
+@interface PesquisaReceitas : UIViewController <UISearchBarDelegate>
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searcBar;
 
 @property (weak, nonatomic) IBOutlet UITableView *tabela;
 
-@property NSMutableArray * items;
 
 @end
