@@ -61,10 +61,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
-    
+    if (textField.tag == 1) {
+        if (self.delegate) {
+            [self.delegate performSelector:@selector(scrollToPosition:) withObject:self.viewDificulty];
+        }
+    }
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     
@@ -74,6 +76,11 @@
 {
     [textField resignFirstResponder];
     
+    return YES;
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
     return YES;
 }
 

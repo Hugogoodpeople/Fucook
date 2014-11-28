@@ -63,7 +63,19 @@
         [self actualizarPosicoes];
     });
     
+    
+    UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    [buttonback addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonback setImage:[UIImage imageNamed:@"btleft2"] forState:UIControlStateNormal];
+    UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
+    self.navigationItem.leftBarButtonItem = anotherButtonback;
+
 }
+
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 -(void)addIngrediente:(ObjectIngrediente *)ingr
 {
     [arrayIngredientes addObject:ingr];

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
+#import "ObjectLivro.h"
 
 @interface ObjectReceita : NSObject
 
@@ -28,6 +29,7 @@
 
 @property NSManagedObject * imagem;
 @property NSManagedObject * managedObject;
+@property ObjectLivro     * livro;
 
 -(void)setTheManagedObject:(NSManagedObject *)managedObject;
 

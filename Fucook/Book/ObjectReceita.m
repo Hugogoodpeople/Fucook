@@ -17,6 +17,13 @@
 -(void)setTheManagedObject:(NSManagedObject *)managedObject
 {
 
+    // tenho de saber qual o livro a qual pertence esta receita
+    self.livro = [ObjectLivro new];
+    NSManagedObject * managedLivro = [managedObject valueForKey:@"pertence_livro"];
+    self.livro.titulo    = [managedLivro valueForKey:@"titulo"];
+    self.livro.descricao = [managedLivro valueForKey:@"descricao"];
+
+    
     self.nome           = [managedObject valueForKey:@"nome"];
     self.categoria      = [managedObject valueForKey:@"categoria"];
     self.servings       = [managedObject valueForKey:@"nr_pessoas"];
@@ -45,6 +52,8 @@
         [dir setTheManagedObject:nanageDirections];
         [self.arrayEtapas addObject:dir];
     }
+    
+    
     
 }
 
