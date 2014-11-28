@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "ObjectReceita.h"
 
 @interface ObjectLista : NSObject
 
@@ -19,7 +20,7 @@
 @property NSManagedObject * managedObject;
 @property NSManagedObject * managedObjectReceita;
 
--(void)setTheManagedObject:(NSManagedObject *)managedObject;
+-(void)setTheManagedObject:(NSManagedObject *)managedObject forRecipe:(ObjectReceita * ) receita;
 -(NSManagedObject *)gettheManagedObject:(NSManagedObjectContext *)context;
 
 @end

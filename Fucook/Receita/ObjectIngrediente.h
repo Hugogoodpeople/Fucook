@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
+#import "ObjectReceita.h"
 
 @interface ObjectIngrediente : NSObject
 
@@ -20,9 +21,10 @@
 @property NSString * nutricao;
 @property BOOL selecionado;
 @property NSManagedObject * managedObject;
+@property NSManagedObject * managedObjectReceita;
 
 -(NSManagedObject *)getManagedObject:(NSManagedObjectContext *)context;
--(NSManagedObject *)gettheManagedObjectToList:(NSManagedObjectContext *)context;
+-(NSManagedObject *)gettheManagedObjectToList:(NSManagedObjectContext *)context fromReceita:(ObjectReceita *) receita;
 -(void)setTheManagedObject:(NSManagedObject *)managedObject;
 
 @end

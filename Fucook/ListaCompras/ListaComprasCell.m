@@ -32,24 +32,21 @@
 - (IBAction)btVer:(id)sender {
      NSLog(@"VER");
     if (self.delegate) {
-        [self.delegate performSelector:@selector(OpenReceita:) withObject:self.managedObject];
+        [self.delegate performSelector:@selector(OpenReceita:) withObject:self.objectLista];
     }
 }
 
-- (IBAction)btProcurar:(id)sender {
-     NSLog(@"PROCURAR");
-}
 
 - (IBAction)btAdd:(id)sender {
     if (self.delegate) {
-        [self.delegate performSelector:@selector(editQuant:) withObject:self.managedObject];
+        [self.delegate performSelector:@selector(editQuant:) withObject:self.objectLista.managedObject];
     }
 }
 
 - (IBAction)btDelete:(id)sender {
     NSLog(@"DELETE");
     if (self.delegate) {
-        [self.delegate performSelector:@selector(deleteRow:) withObject:self.managedObject];
+        [self.delegate performSelector:@selector(deleteRow:) withObject:self.objectLista.managedObject];
     }
 }
 @end

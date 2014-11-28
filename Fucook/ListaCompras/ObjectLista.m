@@ -10,7 +10,7 @@
 
 @implementation ObjectLista
 
--(void)setTheManagedObject:(NSManagedObject *)managedObject
+-(void)setTheManagedObject:(NSManagedObject *)managedObject forRecipe:(ObjectReceita * ) receita
 {
     self.managedObject = managedObject;
     
@@ -18,7 +18,7 @@
     self.quantidade =[managedObject valueForKey:@"quantidade"];
     self.quantidade_decimal =[managedObject valueForKey:@"quantidade_decimal"];
     self.unidade =[managedObject valueForKey:@"unidade"];
-    self.managedObjectReceita = [managedObject valueForKey:@"pertence_receita"];
+    self.managedObjectReceita = receita.managedObject;
 
 }
 

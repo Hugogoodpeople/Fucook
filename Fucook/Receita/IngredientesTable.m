@@ -77,14 +77,9 @@ NSManagedObjectContext * context ;
         NSLog(@"unidade: %@", [pedido valueForKey:@"unidade"]);
         ObjectLista * list = [ObjectLista new];
         
-        // para mais tarde poder apagar
-        list.managedObject = pedido;
+       
+        [list setTheManagedObject:pedido forRecipe:self.receita];
         
-        list.nome =[pedido valueForKey:@"nome"];
-        list.quantidade =[pedido valueForKey:@"quantidade"];
-        list.quantidade_decimal =[pedido valueForKey:@"quantidade_decimal"];
-        list.unidade =[pedido valueForKey:@"unidade"];
-        list.managedObjectReceita = [pedido valueForKey:@"pertence_receita"];
         
         
         //[items addObject:list];
@@ -341,12 +336,15 @@ NSManagedObjectContext * context ;
         [listItem setValue:ingrediente.quantidade forKey:@"quantidade"];
         [listItem setValue:ingrediente.quantidadeDecimal forKey:@"quantidade_decimal"];
         [listItem setValue:ingrediente.unidade forKey:@"unidade"];
+        [listItem setValue:self.receita.managedObject forKey:@"pertence_receita"];
         
         ObjectLista * objLista = [ObjectLista new];
-        objLista.nome               = ingrediente.nome;
-        objLista.quantidade         = ingrediente.quantidade;
-        objLista.quantidade_decimal = ingrediente.quantidadeDecimal;
-        objLista.unidade            = ingrediente.unidade;
+        objLista.nome                   = ingrediente.nome;
+        objLista.quantidade             = ingrediente.quantidade;
+        objLista.quantidade_decimal     = ingrediente.quantidadeDecimal;
+        objLista.unidade                = ingrediente.unidade;
+        objLista.managedObjectReceita   = self.receita.managedObject;
+        
         
         
         // tenho de mudar os valores da quantidade do ingrediente antes de gravar

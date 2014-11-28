@@ -569,7 +569,7 @@
     for (NSManagedObject * managedItemList in fetchedObjects)
     {
         ObjectLista * objLista = [ObjectLista new];
-        [objLista setTheManagedObject:managedItemList];
+        [objLista setTheManagedObject:managedItemList forRecipe:receita];
         
         [arrayShoppingList addObject:objLista];
     }
@@ -597,7 +597,7 @@
     for (ObjectIngrediente * listIgre in arrayIngredientes)
     {
         // ele aqui devia gravar os ingredientes 1 a 1 na base de dados
-        [listIgre gettheManagedObjectToList: context];
+        [listIgre gettheManagedObjectToList: context fromReceita: receita];
         
     }
     

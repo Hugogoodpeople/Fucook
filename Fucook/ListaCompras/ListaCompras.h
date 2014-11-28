@@ -21,4 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIView *viewBlock;
 @property (weak, nonatomic) IBOutlet UIView *viewPicker;
 - (IBAction)btDone:(id)sender;
+- (IBAction)clickAddIng:(id)sender;
+
+
 @end

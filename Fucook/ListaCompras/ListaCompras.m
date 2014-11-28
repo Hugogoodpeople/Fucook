@@ -18,11 +18,12 @@
 #import "DirectionsHugo.h"
 #import "Notas.h"
 #import "NavigationBarItem.h"
-
+#import "NewIngredienteShoppingList.h"
+#import "ObjectIngrediente.h"
 
 
 @interface ListaCompras (){
-     NSArray *_pickerUnit;
+    NSArray *_pickerUnit;
     NSArray *_pickerPeso;
     NSArray *_pickerData;
     NSString *indexCell;
@@ -40,7 +41,7 @@
     [super viewDidLoad];
     self.tabbleView.delegate = self;
     self.tabbleView.dataSource = self;
-    [self preencherTabela];
+    //[self preencherTabela];
     selectedIndex = -1;
     
     [self.tabbleView registerNib:[UINib nibWithNibName:@"TableHeader" bundle:nil] forHeaderFooterViewReuseIdentifier:@"TableHeader"];
@@ -58,17 +59,14 @@
     
    //[self loadData];
 
-    UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    [buttonback addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-    [buttonback setImage:[UIImage imageNamed:@"btleft2"] forState:UIControlStateNormal];
-    UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
-    self.navigationItem.leftBarButtonItem = anotherButtonback;
-    
 }
 
-- (IBAction)back:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+-(void)viewWillAppear:(BOOL)animated
+{
+     selectedIndex = -1;
+    [self preencherTabela];
 }
+
 -(void)preencherTabela
 {
     NSMutableArray * items = [NSMutableArray new];
@@ -106,7 +104,8 @@
         list.nome =[pedido valueForKey:@"nome"];
         list.quantidade =[pedido valueForKey:@"quantidade"];
         list.quantidade_decimal =[pedido valueForKey:@"quantidade_decimal"];
-        list.unidade =[pedido valueForKey:@"unidade"];        
+        list.unidade =[pedido valueForKey:@"unidade"];
+        list.managedObjectReceita = [pedido valueForKey:@"pertence_receita"];
         
         [items addObject:list];
     }
@@ -133,13 +132,6 @@
     
 }
 
-
-
-
-
-
-
-
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -163,19 +155,36 @@
         cell = [nib objectAtIndex:0];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    if(selectedIndex == indexPath.row){
+    
+    /*
+    if(selectedIndex == indexPath.row)
+    {
         
-    }else{
+    }else
+    {
         
     }
+    */
+    // tenho de saber se o ingrediente percente a alguma receita, se nao pertencer o botao de ver a receita deve ficar desactivo
+    
     NSLog(@"%@",listas.unidade);
-    cell.labelTitle.text = listas.nome;
-    cell.labelPeso.text = listas.quantidade;
-    cell.labelUnit.text = listas.unidade;
+    cell.labelTitle.text    = listas.nome;
+    cell.labelPeso.text     = listas.quantidade;
+    cell.labelUnit.text     = listas.unidade;
     cell.labelQuanDeci.text = listas.quantidade_decimal;
-    cell.managedObject = listas.managedObject;
-    cell.index = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
-    cell.delegate = self;
+    cell.objectLista        = listas;
+    cell.index              = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
+    cell.delegate           = self;
+    
+    if(listas.managedObjectReceita == nil)
+    {
+        [cell.viewVer setAlpha:0.6];
+    }
+    else
+    {
+        [cell.viewVer setAlpha:0];
+    }
+    
     return cell;
 
 }
@@ -245,7 +254,6 @@
         [Livro setValue:@".4" forKey:@"quantidade_decimal"];
         [Livro setValue:@"g" forKey:@"unidade"];
 
-        
 
         
         NSError *error = nil;
@@ -254,30 +262,7 @@
             return;
         }
         
-    
-
-    /*
-    ObjectLista *phone1 = [ObjectLista dataObjectWithName:@"Phone 1" children:nil];
-    ObjectLista *phone = [ObjectLista dataObjectWithName:@"Phones"
-                                                  children:[NSArray arrayWithObjects:phone1, nil]];
-    
-    
-    ObjectLista *computer1 = [ObjectLista dataObjectWithName:@"Computer 1" children:nil];
-    
-    ObjectLista *computer = [ObjectLista dataObjectWithName:@"Computers"
-                                                     children:[NSArray arrayWithObjects:computer1, nil]];
-    ObjectLista *car = [ObjectLista dataObjectWithName:@"Cars" children:nil];
-    ObjectLista *bike = [ObjectLista dataObjectWithName:@"Bikes" children:nil];
-    ObjectLista *house = [ObjectLista dataObjectWithName:@"Houses" children:nil];
-    ObjectLista *flats = [ObjectLista dataObjectWithName:@"Flats" children:nil];
-    ObjectLista *motorbike = [ObjectLista dataObjectWithName:@"Motorbikes" children:nil];
-    ObjectLista *drinks = [ObjectLista dataObjectWithName:@"Drinks" children:nil];
-    ObjectLista *food = [ObjectLista dataObjectWithName:@"Food" children:nil];
-    ObjectLista *sweets = [ObjectLista dataObjectWithName:@"Sweets" children:nil];
-    ObjectLista *watches = [ObjectLista dataObjectWithName:@"Watches" children:nil];
-    ObjectLista *walls = [ObjectLista dataObjectWithName:@"Walls" children:nil];
-    */
-    //self.data = [NSArray arrayWithObjects:phone, computer, car, bike, house, flats, motorbike, drinks, food, sweets, watches, walls, nil];
+ 
 
 }
 
@@ -350,6 +335,33 @@
     [self.tabbleView reloadData];
 }
 
+- (IBAction)clickAddIng:(id)sender
+{
+    // não pode ser receita pk esta está sempre relacionada com um livro
+    NewIngredienteShoppingList * ingrediente = [NewIngredienteShoppingList new];
+    ingrediente.delegate = self;
+    
+    
+    [self.navigationController pushViewController:ingrediente animated:YES];
+}
+
+-(void)addIngrediente:(ObjectIngrediente *) ingre
+{
+    NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    ObjectLista * objList = [ObjectLista new];
+    objList.nome = ingre.nome;
+    objList.quantidade = ingre.quantidade;
+    objList.quantidade_decimal = ingre.quantidadeDecimal;
+    objList.unidade = ingre.unidade;
+    
+    objList.managedObject = [objList gettheManagedObject:context];
+    
+    [arrayOfItems addObject:objList];
+    
+    [self.tabbleView reloadData];
+}
+
 
 -(void)deleteRow: (NSManagedObject *) managedObject{
     NSLog(@"deleteou");
@@ -381,50 +393,67 @@
     
 }
 
--(void)OpenReceita: (NSString *) index{
-     indexCell = index;
-    THTinderNavigationController * tinderNavigationController = [THTinderNavigationController new];
+-(void)OpenReceita: (ObjectLista *) objLista{
     
-    //[tinderNavigationController.view setFrame:CGRectMake(0,64, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width-64)];
-    
-    
-    IngredientesTable *viewController1 = [[IngredientesTable alloc] init];
-    [viewController1.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
-    viewController1.view.backgroundColor = [UIColor whiteColor];
-    
-    DirectionsHugo *viewController2 = [[DirectionsHugo alloc] init];
-    [viewController2.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
-    viewController2.view.clipsToBounds = YES;
-    viewController2.view.backgroundColor = [UIColor whiteColor];
-    
-    Notas *viewController3 = [[Notas alloc] init];
-    [viewController3.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
-    viewController3.view.clipsToBounds = YES;
-    viewController3.view.backgroundColor = [UIColor whiteColor];
+    if (objLista.managedObjectReceita)
+    {
     
     
-    tinderNavigationController.viewControllers = @[
-                                                   viewController2,
-                                                   viewController1,
-                                                   viewController3
-                                                   ];
-    
-    NavigationBarItem * item1 = [[NavigationBarItem alloc] init];
-    NavigationBarItem * item2 = [[NavigationBarItem alloc] init];
-    NavigationBarItem * item3 = [[NavigationBarItem alloc] init];
-    
-    item1.titulo = @"Directions";
-    item2.titulo = @"Ingredients";
-    item3.titulo = @"Notes";
-    
-    tinderNavigationController.navbarItemViews = @[
-                                                   item1,
-                                                   item2,
-                                                   item3
-                                                   ];
-    [tinderNavigationController setCurrentPage:1 animated:NO];
+        //  indexCell = index;
+        THTinderNavigationController * tinderNavigationController = [THTinderNavigationController new];
+
+        ObjectReceita * objR = [ObjectReceita new];
+
+        // tenho de ir buscar a receita ao qual este ingrediente pertence
+        [objR setTheManagedObject:objLista.managedObjectReceita];
     
     
-    [self.navigationController pushViewController:tinderNavigationController animated:YES];
+        IngredientesTable *viewController1 = [[IngredientesTable alloc] init];
+        viewController1.receita = objR;
+        [viewController1.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
+        viewController1.view.backgroundColor = [UIColor whiteColor];
+    
+        DirectionsHugo *viewController2 = [[DirectionsHugo alloc] init];
+        viewController2.receita = objR;
+        [viewController2.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
+        viewController2.view.clipsToBounds = YES;
+        viewController2.view.backgroundColor = [UIColor whiteColor];
+    
+        Notas *viewController3 = [[Notas alloc] init];
+        viewController3.receita = objR;
+        [viewController3.view setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-90)];
+        viewController3.view.clipsToBounds = YES;
+        viewController3.view.backgroundColor = [UIColor whiteColor];
+        
+    
+        tinderNavigationController.viewControllers = @[
+                                                    viewController2,
+                                                    viewController1,
+                                                    viewController3
+                                                    ];
+    
+        NavigationBarItem * item1 = [[NavigationBarItem alloc] init];
+        NavigationBarItem * item2 = [[NavigationBarItem alloc] init];
+        NavigationBarItem * item3 = [[NavigationBarItem alloc] init];
+    
+        item1.titulo = @"Directions";
+        item2.titulo = @"Ingredients";
+        item3.titulo = @"Notes";
+    
+        tinderNavigationController.navbarItemViews = @[
+                                                    item1,
+                                                    item2,
+                                                    item3
+                                                    ];
+        [tinderNavigationController setCurrentPage:1 animated:NO];
+    
+        [self.navigationController pushViewController:tinderNavigationController animated:YES];
+        
+    }else
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"this ingrediente dont belong to any recipe" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+
 }
 @end

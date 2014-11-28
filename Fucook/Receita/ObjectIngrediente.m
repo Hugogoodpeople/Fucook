@@ -8,6 +8,7 @@
 
 #import "ObjectIngrediente.h"
 
+
 @implementation ObjectIngrediente
 
 /*
@@ -35,7 +36,7 @@
     
 }
 
--(NSManagedObject *)gettheManagedObjectToList:(NSManagedObjectContext *)context
+-(NSManagedObject *)gettheManagedObjectToList:(NSManagedObjectContext *)context fromReceita:(ObjectReceita *) receita
 {
     NSManagedObject *mangIngrediente = [NSEntityDescription
                                         insertNewObjectForEntityForName:@"ShoppingList"
@@ -45,6 +46,7 @@
     [mangIngrediente setValue:self.quantidade forKey:@"quantidade"];
     [mangIngrediente setValue:self.quantidadeDecimal forKey:@"quantidade_decimal"];
     [mangIngrediente setValue:self.unidade forKey:@"unidade"];
+    [mangIngrediente setValue:receita.managedObject forKey:@"pertence_receita"];
     
     return mangIngrediente;
     
@@ -54,10 +56,11 @@
 
 -(void)setTheManagedObject:(NSManagedObject *)managedObject
 {
-    self.nome               = [managedObject valueForKey:@"nome"];
-    self.quantidade         = [managedObject valueForKey:@"quantidade"];
-    self.quantidadeDecimal  = [managedObject valueForKey:@"quantidade_decimal"];
-    self.unidade            = [managedObject valueForKey:@"unidade"];
+    self.managedObject          = managedObject;
+    self.nome                   = [managedObject valueForKey:@"nome"];
+    self.quantidade             = [managedObject valueForKey:@"quantidade"];
+    self.quantidadeDecimal      = [managedObject valueForKey:@"quantidade_decimal"];
+    self.unidade                = [managedObject valueForKey:@"unidade"];
 }
 
 @end

@@ -9,20 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "FXImageView.h"
 #import <CoreData/CoreData.h>
+#import "ObjectLista.h"
 
 @interface ListaComprasCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
-@property (weak, nonatomic) IBOutlet UILabel *labelSub;
 @property (nonatomic , assign) id delegate;
 @property NSString *index;
 
-@property NSManagedObject * managedObject;
+//@property NSManagedObject * managedObject;
+@property ObjectLista * objectLista;
 
 - (IBAction)btVer:(id)sender;
-- (IBAction)btProcurar:(id)sender;
 - (IBAction)btAdd:(id)sender;
 - (IBAction)btDelete:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIView *viewVer;
 @property (weak, nonatomic) IBOutlet UILabel *labelPeso;
 @property (weak, nonatomic) IBOutlet UILabel *labelUnit;
 @property (weak, nonatomic) IBOutlet UILabel *labelQuanDeci;
