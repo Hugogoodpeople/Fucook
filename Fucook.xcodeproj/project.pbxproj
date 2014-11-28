@@ -32,6 +32,7 @@
 		BA1141CD1A2788B600B77AB6 /* FucookIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1141CC1A2788B600B77AB6 /* FucookIAPHelper.m */; };
 		BA1141D21A2791AA00B77AB6 /* InApps.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1141D01A2791AA00B77AB6 /* InApps.m */; };
 		BA1141D31A2791AA00B77AB6 /* InApps.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1141D11A2791AA00B77AB6 /* InApps.xib */; };
+		BA120D841A28913800A526C0 /* WebServiceSender.m in Sources */ = {isa = PBXBuildFile; fileRef = BA120D831A28913800A526C0 /* WebServiceSender.m */; };
 		BA44CD241A24D9E70098083E /* CalendarioEditar.m in Sources */ = {isa = PBXBuildFile; fileRef = BA44CD221A24D9E70098083E /* CalendarioEditar.m */; };
 		BA44CD251A24D9E70098083E /* CalendarioEditar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA44CD231A24D9E70098083E /* CalendarioEditar.xib */; };
 		BA55AC3E1A1A017C00381726 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA55AC3D1A1A017C00381726 /* UIImage+fixOrientation.m */; };
@@ -302,6 +303,8 @@
 		BA1141CF1A2791AA00B77AB6 /* InApps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InApps.h; path = InApps/InApps.h; sourceTree = "<group>"; };
 		BA1141D01A2791AA00B77AB6 /* InApps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InApps.m; path = InApps/InApps.m; sourceTree = "<group>"; };
 		BA1141D11A2791AA00B77AB6 /* InApps.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InApps.xib; path = InApps/InApps.xib; sourceTree = "<group>"; };
+		BA120D821A28913800A526C0 /* WebServiceSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebServiceSender.h; path = WebserviceSender/WebServiceSender.h; sourceTree = "<group>"; };
+		BA120D831A28913800A526C0 /* WebServiceSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebServiceSender.m; path = WebserviceSender/WebServiceSender.m; sourceTree = "<group>"; };
 		BA44CD211A24D9E70098083E /* CalendarioEditar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarioEditar.h; path = Fucook/Calendario/CalendarioEditar.h; sourceTree = "<group>"; };
 		BA44CD221A24D9E70098083E /* CalendarioEditar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarioEditar.m; path = Fucook/Calendario/CalendarioEditar.m; sourceTree = "<group>"; };
 		BA44CD231A24D9E70098083E /* CalendarioEditar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalendarioEditar.xib; path = Fucook/Calendario/CalendarioEditar.xib; sourceTree = "<group>"; };
@@ -692,6 +695,15 @@
 			name = InApps;
 			sourceTree = "<group>";
 		};
+		BA120D811A28912B00A526C0 /* WebServiceSender */ = {
+			isa = PBXGroup;
+			children = (
+				BA120D821A28913800A526C0 /* WebServiceSender.h */,
+				BA120D831A28913800A526C0 /* WebServiceSender.m */,
+			);
+			name = WebServiceSender;
+			sourceTree = "<group>";
+		};
 		BA55AC3B1A1A013C00381726 /* Utils Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -787,6 +799,7 @@
 		BAC639401A07ED420049E3BD = {
 			isa = PBXGroup;
 			children = (
+				BA120D811A28912B00A526C0 /* WebServiceSender */,
 				BA1141CE1A27918000B77AB6 /* InApps */,
 				BA55AC501A1A62CD00381726 /* Utils */,
 				BA55AC3B1A1A013C00381726 /* Utils Image */,
@@ -1666,6 +1679,7 @@
 				BAF76B5B1A0D2AAE00D2CC13 /* DragableTableReceitas.m in Sources */,
 				BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */,
 				BA55AC3E1A1A017C00381726 /* UIImage+fixOrientation.m in Sources */,
+				BA120D841A28913800A526C0 /* WebServiceSender.m in Sources */,
 				BA55AC4F1A1A3ED800381726 /* NSString+MD5.m in Sources */,
 				BAF9550F1A0A4B6D00277B94 /* RootViewController.m in Sources */,
 				BAF76B491A0CCE6B00D2CC13 /* CollectionLivros.m in Sources */,
