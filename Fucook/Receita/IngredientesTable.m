@@ -84,6 +84,8 @@ NSManagedObjectContext * context ;
         list.quantidade =[pedido valueForKey:@"quantidade"];
         list.quantidade_decimal =[pedido valueForKey:@"quantidade_decimal"];
         list.unidade =[pedido valueForKey:@"unidade"];
+        list.managedObjectReceita = [pedido valueForKey:@"pertence_receita"];
+        
         
         //[items addObject:list];
         

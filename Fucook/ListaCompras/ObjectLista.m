@@ -18,6 +18,7 @@
     self.quantidade =[managedObject valueForKey:@"quantidade"];
     self.quantidade_decimal =[managedObject valueForKey:@"quantidade_decimal"];
     self.unidade =[managedObject valueForKey:@"unidade"];
+    self.managedObjectReceita = [managedObject valueForKey:@"pertence_receita"];
 
 }
 
@@ -31,9 +32,9 @@
     [mangIngrediente setValue:self.quantidade forKey:@"quantidade"];
     [mangIngrediente setValue:self.quantidade_decimal forKey:@"quantidade_decimal"];
     [mangIngrediente setValue:self.unidade forKey:@"unidade"];
+    [mangIngrediente setValue:self.managedObjectReceita forKey:@"pertence_receita"];
     
     return mangIngrediente;
-    
 }
 
 

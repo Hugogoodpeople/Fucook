@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="13F34" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Agenda" syncable="YES">
         <attribute name="categoria" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="data" optional="YES" attributeType="Date" syncable="YES"/>
@@ -74,15 +74,16 @@
         <attribute name="quantidade" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="quantidade_decimal" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unidade" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pertence_receita" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Receitas" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Agenda" positionX="-108" positionY="17" width="128" height="118"/>
-        <element name="Etapas" positionX="52" positionY="-135" width="128" height="120"/>
-        <element name="Imagens" positionX="-36" positionY="-324" width="128" height="60"/>
-        <element name="Ingredientes" positionX="297" positionY="-324" width="128" height="150"/>
-        <element name="Livros" positionX="151" positionY="-324" width="128" height="133"/>
-        <element name="Nutricao" positionX="387" positionY="-135" width="128" height="255"/>
-        <element name="Receitas" positionX="198" positionY="-103" width="128" height="253"/>
-        <element name="ShoppingList" positionX="-108" positionY="-180" width="128" height="148"/>
+        <element name="Agenda" positionX="-909" positionY="-108" width="128" height="118"/>
+        <element name="Etapas" positionX="-749" positionY="-198" width="128" height="120"/>
+        <element name="Imagens" positionX="-884" positionY="-261" width="128" height="60"/>
+        <element name="Ingredientes" positionX="-380" positionY="-423" width="128" height="150"/>
+        <element name="Livros" positionX="-567" positionY="-484" width="128" height="133"/>
+        <element name="Nutricao" positionX="-245" positionY="-255" width="128" height="255"/>
+        <element name="Receitas" positionX="-450" positionY="-211" width="128" height="253"/>
+        <element name="ShoppingList" positionX="-605" positionY="-306" width="128" height="163"/>
     </elements>
 </model>

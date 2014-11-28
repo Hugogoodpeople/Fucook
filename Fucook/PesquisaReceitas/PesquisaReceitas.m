@@ -107,11 +107,6 @@
         
         [receitas addObject:receita];
     }
-    
-    
-    
-    
-    
 }
 
 -(void)actualizarImagens
@@ -200,10 +195,7 @@
         });
     }
 
-
-
     return cell;
-
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

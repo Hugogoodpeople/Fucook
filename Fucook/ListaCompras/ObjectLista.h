@@ -17,6 +17,7 @@
 @property NSString * unidade;
 @property NSString * quantidade_decimal;
 @property NSManagedObject * managedObject;
+@property NSManagedObject * managedObjectReceita;
 
 -(void)setTheManagedObject:(NSManagedObject *)managedObject;
 -(NSManagedObject *)gettheManagedObject:(NSManagedObjectContext *)context;
