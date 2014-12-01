@@ -105,7 +105,7 @@
     // tenho de verificar se na data actualmente escolhida ja tem alguma coisa agendada
     // se sim tenho de remover da actionsheet os que já estão escolhidos para essa data
     
-    NSMutableArray * categorias = [[NSMutableArray alloc] initWithArray: @[@"Breakfast",@"Lunch",@"Dinner"]];
+    NSMutableArray * categorias = [[NSMutableArray alloc] initWithArray: @[@"Breakfast",@"Lunch",@"Dinner",@"Dessert"]];
     
     /*
      for (int i = 0 ; i< _datas.count ; i++)

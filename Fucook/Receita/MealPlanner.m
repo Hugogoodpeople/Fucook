@@ -269,8 +269,13 @@
             }
             else if([cal.categoria isEqualToString:@"Dinner"])
             {
+                dia.img3Selected = true;
+            }
+            else if([cal.categoria isEqualToString:@"Dessert"])
+            {
                 dia.img4Selected = true;
             }
+          
         }
     }
     return dia.view;

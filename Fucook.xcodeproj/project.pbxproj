@@ -27,6 +27,12 @@
 		BA023B7D1A13BEB3000B4754 /* Calendario.m in Sources */ = {isa = PBXBuildFile; fileRef = BA023B7B1A13BEB3000B4754 /* Calendario.m */; };
 		BA023B7E1A13BEB3000B4754 /* Calendario.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA023B7C1A13BEB3000B4754 /* Calendario.xib */; };
 		BA02FA311A1F60D2008571D6 /* ObjectCalendario.m in Sources */ = {isa = PBXBuildFile; fileRef = BA02FA301A1F60D2008571D6 /* ObjectCalendario.m */; };
+		BA08662E1A2C871F00A7BB12 /* JATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA08662D1A2C871F00A7BB12 /* JATableViewCell.m */; };
+		BA0866341A2C88CD00A7BB12 /* JAActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0866311A2C88CD00A7BB12 /* JAActionButton.m */; };
+		BA0866351A2C88CD00A7BB12 /* JASwipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0866331A2C88CD00A7BB12 /* JASwipeCell.m */; };
+		BA0866401A2C892E00A7BB12 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0866381A2C892E00A7BB12 /* ALView+PureLayout.m */; };
+		BA0866411A2C892E00A7BB12 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BA08663A1A2C892E00A7BB12 /* NSArray+PureLayout.m */; };
+		BA0866421A2C892E00A7BB12 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BA08663C1A2C892E00A7BB12 /* NSLayoutConstraint+PureLayout.m */; };
 		BA1141C71A27729800B77AB6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1141C61A27729800B77AB6 /* StoreKit.framework */; };
 		BA1141CA1A2786F500B77AB6 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1141C91A2786F500B77AB6 /* IAPHelper.m */; };
 		BA1141CD1A2788B600B77AB6 /* FucookIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1141CC1A2788B600B77AB6 /* FucookIAPHelper.m */; };
@@ -297,6 +303,21 @@
 		BA023B7C1A13BEB3000B4754 /* Calendario.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Calendario.xib; path = Fucook/Receita/Calendario.xib; sourceTree = "<group>"; };
 		BA02FA2F1A1F60D2008571D6 /* ObjectCalendario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectCalendario.h; path = Fucook/Calendario/ObjectCalendario.h; sourceTree = "<group>"; };
 		BA02FA301A1F60D2008571D6 /* ObjectCalendario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectCalendario.m; path = Fucook/Calendario/ObjectCalendario.m; sourceTree = "<group>"; };
+		BA08662C1A2C871F00A7BB12 /* JATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JATableViewCell.h; path = Fucook/ListaCompras/JATableViewCell.h; sourceTree = "<group>"; };
+		BA08662D1A2C871F00A7BB12 /* JATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JATableViewCell.m; path = Fucook/ListaCompras/JATableViewCell.m; sourceTree = "<group>"; };
+		BA0866301A2C88CD00A7BB12 /* JAActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JAActionButton.h; path = Fucook/ListaCompras/JASwipeCell/JAActionButton.h; sourceTree = "<group>"; };
+		BA0866311A2C88CD00A7BB12 /* JAActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JAActionButton.m; path = Fucook/ListaCompras/JASwipeCell/JAActionButton.m; sourceTree = "<group>"; };
+		BA0866321A2C88CD00A7BB12 /* JASwipeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JASwipeCell.h; path = Fucook/ListaCompras/JASwipeCell/JASwipeCell.h; sourceTree = "<group>"; };
+		BA0866331A2C88CD00A7BB12 /* JASwipeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JASwipeCell.m; path = Fucook/ListaCompras/JASwipeCell/JASwipeCell.m; sourceTree = "<group>"; };
+		BA0866371A2C892E00A7BB12 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "Fucook/ListaCompras/JASwipeCell/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
+		BA0866381A2C892E00A7BB12 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "Fucook/ListaCompras/JASwipeCell/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
+		BA0866391A2C892E00A7BB12 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "Fucook/ListaCompras/JASwipeCell/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		BA08663A1A2C892E00A7BB12 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "Fucook/ListaCompras/JASwipeCell/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		BA08663B1A2C892E00A7BB12 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "Fucook/ListaCompras/JASwipeCell/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		BA08663C1A2C892E00A7BB12 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "Fucook/ListaCompras/JASwipeCell/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		BA08663D1A2C892E00A7BB12 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = Fucook/ListaCompras/JASwipeCell/PureLayout/PureLayout.h; sourceTree = "<group>"; };
+		BA08663E1A2C892E00A7BB12 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "Fucook/ListaCompras/JASwipeCell/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
+		BA08663F1A2C892E00A7BB12 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = Fucook/ListaCompras/JASwipeCell/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
 		BA1141C61A27729800B77AB6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BA1141C81A2786F500B77AB6 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		BA1141C91A2786F500B77AB6 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
@@ -690,6 +711,36 @@
 			name = "Util Calendario";
 			sourceTree = "<group>";
 		};
+		BA08662F1A2C88A900A7BB12 /* JASwipe */ = {
+			isa = PBXGroup;
+			children = (
+				BA0866361A2C890D00A7BB12 /* PureLayout */,
+				BA0866301A2C88CD00A7BB12 /* JAActionButton.h */,
+				BA0866311A2C88CD00A7BB12 /* JAActionButton.m */,
+				BA0866321A2C88CD00A7BB12 /* JASwipeCell.h */,
+				BA0866331A2C88CD00A7BB12 /* JASwipeCell.m */,
+				BA08662C1A2C871F00A7BB12 /* JATableViewCell.h */,
+				BA08662D1A2C871F00A7BB12 /* JATableViewCell.m */,
+			);
+			name = JASwipe;
+			sourceTree = "<group>";
+		};
+		BA0866361A2C890D00A7BB12 /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BA0866371A2C892E00A7BB12 /* ALView+PureLayout.h */,
+				BA0866381A2C892E00A7BB12 /* ALView+PureLayout.m */,
+				BA0866391A2C892E00A7BB12 /* NSArray+PureLayout.h */,
+				BA08663A1A2C892E00A7BB12 /* NSArray+PureLayout.m */,
+				BA08663B1A2C892E00A7BB12 /* NSLayoutConstraint+PureLayout.h */,
+				BA08663C1A2C892E00A7BB12 /* NSLayoutConstraint+PureLayout.m */,
+				BA08663D1A2C892E00A7BB12 /* PureLayout.h */,
+				BA08663E1A2C892E00A7BB12 /* PureLayout+Internal.h */,
+				BA08663F1A2C892E00A7BB12 /* PureLayoutDefines.h */,
+			);
+			name = PureLayout;
+			sourceTree = "<group>";
+		};
 		BA1141CE1A27918000B77AB6 /* InApps */ = {
 			isa = PBXGroup;
 			children = (
@@ -947,6 +998,7 @@
 		BADC324B1A165FBC005B1D5A /* ListaCompras */ = {
 			isa = PBXGroup;
 			children = (
+				BA08662F1A2C88A900A7BB12 /* JASwipe */,
 				BA120D851A28938700A526C0 /* NewIngredienteShoppingList */,
 				CE5327AA1A19F85800FCC558 /* ListaComprasCell.h */,
 				CE5327AB1A19F85800FCC558 /* ListaComprasCell.m */,
@@ -1657,6 +1709,7 @@
 				BA023B781A13BE3B000B4754 /* VRGCalendarView.m in Sources */,
 				BAF955141A0A4BA300277B94 /* ATSDragToReorderTableViewController.m in Sources */,
 				BAFC11581A1CBF5600EA10E7 /* CellIngrediente.m in Sources */,
+				BA0866401A2C892E00A7BB12 /* ALView+PureLayout.m in Sources */,
 				BA66E5C51A1230B60090F99D /* NewDirections.m in Sources */,
 				BA023B511A137BEC000B4754 /* DirectionsHeader.m in Sources */,
 				CE253F991A10B9C7003DA45C /* HeaderNewReceita.m in Sources */,
@@ -1688,6 +1741,7 @@
 				BA023B651A13AFF9000B4754 /* NotasHeader.m in Sources */,
 				BA023B451A135D38000B4754 /* DirectionsCell.m in Sources */,
 				BAF465041A14C57100FE7926 /* MealPlanner.m in Sources */,
+				BA0866421A2C892E00A7BB12 /* NSLayoutConstraint+PureLayout.m in Sources */,
 				BA023B771A13BE3B000B4754 /* UIView+convenience.m in Sources */,
 				CE253FA81A10C290003DA45C /* FooterNewReceita.m in Sources */,
 				BA023B601A13AF32000B4754 /* NotasCell.m in Sources */,
@@ -1696,6 +1750,8 @@
 				CE27670D1A166E21003A225B /* RATreeView+TableViewDelegate.m in Sources */,
 				BAF76B5B1A0D2AAE00D2CC13 /* DragableTableReceitas.m in Sources */,
 				BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */,
+				BA0866341A2C88CD00A7BB12 /* JAActionButton.m in Sources */,
+				BA0866411A2C892E00A7BB12 /* NSArray+PureLayout.m in Sources */,
 				BA55AC3E1A1A017C00381726 /* UIImage+fixOrientation.m in Sources */,
 				BA120D841A28913800A526C0 /* WebServiceSender.m in Sources */,
 				BA55AC4F1A1A3ED800381726 /* NSString+MD5.m in Sources */,
@@ -1714,6 +1770,7 @@
 				CE2767061A166E21003A225B /* RATreeNodeController.m in Sources */,
 				BA66E5D31A12310A0090F99D /* NIngredientes.m in Sources */,
 				BAE467FE1A10CBB900D3F596 /* NavigationBarItem.m in Sources */,
+				BA08662E1A2C871F00A7BB12 /* JATableViewCell.m in Sources */,
 				BADC32401A162D87005B1D5A /* PesquisaReceitas.m in Sources */,
 				BA1141CD1A2788B600B77AB6 /* FucookIAPHelper.m in Sources */,
 				BA66E5D11A12310A0090F99D /* Directions.m in Sources */,
@@ -1731,6 +1788,7 @@
 				BADC324F1A165FE9005B1D5A /* ListaCompras.m in Sources */,
 				CE2767071A166E21003A225B /* RATreeNodeItem+Private.m in Sources */,
 				CE27670B1A166E21003A225B /* RATreeView+RATreeNodeCollectionControllerDataSource.m in Sources */,
+				BA0866351A2C88CD00A7BB12 /* JASwipeCell.m in Sources */,
 				BAF465091A14C6E200FE7926 /* iCarousel.m in Sources */,
 				BA1141D21A2791AA00B77AB6 /* InApps.m in Sources */,
 				BAC639551A07ED420049E3BD /* Fucook.xcdatamodeld in Sources */,

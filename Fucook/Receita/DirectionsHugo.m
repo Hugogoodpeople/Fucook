@@ -95,9 +95,23 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    
+    // tenho de verificar se o tempo é igual a 0
+    // se sim tenho de defenir um tempo
+    
     DirectionsHeader * header = [DirectionsHeader new];
     ObjectDirections * direct = [self.items objectAtIndex:section];
-    header.tempo = [NSString stringWithFormat:@"%d MIN", direct.tempoMinutos];
+    
+    
+    if (direct.tempoMinutos == 0)
+    {
+        header.tempo = @"Set timer";
+    }
+    else
+    {
+        header.tempo = [NSString stringWithFormat:@"%d MIN", direct.tempoMinutos];
+    }
+    
     header.passo = [NSString stringWithFormat:@"%dº", direct.passo];
     
     

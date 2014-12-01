@@ -212,7 +212,7 @@ NSManagedObjectContext * context ;
     float calculado = ([ing.quantidade floatValue] + [ing.quantidadeDecimal floatValue])  * ([header.labelNumberServings.text floatValue] / [self.receita.servings floatValue] );
     //ing.quantidade = [NSString stringWithFormat:@"%.2f %@", calculado, ing.unidade];
     
-    return [NSString stringWithFormat:@"%.2f %@", calculado, ing.unidade];
+    return [NSString stringWithFormat:@"%g %@", calculado, ing.unidade];
 }
 
 

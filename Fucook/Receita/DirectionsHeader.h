@@ -11,7 +11,7 @@
 @interface DirectionsHeader : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *lablelPasso;
-@property (weak, nonatomic) IBOutlet UILabel *labelTempo;
+@property (weak, nonatomic) IBOutlet UITextField *labelTempo;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitulo;
 
 @property NSString * passo;

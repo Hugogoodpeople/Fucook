@@ -21,8 +21,21 @@
 #import "NewIngredienteShoppingList.h"
 #import "ObjectIngrediente.h"
 
+// novo codigo para ficar com interface grafico igual aos emails do iOS 8
+#import "JATableViewCell.h"
+#import "JAActionButton.h"
+#import "JAActionButton.h"
 
-@interface ListaCompras (){
+#define kJATableViewCellReuseIdentifier     @"JATableViewCellIdentifier"
+
+#define kFlagButtonColor        [UIColor colorWithRed:255.0/255.0 green:150.0/255.0 blue:0/255.0 alpha:1]
+#define kMoreButtonColor        [UIColor colorWithRed:200.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1]
+#define kArchiveButtonColor     [UIColor colorWithRed:60.0/255.0 green:112.0/255.0 blue:168/255.0 alpha:1]
+#define kUnreadButtonColor      [UIColor colorWithRed:0/255.0 green:122.0/255.0 blue:255.0/255.0 alpha:1]
+
+
+@interface ListaCompras ()
+{
     NSArray *_pickerUnit;
     NSArray *_pickerPeso;
     NSArray *_pickerData;
@@ -44,7 +57,9 @@
     //[self preencherTabela];
     selectedIndex = -1;
     
-    [self.tabbleView registerNib:[UINib nibWithNibName:@"TableHeader" bundle:nil] forHeaderFooterViewReuseIdentifier:@"TableHeader"];
+    [self.tabbleView registerClass:[JATableViewCell class] forCellReuseIdentifier:kJATableViewCellReuseIdentifier];
+    
+    //[self.tabbleView registerNib:[UINib nibWithNibName:@"TableHeader" bundle:nil] forHeaderFooterViewReuseIdentifier:@"TableHeader"];
 
     [self.viewBlock setUserInteractionEnabled:NO];
     [self.viewBlock setBackgroundColor:[[UIColor clearColor] colorWithAlphaComponent:0]];
@@ -64,6 +79,87 @@
     UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
     self.navigationItem.leftBarButtonItem = anotherButtonback;
     
+}
+
+/*
+- (NSArray *)leftButtons
+{
+    
+    __typeof(self) __weak weakSelf = self;
+    JAActionButton *button1 = [JAActionButton actionButtonWithTitle:@"Delete" color:[UIColor redColor] handler:^(UIButton *actionButton, JASwipeCell*cell) {
+        [cell completePinToTopViewAnimation];
+        [weakSelf leftMostButtonSwipeCompleted:cell];
+        NSLog(@"Left Button: Delete Pressed");
+    }];
+    
+    JAActionButton *button2 = [JAActionButton actionButtonWithTitle:@"Mark as unread" color:kUnreadButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Mark As Unread" message:@"Done!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+        NSLog(@"Left Button: Mark as unread Pressed");
+    }];
+    
+    return @[button1, button2];
+}
+ */
+
+- (NSArray *)rightButtons
+{
+    __typeof(self) __weak weakSelf = self;
+    JAActionButton *button1 = [JAActionButton actionButtonWithTitle:@"Got it" color:kArchiveButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
+        //[cell completePinToTopViewAnimation];
+        [weakSelf rightMostButtonSwipeCompleted:cell];
+        NSLog(@"Right Button: Archive Pressed");
+    }];
+    
+    /*
+    JAActionButton *button2 = [JAActionButton actionButtonWithTitle:@"Flag" color:kFlagButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Flag" message:@"Flag pressed!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+        NSLog(@"Right Button: Flag Pressed");
+    }];
+     */
+    JAActionButton *button3 = [JAActionButton actionButtonWithTitle:@"View recipe" color:kMoreButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
+        [weakSelf mostarReceita:cell];
+    }];
+    
+    return @[button1 /*, button2*/, button3];
+}
+
+
+-(void)mostarReceita:(JASwipeCell *)cell
+{
+    // aqui é o novo sitio para chamar as receitas
+    NSIndexPath *indexPath = [self.tabbleView indexPathForCell:cell];
+    ObjectLista * objeLista = [arrayOfItems objectAtIndex:indexPath.row];
+    
+    [self OpenReceita:objeLista];
+}
+
+/*
+- (void)leftMostButtonSwipeCompleted:(JASwipeCell *)cell
+{
+    NSIndexPath *indexPath = [self.tabbleView indexPathForCell:cell];
+    [arrayOfItems removeObjectAtIndex:indexPath.row];
+    
+    [self.tabbleView beginUpdates];
+    [self.tabbleView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tabbleView endUpdates];
+}
+ */
+
+- (void)rightMostButtonSwipeCompleted:(JASwipeCell *)cell
+{
+    NSIndexPath *indexPath = [self.tabbleView indexPathForCell:cell];
+    
+    ObjectLista * objLista = [arrayOfItems objectAtIndex:indexPath.row];
+    
+    [arrayOfItems removeObjectAtIndex:indexPath.row];
+    
+    [self.tabbleView beginUpdates];
+    [self.tabbleView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tabbleView endUpdates];
+    
+    [self deleteRow:objLista.managedObject];
 }
 
 - (IBAction)back:(id)sender {
@@ -154,7 +250,10 @@
     return arrayOfItems.count;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    /*
+    
     static NSString *simpleTableIdentifier = @"ListaComprasCell";
     ObjectLista * listas = [arrayOfItems objectAtIndex:indexPath.row];
     ListaComprasCell *cell = (ListaComprasCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -165,15 +264,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    /*
-    if(selectedIndex == indexPath.row)
-    {
-        
-    }else
-    {
-        
-    }
-    */
+  
     // tenho de saber se o ingrediente percente a alguma receita, se nao pertencer o botao de ver a receita deve ficar desactivo
     
     NSLog(@"%@",listas.unidade);
@@ -195,13 +286,29 @@
     }
     
     return cell;
+     */
+    
+    JATableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kJATableViewCellReuseIdentifier];
+    
+    //[cell addActionButtons:[self leftButtons] withButtonWidth:kJAButtonWidth withButtonPosition:JAButtonLocationLeft];
+    [cell addActionButtons:[self rightButtons] withButtonWidth:kJAButtonWidth withButtonPosition:JAButtonLocationRight];
+    
+    cell.delegate = self;
+    
+    [cell configureCellWithTitle:((ObjectLista *)arrayOfItems[indexPath.row]).nome];
+    [cell setNeedsLayout];
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
+    return cell;
+
 
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(selectedIndex == indexPath.row){
+    /*if(selectedIndex == indexPath.row){
         return 87;
-    }else{
+    }else*/{
         return 44;
     }
 }
@@ -394,7 +501,7 @@
         return;
     }
 
-    [self preencherTabela];
+    //[self preencherTabela];
     
 }
 
