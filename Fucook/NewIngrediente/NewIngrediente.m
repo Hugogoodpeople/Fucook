@@ -44,7 +44,7 @@
     
     self.navigationItem.title = @"Ingredient";
     
-    _pickerDataUnit = @[@"g", @"Kg", @"ml", @"dl", @"cl", @"L", @"un", @"tbsp"];
+    //_pickerDataUnit = @[@"g", @"Kg", @"ml", @"dl", @"cl", @"L", @"un", @"tbsp"];
     
      self.textName.delegate=self;
      self.textQuant.delegate=self;
@@ -52,11 +52,13 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)];
     [self.view addGestureRecognizer:singleTap];
     
-    arrayUnidade = @[@"Units",@"Tbs", @"g", @"kg", @"mL", @"dL", @"L", @"Btl.", @"Bags", @"Pkgs.", @"Boxes", @"Jars"];
+    arrayUnidade = @[@"Tbs", @"g", @"kg", @"mL", @"dL", @"Unit", @"L", @"Btl.", @"Bags", @"Pkgs.", @"Boxes", @"Jars"];
     arrayQuantidade = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"25", @"30", @"35", @"40", @"45", @"50", @"55", @"60", @"70", @"80", @"90", @"100", @"125", @"150", @"175", @"200", @"250", @"300", @"350", @"400", @"450", @"500", @"600", @"700", @"750", @"800", @"900"];
     arrayDecimal = @[@" ",@".2", @".25", @".3", @".4", @".5", @".6", @".7", @".75", @".8", @".9"];
     
     [self adicionarToolBar];
+    
+    [self.pickerQuant selectRow:5 inComponent:0 animated:NO];
     
 }
 
@@ -77,7 +79,9 @@
 -(void)doneWithNumberPad
 {
     [self.textQuant resignFirstResponder];
-    
+    NSString *str = self.textQuant.text;
+    str = [str stringByReplacingOccurrencesOfString:@"," withString:@"."];
+    self.textQuant.text = str;
     
 }
 
@@ -230,11 +234,17 @@ numberOfRowsInComponent:(NSInteger)component
     [self.textQuant resignFirstResponder];
     [self.textName resignFirstResponder];
     
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    //CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
+    // aqui tenho de puchar o picker mais acima um pouco
+    
     
     [UIView animateWithDuration:0.5 animations:^{
         self.viewBlock.alpha = 0.5;
-        [self.viewPicker setFrame:CGRectMake(0,  screenRect.size.height-self.viewPicker.frame.size.height, self.viewPicker.frame.size.width,self.viewPicker.frame.size.height)];
+        //[self.viewPicker setFrame:CGRectMake(0,  screenRect.size.height-self.viewPicker.frame.size.height, self.viewPicker.frame.size.width,self.viewPicker.frame.size.height)];
+        [self.viewPicker setFrame:CGRectMake(0,  self.viewQuantity.frame.size.height*2 + self.viewQuantity.frame.origin.y
+                                             , self.viewPicker.frame.size.width,self.viewPicker.frame.size.height)];
+        
         
     }];
 }

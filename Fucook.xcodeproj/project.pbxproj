@@ -33,6 +33,7 @@
 		BA0866401A2C892E00A7BB12 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0866381A2C892E00A7BB12 /* ALView+PureLayout.m */; };
 		BA0866411A2C892E00A7BB12 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BA08663A1A2C892E00A7BB12 /* NSArray+PureLayout.m */; };
 		BA0866421A2C892E00A7BB12 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BA08663C1A2C892E00A7BB12 /* NSLayoutConstraint+PureLayout.m */; };
+		BA0866441A2CCCEB00A7BB12 /* JATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0866431A2CCCEB00A7BB12 /* JATableViewCell.xib */; };
 		BA1141C71A27729800B77AB6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1141C61A27729800B77AB6 /* StoreKit.framework */; };
 		BA1141CA1A2786F500B77AB6 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1141C91A2786F500B77AB6 /* IAPHelper.m */; };
 		BA1141CD1A2788B600B77AB6 /* FucookIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1141CC1A2788B600B77AB6 /* FucookIAPHelper.m */; };
@@ -318,6 +319,7 @@
 		BA08663D1A2C892E00A7BB12 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = Fucook/ListaCompras/JASwipeCell/PureLayout/PureLayout.h; sourceTree = "<group>"; };
 		BA08663E1A2C892E00A7BB12 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "Fucook/ListaCompras/JASwipeCell/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
 		BA08663F1A2C892E00A7BB12 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = Fucook/ListaCompras/JASwipeCell/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
+		BA0866431A2CCCEB00A7BB12 /* JATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JATableViewCell.xib; path = Fucook/ListaCompras/JATableViewCell.xib; sourceTree = "<group>"; };
 		BA1141C61A27729800B77AB6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BA1141C81A2786F500B77AB6 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		BA1141C91A2786F500B77AB6 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
@@ -721,6 +723,7 @@
 				BA0866331A2C88CD00A7BB12 /* JASwipeCell.m */,
 				BA08662C1A2C871F00A7BB12 /* JATableViewCell.h */,
 				BA08662D1A2C871F00A7BB12 /* JATableViewCell.m */,
+				BA0866431A2CCCEB00A7BB12 /* JATableViewCell.xib */,
 			);
 			name = JASwipe;
 			sourceTree = "<group>";
@@ -1559,6 +1562,7 @@
 				BAF955781A0A9D6900277B94 /* btnshop1@2x.png in Resources */,
 				BA66E60D1A1258160090F99D /* icoimport@2x.png in Resources */,
 				BAF955771A0A9D6900277B94 /* btnsetting2@3x.png in Resources */,
+				BA0866441A2CCCEB00A7BB12 /* JATableViewCell.xib in Resources */,
 				BAF66E2E1A0B851600E90B7D /* imgbookslice@2x.png in Resources */,
 				BAF9556C1A0A9D6900277B94 /* btnfeatured1@2x.png in Resources */,
 				BA66E6081A1258160090F99D /* icocloud@3x.png in Resources */,

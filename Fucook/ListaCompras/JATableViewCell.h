@@ -26,7 +26,9 @@
 
 #import <UIKit/UIKit.h>
 #import "JASwipeCell.h"
+#import "ObjectLista.h"
 
 @interface JATableViewCell : JASwipeCell
 - (void)configureCellWithTitle:(NSString *)title;
+
 @end

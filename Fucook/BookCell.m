@@ -119,6 +119,7 @@
         [self.delegate performSelector:@selector(editarReceita:) withObject:self.receita];
     }
     
+    [self irParaFundo];
 }
 
 - (IBAction)clickCalendario:(id)sender
@@ -127,6 +128,7 @@
     if (self.delegate) {
         [self.delegate performSelector:@selector(calendarioReceita:) withObject:self.receita.managedObject];
     }
+     [self irParaFundo];
 }
 - (IBAction)clickCarrinho:(id)sender
 {
@@ -134,6 +136,7 @@
     if (self.delegate) {
         [self.delegate performSelector:@selector(adicionarReceita:) withObject:self.receita];
     }
+     [self irParaFundo];
 }
 
 - (IBAction)clickRemover:(id)sender {
@@ -142,5 +145,6 @@
     if (self.delegate) {
         [self.delegate performSelector:@selector(ApagarReceita:) withObject:self.receita.managedObject];
     }
+     [self irParaFundo];
 }
 @end

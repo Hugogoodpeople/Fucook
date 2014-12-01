@@ -49,4 +49,9 @@
         [self.delegate performSelector:@selector(deleteRow:) withObject:self.objectLista.managedObject];
     }
 }
+
+
+
+
+
 @end

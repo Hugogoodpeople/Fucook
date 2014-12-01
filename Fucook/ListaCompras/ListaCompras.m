@@ -252,10 +252,12 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    ObjectLista * listas = [arrayOfItems objectAtIndex:indexPath.row];
     /*
     
     static NSString *simpleTableIdentifier = @"ListaComprasCell";
-    ObjectLista * listas = [arrayOfItems objectAtIndex:indexPath.row];
+    
     ListaComprasCell *cell = (ListaComprasCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
     {
@@ -295,7 +297,7 @@
     
     cell.delegate = self;
     
-    [cell configureCellWithTitle:((ObjectLista *)arrayOfItems[indexPath.row]).nome];
+    [cell configureCellWithTitle:[NSString stringWithFormat:@"%@%@ %@    %@",listas.quantidade, listas.quantidade_decimal, listas.unidade, listas.nome]];
     [cell setNeedsLayout];
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];

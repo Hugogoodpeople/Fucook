@@ -73,8 +73,10 @@
     [pesquisaReceitas removeAllObjects];
     
     // fazer o codigo aqui para limpar as receitas
-    for (ObjectReceita * receita in receitas) {
-        if ([receita.nome containsString:searchText]) {
+    for (ObjectReceita * receita in receitas)
+    {
+        if ([receita.nome caseInsensitiveCompare:searchText ])
+        {
             [pesquisaReceitas addObject:receita];
         }
     }
