@@ -297,13 +297,12 @@
     
     cell.delegate = self;
     
-    [cell configureCellWithTitle:[NSString stringWithFormat:@"%@%@ %@    %@",listas.quantidade, listas.quantidade_decimal, listas.unidade, listas.nome]];
+    [cell configureCellWithTitle:[NSString stringWithFormat:@" %@%@ %@ %@",listas.quantidade, listas.quantidade_decimal, listas.unidade, listas.nome]];
     [cell setNeedsLayout];
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
     
     return cell;
-
 
 }
 

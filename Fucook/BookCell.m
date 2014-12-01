@@ -116,9 +116,8 @@
 {
     NSLog(@"Edit");
     if (self.delegate) {
-        [self.delegate performSelector:@selector(editarReceita:) withObject:self.receita];
+        [self.delegate performSelector:@selector(editarReceita:) withObject:self.receita afterDelay:0.2f];
     }
-    
     [self irParaFundo];
 }
 
@@ -126,25 +125,25 @@
 {
     NSLog(@"Calendario");
     if (self.delegate) {
-        [self.delegate performSelector:@selector(calendarioReceita:) withObject:self.receita.managedObject];
+        [self.delegate performSelector:@selector(calendarioReceita:) withObject:self.receita.managedObject afterDelay:0.2f];
     }
-     [self irParaFundo];
+    [self irParaFundo];
 }
 - (IBAction)clickCarrinho:(id)sender
 {
     NSLog(@"Carrinho");
     if (self.delegate) {
-        [self.delegate performSelector:@selector(adicionarReceita:) withObject:self.receita];
+        [self.delegate performSelector:@selector(adicionarReceita:) withObject:self.receita afterDelay:0.2f];
     }
-     [self irParaFundo];
+    [self irParaFundo];
 }
 
-- (IBAction)clickRemover:(id)sender {
-    
+- (IBAction)clickRemover:(id)sender
+{    
     NSLog(@"Remover Receita");
     if (self.delegate) {
-        [self.delegate performSelector:@selector(ApagarReceita:) withObject:self.receita.managedObject];
+        [self.delegate performSelector:@selector(ApagarReceita:) withObject:self.receita.managedObject afterDelay:0.2f];
     }
-     [self irParaFundo];
+    [self irParaFundo];
 }
 @end
