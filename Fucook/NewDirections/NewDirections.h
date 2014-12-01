@@ -30,4 +30,5 @@
 @property (weak, nonatomic) IBOutlet UITextView *textDesc;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTime;
+
 @end

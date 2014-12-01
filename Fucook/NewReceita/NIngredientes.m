@@ -68,11 +68,24 @@
     //NSString *str = @"Ingredient";
     NSString *str = ((ObjectIngrediente *)[self.arrayOfItems objectAtIndex:indexPath.row]).nome;
     CGSize size = [str sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:17] constrainedToSize:CGSizeMake([[UIScreen mainScreen] bounds].size.width -180, 999) lineBreakMode:NSLineBreakByWordWrapping];
+    
+    /*
+     // esta parte até calcula +- mas nao fica perfeito
+     
+    CGSize size = [str sizeWithAttributes:
+                   @{NSFontAttributeName:
+                         [UIFont fontWithName:@"HelveticaNeue" size:17]}];
+    
+    // Values are fractional -- you should take the ceilf to get equivalent values
+    size.height = ceilf(size.height);
+    size.width = ceilf(size.width);
+    
+     */
     NSLog(@"%f",size.height);
     if(size.height == 0)
         return 51;
         
-    return size.height +26;
+    return size.height +30;
 }
 
 // Customize the appearance of table view cells.
@@ -98,8 +111,6 @@
     
     cell.labelNome.text = ingrid.nome;
     cell.labelDesc.text = [NSString stringWithFormat:@"%@%@ %@", ingrid.quantidade, ingrid.quantidadeDecimal , ingrid.unidade];
-    
-    
     
     return cell;
     

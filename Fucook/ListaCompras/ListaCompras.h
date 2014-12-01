@@ -10,7 +10,7 @@
 
 @interface ListaCompras : UIViewController <UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate> {
     
-    int selectedIndex;    
+    NSInteger selectedIndex;
     NSMutableArray * arrayOfItems;
     
 }

@@ -31,7 +31,7 @@
         <attribute name="foto" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id_livro" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="contem_imagem" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Imagens" syncable="YES"/>
+        <relationship name="contem_imagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Imagens" syncable="YES"/>
         <relationship name="contem_receitas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Receitas" inverseName="pertence_livro" inverseEntity="Receitas" syncable="YES"/>
     </entity>
     <entity name="Nutricao" syncable="YES">
@@ -60,7 +60,7 @@
         <attribute name="nr_pessoas" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tempo" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="contem_etapas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Etapas" syncable="YES"/>
-        <relationship name="contem_imagem" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Imagens" syncable="YES"/>
+        <relationship name="contem_imagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Imagens" syncable="YES"/>
         <relationship name="contem_ingredientes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Ingredientes" syncable="YES"/>
         <relationship name="contem_nutricao" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Nutricao" syncable="YES"/>
         <relationship name="esta_agendada" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Agenda" inverseName="tem_receita" inverseEntity="Agenda" syncable="YES"/>
@@ -77,13 +77,13 @@
         <relationship name="pertence_receita" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Receitas" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Agenda" positionX="-254" positionY="-100" width="128" height="118"/>
-        <element name="Etapas" positionX="-794" positionY="-153" width="128" height="120"/>
-        <element name="Imagens" positionX="-947" positionY="-36" width="128" height="60"/>
-        <element name="Ingredientes" positionX="-614" positionY="-342" width="128" height="148"/>
-        <element name="Livros" positionX="-558" positionY="-495" width="128" height="133"/>
-        <element name="Nutricao" positionX="-279" positionY="-405" width="128" height="255"/>
-        <element name="Receitas" positionX="-450" positionY="-262" width="128" height="253"/>
-        <element name="ShoppingList" positionX="-785" positionY="-343" width="128" height="163"/>
+        <element name="Agenda" positionX="-972" positionY="-199" width="128" height="118"/>
+        <element name="Etapas" positionX="-1521" positionY="-324" width="128" height="120"/>
+        <element name="Imagens" positionX="-1665" positionY="-501" width="128" height="60"/>
+        <element name="Ingredientes" positionX="-1703" positionY="-225" width="128" height="148"/>
+        <element name="Livros" positionX="-1208" positionY="-567" width="128" height="133"/>
+        <element name="Nutricao" positionX="-1026" positionY="-531" width="128" height="255"/>
+        <element name="Receitas" positionX="-1188" positionY="-343" width="128" height="253"/>
+        <element name="ShoppingList" positionX="-1368" positionY="-432" width="128" height="163"/>
     </elements>
 </model>

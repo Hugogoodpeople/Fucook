@@ -321,13 +321,12 @@ NSManagedObjectContext * context ;
         
     }
     
-    
-    
     if (podeGravar)
     {
         NSLog(@"adicionar %@", ingrediente.nome);
         
-        
+        // aqui é a criar pla primeira vez tenho de criar assim
+        // não existe nenhum mecanismo automatico para esta parte
         NSManagedObject *listItem = [NSEntityDescription
                                      insertNewObjectForEntityForName:@"ShoppingList"
                                      inManagedObjectContext:context];
@@ -338,14 +337,12 @@ NSManagedObjectContext * context ;
         [listItem setValue:ingrediente.unidade forKey:@"unidade"];
         [listItem setValue:self.receita.managedObject forKey:@"pertence_receita"];
         
-        ObjectLista * objLista = [ObjectLista new];
+        ObjectLista * objLista          = [ObjectLista new];
         objLista.nome                   = ingrediente.nome;
         objLista.quantidade             = ingrediente.quantidade;
         objLista.quantidade_decimal     = ingrediente.quantidadeDecimal;
         objLista.unidade                = ingrediente.unidade;
         objLista.managedObjectReceita   = self.receita.managedObject;
-        
-        
         
         // tenho de mudar os valores da quantidade do ingrediente antes de gravar
         
@@ -415,8 +412,6 @@ NSManagedObjectContext * context ;
             [self.shopingCart removeObject: list];
         }
     }
-    
-    
 }
 
 

@@ -71,7 +71,7 @@
     if(size.height == 0)
         return 51;
     
-    return size.height +26;
+    return size.height +30;
 }
 
 // Customize the appearance of table view cells.

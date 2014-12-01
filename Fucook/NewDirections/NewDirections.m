@@ -60,7 +60,7 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)];
     [self.view addGestureRecognizer:singleTap];
     
-    tempos = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"10",
+    tempos = @[@"Set timer",@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"10",
                @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20",
                @"21", @"22", @"23", @"24", @"25", @"26", @"27", @"28", @"29", @"30",
                @"31", @"32", @"33", @"34", @"35", @"36", @"37", @"38", @"39", @"40",
@@ -203,7 +203,17 @@ numberOfRowsInComponent:(NSInteger)component
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [NSString stringWithFormat:@"%@ min",[tempos objectAtIndex:row]];
+    NSString * tempo;
+    if (row== 0) {
+        tempo = [tempos objectAtIndex:row];
+    }
+    else
+    {
+        tempo = [NSString stringWithFormat:@"%@ min", [tempos objectAtIndex:row]];
+    }
+        
+    
+    return tempo;
 }
 
 
@@ -235,8 +245,15 @@ numberOfRowsInComponent:(NSInteger)component
 - (IBAction)btDoneTime:(id)sender {
     //long d = [self.pickerView selectedRowInComponent:0];
    //self.labelTime.text = [NSString stringWithFormat:@"%ld",(long)[self.pickerView selectedRowInComponent:0]+1];
-    self.labelTime.text = [tempos objectAtIndex:[self.pickerView selectedRowInComponent:0]];
-    
+    if([self.pickerView selectedRowInComponent:0] == 0)
+    {
+        self.labelTime.text = [NSString stringWithFormat:@"%@",  [tempos objectAtIndex:[self.pickerView selectedRowInComponent:0]]];
+    }
+    else
+    {
+        self.labelTime.text = [NSString stringWithFormat:@"%@ min",  [tempos objectAtIndex:[self.pickerView selectedRowInComponent:0]]];
+    }
+        
     [self btAbrir:self];
 }
 @end

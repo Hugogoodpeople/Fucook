@@ -282,6 +282,8 @@
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
     imagePickerController.sourceType = sourceType;
+    [imagePickerController setShowsCameraControls:YES];
+    [imagePickerController setAllowsEditing:YES];
     imagePickerController.delegate = self;
     
     if (sourceType == UIImagePickerControllerSourceTypeCamera)
@@ -289,15 +291,17 @@
         /*
          The user wants to use the camera interface. Set up our custom overlay view for the camera.
          */
-        imagePickerController.showsCameraControls = NO;
+        //imagePickerController.showsCameraControls = NO;
         
         /*
          Load the overlay view from the OverlayView nib file. Self is the File's Owner for the nib file, so the overlayView outlet is set to the main view in the nib. Pass that view to the image picker controller to use as its overlay view, and set self's reference to the view to nil.
          */
+        /*
         [[NSBundle mainBundle] loadNibNamed:@"OverlayView" owner:self options:nil];
         self.overlayView.frame = imagePickerController.cameraOverlayView.frame;
         imagePickerController.cameraOverlayView = self.overlayView;
         self.overlayView = nil;
+         */
     }
     
     self.imagePickerController = imagePickerController;
@@ -410,7 +414,8 @@
 // This method is called when an image has been chosen from the library or taken from the camera.
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
+    //UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
+    UIImage *image =   [info objectForKey:UIImagePickerControllerEditedImage];
     
     [self.capturedImages addObject:image];
     

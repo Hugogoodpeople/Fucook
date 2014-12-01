@@ -263,7 +263,6 @@
         [arrayIngredientes addObject:ingrediente];
     }
     
-#warning tenho de ter cuidado caso já exista um ingrediente com o mesmo nome para esse ser removido
     // ok agora neste ponto já tenho todos os ingredientes da receita
     // agora tenho de verificar se esses ingredientes já existem no shopping cart
     
@@ -321,7 +320,7 @@
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }else
     {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%d ingredients added to your cart", arrayIngredientes.count - count] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%lu ingredients added to your cart", arrayIngredientes.count - count] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     
         [alert show];
     }

@@ -49,7 +49,7 @@
     [self.viewBlock setUserInteractionEnabled:NO];
     [self.viewBlock setBackgroundColor:[[UIColor clearColor] colorWithAlphaComponent:0]];
     
-    _pickerUnit = @[@"Tbs", @"g", @"kg", @"mL", @"dL", @"L", @"Btl.", @"Bags", @"Pkgs.", @"Boxes", @"Jars"];
+    _pickerUnit = @[@"Units",@"Tbs", @"g", @"kg", @"mL", @"dL", @"L", @"Btl.", @"Bags", @"Pkgs.", @"Boxes", @"Jars"];
     _pickerPeso = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"25", @"30", @"35", @"40", @"45", @"50", @"55", @"60", @"70", @"80", @"90", @"100", @"125", @"150", @"175", @"200", @"250", @"300", @"350", @"400", @"450", @"500", @"600", @"700", @"750", @"800", @"900"];
     _pickerData = @[@" ",@".2", @".25", @".3", @".4", @".5", @".6", @".7", @".75", @".8", @".9"];
     
@@ -58,7 +58,16 @@
     self.pickerQuant.delegate = self;
     
    //[self loadData];
+    UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    [buttonback addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonback setImage:[UIImage imageNamed:@"btleft2"] forState:UIControlStateNormal];
+    UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
+    self.navigationItem.leftBarButtonItem = anotherButtonback;
+    
+}
 
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -75,10 +84,10 @@
     
     // para ver se deu algum erro ao inserir
     NSError *error;
-    if (![context save:&error]) {
+    if (![context save:&error])
+    {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
-    
     
     // para ir buscar os dados prestendidos a base de dados
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -220,8 +229,8 @@
 }
 
 
--(void)editQuant:(NSManagedObject *)managedObject{
-   
+-(void)editQuant:(NSManagedObject *)managedObject
+{   
     CGRect screenRect = [[UIScreen mainScreen] bounds];
 
         [UIView animateWithDuration:0.5 animations:^{
@@ -233,10 +242,6 @@
     //indexCell = index;
     managedObjectaux=managedObject;
 }
-
-
-
-
 
 
 - (void)loadData

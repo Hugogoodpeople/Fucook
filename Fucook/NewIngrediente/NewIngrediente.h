@@ -21,9 +21,12 @@
 
 //- (IBAction)btQuant:(id)sender;
 - (IBAction)clickQuantidade:(id)sender;
+- (IBAction)clickUnidade:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *textName;
 @property (weak, nonatomic) IBOutlet UITextField *textQuant;
+@property (weak, nonatomic) IBOutlet UITextField *textUnity;
+
 
 @property (weak, nonatomic) IBOutlet UIView *viewPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerQuant;
