@@ -137,8 +137,9 @@
     
     //[self preencherTabela];
     
+    [self.toobar setFrame:CGRectMake(0, self.toobar.frame.origin.y -4, self.toobar.frame.size.width, 48)];
+    
 }
-
 
 
 -(void)preencherTabela

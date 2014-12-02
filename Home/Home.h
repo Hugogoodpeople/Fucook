@@ -23,4 +23,7 @@
 - (IBAction)clickInApps:(id)sender;
 - (IBAction)clickSettings:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIToolbar *toobar;
+
+
 @end
