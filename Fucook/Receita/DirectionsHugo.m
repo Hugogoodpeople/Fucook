@@ -12,6 +12,9 @@
 #import "ObjectDirections.h"
 
 @interface DirectionsHugo ()
+{
+    float largura;
+}
 
 @property NSMutableArray * arrayHeaders;
 
@@ -22,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    largura = [[UIScreen mainScreen] bounds].size.width;
     
     [self setUp];
 }
@@ -129,7 +133,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UILabel  * label = [[UILabel alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width - 0  , 9999)];
+    UILabel  * label = [[UILabel alloc] initWithFrame:CGRectMake(0,0, largura   , 9999)];
     label.numberOfLines=0;
     label.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:13];
     label.text = ((ObjectDirections *)[self.items objectAtIndex:indexPath.section]).descricao;

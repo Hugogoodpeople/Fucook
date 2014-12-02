@@ -135,7 +135,7 @@
                         </view>
                         <view alpha="0.0" contentMode="scaleToFill" id="tbp-Sz-O0T">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All itens added to shopping list " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Al-CO-Fgq">
                                     <rect key="frame" x="8" y="18" width="304" height="21"/>
@@ -175,7 +175,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="246" y="55"/>
+            <point key="canvasLocation" x="291" y="46"/>
         </view>
     </objects>
     <resources>

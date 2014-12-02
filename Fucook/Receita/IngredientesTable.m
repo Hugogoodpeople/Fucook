@@ -77,17 +77,12 @@ NSManagedObjectContext * context ;
         NSLog(@"unidade: %@", [pedido valueForKey:@"unidade"]);
         ObjectLista * list = [ObjectLista new];
         
-       
         [list setTheManagedObject:pedido forRecipe:self.receita];
-        
-        
         
         //[items addObject:list];
         
         // tenho de fazer aqui a comparação e se encontrar entao tenho de remover da base de dados
         [self.shopingCart addObject:list];
-        
-        
     }
 
 }
@@ -192,11 +187,11 @@ NSManagedObjectContext * context ;
     
     ObjectIngrediente * ing = [self.items objectAtIndex:indexPath.row];
 
-    cell.LabelTitulo.text = ing.nome;
+    cell.LabelTitulo.text = [NSString stringWithFormat:@"%@%@ %@ %@",ing.quantidade, ing.quantidadeDecimal ,ing.unidade , ing.nome];
     cell.ingrediente = ing;
     // tenho de calcular com base no que esta no header
     
-    cell.labelQtd.text = [self calcularValor:indexPath];
+    //cell.labelQtd.text = [self calcularValor:indexPath];
     cell.delegate = self;
 
     [cell addRemove: !ing.selecionado];

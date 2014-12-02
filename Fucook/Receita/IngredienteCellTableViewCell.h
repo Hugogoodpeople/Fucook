@@ -14,7 +14,7 @@
 @property ObjectIngrediente * ingrediente;
 
 @property (nonatomic ,assign) id delegate;
-@property (weak, nonatomic) IBOutlet UILabel *labelQtd;
+//@property (weak, nonatomic) IBOutlet UILabel *labelQtd;
 @property (weak, nonatomic) IBOutlet UILabel *LabelTitulo;
 - (IBAction)clickAddRemove:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *imgAddRemove;

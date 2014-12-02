@@ -1,18 +1,17 @@
 //
-//  CellIngrediente.h
+//  CellEtapa.h
 //  Fucook
 //
-//  Created by Hugo Costa on 19/11/14.
+//  Created by Hugo Costa on 02/12/14.
 //  Copyright (c) 2014 Hugo Costa. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "ObjectIngrediente.h"
 
-
-@interface CellIngrediente : UITableViewCell
+@interface CellEtapa : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *labelNome;
-//@property (weak, nonatomic) IBOutlet UILabel *labelDesc;
+@property (weak, nonatomic) IBOutlet UILabel *labelDesc;
 
 - (IBAction)clickRemover:(id)sender;
 

@@ -282,7 +282,7 @@
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
     imagePickerController.sourceType = sourceType;
-    [imagePickerController setShowsCameraControls:YES];
+    
     [imagePickerController setAllowsEditing:YES];
     imagePickerController.delegate = self;
     
@@ -302,6 +302,7 @@
         imagePickerController.cameraOverlayView = self.overlayView;
         self.overlayView = nil;
          */
+        [imagePickerController setShowsCameraControls:YES];
     }
     
     self.imagePickerController = imagePickerController;

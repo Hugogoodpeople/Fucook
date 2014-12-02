@@ -8,7 +8,7 @@
 
 #import "Directions.h"
 #import "ObjectDirections.h"
-#import "CellIngrediente.h"
+#import "CellEtapa.h"
 
 @interface Directions ()
 
@@ -66,25 +66,25 @@
 {
     //NSString *str = @"Ingredient";
     NSString *str = ((ObjectDirections *)[self.arrayOfItems objectAtIndex:indexPath.row]).descricao;
-    CGSize size = [str sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:17] constrainedToSize:CGSizeMake(180, 999) lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize size = [str sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:17] constrainedToSize:CGSizeMake(270, 999) lineBreakMode:NSLineBreakByWordWrapping];
     NSLog(@"%f",size.height);
     if(size.height == 0)
-        return 51;
+        return 65;
     
-    return size.height +30;
+    return size.height +54;
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *simpleTableIdentifier = @"CellIngrediente";
+    static NSString *simpleTableIdentifier = @"CellEtapa";
     
     
     ObjectDirections * ingrid = [self.arrayOfItems objectAtIndex:indexPath.row];
     
-    CellIngrediente *cell = (CellIngrediente *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    CellEtapa *cell = (CellEtapa *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if(cell == nil){
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CellIngrediente" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CellEtapa" owner:self options:nil];
         cell = [nib objectAtIndex:0];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.contentView.clipsToBounds = YES;
@@ -96,13 +96,10 @@
     cell.ingrediente = ingrid;
     cell.delegate = self.delegate;
     
-    cell.labelNome.text = ingrid.descricao;
+    cell.labelNome.text = [NSString stringWithFormat:@"%@", ingrid.descricao];
     cell.labelDesc.text = [NSString stringWithFormat:@"%d min", ingrid.tempoMinutos];
     
-    
-    
     return cell;
-    
 }
 
 

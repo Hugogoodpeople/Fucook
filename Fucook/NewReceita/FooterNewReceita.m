@@ -10,6 +10,9 @@
 #import "CellIngrediente.h"
 
 @interface FooterNewReceita ()
+{
+    float larguraEcra;
+}
 
 @end
 
@@ -18,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    larguraEcra = [[UIScreen mainScreen] bounds].size.width;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,7 +71,7 @@
 {
     //NSString *str = @"Ingredient";
     NSString *str = [self.arrayOfItems objectAtIndex:indexPath.row];
-    CGSize size = [str sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:17] constrainedToSize:CGSizeMake(180, 999) lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize size = [str sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:17] constrainedToSize:CGSizeMake(larguraEcra -70 , 999) lineBreakMode:NSLineBreakByWordWrapping];
     NSLog(@"%f",size.height);
     if(size.height == 0)
         return 51;
@@ -78,7 +83,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *simpleTableIdentifier = @"CellIngrediente";
-    
     
     NSString * ingrid = [self.arrayOfItems objectAtIndex:indexPath.row];
     
@@ -97,7 +101,7 @@
     cell.ingrediente = ingrid;
     
     cell.labelNome.text = ingrid;
-    cell.labelDesc.text = @"";
+    //cell.labelDesc.text = @"";
     
     
     return cell;
