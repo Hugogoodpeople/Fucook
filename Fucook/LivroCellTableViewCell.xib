@@ -15,21 +15,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hhs-h0-Iw5">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hhs-h0-Iw5">
                         <rect key="frame" x="113" y="444" width="94" height="50"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="btndelet2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Twe-yS-ZS6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btndelet2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Twe-yS-ZS6">
                                 <rect key="frame" x="10" y="11" width="23" height="27"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="23" id="pdA-dU-T3Z"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="btnedit2.png" translatesAutoresizingMaskIntoConstraints="NO" id="S3h-6c-WaZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnedit2.png" translatesAutoresizingMaskIntoConstraints="NO" id="S3h-6c-WaZ">
                                 <rect key="frame" x="70" y="13" width="24" height="24"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwv-7I-65J">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwv-7I-65J">
                                 <rect key="frame" x="62" y="0.0" width="30" height="50"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,7 +38,7 @@
                                     <action selector="ClickEdit:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="El5-xf-eDu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJR-8D-tix">
+                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJR-8D-tix">
                                 <rect key="frame" x="2" y="1" width="46" height="49"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -91,9 +91,13 @@
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="412" image="imgbookslice.png" translatesAutoresizingMaskIntoConstraints="NO" id="HcT-9j-c9q">
+                                <rect key="frame" x="8" y="0.0" width="30" height="420"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HcT-9j-c9q" firstAttribute="top" secondItem="mb9-m1-94t" secondAttribute="top" id="2ki-ox-CKK"/>
                             <constraint firstItem="lAv-sX-LAi" firstAttribute="top" secondItem="mb9-m1-94t" secondAttribute="topMargin" id="AnC-Hl-Ikl"/>
                             <constraint firstItem="afk-i6-W4q" firstAttribute="top" secondItem="lAv-sX-LAi" secondAttribute="bottom" constant="8" symbolic="YES" id="Boy-2f-sqy"/>
                             <constraint firstItem="afk-i6-W4q" firstAttribute="leading" secondItem="mb9-m1-94t" secondAttribute="leadingMargin" id="Mxo-wc-5jE"/>
@@ -102,6 +106,8 @@
                             <constraint firstItem="afk-i6-W4q" firstAttribute="centerX" secondItem="VTf-gf-eTB" secondAttribute="centerX" id="Yo4-LA-QbX"/>
                             <constraint firstAttribute="bottom" secondItem="VTf-gf-eTB" secondAttribute="bottom" id="bEj-vF-DCK"/>
                             <constraint firstAttribute="trailing" secondItem="VTf-gf-eTB" secondAttribute="trailing" id="pDG-Na-hiT"/>
+                            <constraint firstItem="HcT-9j-c9q" firstAttribute="leading" secondItem="mb9-m1-94t" secondAttribute="leading" constant="8" id="rMb-0Y-nQt"/>
+                            <constraint firstAttribute="bottom" secondItem="HcT-9j-c9q" secondAttribute="bottom" id="vLR-bs-C70"/>
                             <constraint firstItem="VTf-gf-eTB" firstAttribute="top" secondItem="mb9-m1-94t" secondAttribute="top" id="y5G-Hu-Wnh"/>
                             <constraint firstItem="lAv-sX-LAi" firstAttribute="leading" secondItem="afk-i6-W4q" secondAttribute="leading" id="yqr-vT-QLw"/>
                         </constraints>
@@ -133,11 +139,12 @@
                 <outlet property="labelDescricao" destination="afk-i6-W4q" id="53i-g1-sbm"/>
                 <outlet property="labelTitulo" destination="lAv-sX-LAi" id="SdY-XX-66d"/>
             </connections>
-            <point key="canvasLocation" x="554" y="-1"/>
+            <point key="canvasLocation" x="510" y="-111"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="btndelet2.png" width="20" height="24"/>
         <image name="btnedit2.png" width="24" height="24"/>
+        <image name="imgbookslice.png" width="6" height="417"/>
     </resources>
 </document>

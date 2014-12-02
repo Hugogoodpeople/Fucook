@@ -250,10 +250,23 @@
     
 }
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    
+    if(decelerate) return;
+    
+    [self scrollViewDidEndDecelerating:scrollView];
+}
+
+
+- (void)scrollViewDidEndDecelerating:(UITableView *)tableView {
+    
+    [tableView scrollToRowAtIndexPath:[tableView indexPathForRowAtPoint: CGPointMake(tableView.contentOffset.x, 160 + tableView.contentOffset.y +tableView.rowHeight/2)] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [[UIScreen mainScreen] bounds].size.width ;
+    return [[UIScreen mainScreen] bounds].size.width - 30 ;
 }
+
 
 -(void)addbook {
     NSLog(@"clicou add");
@@ -278,7 +291,7 @@
 {
     //NSLog(@"Table did Scrool %f" , scrollView.contentOffset.y);
     
-    int pagina = (scrollView.contentOffset.y/self.view.frame.size.width);
+    int pagina = (scrollView.contentOffset.y/(self.view.frame.size.width -60));
     [self.pageControl setCurrentPage: pagina];
     
 }

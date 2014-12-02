@@ -73,7 +73,7 @@ NSManagedObject * managedObject;
     //[self.tableView.layer setAnchorPoint:CGPointMake(0.0, 0.0)];
     self.tableView.transform = CGAffineTransformMakeRotation(M_PI/-2);
     self.tableView.showsVerticalScrollIndicator = YES;
-    self.tableView.pagingEnabled = YES;
+    //self.tableView.pagingEnabled = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
