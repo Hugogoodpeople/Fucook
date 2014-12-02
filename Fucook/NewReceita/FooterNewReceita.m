@@ -71,7 +71,7 @@
 {
     //NSString *str = @"Ingredient";
     NSString *str = [self.arrayOfItems objectAtIndex:indexPath.row];
-    CGSize size = [str sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:17] constrainedToSize:CGSizeMake(larguraEcra -70 , 999) lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize size = [str sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:17] constrainedToSize:CGSizeMake(larguraEcra -50 , 999) lineBreakMode:NSLineBreakByWordWrapping];
     NSLog(@"%f",size.height);
     if(size.height == 0)
         return 51;
@@ -103,9 +103,7 @@
     cell.labelNome.text = ingrid;
     //cell.labelDesc.text = @"";
     
-    
     return cell;
-    
 }
 
 
