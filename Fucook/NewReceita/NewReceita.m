@@ -445,5 +445,20 @@
     [self actualizarPosicoes];
 }
 
+-(void)editarEtapa:(ObjectDirections *)directions
+{
+    NewDirections * direct = [NewDirections new];
+    direct.delegate = self;
+    direct.directions = directions;
+    
+    [self.navigationController pushViewController:direct animated:YES];
+}
+
+-(void)actualizarEtapa:(ObjectDirections * )ingred :(ObjectDirections *) editedIngrediente
+{
+    [dir.arrayOfItems replaceObjectAtIndex:[dir.arrayOfItems indexOfObject:ingred] withObject:editedIngrediente];
+    [self actualizarPosicoes];
+}
+
 
 @end

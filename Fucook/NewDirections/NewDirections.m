@@ -70,6 +70,15 @@
                ];
 
 
+    if (self.directions)
+    {
+        self.textDesc.text = self.directions.descricao;
+        if(self.directions.tempoMinutos != 0)
+            self.labelTime.text = [NSString stringWithFormat:@"%d MIN", self.directions.tempoMinutos];
+        else
+            self.labelTime.text = @"Set time";
+    }
+    
 }
 
 -(void)AdicionarDirections
@@ -80,10 +89,22 @@
     NSInteger row = [self.pickerView selectedRowInComponent:0];
     direct.tempoMinutos = [[tempos objectAtIndex:row] intValue];
     
-    if (self.delegate) {
-        [self.delegate performSelector:@selector(AdicionarDirections:) withObject:direct];
+    
+    if (self.directions) {
+     
+        if (self.delegate) {
+            [self.delegate performSelector:@selector(actualizarEtapa::) withObject:self.directions withObject:direct];
+        }
     }
-
+    else{
+    
+        if (self.delegate) {
+            [self.delegate performSelector:@selector(AdicionarDirections:) withObject:direct];
+        }
+    }
+    
+    
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -127,18 +148,7 @@
     [popup showInView:[UIApplication sharedApplication].keyWindow];
 }
 
-
-
-
-
-
 #pragma mark - Toolbar actions
-
-
-
-
-
-
 
 - (IBAction)startTakingPicturesAtIntervals:(id)sender
 {

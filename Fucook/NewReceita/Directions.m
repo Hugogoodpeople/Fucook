@@ -66,12 +66,12 @@
     __typeof(self) __weak weakSelf = self;
     JAActionButton *button1 = [JAActionButton actionButtonWithTitle:@"Delete" color:kArchiveButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell)
                                {
-                                   //[cell completePinToTopViewAnimation];
-                                   //[self rightMostButtonSwipeCompleted:cell];
+                                   [cell completePinToTopViewAnimation];
+                                   [self rightMostButtonSwipeCompleted:cell];
                                }];
     
     JAActionButton *button2 = [JAActionButton actionButtonWithTitle:@"Edit" color:kFlagButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
-        //[self editIngrediente:cell];
+        [self editEtapa:cell];
     }];
     
     
@@ -165,7 +165,34 @@
         if (self.delegate) {
             [self.delegate performSelector:@selector(actualizarPosicoes) withObject:nil];
         }
-        
+    }
+}
+
+- (void)rightMostButtonSwipeCompleted:(JASwipeCell *)cell
+{
+    NSIndexPath *indexPath = [self.tabela indexPathForCell:cell];
+    
+    // ObjectIngrediente * objLista = [self.arrayOfItems objectAtIndex:indexPath.row];
+    
+    [self.arrayOfItems removeObjectAtIndex:indexPath.row];
+    
+    [self.tabela beginUpdates];
+    [self.tabela deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tabela endUpdates];
+    
+    //[self deleteRow:objLista.managedObject];
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(actualizarPosicoes) withObject:nil afterDelay:0.3];
+    }
+}
+
+-(void)editEtapa:(JASwipeCell *)cell
+{
+    NSIndexPath *indexPath = [self.tabela indexPathForCell:cell];
+    ObjectDirections * ingre = [self.arrayOfItems objectAtIndex:indexPath.row];
+    
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(editarEtapa:) withObject:ingre];
     }
 }
 

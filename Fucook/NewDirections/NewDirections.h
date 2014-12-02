@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ObjectDirections.h"
 
 @interface NewDirections : UIViewController <UITextViewDelegate>
 
@@ -30,5 +31,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *textDesc;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTime;
+
+@property ObjectDirections * directions;
 
 @end
