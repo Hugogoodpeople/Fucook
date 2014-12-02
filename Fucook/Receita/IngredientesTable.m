@@ -210,7 +210,6 @@ NSManagedObjectContext * context ;
     return [NSString stringWithFormat:@"%g %@", calculado, ing.unidade];
 }
 
-
 -(void)callCart
 {
     NSLog(@"abrir cart");

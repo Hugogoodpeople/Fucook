@@ -179,9 +179,11 @@
     
     ingre.arrayOfItems = arrayIngredientes;
     [ingre.tabela reloadData];
+    [ingre.tabela reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     
     dir.arrayOfItems = arraydireccoes;
     [dir.tabela reloadData];
+    [dir.tabela reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     
     footerFinal.arrayOfItems = arrayNotas;
     [footerFinal.tabela reloadData];
@@ -236,9 +238,7 @@
                               insertNewObjectForEntityForName:@"Receitas"
                               inManagedObjectContext:context];
     }
-    
-    
-    
+
     NSString * nomeReceita = headerFinal.textName.text;
     NSString * categoria   = headerFinal.labelCat.text;
     NSString * servings    = headerFinal.labelServ.text;
@@ -264,8 +264,6 @@
     NSManagedObject *Imagem = [NSEntityDescription
                                insertNewObjectForEntityForName:@"Imagens"
                                inManagedObjectContext:context];
-    
-    
     
     //[self.livro.managedObject setValue:Receita forKey:@"contem_receitas"];
     // tenho de adicionar um array com o novo elemento
@@ -398,7 +396,8 @@
 
 
 #warning alterar aqui
--(void)animarIngre:(NSNumber *) num outro:(NSNumber *) num2{
+-(void)animarIngre:(NSNumber *) num outro:(NSNumber *) num2
+{
      NSLog(@"Num1 %d", auxIng);
     if(auxIng==0){
         [UIView animateWithDuration:0.5 animations:^{
@@ -429,6 +428,22 @@
         NSLog(@"tamanho o dir: %f", dir.view.frame.origin.y+dir.view.frame.size.height);
 
     }
-    
 }
+
+-(void)editarIngrediente:(ObjectIngrediente *)ingrediente
+{
+    NewIngrediente * controller = [NewIngrediente new];
+    controller.delegate = self;
+    controller.ingrediente = ingrediente;
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+-(void)actualizarIngrediente:(ObjectIngrediente * )ingred :(ObjectIngrediente *) editedIngrediente
+{
+    [ingre.arrayOfItems replaceObjectAtIndex:[ingre.arrayOfItems indexOfObject:ingred] withObject:editedIngrediente];
+    [self actualizarPosicoes];
+}
+
+
 @end

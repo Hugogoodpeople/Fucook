@@ -296,7 +296,6 @@
     [cell addActionButtons:[self rightButtons] withButtonWidth:kJAButtonWidth withButtonPosition:JAButtonLocationRight];
     
     cell.delegate = self;
-    
     [cell configureCellWithTitle:[NSString stringWithFormat:@" %@%@ %@ %@",listas.quantidade, listas.quantidade_decimal, listas.unidade, listas.nome]];
     [cell setNeedsLayout];
     [cell setNeedsUpdateConstraints];

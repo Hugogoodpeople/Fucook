@@ -223,7 +223,10 @@
 		BAFC11581A1CBF5600EA10E7 /* CellIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFC11561A1CBF5600EA10E7 /* CellIngrediente.m */; };
 		BAFC11591A1CBF5600EA10E7 /* CellIngrediente.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFC11571A1CBF5600EA10E7 /* CellIngrediente.xib */; };
 		BAFE0CB91A2DD223000298BC /* CellEtapa.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFE0CB71A2DD223000298BC /* CellEtapa.m */; };
-		BAFE0CBA1A2DD223000298BC /* CellEtapa.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFE0CB81A2DD223000298BC /* CellEtapa.xib */; };
+		BAFE0CBE1A2DEBF4000298BC /* IngreTwoOptionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFE0CBC1A2DEBF4000298BC /* IngreTwoOptionsController.m */; };
+		BAFE0CBF1A2DEBF4000298BC /* IngreTwoOptionsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFE0CBD1A2DEBF4000298BC /* IngreTwoOptionsController.xib */; };
+		BAFE0CC31A2E0FF3000298BC /* EtapaTwoOptionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFE0CC11A2E0FF3000298BC /* EtapaTwoOptionsController.m */; };
+		BAFE0CC41A2E0FF3000298BC /* EtapaTwoOptionsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFE0CC21A2E0FF3000298BC /* EtapaTwoOptionsController.xib */; };
 		CE253F991A10B9C7003DA45C /* HeaderNewReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE253F941A10B9C7003DA45C /* HeaderNewReceita.m */; };
 		CE253F9A1A10B9C7003DA45C /* HeaderNewReceita.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE253F951A10B9C7003DA45C /* HeaderNewReceita.xib */; };
 		CE253F9B1A10B9C7003DA45C /* NewReceita.m in Sources */ = {isa = PBXBuildFile; fileRef = CE253F971A10B9C7003DA45C /* NewReceita.m */; };
@@ -566,7 +569,12 @@
 		BAFC11571A1CBF5600EA10E7 /* CellIngrediente.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CellIngrediente.xib; path = Fucook/NewReceita/CellIngrediente.xib; sourceTree = "<group>"; };
 		BAFE0CB61A2DD223000298BC /* CellEtapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellEtapa.h; path = Fucook/NewReceita/CellEtapa.h; sourceTree = "<group>"; };
 		BAFE0CB71A2DD223000298BC /* CellEtapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellEtapa.m; path = Fucook/NewReceita/CellEtapa.m; sourceTree = "<group>"; };
-		BAFE0CB81A2DD223000298BC /* CellEtapa.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CellEtapa.xib; path = Fucook/NewReceita/CellEtapa.xib; sourceTree = "<group>"; };
+		BAFE0CBB1A2DEBF4000298BC /* IngreTwoOptionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IngreTwoOptionsController.h; path = Fucook/NewReceita/IngreTwoOptionsController.h; sourceTree = "<group>"; };
+		BAFE0CBC1A2DEBF4000298BC /* IngreTwoOptionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IngreTwoOptionsController.m; path = Fucook/NewReceita/IngreTwoOptionsController.m; sourceTree = "<group>"; };
+		BAFE0CBD1A2DEBF4000298BC /* IngreTwoOptionsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IngreTwoOptionsController.xib; path = Fucook/NewReceita/IngreTwoOptionsController.xib; sourceTree = "<group>"; };
+		BAFE0CC01A2E0FF3000298BC /* EtapaTwoOptionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EtapaTwoOptionsController.h; path = Fucook/NewReceita/EtapaTwoOptionsController.h; sourceTree = "<group>"; };
+		BAFE0CC11A2E0FF3000298BC /* EtapaTwoOptionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EtapaTwoOptionsController.m; path = Fucook/NewReceita/EtapaTwoOptionsController.m; sourceTree = "<group>"; };
+		BAFE0CC21A2E0FF3000298BC /* EtapaTwoOptionsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EtapaTwoOptionsController.xib; path = Fucook/NewReceita/EtapaTwoOptionsController.xib; sourceTree = "<group>"; };
 		CE253F931A10B9C7003DA45C /* HeaderNewReceita.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderNewReceita.h; path = Fucook/NewReceita/HeaderNewReceita.h; sourceTree = "<group>"; };
 		CE253F941A10B9C7003DA45C /* HeaderNewReceita.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderNewReceita.m; path = Fucook/NewReceita/HeaderNewReceita.m; sourceTree = "<group>"; };
 		CE253F951A10B9C7003DA45C /* HeaderNewReceita.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderNewReceita.xib; path = Fucook/NewReceita/HeaderNewReceita.xib; sourceTree = "<group>"; };
@@ -1369,7 +1377,12 @@
 				BAFC11571A1CBF5600EA10E7 /* CellIngrediente.xib */,
 				BAFE0CB61A2DD223000298BC /* CellEtapa.h */,
 				BAFE0CB71A2DD223000298BC /* CellEtapa.m */,
-				BAFE0CB81A2DD223000298BC /* CellEtapa.xib */,
+				BAFE0CBB1A2DEBF4000298BC /* IngreTwoOptionsController.h */,
+				BAFE0CBC1A2DEBF4000298BC /* IngreTwoOptionsController.m */,
+				BAFE0CBD1A2DEBF4000298BC /* IngreTwoOptionsController.xib */,
+				BAFE0CC01A2E0FF3000298BC /* EtapaTwoOptionsController.h */,
+				BAFE0CC11A2E0FF3000298BC /* EtapaTwoOptionsController.m */,
+				BAFE0CC21A2E0FF3000298BC /* EtapaTwoOptionsController.xib */,
 			);
 			name = NewReceita;
 			path = ..;
@@ -1585,7 +1598,6 @@
 				BAF76B4A1A0CCE6B00D2CC13 /* CollectionLivros.xib in Resources */,
 				BAF465341A150ADC00FE7926 /* btleft2@3x.png in Resources */,
 				BAF4653C1A150ADC00FE7926 /* btright3@3x.png in Resources */,
-				BAFE0CBA1A2DD223000298BC /* CellEtapa.xib in Resources */,
 				BAF66E2B1A0B809800E90B7D /* imgbookcut@3x.png in Resources */,
 				BAF465221A14D73700FE7926 /* imgtap@3x.png in Resources */,
 				BAE468141A11254700D3F596 /* btnbook5@2x.png in Resources */,
@@ -1656,8 +1668,10 @@
 				BAF465401A150BAF00FE7926 /* imgshadowcalendar@3x.png in Resources */,
 				BAF465051A14C57100FE7926 /* MealPlanner.xib in Resources */,
 				BA66E5F81A1258160090F99D /* btleft2@3x.png in Resources */,
+				BAFE0CBF1A2DEBF4000298BC /* IngreTwoOptionsController.xib in Resources */,
 				BAF465381A150ADC00FE7926 /* btright1@3x.png in Resources */,
 				BA66E60A1A1258160090F99D /* icoexport@3x.png in Resources */,
+				BAFE0CC41A2E0FF3000298BC /* EtapaTwoOptionsController.xib in Resources */,
 				BA66E60E1A1258160090F99D /* icoimport@3x.png in Resources */,
 				BA66E6001A1258160090F99D /* btnopen1@3x.png in Resources */,
 				BAF9551F1A0A7B7200277B94 /* Home.xib in Resources */,
@@ -1764,6 +1778,7 @@
 				CE27670D1A166E21003A225B /* RATreeView+TableViewDelegate.m in Sources */,
 				BAF76B5B1A0D2AAE00D2CC13 /* DragableTableReceitas.m in Sources */,
 				BA66E5C71A1230B60090F99D /* NewIngrediente.m in Sources */,
+				BAFE0CBE1A2DEBF4000298BC /* IngreTwoOptionsController.m in Sources */,
 				BA0866341A2C88CD00A7BB12 /* JAActionButton.m in Sources */,
 				BA0866411A2C892E00A7BB12 /* NSArray+PureLayout.m in Sources */,
 				BA55AC3E1A1A017C00381726 /* UIImage+fixOrientation.m in Sources */,
@@ -1798,6 +1813,7 @@
 				BA66E61A1A1262910090F99D /* ObjectIngrediente.m in Sources */,
 				BA1141CA1A2786F500B77AB6 /* IAPHelper.m in Sources */,
 				CE27670F1A166E21003A225B /* RATreeView.m in Sources */,
+				BAFE0CC31A2E0FF3000298BC /* EtapaTwoOptionsController.m in Sources */,
 				CE2767051A166E21003A225B /* RATreeNodeCollectionController.m in Sources */,
 				BADC324F1A165FE9005B1D5A /* ListaCompras.m in Sources */,
 				CE2767071A166E21003A225B /* RATreeNodeItem+Private.m in Sources */,

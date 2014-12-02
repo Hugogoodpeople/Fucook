@@ -9,6 +9,12 @@
 #import "Directions.h"
 #import "ObjectDirections.h"
 #import "CellEtapa.h"
+#import "JAActionButton.h"
+
+#define kFlagButtonColor        [UIColor colorWithRed:255.0/255.0 green:150.0/255.0 blue:0/255.0 alpha:1]
+#define kMoreButtonColor        [UIColor colorWithRed:200.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1]
+#define kArchiveButtonColor     [UIColor colorWithRed:60.0/255.0 green:112.0/255.0 blue:168/255.0 alpha:1]
+#define kUnreadButtonColor      [UIColor colorWithRed:0/255.0 green:122.0/255.0 blue:255.0/255.0 alpha:1]
 
 @interface Directions ()
 
@@ -19,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self.tabela registerClass:[CellEtapa class] forCellReuseIdentifier: @"CellEtapa"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,13 +61,23 @@
     return 1;
 }
 
-/*
- - (CGFloat)tableView:(UITableView *)tableView
- heightForRowAtIndexPath:(NSIndexPath *)indexPath
- {
- return 51;
- }
- */
+- (NSArray *)rightButtons
+{
+    __typeof(self) __weak weakSelf = self;
+    JAActionButton *button1 = [JAActionButton actionButtonWithTitle:@"Delete" color:kArchiveButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell)
+                               {
+                                   //[cell completePinToTopViewAnimation];
+                                   //[self rightMostButtonSwipeCompleted:cell];
+                               }];
+    
+    JAActionButton *button2 = [JAActionButton actionButtonWithTitle:@"Edit" color:kFlagButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
+        //[self editIngrediente:cell];
+    }];
+    
+    
+    return @[button1, button2];
+}
+
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,6 +100,9 @@
     
     ObjectDirections * ingrid = [self.arrayOfItems objectAtIndex:indexPath.row];
     
+    
+    /*
+    
     CellEtapa *cell = (CellEtapa *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if(cell == nil){
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CellEtapa" owner:self options:nil];
@@ -100,12 +121,38 @@
     cell.labelDesc.text = [NSString stringWithFormat:@"%d min", ingrid.tempoMinutos];
     
     return cell;
+    
+    
+    */
+    
+
+    
+    CellEtapa *cell = (CellEtapa *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    [cell addActionButtons:[self rightButtons] withButtonWidth:kJAButtonWidth withButtonPosition:JAButtonLocationRight];
+    
+    
+    cell.ingrediente = ingrid;
+    cell.delegateHugo = self.delegate;
+    cell.delegate = self;
+    
+    [cell addActionButtons:[self rightButtons] withButtonWidth:kJAButtonWidth withButtonPosition:JAButtonLocationRight];
+    
+    //cell.labelNome.text = [NSString stringWithFormat:@"%@%@ %@ %@", ingrid.quantidade, ingrid.quantidadeDecimal , ingrid.unidade,ingrid.nome];;
+    //cell.labelDesc.text = [NSString stringWithFormat:@"%@%@ %@", ingrid.quantidade, ingrid.quantidadeDecimal , ingrid.unidade];
+    
+    //[cell configureCellWithTitle:[NSString stringWithFormat:@"%@ %@ %@",ingrid.quantidade, ingrid.unidade, ingrid.nome]];
+    [cell setNeedsLayout];
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
+    return cell;
 }
 
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return YES if you want the specified item to be editable.
-    return YES;
+    return NO;
 }
 
 // Override to support editing the table view.

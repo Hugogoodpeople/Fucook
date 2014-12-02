@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ObjectIngrediente.h"
 
 @interface NewIngrediente : UIViewController <UITextFieldDelegate , UIPickerViewDataSource, UIPickerViewDelegate>
+
+@property ObjectIngrediente * ingrediente;
 
 @property (nonatomic ,assign) id delegate;
 

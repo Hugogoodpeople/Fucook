@@ -53,7 +53,7 @@
                 <outlet property="labelTitle" destination="RMN-Vy-y1f" id="ZQQ-7j-qmc"/>
                 <outlet property="labelUnit" destination="j2g-A3-8Lc" id="ihG-FP-mV2"/>
             </connections>
-            <point key="canvasLocation" x="783" y="207"/>
+            <point key="canvasLocation" x="324" y="205"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

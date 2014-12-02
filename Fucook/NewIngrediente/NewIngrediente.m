@@ -7,7 +7,7 @@
 //
 
 #import "NewIngrediente.h"
-#import "ObjectIngrediente.h"
+
 
 @interface NewIngrediente (){
     BOOL pickerQuantA;
@@ -62,6 +62,14 @@
     
     [self.pickerQuant selectRow:5 inComponent:0 animated:NO];
     
+    
+    if (self.ingrediente)
+    {
+        self.textName.text = self.ingrediente.nome;
+        self.textQuant.text = self.ingrediente.quantidade;
+        self.textUnity.text = self.ingrediente.unidade;
+    }
+    
 }
 
 -(void)adicionarToolBar
@@ -89,6 +97,8 @@
 
 -(void)addIngrediente
 {
+    // tenho de ir buscar os valores selecionados no picker para poder enviar para o controlador pai
+    // esse controlador é que vai mandar gravar na base de dados os valores que foram criados aqui
     ObjectIngrediente * ingrid = [ObjectIngrediente new];
     
     //NSInteger row0 = [self.pickerQuant selectedRowInComponent:0];
@@ -103,17 +113,23 @@
     
     ingrid.unidade = [arrayUnidade objectAtIndex:row2];
     ingrid.nome = self.textName.text;
-    
-    
-    // tenho de ir buscar os valores selecionados no picker para poder enviar para o controlador pai
-    // esse controlador é que vai mandar gravar na base de dados os valores que foram criados aqui
-    if (self.delegate)
-    {
-        [self.delegate performSelector:@selector(addIngrediente:) withObject:ingrid];
-    }
-    
-    [self.navigationController popViewControllerAnimated:YES];
 
+    
+    if (self.ingrediente) {
+        if (self.delegate) {
+            [self.delegate performSelector:@selector(actualizarIngrediente::) withObject:self.ingrediente withObject:ingrid];
+        }
+    }
+    else
+    {
+
+        if (self.delegate)
+        {
+            [self.delegate performSelector:@selector(addIngrediente:) withObject:ingrid];
+        }
+    }
+        
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

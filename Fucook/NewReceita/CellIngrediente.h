@@ -8,15 +8,26 @@
 
 #import <UIKit/UIKit.h>
 #import "ObjectIngrediente.h"
+#import "JASwipeCell.h"
+
+#import "IngreTwoOptionsController.h"
 
 
-@interface CellIngrediente : UITableViewCell
+@interface CellIngrediente : JASwipeCell
+
+@property IngreTwoOptionsController * viewDados;
+
+
+
 @property (weak, nonatomic) IBOutlet UILabel *labelNome;
 //@property (weak, nonatomic) IBOutlet UILabel *labelDesc;
 
 - (IBAction)clickRemover:(id)sender;
 
 @property NSObject * ingrediente;
-@property (nonatomic, assign) id delegate;
+@property (nonatomic, assign) id delegateHugo;
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier ;
+- (void)updateConstraints;
 
 @end
