@@ -245,6 +245,21 @@
     NSString * dificulty   = headerFinal.labelDif.text;
     NSString * tempo       = headerFinal.labelPre.text;
     
+    
+    /*
+    // aqui agora deixou de ser apenas uma nota e passou a ser uma lista de notas
+    NSManagedObject * nota = [NSEntityDescription
+                              insertNewObjectForEntityForName:@"Nota"
+                              inManagedObjectContext:context];
+    // percorrer um ciclo para todas as posições das notas
+    NSMutableArray * arrayNotas = [NSMutableArray new];
+    for (NSString * notaString in footerFinal.arrayOfItems) {
+        
+    }
+    */
+    
+    
+    
     if (footerFinal.arrayOfItems.count == 1) {
         NSString * notas       = [footerFinal.arrayOfItems objectAtIndex:0];
         [Receita setValue:notas         forKey:@"notas"];
@@ -254,6 +269,7 @@
     {
         [Receita setValue:@""         forKey:@"notas"];
     }
+    
     
     [Receita setValue:nomeReceita   forKey:@"nome"];
     [Receita setValue:categoria     forKey:@"categoria"];

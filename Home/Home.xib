@@ -45,13 +45,6 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <items>
-                        <barButtonItem image="btnbook1.png" id="tfq-az-nfk">
-                            <color key="tintColor" red="0.59215686274509804" green="0.21176470588235294" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="clickHome:" destination="-1" id="Y4q-LO-Z1R"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="BTm-SG-hyQ"/>
                         <barButtonItem image="btnshop1.png" style="plain" id="htQ-f3-B3d">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -90,7 +83,6 @@
         </view>
     </objects>
     <resources>
-        <image name="btnbook1.png" width="27" height="24"/>
         <image name="btncall1.png" width="23" height="24"/>
         <image name="btnfeatured1.png" width="17" height="24"/>
         <image name="btnsetting2.png" width="24" height="24"/>

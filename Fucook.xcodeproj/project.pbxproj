@@ -219,7 +219,6 @@
 		BAF955791A0A9D6900277B94 /* btnshop1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF955561A0A9D6900277B94 /* btnshop1@3x.png */; };
 		BAF9557A1A0A9D6900277B94 /* btnshop2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF955571A0A9D6900277B94 /* btnshop2@2x.png */; };
 		BAF9557B1A0A9D6900277B94 /* btnshop2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF955581A0A9D6900277B94 /* btnshop2@3x.png */; };
-		BAF9557C1A0A9D6900277B94 /* imgsample001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAF955591A0A9D6900277B94 /* imgsample001.jpg */; };
 		BAFC11581A1CBF5600EA10E7 /* CellIngrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFC11561A1CBF5600EA10E7 /* CellIngrediente.m */; };
 		BAFC11591A1CBF5600EA10E7 /* CellIngrediente.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFC11571A1CBF5600EA10E7 /* CellIngrediente.xib */; };
 		BAFE0CB91A2DD223000298BC /* CellEtapa.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFE0CB71A2DD223000298BC /* CellEtapa.m */; };
@@ -1687,7 +1686,6 @@
 				BA66E5D21A12310A0090F99D /* Directions.xib in Resources */,
 				BA66E5CA1A1230B60090F99D /* NewNotes.xib in Resources */,
 				BA023B521A137BEC000B4754 /* DirectionsHeader.xib in Resources */,
-				BAF9557C1A0A9D6900277B94 /* imgsample001.jpg in Resources */,
 				BAF9557A1A0A9D6900277B94 /* btnshop2@2x.png in Resources */,
 				BAF955621A0A9D6900277B94 /* btncall2@2x.png in Resources */,
 				BAF955651A0A9D6900277B94 /* btndelet1@3x.png in Resources */,

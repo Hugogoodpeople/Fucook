@@ -233,8 +233,6 @@
     
    // NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
     
-    
-    
     cell.labelPagina.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
     
     
@@ -273,9 +271,6 @@
     _maskingLayer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width-30, altura);
     [_maskingLayer setContents:(id)[_maskingImage CGImage]];
     [cell.viewMovel.layer setMask:_maskingLayer];
-
-    
-    
     
     return cell;
 }

@@ -14,6 +14,7 @@
 
 
 @interface Calendario : UIViewController <VRGCalendarViewDelegate, UIActionSheetDelegate>
+
 @property (weak, nonatomic) IBOutlet UIView *container;
 
 @property NSManagedObject * receita;
